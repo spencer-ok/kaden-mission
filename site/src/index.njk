@@ -1,0 +1,118 @@
+---
+layout: base.njk
+---
+
+<header class="hero">
+  <div class="hero-inner">
+    <h1 class="hero-title">{{ site.missionary }}</h1>
+    <p class="hero-mission">{{ site.mission }}</p>
+    <p class="hero-subtitle">お帰りなさい — Welcome Home</p>
+    <p class="hero-dates">{{ site.missionStart }} – {{ site.missionEnd }}</p>
+  </div>
+</header>
+
+<main>
+  {# Timeline Section #}
+  <section class="section" id="timeline">
+    <h2 class="section-title">旅 <span>My Journey</span></h2>
+    <div class="timeline">
+      {% for transfer in transfers %}
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3>Transfer {{ transfer.number }} — {{ transfer.area }}</h3>
+          <p class="timeline-dates">{{ transfer.startDate }} – {{ transfer.endDate }}</p>
+          <p class="timeline-companion">Companion: {{ transfer.companion }}{% if transfer.companionNote %} <span class="companion-note-inline">({{ transfer.companionNote }})</span>{% endif %}</p>
+          {% if transfer.highlights %}
+          <ul>
+            {% for h in transfer.highlights %}
+            <li>{{ h }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  {# Companions Section #}
+  <section class="section" id="companions">
+    <h2 class="section-title">仲間 <span>My Companions</span></h2>
+    <div class="companions-grid">
+      {% for companion in companions %}
+      <div class="companion-card">
+        <h3>{{ companion.name }}</h3>
+        <p>{{ companion.area }}</p>
+        <p class="companion-dates">{{ companion.dates }}</p>
+        {% if companion.note %}<p class="companion-note">{{ companion.note }}</p>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  {# Art Section #}
+  <section class="section" id="art">
+    <h2 class="section-title">芸術 <span>My Art</span></h2>
+    <p class="section-intro">Throughout my mission, I used my gift for art to touch lives — drawing for members, friends, and investigators, sharing the gospel through creativity.</p>
+    <div class="art-carousel">
+      <button class="carousel-btn carousel-prev" onclick="moveCarousel(-1)">‹</button>
+      <div class="carousel-track">
+        {% for piece in art %}
+        <div class="art-piece">
+          <img src="/assets/images/art/{{ piece.filename }}" alt="{{ piece.title }}" loading="lazy" onclick="openModal(this.src); return false;">
+          {% if piece.title %}<p class="art-title">{{ piece.title }}</p>{% endif %}
+        </div>
+        {% endfor %}
+      </div>
+      <button class="carousel-btn carousel-next" onclick="moveCarousel(1)">›</button>
+    </div>
+  </section>
+
+  {# Quotes Section #}
+  <section class="section" id="quotes">
+    <h2 class="section-title">言葉 <span>My Words</span></h2>
+    <div class="quotes-container">
+      {% for quote in quotes %}
+      <blockquote class="quote-card">
+        <p>{{ quote.text }}</p>
+        <cite>— {{ quote.date }}{% if quote.source %}, {{ quote.source }}{% endif %}</cite>
+      </blockquote>
+      {% endfor %}
+    </div>
+  </section>
+
+  {# Emails Section #}
+  <section class="section" id="emails">
+    <h2 class="section-title">手紙 <span>My Letters Home</span></h2>
+    <div class="emails-list">
+      {% for email in emails %}
+      <details class="email-entry">
+        <summary>
+          <span class="email-date">{{ email.date }}</span>
+          <span class="email-subject">{{ email.subject }}</span>
+          {% if email.images.length %}<span class="email-img-count">📷 {{ email.images.length }}</span>{% endif %}
+        </summary>
+        <div class="email-body">
+          {% if email.summary %}<p class="email-summary">{{ email.summary }}</p>{% endif %}
+          {{ email.body | safe }}
+          {% if email.images.length %}
+          <div class="email-images">
+            {% for img in email.images %}
+            <a href="/assets/images/emails/{{ img }}" class="email-thumb" onclick="openModal(this.href); return false;">
+              <img src="/assets/images/emails/{{ img }}" alt="Photo" loading="lazy">
+            </a>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </details>
+      {% endfor %}
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>Made with love for your homecoming — June 2026</p>
+  <p class="footer-id">010</p>
+</footer>

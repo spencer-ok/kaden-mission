@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ site.title }}</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="#timeline">旅 Journey</a>
+    <a href="#companions">仲間 Companions</a>
+    <a href="#art">芸術 Art</a>
+    <a href="#quotes">言葉 Words</a>
+    <a href="#emails">手紙 Letters</a>
+  </nav>
+  {{ content | safe }}
+  <div class="modal-overlay" id="imageModal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <img id="modalImg" src="" alt="Full image">
+      <a id="modalLink" href="" target="_blank" class="modal-full-link">View Full Image</a>
+    </div>
+  </div>
+  <script>
+    function openModal(src) {
+      document.getElementById('modalImg').src = src;
+      document.getElementById('modalLink').href = src;
+      document.getElementById('imageModal').classList.add('active');
+    }
+    function closeModal() {
+      document.getElementById('imageModal').classList.remove('active');
+      document.getElementById('modalImg').src = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    function moveCarousel(dir) {
+      const track = document.querySelector('.carousel-track');
+      track.scrollBy({ left: dir * 270, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>

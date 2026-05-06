@@ -1,0 +1,10 @@
+{
+  "name": "kaden-mission-email-tools",
+  "version": "1.0.0",
+  "scripts": {
+    "download": "node download-emails.js"
+  },
+  "dependencies": {
+    "googleapis": "^131.0.0"
+  }
+}

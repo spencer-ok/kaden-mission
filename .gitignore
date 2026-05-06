@@ -1,0 +1,16 @@
+node_modules
+_site
+
+# Source materials (raw downloads, not for repo)
+source-materials/emails/downloaded/
+source-materials/emails/downloaded-direct/
+source-materials/emails/best/
+source-materials/emails/node_modules/
+source-materials/emails/token.json
+source-materials/emails/credentials.json
+source-materials/image-classifications.json
+source-materials/photos/
+source-materials/messenger/
+
+# Large generated files
+*.heic
