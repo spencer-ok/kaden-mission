@@ -56,7 +56,7 @@ layout: base.njk
     <h2 class="section-title">芸術 <span>My Art</span></h2>
     <p class="section-intro">Throughout my mission, I used my gift for art to touch lives — drawing for members, friends, and investigators, sharing the gospel through creativity.</p>
     <div class="art-carousel">
-      <button class="carousel-btn carousel-prev" onclick="moveCarousel(-1)">‹</button>
+      <button class="carousel-btn carousel-prev" onclick="moveCarousel(-1)" aria-label="Previous">‹</button>
       <div class="carousel-track">
         {% for piece in art %}
         <div class="art-piece">
@@ -65,7 +65,7 @@ layout: base.njk
         </div>
         {% endfor %}
       </div>
-      <button class="carousel-btn carousel-next" onclick="moveCarousel(1)">›</button>
+      <button class="carousel-btn carousel-next" onclick="moveCarousel(1)" aria-label="Next">›</button>
     </div>
   </section>
 

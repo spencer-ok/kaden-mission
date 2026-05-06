@@ -259,22 +259,34 @@ body {
 .carousel-track {
   display: flex;
   gap: 1rem;
-  overflow: hidden;
+  overflow-x: auto;
   scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 1rem 0;
+  scrollbar-width: none;
+  flex: 1;
 }
 
+.carousel-track::-webkit-scrollbar { display: none; }
+
 .carousel-track .art-piece {
-  min-width: 250px;
+  scroll-snap-align: start;
   flex-shrink: 0;
 }
 
 .carousel-track .art-piece img {
-  width: 250px;
-  height: 300px;
+  width: 220px;
+  height: 280px;
   object-fit: cover;
   border-radius: 4px;
   cursor: pointer;
   box-shadow: 0 2px 8px var(--shadow);
+  transition: transform 0.2s;
+}
+
+.carousel-track .art-piece img:hover {
+  transform: scale(1.03);
 }
 
 .carousel-track .art-piece .art-title {
@@ -287,12 +299,17 @@ body {
 .carousel-btn {
   background: var(--card-bg);
   border: 1px solid var(--divider);
-  font-size: 2rem;
-  padding: 0.5rem 0.8rem;
+  font-size: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
   cursor: pointer;
   border-radius: 50%;
   color: var(--ink);
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
 }
 
 .carousel-btn:hover { background: var(--divider); }
