@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ site.title }}</title>
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 <body>
   <nav class="site-nav">
+    <a href="#map">地図 Map</a>
     <a href="#timeline">旅 Journey</a>
     <a href="#companions">仲間 Companions</a>
     <a href="#art">芸術 Art</a>
@@ -22,6 +24,7 @@
       <a id="modalLink" href="" target="_blank" class="modal-full-link">View Full Image</a>
     </div>
   </div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     function openModal(src) {
       document.getElementById('modalImg').src = src;
@@ -38,6 +41,48 @@
       const track = document.querySelector('.carousel-track');
       track.scrollBy({ left: dir * 270, behavior: 'smooth' });
     }
+
+    // Mission Map
+    (function() {
+      const areas = [
+        { name: "Ibaraki, Osaka", lat: 34.816, lng: 135.568, transfers: "2", companion: "Elder Sonomura", dates: "Sep – Dec 2024" },
+        { name: "Marugame, Shikoku", lat: 34.289, lng: 133.798, transfers: "3–4", companion: "Elder MacKay, Elder Martinson", dates: "Dec 2024 – Mar 2025" },
+        { name: "Izumi Tottori, Sennan", lat: 34.383, lng: 135.273, transfers: "5–6", companion: "Elder Magbago, Elder Sofoul", dates: "Mar – Jul 2025" },
+        { name: "Tsuyama, Okayama", lat: 35.069, lng: 134.003, transfers: "7–8", companion: "Elder Nakazawa, Elder Lear", dates: "Jul – Dec 2025" },
+        { name: "Gobo, Wakayama", lat: 33.891, lng: 135.151, transfers: "9–10", companion: "Elder Warnick, Elder Childs", dates: "Dec 2025 – Mar 2026" },
+        { name: "Nishiwaki, Hyogo", lat: 34.992, lng: 134.971, transfers: "11–12", companion: "Elder Talbot, Elder Gifford", dates: "Mar – Jun 2026" }
+      ];
+
+      const map = L.map('missionMap', { scrollWheelZoom: false }).setView([34.5, 134.3], 8);
+
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: '© OpenStreetMap © CARTO',
+        maxZoom: 16
+      }).addTo(map);
+
+      // Draw path
+      const path = areas.map(a => [a.lat, a.lng]);
+      L.polyline(path, { color: '#8b4513', weight: 2, opacity: 0.6, dashArray: '6 4' }).addTo(map);
+
+      // Add markers
+      areas.forEach((area, i) => {
+        const icon = L.divIcon({
+          className: 'map-number-marker',
+          html: `<span>${i + 1}</span>`,
+          iconSize: [28, 28],
+          iconAnchor: [14, 14]
+        });
+
+        const marker = L.marker([area.lat, area.lng], { icon }).addTo(map);
+
+        marker.bindPopup(`
+          <strong>${area.name}</strong><br>
+          Transfers ${area.transfers}<br>
+          ${area.companion}<br>
+          <em>${area.dates}</em>
+        `);
+      });
+    })();
   </script>
 </body>
 </html>

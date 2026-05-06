@@ -89,6 +89,69 @@ body {
   letter-spacing: 0.1em;
 }
 
+/* === Map === */
+.section-wide {
+  max-width: 1100px;
+}
+
+.map-container {
+  position: relative;
+  border: 1px solid var(--divider);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+#missionMap {
+  height: 500px;
+  width: 100%;
+  background: var(--paper);
+}
+
+.map-mtc-inset {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--divider);
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  z-index: 500;
+  box-shadow: 0 2px 6px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.mtc-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.mtc-dates {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.map-number-marker {
+  background: var(--accent);
+  color: #fff;
+  border-radius: 50%;
+  width: 28px !important;
+  height: 28px !important;
+  line-height: 24px;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.map-number-marker span {
+  display: block;
+  line-height: 24px;
+}
+
 /* === Sections === */
 .section {
   max-width: 900px;
