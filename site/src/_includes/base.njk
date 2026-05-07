@@ -13,22 +13,25 @@
     <a href="#timeline">旅 Journey</a>
     <a href="#companions">仲間 Companions</a>
     <a href="#art">芸術 Art</a>
-    <a href="#quotes">言葉 Words</a>
+    <a href="#quotes">言葉 Quotes</a>
+    <a href="#photos">写真 Photos</a>
     <a href="#emails">手紙 Letters</a>
   </nav>
   {{ content | safe }}
   <div class="modal-overlay" id="imageModal" onclick="closeModal()">
     <div class="modal-content" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-toolbar">
+        <a id="modalDownload" href="" download class="modal-btn" title="Download">⬇</a>
+        <button class="modal-btn" onclick="closeModal()" title="Close">✕</button>
+      </div>
       <img id="modalImg" src="" alt="Full image">
-      <a id="modalLink" href="" target="_blank" class="modal-full-link">View Full Image</a>
     </div>
   </div>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     function openModal(src) {
       document.getElementById('modalImg').src = src;
-      document.getElementById('modalLink').href = src;
+      document.getElementById('modalDownload').href = src;
       document.getElementById('imageModal').classList.add('active');
     }
     function closeModal() {
@@ -37,10 +40,119 @@
     }
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-    function moveCarousel(dir) {
-      const track = document.querySelector('.carousel-track');
-      track.scrollBy({ left: dir * 270, behavior: 'smooth' });
-    }
+    // Art Carousel
+    (function() {
+      let current = 0;
+      const slides = document.querySelectorAll('.carousel-slide');
+      const indicators = document.querySelectorAll('.carousel-indicators .indicator');
+      const total = slides.length;
+      if (!total) return;
+
+      slides[0].classList.add('active');
+      if (indicators[0]) indicators[0].classList.add('active');
+      let timer;
+
+      function goTo(i) {
+        slides[current].classList.remove('active');
+        if (indicators[current]) indicators[current].classList.remove('active');
+        current = (i + total) % total;
+        slides[current].classList.add('active');
+        if (indicators[current]) indicators[current].classList.add('active');
+        resetTimer();
+      }
+
+      function resetTimer() {
+        clearInterval(timer);
+        timer = setInterval(() => goTo(current + 1), 5000);
+      }
+
+      window.carouselNext = () => goTo(current + 1);
+      window.carouselPrev = () => goTo(current - 1);
+      window.carouselGoTo = (btn) => {
+        const idx = [...indicators].indexOf(btn);
+        if (idx >= 0) goTo(idx);
+      };
+      resetTimer();
+    })();
+
+    // Quotes Carousel
+    (function() {
+      const slides = document.querySelectorAll('.quote-slide');
+      if (!slides.length) return;
+      let current = 0;
+      slides[0].classList.add('active');
+
+      function goTo(i) {
+        slides[current].classList.remove('active');
+        current = (i + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        clearInterval(timer);
+        timer = setInterval(() => goTo(current + 1), 8000);
+      }
+
+      window.quoteNext = () => goTo(current + 1);
+      window.quotePrev = () => goTo(current - 1);
+      let timer = setInterval(() => goTo(current + 1), 8000);
+    })();
+
+    // Photo Grid Filter & Pagination
+    (function() {
+      const PAGE_SIZE = 24;
+      let currentPage = 0;
+      let activeTags = new Set();
+      const items = [...document.querySelectorAll('.photo-item')];
+
+      function getFiltered() {
+        if (activeTags.size === 0) return items;
+        return items.filter(i => {
+          const tags = i.dataset.tags.split(',');
+          return [...activeTags].some(t => tags.includes(t));
+        });
+      }
+
+      function render() {
+        const filtered = getFiltered();
+        const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
+        currentPage = Math.min(currentPage, Math.max(totalPages - 1, 0));
+        const start = currentPage * PAGE_SIZE;
+
+        items.forEach(i => i.classList.add('hidden'));
+        filtered.slice(start, start + PAGE_SIZE).forEach(i => i.classList.remove('hidden'));
+
+        const info = document.getElementById('photoPageInfo');
+        const prevBtn = document.getElementById('photoPrev');
+        const nextBtn = document.getElementById('photoNext');
+        info.textContent = `${currentPage + 1} / ${totalPages} (${filtered.length} photos)`;
+        prevBtn.disabled = currentPage === 0;
+        nextBtn.disabled = currentPage >= totalPages - 1;
+      }
+
+      window.filterPhotos = function(tag) {
+        const btn = event.target;
+        if (tag === 'all') {
+          activeTags.clear();
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        } else {
+          document.querySelector('.filter-btn[onclick*="all"]').classList.remove('active');
+          if (activeTags.has(tag)) {
+            activeTags.delete(tag);
+            btn.classList.remove('active');
+          } else {
+            activeTags.add(tag);
+            btn.classList.add('active');
+          }
+          if (activeTags.size === 0) {
+            document.querySelector('.filter-btn[onclick*="all"]').classList.add('active');
+          }
+        }
+        currentPage = 0;
+        render();
+      };
+      window.photoNext = () => { currentPage++; render(); };
+      window.photoPrev = () => { currentPage--; render(); };
+      render();
+    })();
 
     // Mission Map
     (function() {
@@ -68,7 +180,7 @@
       areas.forEach((area, i) => {
         const icon = L.divIcon({
           className: 'map-number-marker',
-          html: `<span>${i + 1}</span>`,
+          html: `<span>${i + 2}</span>`,
           iconSize: [28, 28],
           iconAnchor: [14, 14]
         });

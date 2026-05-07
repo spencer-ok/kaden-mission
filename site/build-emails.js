@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
 const EMAILS_DIR = path.join(__dirname, '..', 'source-materials', 'emails', 'best');
 const ATTACHMENTS_DIR = path.join(__dirname, '..', 'source-materials', 'emails', 'downloaded', 'attachments');
@@ -7,6 +8,11 @@ const ATTACHMENTS_DIR2 = path.join(__dirname, '..', 'source-materials', 'emails'
 const SUMMARIES_PATH = path.join(__dirname, 'src', '_data', 'emailSummaries.json');
 const IMAGES_OUT = path.join(__dirname, 'src', 'assets', 'images', 'emails');
 const OUTPUT_PATH = path.join(__dirname, 'src', '_data', 'emails.json');
+
+if (!fs.existsSync(IMAGES_OUT)) fs.mkdirSync(IMAGES_OUT, { recursive: true });
+
+// Track seen image hashes globally to deduplicate
+const seenHashes = new Set();
 
 if (!fs.existsSync(IMAGES_OUT)) fs.mkdirSync(IMAGES_OUT, { recursive: true });
 
@@ -59,6 +65,9 @@ function findAttachments(file) {
       .filter(f => /\.(jpg|jpeg|png|webp)$/i.test(f))
       .forEach(f => {
         const src = path.join(dirPath, f);
+        const hash = crypto.createHash('md5').update(fs.readFileSync(src)).digest('hex');
+        if (seenHashes.has(hash)) return;
+        seenHashes.add(hash);
         const safeName = `${path.basename(dirPath).slice(0, 20)}_${f}`.replace(/[^a-zA-Z0-9._-]/g, '_');
         const dest = path.join(IMAGES_OUT, safeName);
         if (!fs.existsSync(dest)) fs.copyFileSync(src, dest);

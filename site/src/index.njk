@@ -6,21 +6,43 @@ layout: base.njk
   <div class="hero-inner">
     <h1 class="hero-title">{{ site.missionary }}</h1>
     <p class="hero-mission">{{ site.mission }}</p>
-    <p class="hero-subtitle">お帰りなさい — Welcome Home</p>
+    <p class="hero-subtitle">お帰りなさい</p>
     <p class="hero-dates">{{ site.missionStart }} – {{ site.missionEnd }}</p>
   </div>
 </header>
 
 <main>
+  {# Mission President #}
+  <section class="section" id="president">
+    <div class="mission-president">
+      <img src="/assets/images/mission-president.png" alt="President and Sister Sano" class="president-photo">
+      <div class="president-bio">
+        <h3>{{ site.missionPresident }} & {{ site.missionPresidentWife }}</h3>
+        <p>President Sano is a former mission presidency counselor, temple ordinance worker, district president, branch president, branch mission leader, elders quorum president, and missionary in the Japan Kobe Mission. He was born in Kagoshima City, Japan.</p>
+        <p>Sister Sano is a former branch Relief Society presidency counselor, temple ordinance worker, district Young Women president, branch Primary president, Sunday School teacher, institute teacher, seminary teacher, and missionary in the Japan Okayama Mission. She was born in Omuta City, Japan.</p>
+      </div>
+    </div>
+  </section>
+
   {# Map Section #}
   <section class="section section-wide" id="map">
     <h2 class="section-title">地図 <span>My Mission Map</span></h2>
     <div class="map-container">
       <div id="missionMap"></div>
       <div class="map-mtc-inset">
-        <span class="mtc-label">MTC — Provo, Utah</span>
+        <div class="mtc-top">
+          <span class="mtc-number">1</span>
+          <span class="mtc-label">MTC — Provo, Utah</span>
+        </div>
         <span class="mtc-dates">Jul – Sep 2024</span>
       </div>
+    </div>
+    <div class="mission-map-official" onclick="openModal('/assets/images/mission-map-1.png')">
+      <div class="map-official-label">
+        <span class="map-label-text">Official Kobe Japan Mission Boundaries</span>
+        <span class="map-label-hint">Click to enlarge</span>
+      </div>
+      <img src="/assets/images/mission-map-1.png" alt="Kobe Japan Mission Map" loading="lazy">
     </div>
   </section>
 
@@ -28,20 +50,26 @@ layout: base.njk
   <section class="section" id="timeline">
     <h2 class="section-title">旅 <span>My Journey</span></h2>
     <div class="timeline">
-      {% for transfer in transfers %}
-      <div class="timeline-item">
+      {% set areas = [
+        { "name": "MTC — Provo, Utah", "dates": "Jul 8 – Sep 11, 2024", "companions": ["Elder Wheeler"], "notes": ["Cow Stuffed Animal"] },
+        { "name": "Ibaraki, Osaka", "dates": "Sep 12 – Dec 9, 2024", "companions": ["Elder Sonomura"], "notes": ["That's true."] },
+        { "name": "Marugame, Shikoku", "dates": "Dec 9, 2024 – Mar 1, 2025", "companions": ["Elder MacKay", "Elder Martinson"], "notes": ["Ace, Ace", "Wampaku"] },
+        { "name": "Izumi Tottori, Sennan", "dates": "Mar 1 – Jul 5, 2025", "companions": ["Elder Magbago", "Elder Sofoul"], "notes": ["Card Games", "High Cleanliness Standards"] },
+        { "name": "Tsuyama, Okayama", "dates": "Jul 5 – Dec 21, 2025", "companions": ["Elder Nakazawa", "Elder Lear"], "notes": ["Diabolo Wizard", "Say..."] },
+        { "name": "Gobo, Wakayama", "dates": "Dec 21, 2025 – Mar 14, 2026", "companions": ["Elder Warnick", "Elder Childs"], "notes": ["Bruno Mars", "Backflip"] },
+        { "name": "Nishiwaki, Hyogo", "dates": "Mar 14 – Jun 4, 2026", "companions": ["Elder Talbot", "Elder Gifford"], "notes": ["Stretching", "Rich"] }
+      ] %}
+      {% for area in areas %}
+      <div class="timeline-item{% if loop.index == 1 %} timeline-item-full{% endif %}">
         <div class="timeline-marker"></div>
         <div class="timeline-content">
-          <h3>Transfer {{ transfer.number }} — {{ transfer.area }}</h3>
-          <p class="timeline-dates">{{ transfer.startDate }} – {{ transfer.endDate }}</p>
-          <p class="timeline-companion">Companion: {{ transfer.companion }}{% if transfer.companionNote %} <span class="companion-note-inline">({{ transfer.companionNote }})</span>{% endif %}</p>
-          {% if transfer.highlights %}
-          <ul>
-            {% for h in transfer.highlights %}
-            <li>{{ h }}</li>
+          <h3><span class="area-number">{{ loop.index }}</span>{{ area.name }}</h3>
+          <p class="timeline-dates">{{ area.dates }}</p>
+          <div class="timeline-companions">
+            {% for i in range(0, area.companions.length) %}
+            <p class="timeline-companion">{{ area.companions[i] }} <span class="companion-note-inline">({{ area.notes[i] }})</span></p>
             {% endfor %}
-          </ul>
-          {% endif %}
+          </div>
         </div>
       </div>
       {% endfor %}
@@ -66,31 +94,63 @@ layout: base.njk
   {# Art Section #}
   <section class="section" id="art">
     <h2 class="section-title">芸術 <span>My Art</span></h2>
-    <p class="section-intro">Throughout my mission, I used my gift for art to touch lives — drawing for members, friends, and investigators, sharing the gospel through creativity.</p>
+    <p class="section-intro art-intro">「Throughout my mission, I used my gift for art to touch lives — drawing for members, friends, and investigators, sharing the gospel through creativity.」</p>
     <div class="art-carousel">
-      <button class="carousel-btn carousel-prev" onclick="moveCarousel(-1)" aria-label="Previous">‹</button>
-      <div class="carousel-track">
-        {% for piece in art %}
-        <div class="art-piece">
-          <img src="/assets/images/art/{{ piece.filename }}" alt="{{ piece.title }}" loading="lazy" onclick="openModal(this.src); return false;">
-          {% if piece.title %}<p class="art-title">{{ piece.title }}</p>{% endif %}
+      <div class="carousel-inner">
+        {% for piece in imageInventory %}{% if piece.art and piece.visible !== false %}
+        <div class="carousel-slide">
+          <img src="/assets/images/{{ piece.source }}/{{ piece.modal }}" alt="{{ piece.caption }}" loading="lazy" onclick="openModal(this.src); return false;">
         </div>
-        {% endfor %}
+        {% endif %}{% endfor %}
       </div>
-      <button class="carousel-btn carousel-next" onclick="moveCarousel(1)" aria-label="Next">›</button>
+      <button class="carousel-control prev" onclick="carouselPrev()" aria-label="Previous">‹</button>
+      <button class="carousel-control next" onclick="carouselNext()" aria-label="Next">›</button>
+      <div class="carousel-indicators">
+        {% for piece in imageInventory %}{% if piece.art and piece.visible !== false %}
+        <button class="indicator" onclick="carouselGoTo(this)" aria-label="Slide"></button>
+        {% endif %}{% endfor %}
+      </div>
+    </div>
+  </section>
+
+  {# Photos Section #}
+  <section class="section section-wide" id="photos">
+    <h2 class="section-title">写真 <span>My Photos</span></h2>
+    <div class="photo-filters">
+      <button class="filter-btn active" onclick="filterPhotos('all')">All</button>
+      <button class="filter-btn" onclick="filterPhotos('people')">People</button>
+      <button class="filter-btn" onclick="filterPhotos('group')">Group</button>
+      <button class="filter-btn" onclick="filterPhotos('scenery')">Scenery</button>
+      <button class="filter-btn" onclick="filterPhotos('food')">Food</button>
+      <button class="filter-btn" onclick="filterPhotos('temple')">Temple</button>
+      <button class="filter-btn" onclick="filterPhotos('art')">Art</button>
+    </div>
+    <div class="photo-grid" id="photoGrid">
+      {% for img in imageInventory %}{% if img.visible !== false %}
+      <div class="photo-item" data-tags="{{ img.tags | join(',') }}" data-featured="{{ img.featured }}">
+        <img src="/assets/images/{{ img.source }}/{{ img.thumb }}" alt="{{ img.caption }}" loading="lazy" onclick="openModal('/assets/images/{{ img.source }}/{{ img.modal }}'); return false;">
+      </div>
+      {% endif %}{% endfor %}
+    </div>
+    <div class="photo-paging">
+      <button onclick="photoPrev()" id="photoPrev">← Prev</button>
+      <span id="photoPageInfo"></span>
+      <button onclick="photoNext()" id="photoNext">Next →</button>
     </div>
   </section>
 
   {# Quotes Section #}
   <section class="section" id="quotes">
-    <h2 class="section-title">言葉 <span>My Words</span></h2>
-    <div class="quotes-container">
+    <h2 class="section-title">言葉 <span>My Quotes</span></h2>
+    <div class="quotes-carousel">
       {% for quote in quotes %}
-      <blockquote class="quote-card">
+      <blockquote class="quote-slide">
         <p>{{ quote.text }}</p>
         <cite>— {{ quote.date }}{% if quote.source %}, {{ quote.source }}{% endif %}</cite>
       </blockquote>
       {% endfor %}
+      <button class="carousel-control prev" onclick="quotePrev()" aria-label="Previous">‹</button>
+      <button class="carousel-control next" onclick="quoteNext()" aria-label="Next">›</button>
     </div>
   </section>
 
@@ -111,8 +171,9 @@ layout: base.njk
           {% if email.images.length %}
           <div class="email-images">
             {% for img in email.images %}
-            <a href="/assets/images/emails/{{ img }}" class="email-thumb" onclick="openModal(this.href); return false;">
-              <img src="/assets/images/emails/{{ img }}" alt="Photo" loading="lazy">
+            {% set base = img | replace(".jpg", "") | replace(".jpeg", "") | replace(".png", "") | replace(".webp", "") %}
+            <a href="/assets/images/emails/{{ base }}-modal.jpg" class="email-thumb" onclick="openModal(this.href); return false;">
+              <img src="/assets/images/emails/{{ base }}-thumb.jpg" alt="Photo" loading="lazy">
             </a>
             {% endfor %}
           </div>
