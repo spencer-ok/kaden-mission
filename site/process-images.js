@@ -100,7 +100,10 @@ if (fs.existsSync(EMAILS_DIR)) {
       tags: prev.tags || [],
       caption: prev.caption || '',
       art: prev.art || false,
-      featured: prev.featured || false
+      featured: prev.featured || false,
+      ...prev.scores && { scores: prev.scores },
+      ...prev.rawDescription && { rawDescription: prev.rawDescription },
+      ...prev.visible === false && { visible: false }
     });
   });
 }
@@ -122,7 +125,10 @@ if (fs.existsSync(ART_DIR)) {
       tags: prev.tags || ['art'],
       caption: prev.caption || '',
       art: prev.art !== undefined ? prev.art : artFiles.has(f),
-      featured: prev.featured || false
+      featured: prev.featured || false,
+      ...prev.scores && { scores: prev.scores },
+      ...prev.rawDescription && { rawDescription: prev.rawDescription },
+      ...prev.visible === false && { visible: false }
     });
   });
 }
@@ -151,7 +157,10 @@ if (fs.existsSync(SOURCE_PHOTOS)) {
       tags: prev.tags || [],
       caption: prev.caption || '',
       art: prev.art || false,
-      featured: prev.featured || false
+      featured: prev.featured || false,
+      ...prev.scores && { scores: prev.scores },
+      ...prev.rawDescription && { rawDescription: prev.rawDescription },
+      ...prev.visible === false && { visible: false }
     });
     added++;
   });
@@ -175,7 +184,10 @@ if (fs.existsSync(SOURCE_VIDEOS)) {
         caption: prev.caption || '',
         art: false,
         featured: prev.featured || false,
-        video: f
+        video: f,
+        ...prev.scores && { scores: prev.scores },
+        ...prev.rawDescription && { rawDescription: prev.rawDescription },
+        ...prev.visible === false && { visible: false }
       });
     } catch (e) {
       console.log(`  ERROR extracting thumb: ${f} - ${e.message}`);
