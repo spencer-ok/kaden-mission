@@ -11,6 +11,8 @@ source-materials/emails/credentials.json
 source-materials/image-classifications.json
 source-materials/photos/
 source-materials/messenger/
+source-materials/videos/
+source-materials/audio-tmp/
 
 # Large generated files
 *.heic

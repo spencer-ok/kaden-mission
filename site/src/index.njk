@@ -117,18 +117,22 @@ layout: base.njk
   <section class="section section-wide" id="photos">
     <h2 class="section-title">写真 <span>My Photos</span></h2>
     <div class="photo-filters">
-      <button class="filter-btn active" onclick="filterPhotos('all')">All</button>
-      <button class="filter-btn" onclick="filterPhotos('people')">People</button>
-      <button class="filter-btn" onclick="filterPhotos('group')">Group</button>
-      <button class="filter-btn" onclick="filterPhotos('scenery')">Scenery</button>
-      <button class="filter-btn" onclick="filterPhotos('food')">Food</button>
-      <button class="filter-btn" onclick="filterPhotos('temple')">Temple</button>
-      <button class="filter-btn" onclick="filterPhotos('art')">Art</button>
+      <input type="text" id="photoSearch" class="chat-search" placeholder="Search..." oninput="filterPhotos()">
+      <input type="date" id="photoFrom" class="chat-date-input" onchange="filterPhotos()">
+      <input type="date" id="photoTo" class="chat-date-input" onchange="filterPhotos()">
+      <button class="filter-btn active" data-tag="all" onclick="setPhotoTag(this, 'all')">All</button>
+      <button class="filter-btn" data-tag="people" onclick="setPhotoTag(this, 'people')">People</button>
+      <button class="filter-btn" data-tag="group" onclick="setPhotoTag(this, 'group')">Group</button>
+      <button class="filter-btn" data-tag="scenery" onclick="setPhotoTag(this, 'scenery')">Scenery</button>
+      <button class="filter-btn" data-tag="food" onclick="setPhotoTag(this, 'food')">Food</button>
+      <button class="filter-btn" data-tag="temple" onclick="setPhotoTag(this, 'temple')">Temple</button>
+      <button class="filter-btn" data-tag="art" onclick="setPhotoTag(this, 'art')">Art</button>
     </div>
     <div class="photo-grid" id="photoGrid">
       {% for img in imageInventory %}{% if img.visible !== false %}
-      <div class="photo-item" data-tags="{{ img.tags | join(',') }}" data-featured="{{ img.featured }}">
+      <div class="photo-item" data-tags="{{ img.tags | join(',') }}" data-featured="{{ img.featured }}" data-date="{{ img.date }}" data-desc="{{ img.rawDescription | default('') | lower }}">
         <img src="/assets/images/{{ img.source }}/{{ img.thumb }}" alt="{{ img.caption }}" loading="lazy" onclick="openModal('/assets/images/{{ img.source }}/{{ img.modal }}'); return false;">
+        {% if img.caption %}<span class="photo-caption">{{ img.caption }}</span>{% endif %}
       </div>
       {% endif %}{% endfor %}
     </div>
@@ -157,16 +161,35 @@ layout: base.njk
   {# Emails Section #}
   <section class="section" id="emails">
     <h2 class="section-title">手紙 <span>My Letters Home</span></h2>
+    <div class="email-filters">
+      <input type="text" id="emailSearch" class="chat-search" placeholder="Search..." oninput="filterEmails()">
+      <input type="date" id="emailFrom" class="chat-date-input" onchange="filterEmails()">
+      <input type="date" id="emailTo" class="chat-date-input" onchange="filterEmails()">
+      <button class="filter-btn" id="emailAudioBtn" onclick="this.classList.toggle('active'); filterEmails()">Audio</button>
+      <button class="filter-btn" id="emailPhotosBtn" onclick="this.classList.toggle('active'); filterEmails()">Photos</button>
+    </div>
     <div class="emails-list">
       {% for email in emails %}
-      <details class="email-entry">
+      <details class="email-entry" data-date="{{ email.date }}" data-has-audio="{% if email.audio %}1{% endif %}" data-has-photos="{% if email.images.length %}1{% endif %}">
         <summary>
           <span class="email-date">{{ email.date }}</span>
           <span class="email-subject">{{ email.subject }}</span>
-          {% if email.images.length %}<span class="email-img-count">📷 {{ email.images.length }}</span>{% endif %}
+          {% if email.audio %}<span class="email-audio-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></span>{% endif %}
+          {% if email.images.length %}<span class="email-img-count"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg> {{ email.images.length }}</span>{% endif %}
         </summary>
         <div class="email-body">
           {% if email.summary %}<p class="email-summary">{{ email.summary }}</p>{% endif %}
+          {% if email.audio %}
+          <div class="email-audio">
+            <audio controls preload="none" src="/assets/audio/{{ email.audio }}"></audio>
+            {% if audioTranscripts[email.audio] %}
+            <details class="audio-transcript">
+              <summary>Show transcript</summary>
+              <p>{{ audioTranscripts[email.audio].text }}</p>
+            </details>
+            {% endif %}
+          </div>
+          {% endif %}
           {{ email.body | safe }}
           {% if email.images.length %}
           <div class="email-images">
@@ -183,7 +206,40 @@ layout: base.njk
       {% endfor %}
     </div>
   </section>
-</main>
+
+  {# Messages Section #}
+  <section class="section" id="messages">
+    <h2 class="section-title">会話 <span>Messages Home</span></h2>
+    <div class="chat-filters">
+      <input type="text" id="chatSearch" class="chat-search" placeholder="Search..." oninput="filterChat()">
+      <input type="date" id="chatFrom" class="chat-date-input" onchange="filterChat()">
+      <input type="date" id="chatTo" class="chat-date-input" onchange="filterChat()">
+      <button class="filter-btn" id="chatPhotosBtn" onclick="this.classList.toggle('active'); filterChat()">Photos</button>
+      <button class="filter-btn" id="chatAudioBtn" onclick="this.classList.toggle('active'); filterChat()">Audio</button>
+    </div>
+    <div class="chat-thread">
+      {% for item in messengerHighlights %}
+        {% if item.type == 'gap' %}
+          <div class="chat-gap">⋯</div>
+        {% elif item.type == 'date' %}
+          <div class="chat-date" data-date="{{ item.date }}">{{ item.date }}</div>
+        {% elif item.type == 'message' %}
+          <div class="chat-bubble {% if item.isKaden %}kaden{% else %}other{% endif %}" data-has-photo="{% if item.photos %}1{% endif %}" data-has-audio="{% if item.audio %}1{% endif %}">
+            {% if not item.isKaden %}<span class="chat-sender">{{ item.sender }}</span>{% endif %}
+            {% if item.text %}<p>{{ item.text }}</p>{% endif %}
+            {% if item.photos %}
+            <div class="chat-photos">{% for p in item.photos %}<img src="/assets/images/messenger/{{ p }}" alt="Photo" loading="lazy" onclick="openModal('/assets/images/messenger/{{ p }}'); return false;">{% endfor %}</div>
+            {% endif %}
+            {% if item.audio %}
+            <div class="chat-audio">{% for a in item.audio %}<audio controls preload="none" src="/assets/audio/{{ a }}"></audio>{% endfor %}</div>
+            {% endif %}
+            {% if item.reactions %}<span class="chat-reactions">{% for r in item.reactions %}{{ r.emoji }}{% endfor %}</span>{% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <button class="chat-expand-btn" onclick="this.previousElementSibling.classList.toggle('expanded'); this.textContent = this.textContent === 'Show All' ? 'Collapse' : 'Show All';">Show All</button>
+  </section>
 
 <footer class="site-footer">
   <p>Made with love for your homecoming — June 2026</p>

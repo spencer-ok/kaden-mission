@@ -16,6 +16,7 @@
     <a href="#quotes">言葉 Quotes</a>
     <a href="#photos">写真 Photos</a>
     <a href="#emails">手紙 Letters</a>
+    <a href="#messages">会話 Messages</a>
   </nav>
   {{ content | safe }}
   <div class="modal-overlay" id="imageModal" onclick="closeModal()">
@@ -75,6 +76,71 @@
       resetTimer();
     })();
 
+    // Email Filter
+    function filterEmails() {
+      const search = document.getElementById('emailSearch').value.toLowerCase();
+      const from = document.getElementById('emailFrom').value;
+      const to = document.getElementById('emailTo').value;
+      const audioOnly = document.getElementById('emailAudioBtn').classList.contains('active');
+      const photosOnly = document.getElementById('emailPhotosBtn').classList.contains('active');
+      document.querySelectorAll('.email-entry').forEach(el => {
+        let show = true;
+        const date = el.dataset.date;
+        if (search && !el.textContent.toLowerCase().includes(search)) show = false;
+        if (from && date < from) show = false;
+        if (to && date > to) show = false;
+        if (audioOnly && !el.dataset.hasAudio) show = false;
+        if (photosOnly && !el.dataset.hasPhotos) show = false;
+        el.style.display = show ? '' : 'none';
+      });
+    }
+
+    // Chat Filter
+    function filterChat() {
+      const search = document.getElementById('chatSearch').value.toLowerCase();
+      const from = document.getElementById('chatFrom').value;
+      const to = document.getElementById('chatTo').value;
+      const photosOnly = document.getElementById('chatPhotosBtn').classList.contains('active');
+      const audioOnly = document.getElementById('chatAudioBtn').classList.contains('active');
+      const thread = document.querySelector('.chat-thread');
+      const elements = Array.from(thread.children);
+
+      let i = 0;
+      while (i < elements.length) {
+        const el = elements[i];
+        if (el.classList.contains('chat-date')) {
+          const date = el.dataset.date;
+          // Collect all bubbles until next date/gap
+          let j = i + 1;
+          const bubbles = [];
+          while (j < elements.length && !elements[j].classList.contains('chat-date') && !elements[j].classList.contains('chat-gap')) {
+            bubbles.push(elements[j]);
+            j++;
+          }
+          // Filter bubbles
+          let anyVisible = false;
+          for (const b of bubbles) {
+            let show = true;
+            if (search && !b.textContent.toLowerCase().includes(search)) show = false;
+            if (from && date < from) show = false;
+            if (to && date > to) show = false;
+            if (photosOnly && !b.dataset.hasPhoto) show = false;
+            if (audioOnly && !b.dataset.hasAudio) show = false;
+            b.style.display = show ? '' : 'none';
+            if (show) anyVisible = true;
+          }
+          el.style.display = anyVisible ? '' : 'none';
+          // Hide gap before empty day
+          if (i > 0 && elements[i-1].classList.contains('chat-gap')) {
+            elements[i-1].style.display = anyVisible ? '' : 'none';
+          }
+          i = j;
+        } else {
+          i++;
+        }
+      }
+    }
+
     // Quotes Carousel
     (function() {
       const slides = document.querySelectorAll('.quote-slide');
@@ -103,10 +169,17 @@
       const items = [...document.querySelectorAll('.photo-item')];
 
       function getFiltered() {
-        if (activeTags.size === 0) return items;
+        const search = (document.getElementById('photoSearch')?.value || '').toLowerCase();
+        const from = document.getElementById('photoFrom')?.value || '';
+        const to = document.getElementById('photoTo')?.value || '';
+
         return items.filter(i => {
           const tags = i.dataset.tags.split(',');
-          return [...activeTags].some(t => tags.includes(t));
+          if (activeTags.size > 0 && ![...activeTags].some(t => tags.includes(t))) return false;
+          if (search && !i.dataset.desc.includes(search) && !tags.some(t => t.includes(search))) return false;
+          if (from && i.dataset.date && i.dataset.date < from) return false;
+          if (to && i.dataset.date && i.dataset.date > to) return false;
+          return true;
         });
       }
 
@@ -127,14 +200,13 @@
         nextBtn.disabled = currentPage >= totalPages - 1;
       }
 
-      window.filterPhotos = function(tag) {
-        const btn = event.target;
+      window.setPhotoTag = function(btn, tag) {
         if (tag === 'all') {
           activeTags.clear();
-          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          document.querySelectorAll('.photo-filters .filter-btn').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
         } else {
-          document.querySelector('.filter-btn[onclick*="all"]').classList.remove('active');
+          document.querySelector('.filter-btn[data-tag="all"]').classList.remove('active');
           if (activeTags.has(tag)) {
             activeTags.delete(tag);
             btn.classList.remove('active');
@@ -143,12 +215,14 @@
             btn.classList.add('active');
           }
           if (activeTags.size === 0) {
-            document.querySelector('.filter-btn[onclick*="all"]').classList.add('active');
+            document.querySelector('.filter-btn[data-tag="all"]').classList.add('active');
           }
         }
         currentPage = 0;
         render();
       };
+
+      window.filterPhotos = function() { currentPage = 0; render(); };
       window.photoNext = () => { currentPage++; render(); };
       window.photoPrev = () => { currentPage--; render(); };
       render();
