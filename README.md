@@ -119,7 +119,21 @@ Output goes to `site/_site/`
 cd C:\apps\kaden-mission\site
 npm run deploy
 ```
-(Requires S3 bucket `kaden-mission-web` to be created first)
+Builds the site, syncs to S3, and invalidates the CloudFront cache.
+
+**Live URL:** https://kaden.sacred-symmetry-ai.com
+
+### AWS Infrastructure
+
+| Resource | Value |
+|----------|-------|
+| S3 Bucket | `kaden.sacred-symmetry-ai.com` |
+| CloudFront Distribution | `E1503E9K1S3IMT` (`d3j2kg50rub1bo.cloudfront.net`) |
+| ACM Certificate | `fa716d35-2c12-4abb-9123-b7724a7fe9cf` |
+| Route53 Zone | `Z01159073U3EXD4Z3W21O` (sacred-symmetry-ai.com) |
+| Region | us-east-1 |
+
+CloudFront serves the site over HTTPS with compression. The S3 bucket has static website hosting enabled with public read access. DNS is an A-record alias from `kaden.sacred-symmetry-ai.com` to the CloudFront distribution.
 
 ---
 
