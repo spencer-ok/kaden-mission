@@ -1002,6 +1002,25 @@ body {
 
 .modal-btn:hover { background: rgba(255,255,255,0.3); }
 
+.modal-caption {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+.modal-caption:empty { display: none; }
+
+.modal-desc {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  text-align: center;
+  max-width: 600px;
+  line-height: 1.4;
+}
+.modal-desc:empty { display: none; }
+
 /* === Footer === */
 .site-footer {
   text-align: center;

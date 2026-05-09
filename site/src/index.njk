@@ -98,8 +98,8 @@ layout: base.njk
     <div class="art-carousel">
       <div class="carousel-inner">
         {% for piece in imageInventory %}{% if piece.art and piece.visible !== false %}
-        <div class="carousel-slide">
-          <img src="/assets/images/{{ piece.source }}/{{ piece.modal }}" alt="{{ piece.caption }}" loading="lazy" onclick="openModal(this.src); return false;">
+        <div class="carousel-slide" data-caption="{{ piece.caption | default('') }}" data-rawdesc="{{ piece.rawDescription | default('') }}">
+          <img src="/assets/images/{{ piece.source }}/{{ piece.modal }}" alt="{{ piece.caption }}" loading="lazy" onclick="openModal(this.src, this.parentElement.dataset.caption, this.parentElement.dataset.rawdesc); return false;">
         </div>
         {% endif %}{% endfor %}
       </div>
@@ -135,8 +135,8 @@ layout: base.njk
     </div>
     <div class="photo-grid" id="photoGrid">
       {% for img in imageInventory %}{% if img.visible !== false %}
-      <div class="photo-item{% if img.video %} video-item{% endif %}" data-tags="{{ img.tags | join(',') }}{% if img.video %},video{% endif %}" data-featured="{{ img.featured }}" data-date="{{ img.date }}" data-desc="{{ img.rawDescription | default('') | lower }}"{% if img.video %} data-video="/assets/videos/{{ img.video }}"{% endif %}>
-        <img src="/assets/images/{{ img.source }}/{{ img.thumb }}" alt="{{ img.caption }}" loading="lazy" onclick="{% if img.video %}openVideoModal('/assets/videos/{{ img.video }}'){% else %}openModal('/assets/images/{{ img.source }}/{{ img.modal }}'){% endif %}; return false;">
+      <div class="photo-item{% if img.video %} video-item{% endif %}" data-tags="{{ img.tags | join(',') }}{% if img.video %},video{% endif %}" data-featured="{{ img.featured }}" data-date="{{ img.date }}" data-desc="{{ img.rawDescription | default('') | lower }}" data-caption="{{ img.caption | default('') }}" data-rawdesc="{{ img.rawDescription | default('') }}"{% if img.video %} data-video="/assets/videos/{{ img.video }}"{% endif %}>
+        <img src="/assets/images/{{ img.source }}/{{ img.thumb }}" alt="{{ img.caption }}" loading="lazy" onclick="{% if img.video %}openVideoModal('/assets/videos/{{ img.video }}', this.parentElement.dataset.caption, this.parentElement.dataset.rawdesc){% else %}openModal('/assets/images/{{ img.source }}/{{ img.modal }}', this.parentElement.dataset.caption, this.parentElement.dataset.rawdesc){% endif %}; return false;">
         {% if img.video %}<span class="video-badge">▶</span>{% endif %}
         {% if img.caption %}<span class="photo-caption">{{ img.caption }}</span>{% endif %}
       </div>

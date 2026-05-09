@@ -25,7 +25,9 @@
         <a id="modalDownload" href="" download class="modal-btn" title="Download">⬇</a>
         <button class="modal-btn" onclick="closeModal()" title="Close">✕</button>
       </div>
+      <p class="modal-caption" id="modalCaption"></p>
       <img id="modalImg" src="" alt="Full image">
+      <p class="modal-desc" id="modalDesc"></p>
     </div>
   </div>
   <div class="modal-overlay" id="videoModal" onclick="closeVideoModal()">
@@ -34,24 +36,30 @@
         <a id="videoDownload" href="" download class="modal-btn" title="Download">⬇</a>
         <button class="modal-btn" onclick="closeVideoModal()" title="Close">✕</button>
       </div>
+      <p class="modal-caption" id="videoCaption"></p>
       <video id="modalVideo" controls></video>
+      <p class="modal-desc" id="videoDesc"></p>
     </div>
   </div>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    function openModal(src) {
+    function openModal(src, caption, desc) {
       document.getElementById('modalImg').src = src;
       document.getElementById('modalDownload').href = src;
+      document.getElementById('modalCaption').textContent = caption || '';
+      document.getElementById('modalDesc').textContent = desc || '';
       document.getElementById('imageModal').classList.add('active');
     }
     function closeModal() {
       document.getElementById('imageModal').classList.remove('active');
       document.getElementById('modalImg').src = '';
     }
-    function openVideoModal(src) {
+    function openVideoModal(src, caption, desc) {
       var v = document.getElementById('modalVideo');
       v.src = src;
       document.getElementById('videoDownload').href = src;
+      document.getElementById('videoCaption').textContent = caption || '';
+      document.getElementById('videoDesc').textContent = desc || '';
       document.getElementById('videoModal').classList.add('active');
       v.play();
     }
