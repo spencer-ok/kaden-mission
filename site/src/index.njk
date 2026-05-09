@@ -201,7 +201,7 @@ layout: base.njk
           <div class="email-images">
             {% for img in email.images %}
             {% set base = img | replace(".jpg", "") | replace(".jpeg", "") | replace(".png", "") | replace(".webp", "") %}
-            <a href="/assets/images/emails/{{ base }}-modal.jpg" class="email-thumb" onclick="openModal(this.href); return false;">
+            <a href="/assets/images/emails/{{ base }}-modal.jpg" class="email-thumb" onclick="var m=imgMeta[this.getAttribute('href')]||{}; openModal(this.href, m.c, m.d); return false;">
               <img src="/assets/images/emails/{{ base }}-thumb.jpg" alt="Photo" loading="lazy">
             </a>
             {% endfor %}

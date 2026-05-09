@@ -107,12 +107,19 @@ npm run dev
 ```
 Runs at http://localhost:8181
 
+**Fast mode** (`npm run dev`) skips copying 7,000+ image/video assets — builds in ~4 seconds instead of ~60. Images won't load in the browser but HTML/CSS/JS changes are instant.
+
+**Full mode** (when you need to see images):
+```bash
+npm run dev:full
+```
+
 ### Build Site
 ```bash
 cd C:\apps\kaden-mission\site
 npm run build
 ```
-Output goes to `site/_site/`
+Output goes to `site/_site/` (full build, includes all assets)
 
 ### Deploy to S3
 ```bash

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Kaden's Mission Homecoming - Interactive timeline website",
   "scripts": {
-    "dev": "eleventy --serve --port=8181",
+    "dev": "FAST=1 eleventy --serve --port=8181",
+    "dev:full": "eleventy --serve --port=8181",
     "build": "eleventy",
     "clean": "rm -rf _site",
     "deploy": "./deploy.sh"

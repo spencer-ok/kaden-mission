@@ -43,6 +43,7 @@
   </div>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
+    var imgMeta = {{ imageInventory | emailMetaJson | safe }};
     function openModal(src, caption, desc) {
       document.getElementById('modalImg').src = src;
       document.getElementById('modalDownload').href = src;
@@ -176,19 +177,24 @@
       const slides = document.querySelectorAll('.quote-slide');
       if (!slides.length) return;
       let current = 0;
+      let timer = null;
+      const container = document.querySelector('.quotes-carousel');
       slides[0].classList.add('active');
 
       function goTo(i) {
         slides[current].classList.remove('active');
         current = (i + slides.length) % slides.length;
         slides[current].classList.add('active');
-        clearInterval(timer);
-        timer = setInterval(() => goTo(current + 1), 8000);
       }
 
-      window.quoteNext = () => goTo(current + 1);
-      window.quotePrev = () => goTo(current - 1);
-      let timer = setInterval(() => goTo(current + 1), 8000);
+      function startTimer() { if (!timer) timer = setInterval(() => goTo(current + 1), 8000); }
+      function stopTimer() { clearInterval(timer); timer = null; }
+
+      const obs = new IntersectionObserver(([entry]) => { entry.isIntersecting ? startTimer() : stopTimer(); }, { threshold: 0.3 });
+      obs.observe(container);
+
+      window.quoteNext = () => { stopTimer(); goTo(current + 1); startTimer(); };
+      window.quotePrev = () => { stopTimer(); goTo(current - 1); startTimer(); };
     })();
 
     // Photo Grid Filter & Pagination
