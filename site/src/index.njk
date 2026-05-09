@@ -113,25 +113,31 @@ layout: base.njk
     </div>
   </section>
 
-  {# Photos Section #}
+  {# Memories Section #}
   <section class="section section-wide" id="photos">
-    <h2 class="section-title">写真 <span>My Photos</span></h2>
+    <h2 class="section-title">思い出 <span>My Memories</span></h2>
     <div class="photo-filters">
-      <input type="text" id="photoSearch" class="chat-search" placeholder="Search..." oninput="filterPhotos()">
-      <input type="date" id="photoFrom" class="chat-date-input" onchange="filterPhotos()">
-      <input type="date" id="photoTo" class="chat-date-input" onchange="filterPhotos()">
-      <button class="filter-btn active" data-tag="all" onclick="setPhotoTag(this, 'all')">All</button>
-      <button class="filter-btn" data-tag="people" onclick="setPhotoTag(this, 'people')">People</button>
-      <button class="filter-btn" data-tag="group" onclick="setPhotoTag(this, 'group')">Group</button>
-      <button class="filter-btn" data-tag="scenery" onclick="setPhotoTag(this, 'scenery')">Scenery</button>
-      <button class="filter-btn" data-tag="food" onclick="setPhotoTag(this, 'food')">Food</button>
-      <button class="filter-btn" data-tag="temple" onclick="setPhotoTag(this, 'temple')">Temple</button>
-      <button class="filter-btn" data-tag="art" onclick="setPhotoTag(this, 'art')">Art</button>
+      <div class="filter-tags">
+        <button class="filter-btn active" data-tag="all" onclick="setPhotoTag(this, 'all')">All</button>
+        <button class="filter-btn" data-tag="people" onclick="setPhotoTag(this, 'people')">People</button>
+        <button class="filter-btn" data-tag="group" onclick="setPhotoTag(this, 'group')">Group</button>
+        <button class="filter-btn" data-tag="scenery" onclick="setPhotoTag(this, 'scenery')">Scenery</button>
+        <button class="filter-btn" data-tag="food" onclick="setPhotoTag(this, 'food')">Food</button>
+        <button class="filter-btn" data-tag="temple" onclick="setPhotoTag(this, 'temple')">Temple</button>
+        <button class="filter-btn" data-tag="art" onclick="setPhotoTag(this, 'art')">Art</button>
+        <button class="filter-btn" data-tag="video" onclick="setPhotoTag(this, 'video')">Video</button>
+      </div>
+      <div class="filter-controls">
+        <input type="text" id="photoSearch" class="chat-search" placeholder="Search..." oninput="filterPhotos()">
+        <input type="date" id="photoFrom" class="chat-date-input" onchange="filterPhotos()">
+        <input type="date" id="photoTo" class="chat-date-input" onchange="filterPhotos()">
+      </div>
     </div>
     <div class="photo-grid" id="photoGrid">
       {% for img in imageInventory %}{% if img.visible !== false %}
-      <div class="photo-item" data-tags="{{ img.tags | join(',') }}" data-featured="{{ img.featured }}" data-date="{{ img.date }}" data-desc="{{ img.rawDescription | default('') | lower }}">
-        <img src="/assets/images/{{ img.source }}/{{ img.thumb }}" alt="{{ img.caption }}" loading="lazy" onclick="openModal('/assets/images/{{ img.source }}/{{ img.modal }}'); return false;">
+      <div class="photo-item{% if img.video %} video-item{% endif %}" data-tags="{{ img.tags | join(',') }}{% if img.video %},video{% endif %}" data-featured="{{ img.featured }}" data-date="{{ img.date }}" data-desc="{{ img.rawDescription | default('') | lower }}"{% if img.video %} data-video="/assets/videos/{{ img.video }}"{% endif %}>
+        <img src="/assets/images/{{ img.source }}/{{ img.thumb }}" alt="{{ img.caption }}" loading="lazy" onclick="{% if img.video %}openVideoModal('/assets/videos/{{ img.video }}'){% else %}openModal('/assets/images/{{ img.source }}/{{ img.modal }}'){% endif %}; return false;">
+        {% if img.video %}<span class="video-badge">▶</span>{% endif %}
         {% if img.caption %}<span class="photo-caption">{{ img.caption }}</span>{% endif %}
       </div>
       {% endif %}{% endfor %}

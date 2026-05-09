@@ -14,7 +14,7 @@
     <a href="#companions">仲間 Companions</a>
     <a href="#art">芸術 Art</a>
     <a href="#quotes">言葉 Quotes</a>
-    <a href="#photos">写真 Photos</a>
+    <a href="#photos">思い出 Memories</a>
     <a href="#emails">手紙 Letters</a>
     <a href="#messages">会話 Messages</a>
   </nav>
@@ -28,6 +28,15 @@
       <img id="modalImg" src="" alt="Full image">
     </div>
   </div>
+  <div class="modal-overlay" id="videoModal" onclick="closeVideoModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <div class="modal-toolbar">
+        <a id="videoDownload" href="" download class="modal-btn" title="Download">⬇</a>
+        <button class="modal-btn" onclick="closeVideoModal()" title="Close">✕</button>
+      </div>
+      <video id="modalVideo" controls></video>
+    </div>
+  </div>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     function openModal(src) {
@@ -39,7 +48,20 @@
       document.getElementById('imageModal').classList.remove('active');
       document.getElementById('modalImg').src = '';
     }
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+    function openVideoModal(src) {
+      var v = document.getElementById('modalVideo');
+      v.src = src;
+      document.getElementById('videoDownload').href = src;
+      document.getElementById('videoModal').classList.add('active');
+      v.play();
+    }
+    function closeVideoModal() {
+      var v = document.getElementById('modalVideo');
+      v.pause();
+      v.src = '';
+      document.getElementById('videoModal').classList.remove('active');
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeVideoModal(); } });
 
     // Art Carousel
     (function() {
@@ -195,7 +217,7 @@
         const info = document.getElementById('photoPageInfo');
         const prevBtn = document.getElementById('photoPrev');
         const nextBtn = document.getElementById('photoNext');
-        info.textContent = `${currentPage + 1} / ${totalPages} (${filtered.length} photos)`;
+        info.textContent = `${currentPage + 1} / ${totalPages} (${filtered.length} items)`;
         prevBtn.disabled = currentPage === 0;
         nextBtn.disabled = currentPage >= totalPages - 1;
       }
@@ -203,7 +225,7 @@
       window.setPhotoTag = function(btn, tag) {
         if (tag === 'all') {
           activeTags.clear();
-          document.querySelectorAll('.photo-filters .filter-btn').forEach(b => b.classList.remove('active'));
+          document.querySelectorAll('.filter-tags .filter-btn').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
         } else {
           document.querySelector('.filter-btn[data-tag="all"]').classList.remove('active');
