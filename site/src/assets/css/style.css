@@ -424,7 +424,8 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 8px;
-  background: #1a1a2e;
+  background: var(--card-bg);
+  border: 1px solid var(--divider);
 }
 
 .carousel-inner {
@@ -461,8 +462,8 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.4);
-  color: #fff;
+  background: rgba(0,0,0,0.15);
+  color: var(--ink);
   border: none;
   font-size: 2rem;
   width: 3rem;
@@ -475,7 +476,7 @@ body {
   justify-content: center;
 }
 
-.carousel-control:hover { background: rgba(0,0,0,0.7); }
+.carousel-control:hover { background: rgba(0,0,0,0.25); }
 .carousel-control.prev { left: 1rem; }
 .carousel-control.next { right: 1rem; }
 
@@ -491,13 +492,13 @@ body {
   height: 10px;
   border-radius: 50%;
   border: none;
-  background: rgba(255,255,255,0.4);
+  background: var(--divider);
   cursor: pointer;
   transition: background 0.3s;
 }
 
 .carousel-indicators .indicator.active {
-  background: #fff;
+  background: var(--accent);
 }
 
 /* === Photos === */
