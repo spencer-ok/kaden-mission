@@ -79,20 +79,19 @@
     (function() {
       let current = 0;
       const slides = document.querySelectorAll('.carousel-slide');
-      const indicators = document.querySelectorAll('.carousel-indicators .indicator');
+      const counter = document.getElementById('carouselCounter');
       const total = slides.length;
       if (!total) return;
 
       slides[0].classList.add('active');
-      if (indicators[0]) indicators[0].classList.add('active');
+      counter.textContent = '1 / ' + total;
       let timer;
 
       function goTo(i) {
         slides[current].classList.remove('active');
-        if (indicators[current]) indicators[current].classList.remove('active');
         current = (i + total) % total;
         slides[current].classList.add('active');
-        if (indicators[current]) indicators[current].classList.add('active');
+        counter.textContent = (current + 1) + ' / ' + total;
         resetTimer();
       }
 
@@ -103,10 +102,6 @@
 
       window.carouselNext = () => goTo(current + 1);
       window.carouselPrev = () => goTo(current - 1);
-      window.carouselGoTo = (btn) => {
-        const idx = [...indicators].indexOf(btn);
-        if (idx >= 0) goTo(idx);
-      };
       resetTimer();
     })();
 

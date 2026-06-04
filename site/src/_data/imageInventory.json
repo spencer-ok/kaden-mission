@@ -3440,7 +3440,7 @@
       "document"
     ],
     "caption": "Origami birds",
-    "art": false,
+    "art": true,
     "featured": false,
     "scores": {
       "document": 7
@@ -8156,7 +8156,7 @@
       "art"
     ],
     "caption": "Sketchbook",
-    "art": false,
+    "art": true,
     "featured": false,
     "scores": {
       "art": 8
@@ -8175,7 +8175,7 @@
       "document"
     ],
     "caption": "Face Sketch",
-    "art": false,
+    "art": true,
     "featured": false,
     "scores": {
       "people": 7,
@@ -34485,7 +34485,7 @@
       "art"
     ],
     "caption": "Sunflower Art",
-    "art": false,
+    "art": true,
     "featured": false,
     "scores": {
       "art": 8
@@ -58347,7 +58347,7 @@
       "document"
     ],
     "caption": "Motorcycle Drawing",
-    "art": false,
+    "art": true,
     "featured": false,
     "scores": {
       "people": 7,
@@ -60682,7 +60682,7 @@
       "document"
     ],
     "caption": "Drawing table",
-    "art": false,
+    "art": true,
     "featured": false,
     "video": "20251011_115543.mp4",
     "scores": {
@@ -60761,7 +60761,7 @@
       "people"
     ],
     "caption": "Cartoon woman",
-    "art": false,
+    "art": true,
     "featured": false,
     "video": "20251031_222820.mp4",
     "scores": {
@@ -61627,7 +61627,7 @@
     "date": "2025-05-26",
     "tags": [],
     "caption": "",
-    "art": false,
+    "art": true,
     "featured": false
   },
   {
@@ -61693,7 +61693,7 @@
     "date": "2025-08-25",
     "tags": [],
     "caption": "",
-    "art": false,
+    "art": true,
     "featured": false
   },
   {
@@ -61704,7 +61704,7 @@
     "date": "2025-08-25",
     "tags": [],
     "caption": "",
-    "art": false,
+    "art": true,
     "featured": false
   },
   {
@@ -61715,7 +61715,7 @@
     "date": "2026-06-01",
     "tags": [],
     "caption": "",
-    "art": false,
+    "art": true,
     "featured": false
   },
   {
@@ -61726,7 +61726,7 @@
     "date": "2026-06-01",
     "tags": [],
     "caption": "",
-    "art": false,
+    "art": true,
     "featured": false
   },
   {

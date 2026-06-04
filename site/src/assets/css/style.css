@@ -440,7 +440,7 @@ body {
 .carousel-inner {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 450px;
 }
 
 .carousel-slide {
@@ -455,6 +455,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1rem 0 0;
 }
 
 .carousel-slide.active {
@@ -464,7 +465,7 @@ body {
 
 .carousel-slide img {
   max-width: 100%;
-  max-height: 500px;
+  max-height: 420px;
   object-fit: contain;
   cursor: pointer;
 }
@@ -491,25 +492,12 @@ body {
 .carousel-control.prev { left: 1rem; }
 .carousel-control.next { right: 1rem; }
 
-.carousel-indicators {
-  display: flex;
-  justify-content: center;
-  gap: 0.4rem;
-  padding: 0.75rem 0;
-}
-
-.carousel-indicators .indicator {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: none;
-  background: var(--divider);
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.carousel-indicators .indicator.active {
-  background: var(--accent);
+.carousel-counter {
+  text-align: center;
+  padding: 0.3rem 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+  letter-spacing: 0.05em;
 }
 
 /* === Photos === */
