@@ -673,7 +673,7 @@ body {
 /* === Poetry === */
 .poetry-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
   gap: 1.5rem;
   max-width: 900px;
   margin: 0 auto;
@@ -686,6 +686,7 @@ body {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .poem-title {
@@ -699,6 +700,8 @@ body {
   font-size: 0.9rem;
   line-height: 1.7;
   white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   margin-bottom: 0.8rem;
   color: var(--ink);
   flex: 1;
