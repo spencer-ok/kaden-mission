@@ -1,0 +1,302 @@
+Delivered-To: killianfamily@gmail.com
+Received: by 2002:a05:7022:7e81:b0:87:2b5:62f6 with SMTP id uu1csp1274874dlb;
+        Sat, 24 Aug 2024 22:02:56 -0700 (PDT)
+X-Received: by 2002:a17:907:948a:b0:a86:aded:b09c with SMTP id a640c23a62f3a-a86adedb612mr350874066b.60.1724562176581;
+        Sat, 24 Aug 2024 22:02:56 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1724562176; cv=none;
+        d=google.com; s=arc-20160816;
+        b=rwQp9jYx9p5VwX0WapXGogiQ0SbFimHxKNdHJj+1hSQUwRLSgJaX3ODvIwL+bWSrGh
+         cPpLsPd8Iky5jGEbqy+JlNMTa0gmU+y7fikgbNNkKQF725TXyYrQrdDl6PVrVXArCIo0
+         eKE1x0FPGGo5xSZH2VjCiYnHLQsdEjdZgAMV+GcL1hIeHGVRfyYLlsXBWfANWrIh1yo2
+         SZOseW+hOGAZoMg8gr0fx7DB0WSAxJ6qX5/MR3WVMF/DTTKVf41ZLAfwsvjSSpFem7Dd
+         g8kYELUHiyqDkHiGu7SLQ5LCkUl6bSjqVR4NiAxzHqieHSkhQYnXJAhsTO6o8/1d/vyS
+         xLhw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=pOclHAnchHAQBp2H6NgbXN6t1W3u1RXxDvZxbmP9I80=;
+        fh=7heRuBWPyNQUWJA2/viMPwiNfAUA567OllBtKvgTBis=;
+        b=TTldWZOfAEe2Y9B29MD3am1fuYvPwP+oIk7YRx7aDrfNwbHxOnWY0E3zsOnIhEiDI2
+         9p78bp/X3JpN5MAxmk9umQCoFDrB452/meyW7aMSjMWO1aewN4Gpsc1mfud7kRxp6xiR
+         BjxkIBSbKAVjpnslShIeh+gfK+A6ncRolOVAaHpKY3wB/jpfZDen1kqiJX6F0f1jC4Ck
+         pcS9OyEoPvU7N83evQupt8JIoZgT/fPahaOdzozWb683F0sbIack1sJloDGP45D+lmjx
+         OmFumN28qRp6w5lkYoFCzHJYhQprorOoXUXxxK9+fRJ98SqRrbepPX1fmLywpcrmvtLD
+         yaSA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@missionary.org header.s=google header.b=F2Y3bX5C;
+       spf=pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=kaden.killian@missionary.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=missionary.org;
+       dara=pass header.i=@gmail.com
+Return-Path: <kaden.killian@missionary.org>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id a640c23a62f3a-a868f46fe7fsor188462766b.13.2024.08.24.22.02.56
+        for <killianfamily@gmail.com>
+        (Google Transport Security);
+        Sat, 24 Aug 2024 22:02:56 -0700 (PDT)
+Received-SPF: pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@missionary.org header.s=google header.b=F2Y3bX5C;
+       spf=pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=kaden.killian@missionary.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=missionary.org;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=missionary.org; s=google; t=1724562175; x=1725166975; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=pOclHAnchHAQBp2H6NgbXN6t1W3u1RXxDvZxbmP9I80=;
+        b=F2Y3bX5Clm7GRq41sxn/vGHZqyD/TrYVwRVtx4MZRQk0zk20ARShGkdkxYaMcfdmnv
+         0bOAw+Y0j0AtXmxAMjx9aOnta2AUBMcR0MbrfBoXwbvqg33KkdLOJrswaMstZl3ZV7/i
+         gzQ2K/GiA4JHzIJwJ4evYX85NUVnF4JckeWMvJzO0wwvHpoC//paAPSWe7cREV2s428b
+         m550tFEmBtNaxuY2Ep4OYsg1Ax2B0Sj/sl24pNGdbucswvTUj+9HvGoFDdlbSPkXPM9r
+         n2SoV/dKH4x5SYN8PXRl8sJ94/Dfzi6krFWnzT0ruGMOkMT/BA4RQ+quOlyKL13sMxtc
+         CNYA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1724562175; x=1725166975;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=pOclHAnchHAQBp2H6NgbXN6t1W3u1RXxDvZxbmP9I80=;
+        b=iBZJg0kH86XuCZRaC5R8MlBGgfhADgR/gLpHdHLGnG1mGSPUJPW4SXaKBPrpdRxCw8
+         hYRvZKEOEigeMt3G5HSNbKXrK/LNHsui1QkxSyagyYsGk6Gz8UWT3g6wjR7iJQwgJ3z7
+         vKeziyJRXVdKM6yB62pGgMDcwQn/7InUgA3k2rdmNcsfEThZRkegHCIk4LA2gmOja16s
+         ltMx0/tG8/JU83RlXIZebJw4qfGwZGvth9urF9Sw1meaY8b5cth4Un+VDIIGNSS8xBeI
+         FRw5YGNFDZYfJUJgtNIF7c6NSwO1FtYlnmsXhjCd439ozRKXSVpJreWWDq5bO5RDCT+V
+         IQfQ==
+X-Gm-Message-State: AOJu0YyNOa0Te4JoqYcwEF4JX/wp4vQdpdyfCe1I9+YPb2d3vThquBkF
+	rIriUxqkgVbaK4GAC7KOGktiii3mfJxNRIpuqF7sRGgqJEUc/iBaFNRO5ic1+CV8qbx+FRHsCgP
+	U2AKvvnKsNc4js9zdWBo+zqASZsebGwlEGzXna45fohTz2kZ/eqjzKIdkRgeZD8VHyUKXeA5S+T
+	c+8nuuXwMKYDbV5ZmRry7DKg3TcV2iVOkn/ELwXffvbHRxOnTFwAbooPbAfJDyG5YuUKzhHGMDv
+	ZLir3qePbNmsN/+hUKJnwktToXOJpXNXfMQqiIiftmYgtWX9sSTmQShOXt8cNUHCPzK8nyk
+X-Google-Smtp-Source: AGHT+IHo89Odo/0HUv4Zqhr0IcydxGIjwo3OBrO9papTUUjZ29AImiXA116k1oUOdkTMCsBwSxTX3EIaU4+kXkGNyYY=
+X-Received: by 2002:a05:6402:2347:b0:5be:ec7f:3bb2 with SMTP id
+ 4fb4d7f45d1cf-5c08910fe93mr4082004a12.0.1724562174607; Sat, 24 Aug 2024
+ 22:02:54 -0700 (PDT)
+MIME-Version: 1.0
+From: Kaden Killian <kaden.killian@missionary.org>
+Date: Sat, 24 Aug 2024 22:45:25 -0600
+Message-ID: <CABgTvgYfU4K=_GpYGb2aBwkZ-87a3tS01g_5Ty2FdyS9xpqerQ@mail.gmail.com>
+Subject: =?UTF-8?B?V2Vla2x5IGVtYWlsICM2IPCfpK8=?=
+To: killianfamily <killianfamily@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000cf9abd06207aebf1"
+X-GM-M1Sbpsf:  SC01
+X-CLOUD-SEC-AV-Sent: true
+X-CLOUD-SEC-AV-Info: missionarymail,google_mail,monitor
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+
+--000000000000cf9abd06207aebf1
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Gonna keep trying to go with the daily writing stuff
+
+Sunday I was able to do a lot of personal study which was nice, and during
+the Go and Do experience I rewatched =E2=80=9Cthe phone call=E2=80=9D and a=
+ very old church
+video called =E2=80=9Cman's search for happiness=E2=80=9D. It was fun to ha=
+ve a bit of
+nostalgia with the phone call, but beyond that I learned a lot about the
+value of lasting relationships and about how central the family is in the
+Gospel
+
+Monday was also good, me and my companion had our first 25 minute HOA and
+it definitely didn't go perfectly, but it was decent. (IDK if I've even
+explained what an =E2=80=9CHOA=E2=80=9D [Helping Others Appointment] is, bu=
+t in case I
+haven't it's basically someone whose native language is Japanese in this
+case, and is either acting or genuinely seeking to know more about the
+church (much less likely lol), and we basically practice teaching to them)
+Monday I also got a lot more Japanese practice in throughout the 6 hours of
+classes. We learned a lot about making and asking questions in Japanese,
+and it's crazy how flip flopped the sentences get when compared to English
+=F0=9F=98=B5=E2=80=8D=F0=9F=92=AB
+
+Tuesday we had our General Authority devotional and we got to hear from
+Elder and Sister Bassett, which was really neat. I loved both of their
+talks, and I feel like my main takeaway from what I heard was that one of
+the best things we can use our time for as members of the church
+(especially at this age) is being a missionary. We are in the water, and
+we're trying to help others find for themselves how it feels, through
+baptism especially. Also got me thinking about the themesong for The Chosen
+=F0=9F=98=82
+
+I allllso wrote another poem in the 5 minutes of journal time we had before
+our group devotional breakdown: (will have to send it next week sorry,
+short on time =F0=9F=98=85)
+
+Wednesday was a good day (any day where I'm learning is a good day), but
+very exhausting, I think I might be catching a cold again and it was not
+very fun talking for such a long time.
+
+Thursday
+
+Felt a little worse on Thursday, but nothing crazy. We learned a lot of
+different sentence strengtheners, one of which (=E3=81=A8=E3=81=84=E3=81=86=
+) genuinely can't
+cohesively translate very well into English which makes it pretty tricky to
+learn =F0=9F=98=85 We've pretty much learned all the pieces of sentence str=
+ucture
+stuff but we are just now trying to incorporate it together.
+
+Friday was good, but I definitely woke up super stuffy and runny which was
+not very fun. The rest of the day was aight though.
+
+P-day/Saturday was good, but my voice was almost gone. We had one morning
+class and then had the rest of the day to shine shoes, do laundry, play
+volleyball and buy some cough drops (as well as some BYU creamery ice
+cream) super excited for Sunday and Tuesday, but I'm pretty doubtful as to
+my singing capabilities in the choir practices =F0=9F=98=85 I was waaaay to=
+o loud and
+I'm pretty certain I will not be able to talk at all tomorrow=E2=80=A6
+
+Well thanks again for this issue of Elder Killians issues. I'm hoping I'll
+feel a lot better next week, very exciting that we only have a couple weeks
+left at the MTC =F0=9F=91=80 I cannot wait for Japan (or likely a reassignm=
+ent lol)
+
+Love you guys!!!!!!!!!!!
+
+-Elder Killian
+
+Spiritual Afterthought
+
+Alma 34
+
+16 And thus mercy can satisfy the demands of justice, and encircles them in
+the arms of safety, while he that exercises no faith unto repentance is
+exposed to the whole law of the demands of justice; therefore only unto him
+that has faith unto repentance is brought about the great and eternal plan
+of redemption.
+
+Pretty to the point scripture, which I like. Faith is so emphasized in
+religion and is such a basic step that I feel like people sometimes forget
+just how crucial it is. having faith in the first place Is a challenge, but
+I think that strengthening It rather than just letting it sit there is
+easier said than done. Keep at it!!
+
+Bye =F0=9F=91=8B
+
+--000000000000cf9abd06207aebf1
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto"><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;m=
+argin-bottom:0pt"><br></p><p dir=3D"ltr" style=3D"line-height:1.38;margin-t=
+op:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-family:arial,s=
+ans-serif;font-variant-numeric:normal;font-variant-east-asian:normal;font-v=
+ariant-alternates:normal;vertical-align:baseline">Gonna keep trying to go w=
+ith the daily writing stuff</span></p><br><p dir=3D"ltr" style=3D"line-heig=
+ht:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;fon=
+t-family:arial,sans-serif;font-variant-numeric:normal;font-variant-east-asi=
+an:normal;font-variant-alternates:normal;vertical-align:baseline">Sunday I =
+was able to do a lot of personal study which was nice, and during the Go an=
+d Do experience I rewatched =E2=80=9Cthe phone call=E2=80=9D and a very old=
+ church video called =E2=80=9Cman&#39;s search for happiness=E2=80=9D. It w=
+as fun to have a bit of nostalgia with the phone call, but beyond that I le=
+arned a lot about the value of lasting relationships and about how central =
+the family is in the Gospel</span></p><br><p dir=3D"ltr" style=3D"line-heig=
+ht:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;fon=
+t-family:arial,sans-serif;font-variant-numeric:normal;font-variant-east-asi=
+an:normal;font-variant-alternates:normal;vertical-align:baseline">Monday wa=
+s also good, me and my companion had our first 25 minute HOA and it definit=
+ely didn&#39;t go perfectly, but it was decent. (IDK if I&#39;ve even expla=
+ined what an =E2=80=9CHOA=E2=80=9D [Helping Others Appointment] is, but in =
+case I haven&#39;t it&#39;s basically someone whose native language is Japa=
+nese in this case, and is either acting or genuinely seeking to know more a=
+bout the church (much less likely lol), and we basically practice teaching =
+to them) Monday I also got a lot more Japanese practice in throughout the 6=
+ hours of classes. We learned a lot about making and asking questions in Ja=
+panese, and it&#39;s crazy how flip flopped the sentences get when compared=
+ to English =F0=9F=98=B5=E2=80=8D=F0=9F=92=AB</span></p><br><p dir=3D"ltr" =
+style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"=
+font-size:11pt;font-family:arial,sans-serif;font-variant-numeric:normal;fon=
+t-variant-east-asian:normal;font-variant-alternates:normal;vertical-align:b=
+aseline">Tuesday we had our General Authority devotional and we got to hear=
+ from Elder and Sister Bassett, which was really neat. I loved both of thei=
+r talks, and I feel like my main takeaway from what I heard was that one of=
+ the best things we can use our time for as members of the church (especial=
+ly at this age) is being a missionary. We are in the water, and we&#39;re t=
+rying to help others find for themselves how it feels, through baptism espe=
+cially. Also got me thinking about the themesong for The Chosen =F0=9F=98=
+=82</span></p><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margi=
+n-bottom:0pt"><span style=3D"font-size:11pt;font-family:arial,sans-serif;fo=
+nt-variant-numeric:normal;font-variant-east-asian:normal;font-variant-alter=
+nates:normal;vertical-align:baseline">I allllso wrote another poem in the 5=
+ minutes of journal time we had before our group devotional breakdown: (wil=
+l have to send it next week sorry, short on time =F0=9F=98=85)</span></p><b=
+r><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt=
+"><span style=3D"font-size:11pt;font-family:arial,sans-serif;font-variant-n=
+umeric:normal;font-variant-east-asian:normal;font-variant-alternates:normal=
+;vertical-align:baseline">Wednesday was a good day (any day where I&#39;m l=
+earning is a good day), but very exhausting, I think I might be catching a =
+cold again and it was not very fun talking for such a long time.=C2=A0=C2=
+=A0</span></p><br><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;m=
+argin-bottom:0pt"><span style=3D"font-size:11pt;font-family:arial,sans-seri=
+f;font-variant-numeric:normal;font-variant-east-asian:normal;font-variant-a=
+lternates:normal;vertical-align:baseline">Thursday</span></p><p dir=3D"ltr"=
+ style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D=
+"font-size:11pt;font-family:arial,sans-serif;font-variant-numeric:normal;fo=
+nt-variant-east-asian:normal;font-variant-alternates:normal;vertical-align:=
+baseline">Felt a little worse on Thursday, but nothing crazy. We learned a =
+lot of different sentence strengtheners, one of which (=E3=81=A8=E3=81=84=
+=E3=81=86) genuinely can&#39;t cohesively translate very well into English =
+which makes it pretty tricky to learn =F0=9F=98=85 We&#39;ve pretty much le=
+arned all the pieces of sentence structure stuff but we are just now trying=
+ to incorporate it together.</span></p><br><p dir=3D"ltr" style=3D"line-hei=
+ght:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;fo=
+nt-family:arial,sans-serif;font-variant-numeric:normal;font-variant-east-as=
+ian:normal;font-variant-alternates:normal;vertical-align:baseline">Friday w=
+as good, but I definitely woke up super stuffy and runny which was not very=
+ fun. The rest of the day was aight though.</span></p><br><p dir=3D"ltr" st=
+yle=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"fo=
+nt-size:11pt;font-family:arial,sans-serif;font-variant-numeric:normal;font-=
+variant-east-asian:normal;font-variant-alternates:normal;vertical-align:bas=
+eline">P-day/Saturday was good, but my voice was almost gone. We had one mo=
+rning class and then had the rest of the day to shine shoes, do laundry, pl=
+ay volleyball and buy some cough drops (as well as some BYU creamery ice cr=
+eam) super excited for Sunday and Tuesday, but I&#39;m pretty doubtful as t=
+o my singing capabilities in the choir practices =F0=9F=98=85 I was waaaay =
+too loud and I&#39;m pretty certain I will not be able to talk at all tomor=
+row=E2=80=A6</span></p><br><p dir=3D"ltr" style=3D"line-height:1.38;margin-=
+top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-family:arial,=
+sans-serif;font-variant-numeric:normal;font-variant-east-asian:normal;font-=
+variant-alternates:normal;vertical-align:baseline">Well thanks again for th=
+is issue of Elder Killians issues. I&#39;m hoping I&#39;ll feel a lot bette=
+r next week, very exciting that we only have a couple weeks left at the MTC=
+ =F0=9F=91=80 I cannot wait for Japan (or likely a reassignment lol)</span>=
+</p><br><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bott=
+om:0pt"><span style=3D"font-size:11pt;font-family:arial,sans-serif;font-var=
+iant-numeric:normal;font-variant-east-asian:normal;font-variant-alternates:=
+normal;vertical-align:baseline">Love you guys!!!!!!!!!!!</span></p><p dir=
+=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span =
+style=3D"font-size:11pt;font-family:arial,sans-serif;font-variant-numeric:n=
+ormal;font-variant-east-asian:normal;font-variant-alternates:normal;vertica=
+l-align:baseline">-Elder Killian</span></p><br><p dir=3D"ltr" style=3D"line=
+-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11p=
+t;font-family:arial,sans-serif;font-variant-numeric:normal;font-variant-eas=
+t-asian:normal;font-variant-alternates:normal;vertical-align:baseline">Spir=
+itual Afterthought</span></p><p dir=3D"ltr" style=3D"line-height:1.38;margi=
+n-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-family:aria=
+l,sans-serif;font-variant-numeric:normal;font-variant-east-asian:normal;fon=
+t-variant-alternates:normal;vertical-align:baseline">Alma 34</span></p><p d=
+ir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><spa=
+n style=3D"font-size:11pt;font-family:arial,sans-serif;font-variant-numeric=
+:normal;font-variant-east-asian:normal;font-variant-alternates:normal;verti=
+cal-align:baseline">16 And thus mercy can satisfy the demands of justice, a=
+nd encircles them in the arms of safety, while he that exercises no faith u=
+nto repentance is exposed to the whole law of the demands of justice; there=
+fore only unto him that has faith unto repentance is brought about the grea=
+t and eternal plan of redemption.</span></p><br><p dir=3D"ltr" style=3D"lin=
+e-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11=
+pt;font-family:arial,sans-serif;font-variant-numeric:normal;font-variant-ea=
+st-asian:normal;font-variant-alternates:normal;vertical-align:baseline">Pre=
+tty to the point scripture, which I like. Faith is so emphasized in religio=
+n and is such a basic step that I feel like people sometimes forget just ho=
+w crucial it is. having faith in the first place Is a challenge, but I thin=
+k that strengthening It rather than just letting it sit there is easier sai=
+d than done. Keep at it!!</span></p><br><p dir=3D"ltr" style=3D"line-height=
+:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-=
+family:arial,sans-serif;font-variant-numeric:normal;font-variant-east-asian=
+:normal;font-variant-alternates:normal;vertical-align:baseline">Bye =F0=9F=
+=91=8B</span></p><br></div>
+
+--000000000000cf9abd06207aebf1--

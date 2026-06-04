@@ -1,0 +1,140 @@
+Delivered-To: killianfamily@gmail.com
+Received: by 2002:a05:7022:a88:b0:8c:d8d2:5690 with SMTP id dd8csp2325551dlb;
+        Sun, 20 Oct 2024 18:14:30 -0700 (PDT)
+X-Received: by 2002:a5d:5e04:0:b0:37e:d715:3f39 with SMTP id ffacd0b85a97d-37ed7154007mr3683702f8f.10.1729473270629;
+        Sun, 20 Oct 2024 18:14:30 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1729473270; cv=none;
+        d=google.com; s=arc-20240605;
+        b=XkNO9qzDUfyZOikkLNZJUg+RKoryF55r0vIpCHm6txLAS+yiPIiqIgv5jz53IkYA/G
+         aSZtPw96T0BHHkM7TSrGHiBreC48Y3wzBZwYfO+FvHkwpPPLdpPgXFKCudjsiMUJkNJB
+         /2e/I3Me+skSh9qd3qYLpvZno7maGEk5/ALqGs4KPYEXh5zGgatv5kiBBuhmddR/1TkM
+         XLIIY7+0IqJpD00eXhylM+jLo8VhTVJ9XdrxuRm3QDBwUK5+Gp7lYUulb7ja35XXzCES
+         mavjAM0186ytsJe0SLDp2rztlTo6m3Zw44LWAV/ALuqkOOxBT8lOPumL09c+IkX+jl48
+         UvOg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=kfnJpP8rLGC3ETIsVjbgEazOcuIV0KmxuI0lSVDc+JM=;
+        fh=7heRuBWPyNQUWJA2/viMPwiNfAUA567OllBtKvgTBis=;
+        b=FaSBO7iMPzIXxcG0WxwfIPvC2naKS5g3sSktfYBmlp5XCNjXkmVvkwGT31LrOcvd6w
+         hHyIbU51i2VbHfuDMnxFAMvc7nhDi6rowSIu5AxRpfCINo4lBZxllEYtGKD3EtIxVluO
+         TmW+TULMdrJnYmvA6nc3nNHsPtRhK9NqbQUn18ShmA1RXHaytEumAkSjwzfVgD5n1ptI
+         gua1XKHpi9apqKX39kZGqSRAz+y1/qWBeOIpgTrsVWK83d43HHPe6ePbFUca16NcXG5q
+         +Q5jKeaT09pk0Vg/drGHUj/ingxn0yPQYV2KRTGQIKihIxsiZzFnPUO8b/wTsUPggqzK
+         7dBw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@missionary.org header.s=google header.b=IDiNv2XA;
+       spf=pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=kaden.killian@missionary.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=missionary.org;
+       dara=pass header.i=@gmail.com
+Return-Path: <kaden.killian@missionary.org>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id a640c23a62f3a-a9a912b551esor66721766b.6.2024.10.20.18.14.30
+        for <killianfamily@gmail.com>
+        (Google Transport Security);
+        Sun, 20 Oct 2024 18:14:30 -0700 (PDT)
+Received-SPF: pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@missionary.org header.s=google header.b=IDiNv2XA;
+       spf=pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=kaden.killian@missionary.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=missionary.org;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=missionary.org; s=google; t=1729473270; x=1730078070; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=kfnJpP8rLGC3ETIsVjbgEazOcuIV0KmxuI0lSVDc+JM=;
+        b=IDiNv2XAw7ibCLpdNaZbe36/f8fgyRNioSNopBaprcfF8ZYEzmp4OpLN9MDQnrnCBd
+         CAicMQv8M26kcAErmUnvZzmpVBpiopFrXYj8r8Unh4uBkGvlkmbGLqsK+L0NzLgKFBiu
+         QM+YclZpj8R4W3ARrByf7B8AJwlGn5EG6pOumY1M8GkD625NsccQCBS7TUSdH3KDteyb
+         da2JYErocvjotRzRDLlOhThwk3Q5iRBDA9EAFbMt+7THe+m/EGvQmBr3cMjF5vgLVN4k
+         poZkXPZXVkcGLaOPcStipjEiMm1idJBynSZ2vOJZg6zx7THRo66/csbNsnu71OJzhiEW
+         GV4Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1729473270; x=1730078070;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=kfnJpP8rLGC3ETIsVjbgEazOcuIV0KmxuI0lSVDc+JM=;
+        b=HN0678VFXGkO5Q/QszK50pyKW8tr+qr2wp81vH0ZnMWXr2DMyjPAeutUhX4r/uZ0MJ
+         1GTRK24uAhMGJlJRh6Lj+XGSXtQJlN6cBI35YMROyTY91qBPVocMwruCXnvXgjM28g7Y
+         UvXnM+kkoiY6ra4PW+fU3OFhNDcDX7XAX+3q8gxn0oaia9arwN8F1Bk4ID6kR/kchYpd
+         ZXNiHWnPzSRPnNmQc/dDHBVQA0sZBCSA9RPjvPp6RhDCIH5kvA8marFJF43jppkka86U
+         u7XHdWw9t8KgNQu9icUy2Go88GhPr4mbc/BvIa+8EjTZq9c/N8odNRkMKPZ7Gwm1GhXs
+         ehEw==
+X-Gm-Message-State: AOJu0YwV0XTLGMlwAwUD9rmkydIy813+H9PHMq6RsEnWN/GZVwyagCjP
+	wtLNP9u9ydUEFEWM4GY0MwK2j2jldM8fK2yhGG0vHYzjShcQY0COfqL6F9voDiow40O7Ruryxn6
+	r5c0S2MmTVVQh5bGROVyIDXepxy/RQFM8iqTpiJWsFWbUkkmkpTKeS2vyWvNa90bVHdO9Tf9HTZ
+	pZV7H4MkO8JUDYYyMGZB58yNPe80FYbBnZZ+59tk1kZNaiGQD/TLxQHnpDGsC2FF+tIKRnCwmdj
+	mk/emEhY9YfYaMybE5e/7Y5Z8LSqhcFUCFIRhKxJjSdLUkqtgYUXiOn1CitLWIgPZV+A5D3
+X-Google-Smtp-Source: AGHT+IGQxyyzxFl16Ym23q7oAzdq2iRM6qoUGtkm76uXdkxBV9Vd0fcWG8GmFTq4kXM6sIDwzln2+Ozk2WL/Q8iHUeU=
+X-Received: by 2002:a05:6402:35c6:b0:5c9:5bcf:db95 with SMTP id
+ 4fb4d7f45d1cf-5ca0ac627famr8559427a12.16.1729473269510; Sun, 20 Oct 2024
+ 18:14:29 -0700 (PDT)
+MIME-Version: 1.0
+From: Kaden Killian <kaden.killian@missionary.org>
+Date: Mon, 21 Oct 2024 10:14:18 +0900
+Message-ID: <CABgTvgZGkC62iPnptGPc5gxYv_t_DOcD21hpkbC2+DFgHY968A@mail.gmail.com>
+Subject: 
+To: killianfamily <killianfamily@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000e0cbf50624f25f86"
+X-GM-M1Sbpsf:  SC01
+X-CLOUD-SEC-AV-Sent: true
+X-CLOUD-SEC-AV-Info: missionarymail,google_mail,monitor
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+
+--000000000000e0cbf50624f25f86
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Dear Aubrey across the Sea
+I bet you didn't expect a =E2=80=9Cpoem letter=E2=80=9D from me
+I Usually find it tough to write
+But if it's a poem, I just might =F0=9F=98=82
+I'm doing well, the service is great
+But being a missionary is a heavy weight
+At the end of each day I am tired and wasted
+But you wouldn't believe all the joy that I've tasted
+As I mentioned, I feel quite tired
+But through humble prayer, I'm always inspired-
+To move forward and teach stronger;
+The Lord makes sure I can go a little longer.
+I've taught many lessons and learned many things
+Of the peace from the Gospel, the joy that it brings.
+When speaking this language I've stuttered and stammered
+But not yet I've been 100% hammered.
+I'm not quite sure why I can understand well,
+But (again) through much prayer, your knowledge can swell.
+In Japan (unrelated) I've eaten a lot;
+You wouldn't believe all the fish that I've bought =F0=9F=98=82
+Squid, octopus, eel and urchin
+Thankfully none left my stomach hurtin=E2=80=99
+
+--000000000000e0cbf50624f25f86
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto"><br><div dir=3D"auto">Dear Aubrey across the Sea</div><di=
+v dir=3D"auto">I bet you didn&#39;t expect a =E2=80=9Cpoem letter=E2=80=9D =
+from me</div><div dir=3D"auto">I Usually find it tough to write</div><div d=
+ir=3D"auto">But if it&#39;s a poem, I just might =F0=9F=98=82</div><div dir=
+=3D"auto">I&#39;m doing well, the service is great</div><div dir=3D"auto">B=
+ut being a missionary is a heavy weight</div><div dir=3D"auto">At the end o=
+f each day I am tired and wasted</div><div dir=3D"auto">But you wouldn&#39;=
+t believe all the joy that I&#39;ve tasted</div><div dir=3D"auto">As I ment=
+ioned, I feel quite tired</div><div dir=3D"auto">But through humble prayer,=
+ I&#39;m always inspired-</div><div dir=3D"auto">To move forward and teach =
+stronger;</div><div dir=3D"auto">The Lord makes sure I can go a little long=
+er.</div><div dir=3D"auto">I&#39;ve taught many lessons and learned many th=
+ings</div><div dir=3D"auto">Of the peace from the Gospel, the joy that it b=
+rings.</div><div dir=3D"auto">When speaking this language I&#39;ve stuttere=
+d and stammered</div><div dir=3D"auto">But not yet I&#39;ve been 100% hamme=
+red.</div><div dir=3D"auto">I&#39;m not quite sure why I can understand wel=
+l,</div><div dir=3D"auto">But (again) through much prayer, your knowledge c=
+an swell.</div><div dir=3D"auto">In Japan (unrelated) I&#39;ve eaten a lot;=
+</div><div dir=3D"auto">You wouldn&#39;t believe all the fish that I&#39;ve=
+ bought =F0=9F=98=82</div><div dir=3D"auto">Squid, octopus, eel and urchin<=
+/div><div dir=3D"auto">Thankfully none left my stomach hurtin=E2=80=99=C2=
+=A0</div></div>
+
+--000000000000e0cbf50624f25f86--

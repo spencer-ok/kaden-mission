@@ -1,0 +1,180 @@
+Delivered-To: killianfamily@gmail.com
+Received: by 2002:a05:7030:2907:b0:f1:ade1:54e1 with SMTP id r7csp1236534lab;
+        Mon, 9 Mar 2026 05:14:26 -0700 (PDT)
+X-Received: by 2002:a17:907:1c9d:b0:b93:6019:5858 with SMTP id a640c23a62f3a-b942dbced30mr616568566b.7.1773058466626;
+        Mon, 09 Mar 2026 05:14:26 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1773058466; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=NOw/vzpIce0W9htZGJz+hndr9p3YAXpYtIm17dubnOiaQIRVtcPkf9IAadjOVQx9Z1
+         V/iYuS8htgjBaEZce+4P9w/I8W9YhNWpjbkzsFMHn20r75mlc/hcR8xmL2wQLaDvCxtd
+         jK2rzaFT0M8m5gdtIykWDGLLKLFDzL/mAcdcXzBpOVjff0tIveUZUT1wP1fTpPeOsiC2
+         UB1reWzy96s+ed943s7hLXNuBdW0H4wpcuFXr8XPtGNTXz/lH2R92HADGswKSIROCker
+         h43UBSZTicZtxbf/Qo4fjAvaBfmnKl9lpV7DToQBgUE2DsvHbjHaPOu1Em3qAzN5KuBj
+         BD9A==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=OvwaHg+6tJjR0Dn8RNazT9Q+kP8PIhgOcdS1Lu+ibt4=;
+        fh=Z6qIxyYYRJ6j+FNssoCqK5Gc8S1S3uCnhgfLbiAK++k=;
+        b=H8xR6sIA319M/f7Pr/3D7LJzeBXpGI5J+QgqNdttwdJI8XyVj5omTmC2XyFthK3E/6
+         /J2APLnBSd9anEPVE8SDfK2bhecxZNe3s32p1YJxKXUEszuqv8LsyA/PkSr45z1+TeiJ
+         aqHPJbaKfntdZi0Fsuu9EvO6tBA0lKItv5UsOckcqZSmsZEQdTF1rcW1gf0pa+dpslQ/
+         t9L+bS5I7AuNWoTH94AKile3CaVXdvHOX9HejsSaeJnZ0CIgHGhBWcVL17VQMjzq320p
+         mC2LvK4nc3y96BTqfNUR+f9yh/eo9tv+goDI5JhffcnrVHGtWhe+rmRxr+NY+3YMXkTm
+         p8Uw==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@missionary.org header.s=google header.b=GTh7zlyF;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=kaden.killian@missionary.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=missionary.org;
+       dara=pass header.i=@gmail.com
+Return-Path: <kaden.killian@missionary.org>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id a640c23a62f3a-b942f55e746sor160472366b.14.2026.03.09.05.14.26
+        for <killianfamily@gmail.com>
+        (Google Transport Security);
+        Mon, 09 Mar 2026 05:14:26 -0700 (PDT)
+Received-SPF: pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@missionary.org header.s=google header.b=GTh7zlyF;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=kaden.killian@missionary.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=missionary.org;
+       dara=pass header.i=@gmail.com
+ARC-Seal: i=1; a=rsa-sha256; t=1773058466; cv=none;
+        d=google.com; s=arc-20240605;
+        b=XIusJ1G9+ELarpXKdkoLoqGwahE8O1CoBpTT6c3kGamiHpYgincdS7UTR4MWSndMkC
+         Yb/DZqrZNyFMl9kkP5MnM1sHSXkMpaNLggGGLBeDhqppZEJMS0Y/6K0a6XX9yQ4g2igr
+         mtB1ThL3dwywcHoDbEIjkpyuCneSMZYQ/rz7h5AWaF8sn1yyhT5Ach2SmrzhIrjIx/Ij
+         u+KuytLYoewDoopdrerAFfV2M4o5m/sEsUx2LJhhL69jvrTEs5wfmrlJLlbzbGRBrYi4
+         8I8XpKLDTIKOk1zWaFdhF4CBR0MB4N/uUcCOf2Nm5TIJUVzeyhnXP2/Ds5jM/szBsmSS
+         F+8Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=OvwaHg+6tJjR0Dn8RNazT9Q+kP8PIhgOcdS1Lu+ibt4=;
+        fh=Z6qIxyYYRJ6j+FNssoCqK5Gc8S1S3uCnhgfLbiAK++k=;
+        b=TjMBVtNI8lVoTk/HeopU2yD3w9RYPLgHz8LZ++AzlPDGYFRbwA3ZxuES0KbGdS75Ou
+         M6m3xzBsm0lS4O+6lDe013mg6GUDbKVVp9wx/42YkHC3uwkxRHGBowXP5beeRJ61WI4r
+         tzqApGy7pnM7ZPO9tBHhOMXhS6W/um9mo2mtV713QivGqgiiCEDK3xZ+u9Y/VdRj7erK
+         bbR7T8KULcPQOijHAmVRMSxyDc2xR1ctm1HIJVi8MNu/7yaEHIlYWsjpmwGL914UeLnB
+         SxlXaiXm/IRP/IGd4du2QRjiz8g0WpxiR4+sVI3gz0FDO+tXg6ny8DSZLk/5DKfy1kP1
+         4dng==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=missionary.org; s=google; t=1773058466; x=1773663266; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=OvwaHg+6tJjR0Dn8RNazT9Q+kP8PIhgOcdS1Lu+ibt4=;
+        b=GTh7zlyFp8G69MxUq2d6v9pIBmmYL5BMNCQW7qpMDmliVWPyUvX93sKBRdQMep7EPx
+         1N7gwx46nX+YKwDWdtWNmZTaVUmJRMGaUF/lkYXy4vIuLGhnqAWTXf0O0zlCXIX1cjU1
+         GXNCXK1c0fby9tLNItAW6GUDkHLd3ecy9mEaGlDHn8zXbHf1ZpbyeMCUPq62xZWiOFpL
+         YwYEa1S2WBXG0fd3Id2sJNV68vLH6BNd+oMbbUj/VADxliHI2YAMJqr2U/jEOQxD6b8P
+         pH3CURj680h1jGIjg6C8rn8GXKXodxuAV/DbaNTz1w/inpZ5WuoXJ77MGHvUnsSeDBIx
+         gqKg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1773058466; x=1773663266;
+        h=to:subject:message-id:date:from:mime-version:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=OvwaHg+6tJjR0Dn8RNazT9Q+kP8PIhgOcdS1Lu+ibt4=;
+        b=YPioSlP9UssRcXaaoTLjzMX0JEAVpgygbIdE7b/snbIZeAEZ3tr9avWL+JoXk3ohbQ
+         wt8BPIwTRNzcNBDPnXnsC0//LB/BwX7VoONTgbB1RoKebHNTKKPNprs14HTYFBszUhfQ
+         BMMwOc68g0KiyOD12zoyB4usEhUZLbUyLiwzdj4guJtEJMrxLZuYbVz4duGlACFkS+ws
+         ug9RIfyQH2sdV9hUh+R72J7XkQM5Tej2AIuOxekYwq3xyo68r2Bil8DA1yapZnKhQV03
+         hxJbG1CNsEZ8PUE0xxQnfXdG+0FCEnZ9xJ7R/DRO6o63G22Qj4/t7T8D59C4iEHPTwGs
+         b0RQ==
+X-Gm-Message-State: AOJu0Yw8xfVxsHUOsysi9d1XhbI/HaDlGfF67ysIcKDH7KvJAoOINdq1
+	prcbWOnPF4jTDwfFD5HZhvrYUUNJOxZ/XW2pHn3HV/G9VMaaoVWYsF/ubqeX2PGeUbuEhcxfGrw
+	mO40IsVSOYilgY7vl3ezpQSBB9YQmia/GPGrbFgg59DcRAA49ewE=
+X-Gm-Gg: ATEYQzzEDr4CguSA/T7HjSumtpMReoHrReHaxlwuBHBRD8fl15OndXAX9bm+4LXvWC0
+	ZJz8k8yRBmZnvPGhiK6P+fSd1xmXdSpAYMqmLkl1Lv6S/TFeCTZWOdMtnRnyW5Qc1ELRxVpIQvS
+	PniS3LbPF89n5VRsbruWao4NMUDHBOKYn2ACXwipi4uOgKjKykSlLG6EXtdKiFJhUlpU8/Ogsks
+	DFYVz+z64UD16EEB2Sv9VIhnh67JMPAgX2H8qUlsjUmaI9gPpYBo5vtdw+JFMo5vM/dxXMq/Qc5
+	EvlsdXoueWaPOqtyho5oeebT88gcrIBuA0wNE6Y=
+X-Received: by 2002:a17:907:a0c8:b0:b93:80f3:b356 with SMTP id
+ a640c23a62f3a-b942dbcd374mr597659766b.8.1773058465755; Mon, 09 Mar 2026
+ 05:14:25 -0700 (PDT)
+MIME-Version: 1.0
+From: Kaden Killian <kaden.killian@missionary.org>
+Date: Mon, 9 Mar 2026 21:14:12 +0900
+X-Gm-Features: AaiRm53fijRz-k4O_S4io8ebhS-IACM1unYCdGubjkYHVlQpw5ynzQx59-BGlbo
+Message-ID: <CABgTvgZ4DgQKNdCP7DM71VoXBZckoF82sPcBW+y3UeT1cFajxw@mail.gmail.com>
+Subject: Poetry's great escape
+To: Tanya Killian <killianfamily@gmail.com>, 
+	"Spencer Killian (Spencer K)" <spencerok@gmail.com>, Kyle Killian <kylekillian@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000048267064c9658db"
+
+--000000000000048267064c9658db
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Stanzas trickle from ma-mouth you hear it?
+Stance: Wide- flickin in n out you fear it?
+Low bars doesn't mean my bar is set low-
+Hurdle high dare to fly don't try to run bro
+
+Yes those were some epic rap lyrics I wrote =F0=9F=94=A5=F0=9F=94=A5 Lowkey=
+ harder to write rap
+than traditional poetry
+
+Anyways it's been an awesome week. We were able to have lessons with our
+friends and 2 of them came to church! Huge steps for Gobo!
+
+Sunday was a highlight not just because of two friends coming to church,
+but 4 dudes from America also pulled up on a trip! Even though they
+understood little, they testified about the spirit they felt.
+
+A fun thing from this week was going to Tanabe and meeting a bunch of kids
+by the beach! We somehow got put into their friend group chat and we even
+made a tik tok with them. So lit
+
+This Pday was cool too! The Senior couple the McArthurs took us with their
+grandkids up to a place called Koyasan, and it had a bunch of sweet shrines
+and stuff. While there, I was able to talk with two Japanese guys (one of
+which loves Welcome to Demon School!!) And get their contact info, and I
+randomly met a non-member couple from Provo Utah!! The guy even used to
+live in Lindon for a few months! I didn't get to share all that much
+besides how awesome a mission is, but I believe it left an impression.
+
+I'm probably leaving Gobo this next transfer, heading into my last two in a
+new area... or old one...
+
+We will see! I love you! I promise that God loves us and blesses us as we
+trust Him and put effort into doing His will.
+
+Toodleoo!
+
+--000000000000048267064c9658db
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto"><div dir=3D"auto">Stanzas trickle from ma-mouth you hear =
+it?</div><div dir=3D"auto">Stance: Wide- flickin in n out you fear it?</div=
+><div dir=3D"auto">Low bars doesn&#39;t mean my bar is set low-</div><div d=
+ir=3D"auto">Hurdle high dare to fly don&#39;t try to run bro</div><div dir=
+=3D"auto"><br></div><div dir=3D"auto">Yes those were some epic rap lyrics I=
+ wrote =F0=9F=94=A5=F0=9F=94=A5 Lowkey harder to write rap than traditional=
+ poetry</div><div dir=3D"auto"><br></div><div dir=3D"auto">Anyways it&#39;s=
+ been an awesome week. We were able to have lessons with our friends and 2 =
+of them came to church! Huge steps for Gobo!</div><div dir=3D"auto"><br></d=
+iv><div dir=3D"auto">Sunday was a highlight not just because of two friends=
+ coming to church, but 4 dudes from America also pulled up on a trip! Even =
+though they understood little, they testified about the spirit they felt.</=
+div><div dir=3D"auto"><br></div><div dir=3D"auto">A fun thing from this wee=
+k was going to Tanabe and meeting a bunch of kids by the beach! We somehow =
+got put into their friend group chat and we even made a tik tok with them. =
+So lit</div><div dir=3D"auto"><br></div><div dir=3D"auto">This Pday was coo=
+l too! The Senior couple the McArthurs took us with their grandkids up to a=
+ place called Koyasan, and it had a bunch of sweet shrines and stuff. While=
+ there, I was able to talk with two Japanese guys (one of which loves Welco=
+me to Demon School!!) And get their contact info, and I randomly met a non-=
+member couple from Provo Utah!! The guy even used to live in Lindon for a f=
+ew months! I didn&#39;t get to share all that much besides how awesome a mi=
+ssion is, but I believe it left an impression.</div><div dir=3D"auto"><br><=
+/div><div dir=3D"auto">I&#39;m probably leaving Gobo this next transfer, he=
+ading into my last two in a new area... or old one...</div><div dir=3D"auto=
+"><br></div><div dir=3D"auto">We will see! I love you! I promise that God l=
+oves us and blesses us as we trust Him and put effort into doing His will.<=
+/div><div dir=3D"auto"><br></div><div dir=3D"auto">Toodleoo!</div></div>
+
+--000000000000048267064c9658db--

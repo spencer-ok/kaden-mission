@@ -6,6 +6,8 @@ module.exports = function(eleventyConfig) {
   } else {
     eleventyConfig.addPassthroughCopy("src/assets");
   }
+  eleventyConfig.addPassthroughCopy({"src/favicon.ico": "favicon.ico"});
+  eleventyConfig.addPassthroughCopy({"src/apple-touch-icon.png": "apple-touch-icon.png"});
 
   eleventyConfig.addFilter("emailMetaJson", function(inventory) {
     var meta = {};

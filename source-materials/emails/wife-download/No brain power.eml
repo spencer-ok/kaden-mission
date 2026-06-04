@@ -1,0 +1,154 @@
+Delivered-To: killianfamily@gmail.com
+Received: by 2002:a05:6022:1182:b0:79:16f:323e with SMTP id ch2csp2249255lab;
+        Mon, 29 Sep 2025 06:27:49 -0700 (PDT)
+X-Received: by 2002:a17:907:971b:b0:b3c:31c2:b57d with SMTP id a640c23a62f3a-b3c31c2be2bmr764149066b.55.1759152469125;
+        Mon, 29 Sep 2025 06:27:49 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1759152469; cv=none;
+        d=google.com; s=arc-20240605;
+        b=FzM8gPQldktgCqyfHoOG2wfxmnrQPEJb7LdN3JKwhfdTOgt1g+61tsexfLtclsfUpb
+         cpjYUqr2MSJGx9BjLE6nuf9V7iCVWLvBfYixEf8DTm3pB1a/SR+7SF1+e1AspuR2Y/Lw
+         OUZpRyU439I9CgK7dFAi/WyExMbWGcE2zgio0/O0Rb0ObWMkrRubHfrMB2x4Rv8DUyim
+         3PQFKUE4M/rA2aYFIwVKfZc0S2D0NT3ZxZ2S2UgQ42xq7qkUosJFEqINvPX5tn4/V3yp
+         mF364AgJSMGskfWfM6QnONaW1USmiZD8XvmLSvSrAfzR684mRGg/fBWD3BTOJLTLuho2
+         b6mg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=2pXtyfbtZVvr6T7Np0wGSLNgz71K88FbRcNVHdW/Dns=;
+        fh=Z6qIxyYYRJ6j+FNssoCqK5Gc8S1S3uCnhgfLbiAK++k=;
+        b=eP6IvKERnw3imx+VFG+TTKu7sC1gtDrePO4X1s+6z7KtJrGiMuIxYDHOAY0k7LqR6C
+         6AnC9aPVIF2KfmMxIbEm57gKzhGwFUZFB/pFZzDFfMf247By10TYVaOQQau29Uz/hMIN
+         DMUbTZ0tdzTAOl8iSlBpCdOH+xQ6qkPt9elcWGOSngaTGvcdE1bKiY40yOZIw5yeMbr+
+         R4WhZhbXbX1C2MIwViIY3GWWRnn5B4wBbMkQfPDO86djffvLwgL8KqK844c+p6lCgUkA
+         L1hP+NaNRj44PgNEjNSbjoXlKJR9tVDcPmx4mnYpTnoDzjz63PLu5JT+8EUZ5Ssg9SSm
+         Y5nQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@missionary.org header.s=google header.b=d2fu4G5j;
+       spf=pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=kaden.killian@missionary.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=missionary.org;
+       dara=pass header.i=@gmail.com
+Return-Path: <kaden.killian@missionary.org>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id a640c23a62f3a-b3bd6576ed5sor195289066b.12.2025.09.29.06.27.48
+        for <killianfamily@gmail.com>
+        (Google Transport Security);
+        Mon, 29 Sep 2025 06:27:48 -0700 (PDT)
+Received-SPF: pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@missionary.org header.s=google header.b=d2fu4G5j;
+       spf=pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=kaden.killian@missionary.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=missionary.org;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=missionary.org; s=google; t=1759152468; x=1759757268; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=2pXtyfbtZVvr6T7Np0wGSLNgz71K88FbRcNVHdW/Dns=;
+        b=d2fu4G5j0Ds+ZoKfzo39tIeVx+UEvW2NT6SpOL7eaWPp/vAJx01mK1a3GUc2yYgNhZ
+         oshovz51dsS09ynnUVfZEtqpHBxmhX/G7u9D7gREc3rzBlRgYLs9qsqJ9BQCIKFeGDL1
+         /Q3qrMYqD1S9lStuRod/SLhzV/awF20jIEt+luZCXqagAcPEm4DTtT00ZDckkbfGs4iG
+         fh6eF8ly02EVzZ/+py2LV8IfIMYvIjD0p98olW7NObzKsz4UmPqnMOEX/aV40bxcQX+o
+         PaRInmi4a8mJwlT/KZNf0qG04Uyn4NROxW96/uJSsRi4LqnhwVlRqjbXCf9je1lX8RTC
+         rZQg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1759152468; x=1759757268;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=2pXtyfbtZVvr6T7Np0wGSLNgz71K88FbRcNVHdW/Dns=;
+        b=iaJgUb/0XDASJa+EuXwslTjqK2Rbm78g6FjiuEc1N1Dx3gUgjeHPP26ImM4a9h0and
+         FNWh1CtQHZg77AywOEXUXgpCrJrqHYBKmbYc9Cf/IfUZYtTMLTs4PmK5Qa/UTTKsH+U1
+         xkUW+gaLHeDLW6fXuP4kyBLWHUScvqeO847xFTZgAYoFLy0Qv9eSxXNyQhWKxicuL5nF
+         Oh7/2hS3JwX1aw1fSyxKHJZ/k4AG0sV14dwQG6ddPmERzYNMZUMyTiLBjue2gDj8wT2Q
+         N25Wj26wzm+QOAgIvIK5p65fTxwPyk5ntTXhT2+0o3oXron++gJdsKNEuD8RF/mJvGFp
+         aLBQ==
+X-Gm-Message-State: AOJu0Yxu9M2sNnPlIdhG6BkL9RMluM3vFpcsXJHP4N9U4mYBB4ey51w9
+	VEfya6KcyknqQ2wrHI5vqRQV14U7ZW3hXQeOSUt8FjGVwI140LLRrLbErV8gMuE6HgJKB0hkQdc
+	U6hlKlqp4d25XlQImqJjLLZo9J67L5xqta2ZfjL7dQiRA+F9Hxu4rkgpnt6DIhvkKHkLZRztH0x
+	mwxOE8pedXuTKHlWoWV1/tpmtzm0Wiq+i/qEA4/wg/2Ym6tdK1R+QCmSBKZOIcyx052z4Rz8u2R
+	qq7saE78CtWihVW3x4Wo3klwDKi4+EcRraV3B/OcY1hISwa/1X8IGRZC91Lz1LshfPWKGoCPelY
+X-Gm-Gg: ASbGnctmbV5Z/CfA1DsdSaN3sEerj8TzfRQUsTH4SLzI3UCt3KsjBoXpu7nldz9Dg3p
+	67R7aGmXHMlv7QLNpawcDHmqkPPJGeEJn2E90Bjx6uQGwZy6PLw0nEW+PMCDtPuRy+TxbBzBnm1
+	Byu8hkhIIOhlo6UwwRx5OAFcIiowGdG3xILv//R+2mSy+63rz3lnOMvBWunxx7dWA90oSKd/HNt
+	QZ9cIzrJX5SR7UjxSicPjRKgmynIQzFw6+PH7MHx8y4ub+QQPwVHR2D
+X-Google-Smtp-Source: AGHT+IFgvEeLXYdY3TnwhmwvGV2/4+ABqs41JhE6C7cVw5kVTP5O8fhyXV2gxmic2vnfiZziCE+NvJAF9RMA278CvC0=
+X-Received: by 2002:a17:907:3c8c:b0:b2e:34f1:9dbf with SMTP id
+ a640c23a62f3a-b34b69423ecmr1839824466b.1.1759152467219; Mon, 29 Sep 2025
+ 06:27:47 -0700 (PDT)
+MIME-Version: 1.0
+From: Kaden Killian <kaden.killian@missionary.org>
+Date: Mon, 29 Sep 2025 22:27:35 +0900
+X-Gm-Features: AS18NWAACpenlAdsgvfPynoYTIU3JTqr_8JQTolEnavbLC-izgRekEFBzO0jfCw
+Message-ID: <CABgTvgYWdJzirisZ7v25SLQ6RAaT07ncdDV97bMrswGXDa9KJw@mail.gmail.com>
+Subject: No brain power
+To: Tanya Killian <killianfamily@gmail.com>, 
+	"Spencer Killian (Spencer K)" <spencerok@gmail.com>, Kyle Killian <kylekillian@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000ea277a063ff099a2"
+X-CLOUD-SEC-AV-Sent: true
+X-CLOUD-SEC-AV-Info: missionarymail,google_mail,monitor
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+
+--000000000000ea277a063ff099a2
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Today (and with this transfer) I've had quite a bit to think about and it's
+been busy and in the end I didn't really get a chance to write an email.
+Sorry =F0=9F=98=85 I will try and make even this short email meaningful tho=
+ugh!
+
+Here's a few fun things you'll get to hear about next week!
+
+I got a bean! Meaning I'm going to be training a new missionary! =F0=9F=98=
+=B2
+
+I lost a lot of stuff =F0=9F=98=85 just not my temper =F0=9F=98=8E=E2=9C=8C=
+=EF=B8=8F
+
+We have up to 5 new people coming to our Eikaiwa this next week =F0=9F=8E=
+=89=F0=9F=8E=89
+
+We were able to meet up with some people at a community center and play
+Magic the Gathering =F0=9F=94=A5=F0=9F=94=A5
+
+That's a few of them!
+
+Last message:
+Don't be upset over things out of your control, or try not to be upset over
+them. There are a lot of things that we really don't have too much
+influence over, even if we are trying our hardest to influence them. If you
+feel like you are giving your 100% and it's not enough please don't worry
+too much about it! God loves effort. He loves you!
+
+I love you too!
+
+I'll write more next week!
+
+--000000000000ea277a063ff099a2
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto">Today (and with this transfer) I&#39;ve had quite a bit t=
+o think about and it&#39;s been busy and in the end I didn&#39;t really get=
+ a chance to write an email. Sorry =F0=9F=98=85 I will try and make even th=
+is short email meaningful though!<div dir=3D"auto"><br></div><div dir=3D"au=
+to">Here&#39;s a few fun things you&#39;ll get to hear about next week!</di=
+v><div dir=3D"auto"><br></div><div dir=3D"auto">I got a bean! Meaning I&#39=
+;m going to be training a new missionary! =F0=9F=98=B2</div><div dir=3D"aut=
+o"><br></div><div dir=3D"auto">I lost a lot of stuff =F0=9F=98=85 just not =
+my temper =F0=9F=98=8E=E2=9C=8C=EF=B8=8F</div><div dir=3D"auto"><br></div><=
+div dir=3D"auto">We have up to 5 new people coming to our Eikaiwa this next=
+ week =F0=9F=8E=89=F0=9F=8E=89</div><div dir=3D"auto"><br></div><div dir=3D=
+"auto">We were able to meet up with some people at a community center and p=
+lay Magic the Gathering =F0=9F=94=A5=F0=9F=94=A5</div><div dir=3D"auto"><br=
+></div><div dir=3D"auto">That&#39;s a few of them!</div><div dir=3D"auto"><=
+br></div><div dir=3D"auto">Last message:</div><div dir=3D"auto">Don&#39;t b=
+e upset over things out of your control, or try not to be upset over them. =
+There are a lot of things that we really don&#39;t have too much influence =
+over, even if we are trying our hardest to influence them. If you feel like=
+ you are giving your 100% and it&#39;s not enough please don&#39;t worry to=
+o much about it! God loves effort. He loves you!</div><div dir=3D"auto"><br=
+></div><div dir=3D"auto">I love you too!</div><div dir=3D"auto"><br></div><=
+div dir=3D"auto">I&#39;ll write more next week!</div></div>
+
+--000000000000ea277a063ff099a2--

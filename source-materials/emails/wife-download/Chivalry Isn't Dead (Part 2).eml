@@ -1,0 +1,413 @@
+Delivered-To: killianfamily@gmail.com
+Received: by 2002:a05:6022:b143:b0:79:16f:323e with SMTP id z3csp1274752laa;
+        Mon, 1 Sep 2025 07:25:52 -0700 (PDT)
+X-Received: by 2002:a17:907:961a:b0:b04:2edd:280b with SMTP id a640c23a62f3a-b042edd2a50mr379816566b.39.1756736752000;
+        Mon, 01 Sep 2025 07:25:52 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1756736751; cv=none;
+        d=google.com; s=arc-20240605;
+        b=JOeGOp9RmzKG3KQlNcgJDYHsCuFXG3mqwWA/49UwYwt9KEjwLpHeMLdS0IjiQwV33I
+         wFjmQnKG1yUs2ixsFmvrHTgGbnN48Aw4fZNH801+GYVq4ldC3qw2glmvdndSCxx+H+iJ
+         XasNrzWPvDpqy8WLbY04ntqj5wLSZcHG09IxfGK/RPds4vuKE75VN/jk3HG+L3rqErBw
+         hKFbPxAVaU2FG9y0yYprhtB/RsjA+jcKUlQcsJvf26d3FINU72XdbtajcxfceDFbLIP2
+         P4Ntf5p5Vn6Kt8n+H2d4i4LSCmpYcwB0lL0y1Rumn0C7m5syFAxe8HhkMnU7b76sJsST
+         UXTg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=ndzxtZ2UlBVimgOpJzJ7BGkcEWmyHGMBkkJHSzIlcsU=;
+        fh=Z6qIxyYYRJ6j+FNssoCqK5Gc8S1S3uCnhgfLbiAK++k=;
+        b=FGYI9qr/aylqS/DiqSriiMbXzuTorCL2KQRB9corZzqmqoy/vBS2cvwJbDMgnrE6wx
+         qQHnyB/QRTYNgr3W514uox+Ln6gN6r34A4laSVN3bDfz/NMil6wOHjDn53STxg1tGIoW
+         tOysPHIVKn9VCiGiEx778os734OaNdHMXroIjAPuORk9tmovKgBjpL5YvwumFQ7nA40F
+         mcMhC3wkOBTguxELEi+eF2gO/cLsdSG5+7pn+eTYmvLV08x4VDmhSQ3YRb6izJBxVNkc
+         wnt5RYyrXszdG70rDNk2C6ujSZZSOtbyBGQsr/cD4FwONiXszSyyCDhhYxDp+GsON0Q2
+         KqYg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@missionary.org header.s=google header.b=SKFrufgR;
+       spf=pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=kaden.killian@missionary.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=missionary.org;
+       dara=pass header.i=@gmail.com
+Return-Path: <kaden.killian@missionary.org>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id a640c23a62f3a-b0435d7f453sor83099666b.17.2025.09.01.07.25.51
+        for <killianfamily@gmail.com>
+        (Google Transport Security);
+        Mon, 01 Sep 2025 07:25:51 -0700 (PDT)
+Received-SPF: pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@missionary.org header.s=google header.b=SKFrufgR;
+       spf=pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=kaden.killian@missionary.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=missionary.org;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=missionary.org; s=google; t=1756736751; x=1757341551; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=ndzxtZ2UlBVimgOpJzJ7BGkcEWmyHGMBkkJHSzIlcsU=;
+        b=SKFrufgR4bV+Mao/gkVWshYeybIpbi1vRuO1/wNPLO9zXalF7bqVXzjO31pEdxx4cU
+         v/8A2gi1r/nA0ov+rkYaR2uCSNYEVIGvMg5xFEqXTrwSP96N6g0poCTQFXPW72Z5ZPv6
+         2DgWXXQDDlAuHqwARtBbYV46UvApuS883pdhX/jvZn1hgoSxAeSYS4+GTDi5HtRc4qeA
+         0k77N7G9a0JNqmQRVxAOvTwArK+GEf9PB3Vo35q8Zraxmc96WlkE9zw9937mGeVTLUFy
+         qgOh63L0whXoElnSsFLf01ocdqx8aO/+LizYW6kZ84qmrzQ92/jRdteP2qMN7pUXOEuL
+         +yHg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1756736751; x=1757341551;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=ndzxtZ2UlBVimgOpJzJ7BGkcEWmyHGMBkkJHSzIlcsU=;
+        b=nUOlXIDpwYtJ7LsFRC/urdzLHqzKIP5ftN07SssXjRqIPhWKOVNv0Wyh1nzKIAcjab
+         fOReCSr1SQNzlMku31bhGa3+JPcTf1piTX7uUGsXbV2rwdkwJQT3tJhgT5RdaS+Safyh
+         MwWWjDTznhzqx4DoGZq4B2AuVvZUzJ1VJN4u9Xd2WnNFdjoTREzbnXEYTHHPKtY+GmrE
+         ZtnU9CHz5RruNHWoDVB4/0BhWAvnirF5I8ckP3+WFlWyHID9K3zgJbFs64NlmvtOMmjk
+         HT8SGOoXzL+eNpUVbu2Q+Jqb7YXuy6IFFC6qvsbJn6rtAo6CLplHUhv0tTxDdaFEAlQ+
+         QRNQ==
+X-Gm-Message-State: AOJu0Yw6zN4TWG3oVvIsNd183VFeZp50YA/mqZyavqQtrlcBVVNNmyMZ
+	K4u9x6Xr8ETxWHzadJvWwpMGTFvamMSppT3YwazC6doEevwVEsErUS1yg1OXMOcgiXFBZljsaiK
+	JBaz8gb+N9rlslhTqGM509gEJtR6sdr82DOodWxNPyD8EJR8FOR/2419y4MJWSqLdJ7MtwgVoLA
+	dAI5plcc3m4pem0u1IMun2kGFyb8CsfMWm6M1f8LkpoOgjB5cmIrFnwq0XjJR8XeHJhe4ba18wA
+	kf6huxHvAY/kv0FtU57TkT+A5OhzpmVWsJ7KTmH1DDC/+v9XYhDUNMqeaebP2XoTIODji1cScxt
+X-Gm-Gg: ASbGncuIr5az/upgfrurlpiSZC4E+uxta4rzImcZqQWKLFpXgDMj7A1F5rU89+X1sHW
+	wyoTxkLz4oAJp0pbrF9HzPZpHK3UQzj3yFJESIfCfpIL77utf7U/bJZ++1ahaMEojoJCMbKa17a
+	KtnnqoQ8cLqymASHKzfZtnR8SSvd5tOr9O5LV7/RQyn3kbV/0D5OSA7MCNv/cidKXoqlw5H2c6Y
+	s1KVn8haTMixoIiWo2fAX2ZbbNc1aawPOPmkx3cxNzXcQ==
+X-Google-Smtp-Source: AGHT+IF8n89j84FIFdRfMh2iRA+Wl+qPaiTNlBfKNwnrVIWXcxI5lnPNgeCR3CCyEHqyGvIjUqgyumw7btsWgiLn0aI=
+X-Received: by 2002:a17:907:868b:b0:b04:31c6:a43a with SMTP id
+ a640c23a62f3a-b0431c6a90fmr307531966b.41.1756736751075; Mon, 01 Sep 2025
+ 07:25:51 -0700 (PDT)
+MIME-Version: 1.0
+From: Kaden Killian <kaden.killian@missionary.org>
+Date: Mon, 1 Sep 2025 23:25:38 +0900
+X-Gm-Features: Ac12FXz-rV-dB-tFPeWzgJ6GUekDBjpjgZ5Jv7DnG5mX6667qmBS8Spwel3VdyM
+Message-ID: <CABgTvgbcsx0e0OQT_kw6zBX=qhpE_7KnFL8pVe4s-RQ0dd9n2g@mail.gmail.com>
+Subject: Chivalry Isn't Dead (Part 2)
+To: Tanya Killian <killianfamily@gmail.com>, 
+	"Spencer Killian (Spencer K)" <spencerok@gmail.com>, Kyle Killian <kylekillian@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000031374063dbe26b4"
+X-CLOUD-SEC-AV-Sent: true
+X-CLOUD-SEC-AV-Info: missionarymail,google_mail,monitor
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+
+--000000000000031374063dbe26b4
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Welcome to Part 2 =E2=9C=8C=EF=B8=8F=F0=9F=98=B2=E2=9C=8C=EF=B8=8F
+
+Tuesday
+Today was an awesome DCM in person! We actually did make it to Tottori, and
+we learned a lot as well! We all met together afterwards to eat Udon (and
+the desert we brought all the way to Yonago). The rest of our day was
+unfortunately traveling back home lol. The trains do not like us.
+
+Wednesday
+Today we visited Ogi San again, and brought him some fruit! He was super
+reluctant to take any but in the end agreed to take one. Later we will
+visit him again! We tried some housing on the way back to the church, to
+little avail. No reason to be discouraged though! I believe that we are
+leaving an impact on even the people that initially refuse us. Today we
+also met up and got some ramen for dinner with Mitani Kyoudai!! Great day!
+
+Thursday
+Today was SKK so we didn't do much besides planning. It was pretty
+productive as far as planning goes, so that's great! We also had the lesson
+with Mitani Kyoudai at the church, and afterwards Japanese class at the
+community center. I swear I need to start tape recording these
+conversations. I swear the mix of personalities between us at that table in
+the community center is crazy. Fujita Sensei referenced =E2=80=9CLets Make =
+a Deal=E2=80=9D
+and we had to guess which of 3 boxes a toy car was inside of. It was
+insanely deep psychological stuff and I felt my brain like grow 3 sizes
+even if I can=E2=80=99t explain anything that I learned that night. Next ti=
+me I'm
+gonna bring Uno and we are gonna play it at our table lol. I=E2=80=99m look=
+ing
+forward to it!!
+
+Dreamed about =E3=81=95=E3=81=8F=E3=81=A1=E3=82=93, Bananas, an arcade (may=
+be?) =E6=9B=B8=E5=BA=97=E4=BC=9A
+
+Friday
+Today we did some sign streeting in front of a high school! Well, we
+started off by doing sign streeting. The approach that Nakazawa=E9=95=B7=E8=
+=80=81 wanted to
+use was to try drawing pokemon for students, then invite them to our
+Eikawa. We ended talking with a handful of students but only 3 took a
+request for the drawing. The first person was a girl who we've talked with
+a couple times randomly at this point. She's very quiet and composed, and
+even though we didn't talk with her about the gospel this time around, I
+really feel like she would listen and have an interest in it if we are
+genuine with her. After our finding at the high school, we headed back to
+the church for game night. I dominated uno as usual, and played some super
+fun ping pong with Matsuoka San. We shared a couple scriptures for our
+spiritual thought, here they are:
+Alma 37:6-7
+6 Now ye may suppose that this is foolishness in me; but behold I say unto
+you, that by small and simple things are great things brought to pass; and
+small means in many instances doth confound the wise. 7 And the Lord God
+doth work by means to bring about his great and eternal purposes; and by
+very small means the Lord doth confound the wise and bringeth about the
+salvation of many souls.
+These are pretty famous scriptures in our church, but that's no reason to
+downplay their importance and truth. If we spend our time looking for big
+miracles and =E2=80=9Cmeaningful=E2=80=9D things, we are going to lose sigh=
+t of the
+countless simple wonders and tender mercies that are abundant in our lives.
+Look for the details. Look for God's love. I promise that you will find it.
+
+Saturday
+My dreams were actually insane tonight. Dreamed about:
+Kanye, birds turning into burgers that when placed on my head communicated
+with me, pizza, fishing watches out of sand with my companion, weird stuff
+
+Chivalry is not dead!
+Today we studied the Book of Mormon with members, and helped give some
+water to an almost dead cat at the church. We were also able to do some
+housing and gave out a decent amount of Eikaiwa flyers. There were
+definitely a few people we met with good potential! Pray that they will
+follow through on what they felt and call us =F0=9F=98=81Earlier today we w=
+ere able
+to meet with Katayama san and talk a bit about his thoughts on religion. I
+can tell that there's a change working in his heart. We were able to join a
+small concert that he invited us to, and it was pretty neat. There were 3
+ladies performing songs from Gibli movies, and before the performance I
+noticed they were struggling to set up one of their phones against a box to
+record their performance. So, with my nice fancy phone stand, I strolled
+over and offered It to them to use. They were super happy!! At amother
+point today I also got the door for a lady wheeling product into a Combini;
+Chivalry isn't dead. =F0=9F=98=8E=F0=9F=98=8E
+
+Sunday
+Long long long long long
+Today we were at the church from 9AM until 5PM. It was all pretty
+productive, but definitely took a loooong time. We were so hungry by the
+end =F0=9F=98=85
+
+=F0=9F=8C=9FSome more poetry? Don't mind me-=F0=9F=8C=9F
+
+Trains trains trains trains trains
+Trains trains trains trains trains trains trains
+Trains trains trains trains trains
+
+This could be just a personal problem
+But writing the same word time after time
+I begin to question the truth in the spelling
+And the spelling certainly questions mine
+
+I need to go to the bathroom
+I haven't since I left the church
+And I fear I face doom
+When I feel my stomach lurch
+
+My companion was asked to order me some water
+From the vending machine.
+However, I felt the urge to slaughter
+When a different drink he handed me
+(An exaggeration by the way lol)
+
+A face in the fog in my mind
+I don't know whose it may be
+Honestly, I don't mind
+As long as I can see
+A face in the fog in my mind
+I don't know whose it may be
+Honestly, I don't mind
+As long as I can see
+That there's a reason to move past the trials and grief that at times we
+experience
+It's not going to last forever, I trust
+I'm willing to bet more than a pence
+That it'll be for my good, therefore my hardships are a must
+A face in the fog smiles back
+
+=E8=8A=B1=E3=81=8C=E5=92=B2=E3=81=8F
+=E3=81=A7=E3=81=AF=E3=81=AA=E3=81=84=E3=83=BC=E7=AC=91
+=E6=9A=91=E3=81=99=E3=81=8E=E3=81=A0
+
+=E7=A7=8B=E6=9D=A5=E3=82=93=E3=81=AD
+=E6=97=A5=E3=81=8C=E7=B5=82=E3=82=8F=E3=82=93=E3=81=AD=E3=83=BC
+=E3=81=AD=E3=81=87=E3=83=BC =E3=81=AA=E3=81=9C=EF=BC=9F
+
+=E3=82=A6=E3=82=BD=E3=81=A3=E3=81=BD=E3=81=84
+=E5=83=95=E3=81=AE=E8=A9=A9=E3=81=8C =E3=81=A1
+=E3=82=87=E3=81=A3=E3=81=A8=E5=A4=89
+
+Pday
+Today has been crazy already. We started off the day by calling our
+families at the church, then started biking to a pretty far away Mcdonalds
+to meet up with a girl named Yuzuki. On the way we stopped by the trusty
+card shop and got some beyond reasonably discounted cards, then biked like
+30-40 minutes in the heat. It was a pretty fun bike ride, and we got to see
+a few places I've never been to before in Tsuyama along the way. We got
+there a decent bit earlier than expected, so we ordered a drink and waited
+for Yuzuki to show up. Yuzuki showed up, we ate and talked for a little
+while, and explained to her a bit about the word of wisdom. She was pretty
+surprised that we don't drink tea or coffee! She said she works at
+Starbucks and I told her about how Sakurako from Sennan works at a caf=C3=
+=A9 and
+is planning on getting baptized this year =F0=9F=98=B2 They are only a year=
+ apart
+from each other, so hopefully Yuzuki San can consider joining our church as
+something that is a possibility for her. After Mcdonalds, we biked over to
+the shopping mall and took some photos at a photo booth, and walked around
+the dollar store before realizing we had to leave right then or we wouldn't
+be able to take our train! So, we said goodbye and rushed to the station=E2=
+=80=A6
+we just barely made it. On the way Nakazawa=E9=95=B7=E8=80=81=E2=80=99s bac=
+k tire Popped, and a
+lady almost ran me over. We are gonna have to worry about the bike when we
+get back, but somehow even with the flat we were able to make it to the
+station in the nick of time. After that, it was just trains until we made
+it to Yonago. At least I hope we made it! Guess We will find out next week
+=E2=9C=8C=EF=B8=8F
+
+Well, congrats! You've made it to the end of my email. I love you so much!!
+
+Let's do our best this next week!
+
+Love, Elder Killian
+
+--000000000000031374063dbe26b4
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto">Welcome to Part 2 =E2=9C=8C=EF=B8=8F=F0=9F=98=B2=E2=9C=8C=
+=EF=B8=8F<div dir=3D"auto"><br></div><div dir=3D"auto">Tuesday</div><div di=
+r=3D"auto">Today was an awesome DCM in person! We actually did make it to T=
+ottori, and we learned a lot as well! We all met together afterwards to eat=
+ Udon (and the desert we brought all the way to Yonago). The rest of our da=
+y was unfortunately traveling back home lol. The trains do not like us.</di=
+v><div dir=3D"auto"><br></div><div dir=3D"auto">Wednesday</div><div dir=3D"=
+auto">Today we visited Ogi San again, and brought him some fruit! He was su=
+per reluctant to take any but in the end agreed to take one. Later we will =
+visit him again! We tried some housing on the way back to the church, to li=
+ttle avail. No reason to be discouraged though! I believe that we are leavi=
+ng an impact on even the people that initially refuse us. Today we also met=
+ up and got some ramen for dinner with Mitani Kyoudai!! Great day!</div><di=
+v dir=3D"auto"><br></div><div dir=3D"auto">Thursday</div><div dir=3D"auto">=
+Today was SKK so we didn&#39;t do much besides planning. It was pretty prod=
+uctive as far as planning goes, so that&#39;s great! We also had the lesson=
+ with Mitani Kyoudai at the church, and afterwards Japanese class at the co=
+mmunity center. I swear I need to start tape recording these conversations.=
+ I swear the mix of personalities between us at that table in the community=
+ center is crazy. Fujita Sensei referenced =E2=80=9CLets Make a Deal=E2=80=
+=9D and we had to guess which of 3 boxes a toy car was inside of. It was in=
+sanely deep psychological stuff and I felt my brain like grow 3 sizes even =
+if I can=E2=80=99t explain anything that I learned that night. Next time I&=
+#39;m gonna bring Uno and we are gonna play it at our table lol. I=E2=80=99=
+m looking forward to it!!=C2=A0</div><div dir=3D"auto"><br></div><div dir=
+=3D"auto">Dreamed about =E3=81=95=E3=81=8F=E3=81=A1=E3=82=93, Bananas, an a=
+rcade (maybe?) =E6=9B=B8=E5=BA=97=E4=BC=9A</div><div dir=3D"auto"><br></div=
+><div dir=3D"auto">Friday</div><div dir=3D"auto">Today we did some sign str=
+eeting in front of a high school! Well, we started off by doing sign street=
+ing. The approach that Nakazawa=E9=95=B7=E8=80=81 wanted to use was to try =
+drawing pokemon for students, then invite them to our Eikawa. We ended talk=
+ing with a handful of students but only 3 took a request for the drawing. T=
+he first person was a girl who we&#39;ve talked with a couple times randoml=
+y at this point. She&#39;s very quiet and composed, and even though we didn=
+&#39;t talk with her about the gospel this time around, I really feel like =
+she would listen and have an interest in it if we are genuine with her. Aft=
+er our finding at the high school, we headed back to the church for game ni=
+ght. I dominated uno as usual, and played some super fun ping pong with Mat=
+suoka San. We shared a couple scriptures for our spiritual thought, here th=
+ey are:=C2=A0</div><div dir=3D"auto">Alma 37:6-7</div><div dir=3D"auto">6 N=
+ow ye may suppose that this is foolishness in me; but behold I say unto you=
+, that by small and simple things are great things brought to pass; and sma=
+ll means in many instances doth confound the wise. 7 And the Lord God doth =
+work by means to bring about his great and eternal purposes; and by very sm=
+all means the Lord doth confound the wise and bringeth about the salvation =
+of many souls.</div><div dir=3D"auto">These are pretty famous scriptures in=
+ our church, but that&#39;s no reason to downplay their importance and trut=
+h. If we spend our time looking for big miracles and =E2=80=9Cmeaningful=E2=
+=80=9D things, we are going to lose sight of the countless simple wonders a=
+nd tender mercies that are abundant in our lives. Look for the details. Loo=
+k for God&#39;s love. I promise that you will find it.</div><div dir=3D"aut=
+o"><br></div><div dir=3D"auto">Saturday</div><div dir=3D"auto">My dreams we=
+re actually insane tonight. Dreamed about:</div><div dir=3D"auto">Kanye, bi=
+rds turning into burgers that when placed on my head communicated with me, =
+pizza, fishing watches out of sand with my companion, weird stuff</div><div=
+ dir=3D"auto"><br></div><div dir=3D"auto">Chivalry is not dead!</div><div d=
+ir=3D"auto">Today we studied the Book of Mormon with members, and helped gi=
+ve some water to an almost dead cat at the church. We were also able to do =
+some housing and gave out a decent amount of Eikaiwa flyers. There were def=
+initely a few people we met with good potential! Pray that they will follow=
+ through on what they felt and call us =F0=9F=98=81Earlier today we were ab=
+le to meet with Katayama san and talk a bit about his thoughts on religion.=
+ I can tell that there&#39;s a change working in his heart. We were able to=
+ join a small concert that he invited us to, and it was pretty neat. There =
+were 3 ladies performing songs from Gibli movies, and before the performanc=
+e I noticed they were struggling to set up one of their phones against a bo=
+x to record their performance. So, with my nice fancy phone stand, I stroll=
+ed over and offered It to them to use. They were super happy!! At amother p=
+oint today I also got the door for a lady wheeling product into a Combini; =
+Chivalry isn&#39;t dead. =F0=9F=98=8E=F0=9F=98=8E</div><div dir=3D"auto"><b=
+r></div><div dir=3D"auto">Sunday</div><div dir=3D"auto">Long long long long=
+ long</div><div dir=3D"auto">Today we were at the church from 9AM until 5PM=
+. It was all pretty productive, but definitely took a loooong time. We were=
+ so hungry by the end =F0=9F=98=85</div><div dir=3D"auto"><br></div><div di=
+r=3D"auto">=F0=9F=8C=9FSome more poetry? Don&#39;t mind me-=F0=9F=8C=9F</di=
+v><div dir=3D"auto"><br></div><div dir=3D"auto">Trains trains trains trains=
+ trains</div><div dir=3D"auto">Trains trains trains trains trains trains tr=
+ains</div><div dir=3D"auto">Trains trains trains trains trains</div><div di=
+r=3D"auto"><br></div><div dir=3D"auto">This could be just a personal proble=
+m</div><div dir=3D"auto">But writing the same word time after time</div><di=
+v dir=3D"auto">I begin to question the truth in the spelling</div><div dir=
+=3D"auto">And the spelling certainly questions mine</div><div dir=3D"auto">=
+<br></div><div dir=3D"auto">I need to go to the bathroom</div><div dir=3D"a=
+uto">I haven&#39;t since I left the church</div><div dir=3D"auto">And I fea=
+r I face doom</div><div dir=3D"auto">When I feel my stomach lurch</div><div=
+ dir=3D"auto"><br></div><div dir=3D"auto">My companion was asked to order m=
+e some water</div><div dir=3D"auto">From the vending machine.</div><div dir=
+=3D"auto">However, I felt the urge to slaughter</div><div dir=3D"auto">When=
+ a different drink he handed me</div><div dir=3D"auto">(An exaggeration by =
+the way lol)</div><div dir=3D"auto"><br></div><div dir=3D"auto">A face in t=
+he fog in my mind</div><div dir=3D"auto">I don&#39;t know whose it may be</=
+div><div dir=3D"auto">Honestly, I don&#39;t mind</div><div dir=3D"auto">As =
+long as I can see</div><div dir=3D"auto">A face in the fog in my mind</div>=
+<div dir=3D"auto">I don&#39;t know whose it may be</div><div dir=3D"auto">H=
+onestly, I don&#39;t mind</div><div dir=3D"auto">As long as I can see</div>=
+<div dir=3D"auto">That there&#39;s a reason to move past the trials and gri=
+ef that at times we experience</div><div dir=3D"auto">It&#39;s not going to=
+ last forever, I trust</div><div dir=3D"auto">I&#39;m willing to bet more t=
+han a pence</div><div dir=3D"auto">That it&#39;ll be for my good, therefore=
+ my hardships are a must</div><div dir=3D"auto">A face in the fog smiles ba=
+ck</div><div dir=3D"auto"><br></div><div dir=3D"auto">=E8=8A=B1=E3=81=8C=E5=
+=92=B2=E3=81=8F</div><div dir=3D"auto">=E3=81=A7=E3=81=AF=E3=81=AA=E3=81=84=
+=E3=83=BC=E7=AC=91</div><div dir=3D"auto">=E6=9A=91=E3=81=99=E3=81=8E=E3=81=
+=A0</div><div dir=3D"auto"><br></div><div dir=3D"auto">=E7=A7=8B=E6=9D=A5=
+=E3=82=93=E3=81=AD</div><div dir=3D"auto">=E6=97=A5=E3=81=8C=E7=B5=82=E3=82=
+=8F=E3=82=93=E3=81=AD=E3=83=BC</div><div dir=3D"auto">=E3=81=AD=E3=81=87=E3=
+=83=BC=E3=80=80=E3=81=AA=E3=81=9C=EF=BC=9F</div><div dir=3D"auto"><br></div=
+><div dir=3D"auto">=E3=82=A6=E3=82=BD=E3=81=A3=E3=81=BD=E3=81=84</div><div =
+dir=3D"auto">=E5=83=95=E3=81=AE=E8=A9=A9=E3=81=8C=E3=80=80=E3=81=A1</div><d=
+iv dir=3D"auto">=E3=82=87=E3=81=A3=E3=81=A8=E5=A4=89</div><div dir=3D"auto"=
+><br></div><div dir=3D"auto">Pday</div><div dir=3D"auto">Today has been cra=
+zy already. We started off the day by calling our families at the church, t=
+hen started biking to a pretty far away Mcdonalds to meet up with a girl na=
+med Yuzuki. On the way we stopped by the trusty card shop and got some beyo=
+nd reasonably discounted cards, then biked like 30-40 minutes in the heat. =
+It was a pretty fun bike ride, and we got to see a few places I&#39;ve neve=
+r been to before in Tsuyama along the way. We got there a decent bit earlie=
+r than expected, so we ordered a drink and waited for Yuzuki to show up. Yu=
+zuki showed up, we ate and talked for a little while, and explained to her =
+a bit about the word of wisdom. She was pretty surprised that we don&#39;t =
+drink tea or coffee! She said she works at Starbucks and I told her about h=
+ow Sakurako from Sennan works at a caf=C3=A9 and is planning on getting bap=
+tized this year =F0=9F=98=B2 They are only a year apart from each other, so=
+ hopefully Yuzuki San can consider joining our church as something that is =
+a possibility for her. After Mcdonalds, we biked over to the shopping mall =
+and took some photos at a photo booth, and walked around the dollar store b=
+efore realizing we had to leave right then or we wouldn&#39;t be able to ta=
+ke our train! So, we said goodbye and rushed to the station=E2=80=A6 we jus=
+t barely made it. On the way Nakazawa=E9=95=B7=E8=80=81=E2=80=99s back tire=
+ Popped, and a lady almost ran me over. We are gonna have to worry about th=
+e bike when we get back, but somehow even with the flat we were able to mak=
+e it to the station in the nick of time. After that, it was just trains unt=
+il we made it to Yonago. At least I hope we made it! Guess We will find out=
+ next week =E2=9C=8C=EF=B8=8F</div><div dir=3D"auto"><br></div><div dir=3D"=
+auto">Well, congrats! You&#39;ve made it to the end of my email. I love you=
+ so much!!</div><div dir=3D"auto"><br></div><div dir=3D"auto">Let&#39;s do =
+our best this next week!</div><div dir=3D"auto"><br></div><div dir=3D"auto"=
+>Love, Elder Killian</div><div dir=3D"auto"><br></div></div>
+
+--000000000000031374063dbe26b4--

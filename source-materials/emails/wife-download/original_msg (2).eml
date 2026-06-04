@@ -1,0 +1,399 @@
+Delivered-To: killianfamily@gmail.com
+Received: by 2002:a05:6022:b20f:b0:6f:9629:2a79 with SMTP id bg15csp818729lab;
+        Tue, 13 May 2025 20:49:18 -0700 (PDT)
+X-Received: by 2002:a17:907:7fa0:b0:ad2:4e5e:aaa1 with SMTP id a640c23a62f3a-ad4f7136066mr201052866b.12.1747194557985;
+        Tue, 13 May 2025 20:49:17 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1747194557; cv=none;
+        d=google.com; s=arc-20240605;
+        b=M1iqlOy/lwVgxDN9eJbYH5F4bf9jyr2tix93ihc00tR/HaowRsSyodY0l6sMyNJjYd
+         VgKmU9hBwcfwBFHn9Y2Nl/MRVvfiGh6qCYOc0xC0yA75S/aT0HLSN0u8+A53ypeTlPds
+         PdADBlbLJzjTdCOSKv3Ic8ik8kUaU+Bv2rDSFddB7l80/bIGv6I9d82w8V2sLKj/4KgT
+         mb2vrPsn6lFzhXRnKJBNm7bWGBjYMYfA8X2FLZayXPq2bCshVKRcMfV7y0Rwfsa6zudk
+         W0bgHsKK+tdaV54BZ1TxSJZPczhLnCgDxOAtBty3lPRzM5lIUmZSdJ4ydH8yaZB2KdPK
+         ElGg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=W7Gp1vnKY2GfiVf4YTYnT4tLoqytbfD2a3zzXTPNKR4=;
+        fh=YV2lJTWLy9+vtE/lRrQJmQ4sGdf7fKsQrloTRmIHfcg=;
+        b=j09ybNnlWZ9xvlRiPwj+8vIiiaLteQUuRK/7UIuJfYhrhT6ctM+fOu5+XIB1PjksW9
+         50UDoqMgd2sbEMw9gTzDU+JoDs6hJTVSCjnNeDwIyXwQbOEuR1Vbio1efaMrEkNFT4xC
+         BDqdjX73kASwzQgpYmvddZeDzPe+KZOhXgeVL9EpFrVmKLEste30Et8ic6ZhSPvX1eCR
+         z7mxj1L6m6UEmcX7P07iK2dEu8oisZs2thmbwyJ+L3iby5E8kKM3DLFwG/PAbiuLzFyh
+         iRLrPOE6t0F3+kSUgyIJd+wkgUYe8GG0YG5PTvuw1EVvRTDXxrwoZ+X5Km+owxHEJ/b5
+         tCTw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@missionary.org header.s=google header.b=YwoP8DvE;
+       spf=pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=kaden.killian@missionary.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=missionary.org;
+       dara=pass header.i=@gmail.com
+Return-Path: <kaden.killian@missionary.org>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id a640c23a62f3a-ad21948d623sor562480666b.5.2025.05.13.20.49.17
+        for <killianfamily@gmail.com>
+        (Google Transport Security);
+        Tue, 13 May 2025 20:49:17 -0700 (PDT)
+Received-SPF: pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@missionary.org header.s=google header.b=YwoP8DvE;
+       spf=pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=kaden.killian@missionary.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=missionary.org;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=missionary.org; s=google; t=1747194557; x=1747799357; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=W7Gp1vnKY2GfiVf4YTYnT4tLoqytbfD2a3zzXTPNKR4=;
+        b=YwoP8DvEGA6p0BBMI4ad/5+xfUFEeY0xulhCe8N3FApVbw3WQAYD9IMX4GjkSEsM4y
+         8zat95brYrjJ4AGFm73hgBl+wVzV4jXwo+XeX++a1NdOHlS9nI8bl0xujJJHhndKwlZh
+         WcesC9JmNP+YYlJmkaSYmoA5dm5VaIIWPcML4HFJKhHrQxiJRCM/kr96lntuVKL37LZO
+         xch6qq7yJjhpG4z+6iFyg6upiMb2YXINyiK40sHJfZSSiIhTYLxNdK1fm8edgnzYYxbK
+         W3pBXQH4llTkrUjhan4G6nMBzPnWvk0rMxwvdCj2UQKT5OE/IilEWJ1N8cX25PGMRtsz
+         Gz1Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1747194557; x=1747799357;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=W7Gp1vnKY2GfiVf4YTYnT4tLoqytbfD2a3zzXTPNKR4=;
+        b=hXIpuQH9sLE/BGPHH5XIh2oeCcErFxCiUAj3mDMS+IH/8u0pKIoWUfMD8oN1heC3Sl
+         8xKyHsSzeKvwmK5mOiBa60J9sqaxVvQvhJpvZbu5Mf0JjNM42SWjzZMUx5BKX6l6hn8+
+         cEIxQGAZfqdJlxqJEIwP5cic8od6hZVqgeLAwEI6Fg97GAPvjrRNpAdTdPINB97fs8Ps
+         ncYy86HA0HgIDjMVJKOhQMiCzjY4AELJFCpaLcUJPxWpyVw4eia9t/6RhCU+xBFkCm0/
+         Txc+ic3lk5bUyjOeEGQ2mm34cVPk+8J3wLrUyyFrIJX7P4NiP+52/wSr1YJCctstMRup
+         Sz1Q==
+X-Gm-Message-State: AOJu0Yx2o3WRZ8YUegz0k1o1PWci9l7L5BeEiNpeEM0zYlsgPf7PaTUl
+	remqWRHH5VGriJRccfV9ccitgb+m0gGteHMlqiO6dxrTbN36K+UatbAGX3UABxQQSdD6MjzfwZ8
+	Fup2xbD6Bbng0VJ83I4GFzl/U/X/swsY94a2GtgMyGBpRjiUzNoFjOu/oJFf0/jfO/0iiVxFXpC
+	J2iNAfoltbJFbtl06pCgzDVEyvHzK8m+z8oeJEhrkPSag3uswXuhX/6on97YGGeld0SYCGGJ1HQ
+	QmcVUwt8XW4LaAjXLo9/h+VgbvagVSKFwSvgyHIolqr2Hq3pAu+ZGlAEJ9v2TEZbtl9g4sF
+X-Gm-Gg: ASbGncvDejL8vhzUkirM/9mETuCEeD6r0oed3+XFLureL1IiPBAGwNLJUw4ge1kNhe5
+	KEba4e/V57iStV48puegaq1WiOYAMA5rsB3WPXIdHmHwGB9mYhsnppYDxCp8KPaVaxpjgXjhawq
+	cqHf1D7SU3b+b4pxTtdMb+b/fN+D2/2GtHTSuRlgoz8g==
+X-Google-Smtp-Source: AGHT+IFFYeYJ8cxJzROpoxb22Vmy/7RKeo0MVg6PBKKqYkVeK5rcbtM/IBOfBRyQMncUVmaLfC/i+i+EKd43L54W55E=
+X-Received: by 2002:a17:907:a4c6:b0:ad2:3f9a:64a5 with SMTP id
+ a640c23a62f3a-ad4f74ca26cmr169279266b.41.1747194556773; Tue, 13 May 2025
+ 20:49:16 -0700 (PDT)
+MIME-Version: 1.0
+From: Kaden Killian <kaden.killian@missionary.org>
+Date: Wed, 14 May 2025 12:49:04 +0900
+X-Gm-Features: AX0GCFvDRuWHIfOZqNMKvhxt-Muw-D7LAPX6buCnkN0BKvy_nUGwAjzHpnKUBvM
+Message-ID: <CABgTvga-sOgkgjGPF8BOTWTPSEkBC5DoqjoaBZ0GYKahdieV4w@mail.gmail.com>
+Subject: 
+To: Tanya Killian <killianfamily@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000e907db0635106ec8"
+X-CLOUD-SEC-AV-Sent: true
+X-CLOUD-SEC-AV-Info: missionarymail,google_mail,monitor
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+
+--000000000000e907db0635106ec8
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Tuesday
+Interviews with Sano=E4=BC=9A=E9=95=B7 and DCM! It was awesome. Because we =
+were in Wakayama
+for DCM, we were able to go over to eat dinner at a Filipino member's
+house. Her name (or at least what we call her is V=E5=A7=89=E5=A6=B9(V shim=
+ai)) I ended up
+sitting by their water cooler and V=E5=A7=89=E5=A6=B9 was laughing to tears=
+ about how it
+was a trap and now I have to get water for everyone when they need refills.
+I was also laughing so much to the point of tears just because of how funny
+she thought this simple thing was. It was a riot. She made a bunch of
+different food, one thing was like crossections of pig leg or something;
+the texture made it so hard to eat, I needed to chew it with something else
+in my mouth (I didn't by the way lol). I only had a third then gave the
+rest to my companion. Super sweet family. When we were back home in our
+apartment that night a member showed up with food at our apartment at
+almost midnight, it was nuts. He's not 100% with it I don't think, but he's
+super kind to bring by food.
+
+Wednesday we stopped by the art store lady again, this time we were able to
+put some of our Eikaiwa flyers in her shop! She also sent me out of the
+store with more art supplies but made me not pay for it =F0=9F=98=AD=F0=9F=
+=98=AD she's
+Impossible bro I literally wanna help out her store. She's so sweet, we
+invited her to our Eikaiwa, gonna try and invite her to church next time we
+meet. Also they are closed on Sundays so there's a good chance she can!!!
+Tonight we tried out a game night instead of Eikaiwa, and everyone loved it
+but Shiko lol. He can get over it though =F0=9F=98=82=F0=9F=98=82 We played=
+ a bit of poker
+together so hopefully that helped him enjoy it a bit lol. He really lives
+Eikaiwa. It went pretty well in general, we are going to try it on the
+first Wednesday of every month going forward.
+
+Thursday
+Today was awesome. We got to meet with Setsuko and her friend Asako to play
+Ground Golf! Sister Dono agreed to join us for the lesson, but she really
+just got roped into playing Ground Golf with us lol. I could tell she
+wasn't maybe thrilled lol. afterwards though, she was able to talk a lot
+about the Church with Setsuko. She also explained a bit of the role that
+women play in God's work. It was brief, but really neat. Hopefully we can
+have Asako more involved next chance we have a lesson. Before the Ground
+Golf Magbago=E9=95=B7=E8=80=81 and I went to Wendy's and actually got some =
+food. Low-key
+=E2=AC=87=EF=B8=8F=F0=9F=97=9D mega mid, way better in America. On the way =
+home from Ground Golf, we
+stopped by a member's house and left a note since they weren't there. Later
+that day they actually called and said thanks! =F0=9F=99=8F Tonight was our=
+ last
+dinner outing with Jiro, he is going to Australia! We went to an Udon shop,
+it was super tasty. Jiro asked us some weird questions in the car ride too
+which was fun lol. Probably don't wanna write them in my email lol. We
+figured out more of where he'll be in Australia so we can refer him better.
+We exchanged contact info and sent him off with a hug.
+
+Friday
+We got up pretty early this morning to go all the way down to Gobo to
+participate in an Eikaiwa at a high school?! It was crazy. We walked almost
+2 hours from the station to the school, it was a long walk. We got there
+and I felt like I was in an anime. It was weird to be in a Japanese school.
+It was fun to talk with the students, but some of them were less than
+enthusiastic lol. Looking forward to next month=E2=80=99s class (if I'm sti=
+ll
+around). I also met a guy at church fixing the Air conditioning, When I
+asked him if he knew a Brother Killian, he said yeah, I do? And I told him
+he's my uncle and his jaw just dropped lol. He also happened to see us when
+we went to get Udon too lol. He=E2=80=99s super awesome =F0=9F=98=81
+
+Saturday
+We had our first Eikaiwa class in Ozaki! Unfortunately there were only a
+few previous participants that showed up, and there weren't any kids that
+came for the youth class =F0=9F=98=82 Before now we haven't exactly had man=
+y chances
+to get the word out so there's still hope =F0=9F=98=81 today we also got so=
+me tasty
+Okonomiyaki at a shop called Mugen (endless). It was gas.
+
+On Sunday I gave my talk! It was fabulous. I thought it went well. Below is
+what I read from and translated in Japanese. It's pretty basic but it was
+tricky on the fly haha.
+
+My talk
+
+By Kaden Killian
+
+(Explain how I always title my talks that)
+
+Today I have been asked to talk missionary work
+
+I have been a missionary for less than a year
+
+Just like my introduction paper says, I have served in ibaraki, Marugame,
+and now in Sennan.
+
+I haven't been a missionary for very long, but I have already learned so
+much. I believe that everyone of you guys can learn through missionary work
+as well
+
+I think that everyone can grow from a mission. There are new experiences,
+you meet new people, and you even get to live with a lot of different
+companions throughout your mission. I have learned so much from my past and
+present companions.
+
+Like I said, I think everyone probably will grow from a mission, but there
+are a lot of things that we can do that will change how much we grow.
+
+For me, I have found that I have learned and grown the most by turning
+outside of myself, and looking to those around me. This could be friends,
+ward members, and even my companions.
+
+Basically, by turning outwards we are becoming more like the Savior, and we
+are doing Missionary work.
+
+I want to talk a little bit about what the meaning of missionary work is. I
+think that missionary work is teaching others like the Savior would. This
+of course can be about the gospel, but what else did Jesus Christ do
+besides just teaching about the gospel?
+
+Let's read some scriptures to find out.
+
+3rd Nephi 11:9 he reached out
+And it came to pass that he stretched forth his hand=E2=80=A6
+
+3rd Nephi 17:7 he healed
+=E2=80=A6Bring them hither and I will heal them, for I have compassion upon=
+ you; my
+bowels are filled with mercy.
+
+Mark 8:6 he fed
+6 And he commanded the people to sit down on the ground: and he took the
+seven loaves, and gave thanks, and brake, and gave to his disciples to set
+before them; and they did set them before the people
+
+These are a few things that we can do to do missionary work. I would invite
+each of you to try and see what other things that Jesus did in the
+scriptures during your own studies.
+
+I'd like to recount one of my experiences I had back in Marugame. One time
+I was by the beach with my companion Elder Martinson; While we were over
+there, we saw a lady picking up trash. I noticed some trash nearby, and
+decided to go over and help her out. She was very happy, and we were able
+to introduce ourselves. She gave us some treats, then went to find nearby
+workers to give treats to as well!
+
+She reached out, she fed, and she healed (with treats).
+
+This lady set a good example for me and my companion. She did not know us,
+or the workers, and she was in a place that she did not know. I think that
+we are the same way.
+
+In my mission, as I have followed the example of this lady and the example
+of the Savior, I have seen miracles and success. As we prioritize knowing
+and interacting with those around us, we are following the example of the
+Savior. We can find comfort and reassurance as we follow God=E2=80=99s plan=
+ for us.
+
+I believe that Jesus is our Savior. I have really felt his love. I have
+also felt love from Heavenly father. I love you all, and I want to follow
+Christ's example. I believe that even though I am imperfect, I can feel
+peace as I try my best to be a good missionary.
+
+I say these things in the name of Jesus Christ, Amen.
+
+Also gonna wrap up my email here. Hope you guys are all doing well, I love
+hearing from you all so don't hesitate to send me an email or 3 or 4 =F0=9F=
+=98=89=F0=9F=98=82
+Love you guys!!! Things are going better lately, increased efforts and
+humility make all the difference.
+
+Elder Killian
+
+--000000000000e907db0635106ec8
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto">Tuesday<div dir=3D"auto">Interviews with Sano=E4=BC=9A=E9=
+=95=B7 and DCM! It was awesome. Because we were in Wakayama for DCM, we wer=
+e able to go over to eat dinner at a Filipino member&#39;s house. Her name =
+(or at least what we call her is V=E5=A7=89=E5=A6=B9(V shimai)) I ended up =
+sitting by their water cooler and V=E5=A7=89=E5=A6=B9 was laughing to tears=
+ about how it was a trap and now I have to get water for everyone when they=
+ need refills. I was also laughing so much to the point of tears just becau=
+se of how funny she thought this simple thing was. It was a riot. She made =
+a bunch of different food, one thing was like crossections of pig leg or so=
+mething; the texture made it so hard to eat, I needed to chew it with somet=
+hing else in my mouth (I didn&#39;t by the way lol). I only had a third the=
+n gave the rest to my companion. Super sweet family. When we were back home=
+ in our apartment that night a member showed up with food at our apartment =
+at almost midnight, it was nuts. He&#39;s not 100% with it I don&#39;t thin=
+k, but he&#39;s super kind to bring by food.</div><div dir=3D"auto"><br></d=
+iv><div dir=3D"auto">Wednesday we stopped by the art store lady again, this=
+ time we were able to put some of our Eikaiwa flyers in her shop! She also =
+sent me out of the store with more art supplies but made me not pay for it =
+=F0=9F=98=AD=F0=9F=98=AD she&#39;s Impossible bro I literally wanna help ou=
+t her store. She&#39;s so sweet, we invited her to our Eikaiwa, gonna try a=
+nd invite her to church next time we meet. Also they are closed on Sundays =
+so there&#39;s a good chance she can!!! Tonight we tried out a game night i=
+nstead of Eikaiwa, and everyone loved it but Shiko lol. He can get over it =
+though =F0=9F=98=82=F0=9F=98=82 We played a bit of poker together so hopefu=
+lly that helped him enjoy it a bit lol. He really lives Eikaiwa. It went pr=
+etty well in general, we are going to try it on the first Wednesday of ever=
+y month going forward.</div><div dir=3D"auto"><br></div><div dir=3D"auto">T=
+hursday</div><div dir=3D"auto">Today was awesome. We got to meet with Setsu=
+ko and her friend Asako to play Ground Golf! Sister Dono agreed to join us =
+for the lesson, but she really just got roped into playing Ground Golf with=
+ us lol. I could tell she wasn&#39;t maybe thrilled lol. afterwards though,=
+ she was able to talk a lot about the Church with Setsuko. She also explain=
+ed a bit of the role that women play in God&#39;s work. It was brief, but r=
+eally neat. Hopefully we can have Asako more involved next chance we have a=
+ lesson. Before the Ground Golf Magbago=E9=95=B7=E8=80=81 and I went to Wen=
+dy&#39;s and actually got some food. Low-key =E2=AC=87=EF=B8=8F=F0=9F=97=9D=
+ mega mid, way better in America. On the way home from Ground Golf, we stop=
+ped by a member&#39;s house and left a note since they weren&#39;t there. L=
+ater that day they actually called and said thanks! =F0=9F=99=8F Tonight wa=
+s our last dinner outing with Jiro, he is going to Australia! We went to an=
+ Udon shop, it was super tasty. Jiro asked us some weird questions in the c=
+ar ride too which was fun lol. Probably don&#39;t wanna write them in my em=
+ail lol. We figured out more of where he&#39;ll be in Australia so we can r=
+efer him better. We exchanged contact info and sent him off with a hug.</di=
+v><div dir=3D"auto"><br></div><div dir=3D"auto">Friday</div><div dir=3D"aut=
+o">We got up pretty early this morning to go all the way down to Gobo to pa=
+rticipate in an Eikaiwa at a high school?! It was crazy. We walked almost 2=
+ hours from the station to the school, it was a long walk. We got there and=
+ I felt like I was in an anime. It was weird to be in a Japanese school. It=
+ was fun to talk with the students, but some of them were less than enthusi=
+astic lol. Looking forward to next month=E2=80=99s class (if I&#39;m still =
+around). I also met a guy at church fixing the Air conditioning, When I ask=
+ed him if he knew a Brother Killian, he said yeah, I do? And I told him he&=
+#39;s my uncle and his jaw just dropped lol. He also happened to see us whe=
+n we went to get Udon too lol. He=E2=80=99s super awesome =F0=9F=98=81</div=
+><div dir=3D"auto"><br></div><div dir=3D"auto">Saturday</div><div dir=3D"au=
+to">We had our first Eikaiwa class in Ozaki! Unfortunately there were only =
+a few previous participants that showed up, and there weren&#39;t any kids =
+that came for the youth class =F0=9F=98=82 Before now we haven&#39;t exactl=
+y had many chances to get the word out so there&#39;s still hope =F0=9F=98=
+=81 today we also got some tasty Okonomiyaki at a shop called Mugen (endles=
+s). It was gas.</div><div dir=3D"auto"><br></div><div dir=3D"auto">On Sunda=
+y I gave my talk! It was fabulous. I thought it went well. Below is what I =
+read from and translated in Japanese. It&#39;s pretty basic but it was tric=
+ky on the fly haha.</div><div dir=3D"auto"><br></div><div dir=3D"auto">My t=
+alk</div><div dir=3D"auto"><br></div><div dir=3D"auto">By Kaden Killian</di=
+v><div dir=3D"auto"><br></div><div dir=3D"auto">(Explain how I always title=
+ my talks that)</div><div dir=3D"auto"><br></div><div dir=3D"auto">Today I =
+have been asked to talk missionary work</div><div dir=3D"auto"><br></div><d=
+iv dir=3D"auto">I have been a missionary for less than a year</div><div dir=
+=3D"auto"><br></div><div dir=3D"auto">Just like my introduction paper says,=
+ I have served in ibaraki, Marugame, and now in Sennan.</div><div dir=3D"au=
+to"><br></div><div dir=3D"auto">I haven&#39;t been a missionary for very lo=
+ng, but I have already learned so much. I believe that everyone of you guys=
+ can learn through missionary work as well</div><div dir=3D"auto"><br></div=
+><div dir=3D"auto">I think that everyone can grow from a mission. There are=
+ new experiences, you meet new people, and you even get to live with a lot =
+of different companions throughout your mission. I have learned so much fro=
+m my past and present companions.</div><div dir=3D"auto"><br></div><div dir=
+=3D"auto">Like I said, I think everyone probably will grow from a mission, =
+but there are a lot of things that we can do that will change how much we g=
+row.</div><div dir=3D"auto"><br></div><div dir=3D"auto">For me, I have foun=
+d that I have learned and grown the most by turning outside of myself, and =
+looking to those around me. This could be friends, ward members, and even m=
+y companions.</div><div dir=3D"auto"><br></div><div dir=3D"auto">Basically,=
+ by turning outwards we are becoming more like the Savior, and we are doing=
+ Missionary work.</div><div dir=3D"auto"><br></div><div dir=3D"auto">I want=
+ to talk a little bit about what the meaning of missionary work is. I think=
+ that missionary work is teaching others like the Savior would. This of cou=
+rse can be about the gospel, but what else did Jesus Christ do besides just=
+ teaching about the gospel?</div><div dir=3D"auto"><br></div><div dir=3D"au=
+to">Let&#39;s read some scriptures to find out.</div><div dir=3D"auto"><br>=
+</div><div dir=3D"auto">3rd Nephi 11:9 he reached out</div><div dir=3D"auto=
+">And it came to pass that he stretched forth his hand=E2=80=A6</div><div d=
+ir=3D"auto"><br></div><div dir=3D"auto">3rd Nephi 17:7 he healed</div><div =
+dir=3D"auto">=E2=80=A6Bring them hither and I will heal them, for I have co=
+mpassion upon you; my bowels are filled with mercy.</div><div dir=3D"auto">=
+<br></div><div dir=3D"auto">Mark 8:6 he fed</div><div dir=3D"auto">6 And he=
+ commanded the people to sit down on the ground: and he took the seven loav=
+es, and gave thanks, and brake, and gave to his disciples to set before the=
+m; and they did set them before the people</div><div dir=3D"auto"><br></div=
+><div dir=3D"auto">These are a few things that we can do to do missionary w=
+ork. I would invite each of you to try and see what other things that Jesus=
+ did in the scriptures during your own studies.</div><div dir=3D"auto"><br>=
+</div><div dir=3D"auto">I&#39;d like to recount one of my experiences I had=
+ back in Marugame. One time I was by the beach with my companion Elder Mart=
+inson; While we were over there, we saw a lady picking up trash. I noticed =
+some trash nearby, and decided to go over and help her out. She was very ha=
+ppy, and we were able to introduce ourselves. She gave us some treats, then=
+ went to find nearby workers to give treats to as well!</div><div dir=3D"au=
+to"><br></div><div dir=3D"auto">She reached out, she fed, and she healed (w=
+ith treats).</div><div dir=3D"auto"><br></div><div dir=3D"auto">This lady s=
+et a good example for me and my companion. She did not know us, or the work=
+ers, and she was in a place that she did not know. I think that we are the =
+same way.=C2=A0</div><div dir=3D"auto"><br></div><div dir=3D"auto">In my mi=
+ssion, as I have followed the example of this lady and the example of the S=
+avior, I have seen miracles and success. As we prioritize knowing and inter=
+acting with those around us, we are following the example of the Savior. We=
+ can find comfort and reassurance as we follow God=E2=80=99s plan for us.</=
+div><div dir=3D"auto"><br></div><div dir=3D"auto">I believe that Jesus is o=
+ur Savior. I have really felt his love. I have also felt love from Heavenly=
+ father. I love you all, and I want to follow Christ&#39;s example. I belie=
+ve that even though I am imperfect, I can feel peace as I try my best to be=
+ a good missionary.</div><div dir=3D"auto"><br></div><div dir=3D"auto">I sa=
+y these things in the name of Jesus Christ, Amen.</div><div dir=3D"auto"><b=
+r></div><div dir=3D"auto">Also gonna wrap up my email here. Hope you guys a=
+re all doing well, I love hearing from you all so don&#39;t hesitate to sen=
+d me an email or 3 or 4 =F0=9F=98=89=F0=9F=98=82 Love you guys!!! Things ar=
+e going better lately, increased efforts and humility make all the differen=
+ce.</div><div dir=3D"auto"><br></div><div dir=3D"auto">Elder Killian</div><=
+div dir=3D"auto"><br></div></div>
+
+--000000000000e907db0635106ec8--

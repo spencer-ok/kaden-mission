@@ -1,0 +1,203 @@
+Delivered-To: killianfamily@gmail.com
+Received: by 2002:a05:6022:b212:b0:ec:2671:57f3 with SMTP id bg18csp1563695lab;
+        Mon, 2 Mar 2026 05:27:07 -0800 (PST)
+X-Received: by 2002:a05:6402:270e:b0:65a:507b:c7bd with SMTP id 4fb4d7f45d1cf-65fddceeb96mr7593001a12.26.1772458026977;
+        Mon, 02 Mar 2026 05:27:06 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1772458026; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=Gd5tE/dQ6XND8Cekn8/fRigkeDxFNXs04ygpJ4fBfSMk3sIuGLoZjIzl6hDxLo7D7h
+         w1w6Hgp3w4km8kLOdtlhjrsCPTBdcU7+kU1JWGJqW76i0+z7sdEOCDTS3rzKiHnOQl+7
+         Bb4v9lvKOj2oFfRzZDH6z9pPy9HMlZ/J8S5SmPaAFrLKLXRX/RuXpN9cpry2+U1QJBqR
+         w7CqYoR13YxWhw1QAQdtfm/tRY755VdAok7UC0vZEK6zl/k5PmNtPzpxT+aGtls6Odce
+         NkzrMQfDFrgSlRWam3ca3Q8TOGeTVeRoovBbkjGkrmJ8CKBnUryNqY4FYkj/n1hS/lVm
+         AA0Q==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=CEU9Q9DNNP76d5kfP2srXRWsORc02bZS0oinOJoOKgE=;
+        fh=Z6qIxyYYRJ6j+FNssoCqK5Gc8S1S3uCnhgfLbiAK++k=;
+        b=O/JxL0dYsOwEGnI34w26hPXCxrsLL/mQe5HO39iDZkMpHKumna9G73UF/evk10g0ft
+         pXgYY5eRDH70LhjIUJcxUnxuQb+ibHPQU0ps4wvDlzvtIChGzqgan90EbVE4pYxVbBrL
+         DjgbFUJP1SK1Xn3hk9nIQe3HFS2GOmnvspixnd6IfexsEFZUs0qWsjBsVe17GzFwrXva
+         p6Ittomb3GanZAQ41eGt8qo+iD9MOLl58wuWvCcgTlsgxbBBr+xYj+Ci8MUdCuxPNlx0
+         VXcn0cUxzoeUmFLFLT3wozOmTkzKsKAS9s3L3VTMCPMweQrLbCsyiTXaiyagtPcvcz0o
+         wouw==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@missionary.org header.s=google header.b="YlrC/RVv";
+       arc=pass (i=1);
+       spf=pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=kaden.killian@missionary.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=missionary.org;
+       dara=pass header.i=@gmail.com
+Return-Path: <kaden.killian@missionary.org>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 4fb4d7f45d1cf-65fac073db3sor2520358a12.15.2026.03.02.05.27.06
+        for <killianfamily@gmail.com>
+        (Google Transport Security);
+        Mon, 02 Mar 2026 05:27:06 -0800 (PST)
+Received-SPF: pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@missionary.org header.s=google header.b="YlrC/RVv";
+       arc=pass (i=1);
+       spf=pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=kaden.killian@missionary.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=missionary.org;
+       dara=pass header.i=@gmail.com
+ARC-Seal: i=1; a=rsa-sha256; t=1772458026; cv=none;
+        d=google.com; s=arc-20240605;
+        b=ADjDHJa+8M3L7aIJIaoUhkXqbLt/vk1YzJDCPs5edkIxulNeaR/t2yNNcLCxqHuAqZ
+         bhlkayVS54YAacVLIwKjXJoVg63zKnw5NaCLPoHawNgOc4gpQ8YEkcoDpwj7XCpnwoA8
+         Y6P99PmZ35Z2uHAj12hK/R6xoBCRKVXoiAOEOzd4jQJ/rLkO4gvua8LjZqNzksimUoRi
+         OrR3Xr+8ghCK2691oLWwwhmqnUKxjLK4cZmCfOcpTVcAMer7WKVxEeei1zPiYfCool/B
+         JeqDajnqzNJ9A1JODGPf6xYBDoaONnjNAAOE4+1NWD8ncAx5l0V1hvt/mrQQgs6T9uyF
+         S17w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=CEU9Q9DNNP76d5kfP2srXRWsORc02bZS0oinOJoOKgE=;
+        fh=Z6qIxyYYRJ6j+FNssoCqK5Gc8S1S3uCnhgfLbiAK++k=;
+        b=IhuCLkJg4UOmazK2JDRYqzbQth4oWTs5VyWJNcv528OxysHr9qr61jl/u5+WUxD/YZ
+         Ex7yi40RL8QoVyw4LzyDY/RW84v7hjSr9nVucHNXBYpRhjTySHzcONG9LKPDx5CTNnUp
+         5i8leOzZfvcmVfWEUsfclm7XG9jnpKhiRUVc6FzZ22KzTVrBR7DumpByZm9+XaoHENF0
+         5DO+HXmGNgq/bOekhLdmHXLbxsguURkgZcduJyBFZ15RxqTRDPOePh2/q28tOZumQNNS
+         Gb3Fjt4Jtjwjq98q78vxon7ncYAJDk78H4mQFk12hxWOYAhVHBbHatsFEcs5eQus4Afp
+         rX1A==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=missionary.org; s=google; t=1772458026; x=1773062826; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=CEU9Q9DNNP76d5kfP2srXRWsORc02bZS0oinOJoOKgE=;
+        b=YlrC/RVvoG0uimm8nid1VimHoIW14EZUaENMiN6KZ2OGBCefgimwFAf0zx7Cg+kkzM
+         1Q/9dUDu5Dm/JfvLbLvoLjjSFaDu1VItmU6mlNjjFBAxUAPfRRhijO0DonNYtZTnKQdT
+         2I4ztuYSMp9wbuVqkF0l8kYtHzCvx1ovTpi1uyA/nlkO21f/0gJz+WtVhLjm+Ve53S0f
+         /4pCCOpWfeVNLSwV23x/bFKbXzfsFnyFSSPBd8QV5GZN2dcWbGRJ5Jcj/F2Wrwcgh8Z0
+         P7eu4y+UJEgefCxR5EwSHNq7m17Ruifb0m5xnvjjBjETKTn7D7/W70iLuyhCFrzXop2S
+         x+Sw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1772458026; x=1773062826;
+        h=to:subject:message-id:date:from:mime-version:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=CEU9Q9DNNP76d5kfP2srXRWsORc02bZS0oinOJoOKgE=;
+        b=lDOzt9BIC5YN35bO8mHzsNQic07S2YCvHcLrRZZDrZhhXriP+egtWHIl+iKD9AfQnW
+         QdFkLHyanHFH+r68E3tV/FGpB+p5j8/JqoHoU6MtMb9TKlNP/cWW2c3QQE/mb2lbhZ7K
+         mifIqaPO+1VcVH6lTnsOU/CHnni4uGmQyCApegEteNpzROLgQjNpRcwbvjDPt3PmUfRL
+         d0nTzrMviykoyZUAm3PnyEyNOghGDqBj5HgzlAqBG4tKv5w2sIH6Gj6KsT/jfigFgTAV
+         GmrJ5YRxvsB/8fgtIhx6hVDDfqJWCvB/9+dsk5vxXgHE/d0GgteTpYSqMIiFdqqGanmh
+         wUvA==
+X-Gm-Message-State: AOJu0YzyXTWdCs6n38KGqVwmbC5JkFh+zOUcwkTkxp6gUE0DlRjBllWZ
+	KulZFl0+DnnspeWByyhVipK8eXtAMg3fzKZHJeTE+B//fuVA03W4Lr7+AUXlX/KYI3tB21qhClW
+	NJf40wQIuDwkQPgSGjmxYCt603/hICMsFvuQs6HA5ruqHbfKW6D4=
+X-Gm-Gg: ATEYQzxx/tpn3UvsOcXYpbYPyKkzEPeRXEuSQE76I77j2RQGSYSC4v6SWhblYnNmYuI
+	q0e5MtM6WCoMNajUBCjMDECTEA66Y9WG1uLuozhR4Va2VeX8MhGlizIXz04oOAbLqycGMxz6XS1
+	4gNjsyFnPsZfhXtU+8aBu6c+speqF7mIEgcWbOwjy9aSAIXuNYg+EJLwRAqSYcCDN3nzs+bZN4K
+	e0BPvkCfqXZ9hdqC+x+rC68z+t+xeiSN+3OxrEzt3IoVR7fHmcCZrSZL9mMpm9V3nr0wDUllX2b
+	HGHuvHKYB6OV65U2ZPKuSQ/KGrj2wQNmPtMgU6o=
+X-Received: by 2002:a05:6402:35c4:b0:65b:a76d:7004 with SMTP id
+ 4fb4d7f45d1cf-65fddee7f52mr7326334a12.30.1772458026087; Mon, 02 Mar 2026
+ 05:27:06 -0800 (PST)
+MIME-Version: 1.0
+From: Kaden Killian <kaden.killian@missionary.org>
+Date: Mon, 2 Mar 2026 22:23:52 +0900
+X-Gm-Features: AaiRm52-Lqz3NZswpE38T1qgjPm4gb7qzqg2AYAveV6kvJnunwTQ4av_DzH4FIU
+Message-ID: <CABgTvgbh31LKH9f7jEAibDrQMXFCyQFU0Q-um69iBeWR4fk6Hw@mail.gmail.com>
+Subject: 2 AM Nightmare from Above (and a cockroach)
+To: Tanya Killian <killianfamily@gmail.com>, 
+	"Spencer Killian (Spencer K)" <spencerok@gmail.com>, Kyle Killian <kylekillian@gmail.com>
+Content-Type: multipart/alternative; boundary="0000000000000640cf064c0a8bcb"
+
+--0000000000000640cf064c0a8bcb
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Ignore the title of the email for now, and let's go over some cool things
+from this last week!
+
+We had Eikaiwa at a small high school, Elder Childs and I were joined by
+Elder McCord and Elder Stedler! It was pretty fun, and one of the kids is
+here on a scholarship for basketball and wants to come to church. Pretty
+lit =F0=9F=94=A5=F0=9F=94=A5
+
+We also visited Jian's house for the first time and got to meet his dad,
+who is super chill and used to be a Gymnast. We visited them twice in these
+past two weeks, and the second time I got to give Jian's dad a back
+massage. It was pretty lit.
+
+We have done a lot of cool art finding these past couple weeks, making
+watercolors and doodles and all kinds of things for people. I've had a
+great time spreading around the Gospel message with art!
+
+Lessons these past two weeks have been great; we invited our friend
+Yamamoto san to Baptism and got an "I'll think about it" response, but
+we're seeing growth in all of our friends! We have made plans to invite
+each of them to Baptism as soon as we can, and as the spirit guides.
+
+As for the title of my email, let me set the stage. It's 3:00 AM, and I
+awake to sone scary sounds from the top bunk. Sounds like some weird
+sputtering awfulness and then from the top bunk comes the rain of vomit.
+Elder Childs probably kept hurling over the edge of the bunk bed for like 3
+minutes straight. I was just kind of sitting there, stuck in the bottom
+bunk for fear of the napalm. I avoided getting covered in throw up, but I
+got some decent splash-age, but did throw away a blanket. I then got a
+clothespin on my nose and got up and swept all the vomit into a dustpan
+then a bag. Pretty Nasty lol. In the middle of everything a cockroach came
+from nowhere and I obliterated it. My comp was ok, the night before he had
+some raw squid thing and it did not agree with him. =F0=9F=98=82
+
+I've been learning about Humility and boldness recently.
+
+I've found it hard to be bold while feeling like I'm staying humble. How do
+I balance the two?
+
+If you have any ideas for me I'd love to hear from you!
+
+I love everyone of you so much. You are in my prayers. Look for God's hand
+in your life and you'll be surprised =F0=9F=94=A5=F0=9F=94=A5
+
+Love you!!
+
+Elder Killian
+
+--0000000000000640cf064c0a8bcb
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto">Ignore the title of the email for now, and let&#39;s go o=
+ver some cool things from this last week!<div dir=3D"auto"><br></div><div d=
+ir=3D"auto">We had Eikaiwa at a small high school, Elder Childs and I were =
+joined by Elder McCord and Elder Stedler! It was pretty fun, and one of the=
+ kids is here on a scholarship for basketball and wants to come to church. =
+Pretty lit =F0=9F=94=A5=F0=9F=94=A5</div><div dir=3D"auto"><br></div><div d=
+ir=3D"auto">We also visited Jian&#39;s house for the first time and got to =
+meet his dad, who is super chill and used to be a Gymnast. We visited them =
+twice in these past two weeks, and the second time I got to give Jian&#39;s=
+ dad a back massage. It was pretty lit.</div><div dir=3D"auto"><br></div><d=
+iv dir=3D"auto">We have done a lot of cool art finding these past couple we=
+eks, making watercolors and doodles and all kinds of things for people. I&#=
+39;ve had a great time spreading around the Gospel message with art!</div><=
+div dir=3D"auto"><br></div><div dir=3D"auto">Lessons these past two weeks h=
+ave been great; we invited our friend Yamamoto san to Baptism and got an &q=
+uot;I&#39;ll think about it&quot; response, but we&#39;re seeing growth in =
+all of our friends! We have made plans to invite each of them to Baptism as=
+ soon as we can, and as the spirit guides.</div><div dir=3D"auto"><br></div=
+><div dir=3D"auto">As for the title of my email, let me set the stage. It&#=
+39;s 3:00 AM, and I awake to sone scary sounds from the top bunk. Sounds li=
+ke some weird sputtering awfulness and then from the top bunk comes the rai=
+n of vomit. Elder Childs probably kept hurling over the edge of the bunk be=
+d for like 3 minutes straight. I was just kind of sitting there, stuck in t=
+he bottom bunk for fear of the napalm. I avoided getting covered in throw u=
+p, but I got some decent splash-age, but did throw away a blanket. I then g=
+ot a clothespin on my nose and got up and swept all the vomit into a dustpa=
+n then a bag. Pretty Nasty lol. In the middle of everything a cockroach cam=
+e from nowhere and I obliterated it. My comp was ok, the night before he ha=
+d some raw squid thing and it did not agree with him. =F0=9F=98=82</div><di=
+v dir=3D"auto"><br></div><div dir=3D"auto">I&#39;ve been learning about Hum=
+ility and boldness recently.</div><div dir=3D"auto"><br></div><div dir=3D"a=
+uto">I&#39;ve found it hard to be bold while feeling like I&#39;m staying h=
+umble. How do I balance the two?</div><div dir=3D"auto"><br></div><div dir=
+=3D"auto">If you have any ideas for me I&#39;d love to hear from you!</div>=
+<div dir=3D"auto"><br></div><div dir=3D"auto">I love everyone of you so muc=
+h. You are in my prayers. Look for God&#39;s hand in your life and you&#39;=
+ll be surprised =F0=9F=94=A5=F0=9F=94=A5</div><div dir=3D"auto"><br></div><=
+div dir=3D"auto">Love you!!</div><div dir=3D"auto"><br></div><div dir=3D"au=
+to">Elder Killian</div></div>
+
+--0000000000000640cf064c0a8bcb--

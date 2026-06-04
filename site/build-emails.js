@@ -16,6 +16,12 @@ const seenHashes = new Set();
 
 if (!fs.existsSync(IMAGES_OUT)) fs.mkdirSync(IMAGES_OUT, { recursive: true });
 
+// Load existing emails to preserve audio links
+let existingEmails = [];
+if (fs.existsSync(OUTPUT_PATH)) {
+  existingEmails = JSON.parse(fs.readFileSync(OUTPUT_PATH, 'utf8'));
+}
+
 // Load summaries if available
 let summaries = {};
 if (fs.existsSync(SUMMARIES_PATH)) {
@@ -28,7 +34,7 @@ const files = fs.readdirSync(EMAILS_DIR)
   .sort();
 
 // Skip admin/duplicate emails
-const skipPatterns = ['Confirmation-of-OnSite', 'Devotional-Invitation', 'Mailing-Address', 'Meet-the-trainers', 'Travel-Itinerary', 'Release-Letter'];
+const skipPatterns = ['Confirmation-of-OnSite', 'Devotional-Invitation', 'Mailing-Address', 'Meet-the-trainers', 'Travel-Itinerary'];
 const isSkip = f => skipPatterns.some(p => f.includes(p)) || f.startsWith('2024-03-');
 
 // Deduplicate: prefer non-FW version
@@ -86,8 +92,9 @@ for (const [key, file] of emailMap) {
   const subject = (lines[0] || '').replace('Subject: ', '').trim();
   const dateRaw = (lines[1] || '').replace('Date: ', '').trim();
   
-  // Get body (skip headers)
-  let bodyStart = 4;
+  // Get body (skip headers - find first blank line)
+  let bodyStart = lines.findIndex((l, i) => i > 0 && l.trim() === '') + 1;
+  if (bodyStart < 2) bodyStart = 3;
   let bodyText = lines.slice(bodyStart).join('\n').trim();
   
   // Strip forwarding headers
@@ -121,7 +128,11 @@ for (const [key, file] of emailMap) {
   const summaryKey = Object.keys(summaries).find(k => k.startsWith(dateStr + '_'));
   const summary = summaryKey ? summaries[summaryKey] : '';
 
-  emails.push({ date: dateStr, subject, body: htmlBody, images, summary });
+  // Preserve audio from existing emails.json
+  const prevEmail = existingEmails.find(e => e.date === dateStr && e.subject === subject);
+  const entry = { date: dateStr, subject, body: htmlBody, images, summary };
+  if (prevEmail && prevEmail.audio) entry.audio = prevEmail.audio;
+  emails.push(entry);
 }
 
 emails.sort((a, b) => a.date.localeCompare(b.date));

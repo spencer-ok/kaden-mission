@@ -9,6 +9,7 @@ layout: base.njk
     <p class="hero-subtitle">お帰りなさい</p>
     <p class="hero-dates">{{ site.missionStart }} – {{ site.missionEnd }}</p>
   </div>
+  <img class="hero-stamp" src="/assets/images/kaden-stamp.png" alt="Kaden's stamp">
 </header>
 
 <main>
@@ -200,7 +201,7 @@ layout: base.njk
           {% if email.images.length %}
           <div class="email-images">
             {% for img in email.images %}
-            {% set base = img | replace(".jpg", "") | replace(".jpeg", "") | replace(".png", "") | replace(".webp", "") %}
+            {% set base = img | replace(".jpg", "") | replace(".JPG", "") | replace(".jpeg", "") | replace(".JPEG", "") | replace(".png", "") | replace(".PNG", "") | replace(".webp", "") %}
             <a href="/assets/images/emails/{{ base }}-modal.jpg" class="email-thumb" onclick="var m=imgMeta[this.getAttribute('href')]||{}; openModal(this.href, m.c, m.d); return false;">
               <img src="/assets/images/emails/{{ base }}-thumb.jpg" alt="Photo" loading="lazy">
             </a>

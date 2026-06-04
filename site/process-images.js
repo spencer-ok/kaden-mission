@@ -29,10 +29,19 @@ const artFiles = new Set(
 );
 
 // Track hashes for deduplication
-const seenHashes = new Set();
+const MANIFEST_PATH = path.join(__dirname, 'src', '_data', 'hashManifest.json');
+let hashManifest = {};
+if (fs.existsSync(MANIFEST_PATH)) {
+  hashManifest = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8'));
+}
+const seenHashes = new Set(Object.values(hashManifest));
 
 function hashFile(filepath) {
-  return crypto.createHash('md5').update(fs.readFileSync(filepath)).digest('hex');
+  const fname = path.basename(filepath);
+  if (hashManifest[fname]) return hashManifest[fname];
+  const h = crypto.createHash('md5').update(fs.readFileSync(filepath)).digest('hex');
+  hashManifest[fname] = h;
+  return h;
 }
 
 function processImage(filepath, outDir) {
@@ -82,12 +91,28 @@ function parseDate(filename) {
 }
 
 const inventory = [];
+const inventoryFilenames = new Set();
+
+// Preserve existing inventory entries whose thumbs still exist on disk
+if (fs.existsSync(INVENTORY_PATH)) {
+  const prev = JSON.parse(fs.readFileSync(INVENTORY_PATH, 'utf8'));
+  prev.forEach(item => {
+    const dir = path.join(IMAGES_DIR, item.source);
+    if (fs.existsSync(path.join(dir, item.thumb))) {
+      inventory.push(item);
+      inventoryFilenames.add(item.filename);
+      if (hashManifest[item.filename]) seenHashes.add(hashManifest[item.filename]);
+    }
+  });
+  console.log(`Preserved ${inventory.length} existing entries`);
+}
 
 // --- Process email images ---
 if (fs.existsSync(EMAILS_DIR)) {
   const files = fs.readdirSync(EMAILS_DIR).filter(f => /\.(jpg|jpeg|png|webp)$/i.test(f) && !f.includes('-thumb') && !f.includes('-modal'));
   console.log(`Processing ${files.length} email images...`);
   files.forEach(f => {
+    if (inventoryFilenames.has(f)) { seenHashes.add(hashManifest[f] || hashFile(path.join(EMAILS_DIR, f))); return; }
     const filepath = path.join(EMAILS_DIR, f);
     const hash = hashFile(filepath);
     seenHashes.add(hash);
@@ -113,6 +138,7 @@ if (fs.existsSync(ART_DIR)) {
   const files = fs.readdirSync(ART_DIR).filter(f => /\.(jpg|jpeg|png|webp)$/i.test(f) && !f.includes('-thumb') && !f.includes('-modal'));
   console.log(`Processing ${files.length} art images...`);
   files.forEach(f => {
+    if (inventoryFilenames.has(f)) { seenHashes.add(hashManifest[f] || hashFile(path.join(ART_DIR, f))); return; }
     const filepath = path.join(ART_DIR, f);
     const hash = hashFile(filepath);
     seenHashes.add(hash);
@@ -172,6 +198,8 @@ if (fs.existsSync(SOURCE_VIDEOS)) {
   const files = fs.readdirSync(SOURCE_VIDEOS).filter(f => /\.(mp4|mov|avi|mkv|webm)$/i.test(f));
   console.log(`Extracting thumbnails from ${files.length} videos...`);
   files.forEach(f => {
+    const base = path.basename(f, path.extname(f));
+    if (inventoryFilenames.has(base + '.jpg')) return;
     const src = path.join(SOURCE_VIDEOS, f);
     try {
       const { filename, thumb, modal } = extractVideoThumb(src, VIDEOS_DIR);
@@ -196,9 +224,11 @@ if (fs.existsSync(SOURCE_VIDEOS)) {
 }
 
 fs.writeFileSync(INVENTORY_PATH, JSON.stringify(inventory, null, 2));
+fs.writeFileSync(MANIFEST_PATH, JSON.stringify(hashManifest, null, 2));
 const sources = {};
 inventory.forEach(i => { sources[i.source] = (sources[i.source] || 0) + 1; });
 console.log(`\nInventory: ${inventory.length} total`);
 Object.entries(sources).forEach(([k, v]) => console.log(`  ${k}: ${v}`));
 console.log(`  art: ${inventory.filter(i => i.art).length}, featured: ${inventory.filter(i => i.featured).length}`);
 console.log(`Saved → ${INVENTORY_PATH}`);
+console.log(`Hash manifest: ${Object.keys(hashManifest).length} entries`);

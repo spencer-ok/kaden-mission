@@ -1,0 +1,264 @@
+Delivered-To: killianfamily@gmail.com
+Received: by 2002:a05:7022:689c:b0:8c:d8d2:5690 with SMTP id cm28csp302906dlb;
+        Tue, 1 Oct 2024 06:59:07 -0700 (PDT)
+X-Received: by 2002:a05:6512:6405:b0:530:aa82:a50a with SMTP id 2adb3069b0e04-5389fc633d5mr8582987e87.45.1727791147389;
+        Tue, 01 Oct 2024 06:59:07 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1727791147; cv=none;
+        d=google.com; s=arc-20240605;
+        b=CL/gLC64h6TiHw3tJDmjbquxDv5l3eovPrZoDwEN81trXKST27psSQ2IOEqo3KI/ae
+         uCAjByuhhecj6TebnXTLSJ7PgQ4hvQO13pbzgr7AHiW289Mw4dsKnommToHkb01DJX+T
+         SpfGDnRhdIJLFBdJTMkowO7ymw2gLoZqfU2UkVn64SqAVTTLsTXIqq0qC52ja7ivoxMp
+         t98VNs3h986gQSO1xN0hvnIZ56FB+69/KP5plvfq+BSgF78RUKykiTglqKF6P4mxSLOo
+         SAGEBQwUy91BHBJ4dvqZZDCc3DbgWdYavmmTtPJ1sxvIxAvdVNMS7P90LpB+zkSbf4u4
+         FkkA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=D6WY/g6Cgyg+cQPqXPBpX6WhwzYNdVWDHYYov6D1CWE=;
+        fh=7heRuBWPyNQUWJA2/viMPwiNfAUA567OllBtKvgTBis=;
+        b=ioHsG7IUQSAXj9CR7fZ+iBb1uISHHrJo2Em8cHrkLpaLsJjFqMvixYMvjveGvexwgz
+         ggxHOBANEeNb+SfH7eHlqUotORkcv5vkcQiYsvIxJnz7YmsC0REqYrgNKiW5kE55ZoMI
+         SSJ3SPX/tWX0DTtqwgJEv10ZwTurdshaHua73VJcAtvOh02EyK4Z0huEI/nyE4Rp6emg
+         TahYMKTSmq08kJeSK3bx25WOvzpWShjGDJKKryYEOU4xZWRTxqQsI/l+W1HjdTFvqJd3
+         4y9TkkHyibvr3WpLVqyox+kfT1yOTnBQGY5bydirzk2ABGC50H5jb0UsdpBu8kmNaE8L
+         iEYQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@missionary.org header.s=google header.b=hYvInhz1;
+       spf=pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=kaden.killian@missionary.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=missionary.org;
+       dara=pass header.i=@gmail.com
+Return-Path: <kaden.killian@missionary.org>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 2adb3069b0e04-538a043bf49sor3199098e87.23.2024.10.01.06.59.07
+        for <killianfamily@gmail.com>
+        (Google Transport Security);
+        Tue, 01 Oct 2024 06:59:07 -0700 (PDT)
+Received-SPF: pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@missionary.org header.s=google header.b=hYvInhz1;
+       spf=pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=kaden.killian@missionary.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=missionary.org;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=missionary.org; s=google; t=1727791146; x=1728395946; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=D6WY/g6Cgyg+cQPqXPBpX6WhwzYNdVWDHYYov6D1CWE=;
+        b=hYvInhz1lSRJap/YGNdpfm45sZCtaPqvdC4afYYHSipADZEXUDV/IG/OWmpHcBna2Q
+         47b6L36SDOikt8g2Rr4DGWYufWIxD+JptPMF3UGO0q0YEN2gofVB0WZlgQBlo7VyRndB
+         mv+B5b44PyqmMVlFi+aTtA/0DTCFN7GdZZUUaPqOyXBpCvJBnIOv5mu+jwkBTRy5uAY7
+         saCrvhvBRNjMTSG9kz7Yr6Fx2sGVucwLGt0tmH9/dw/eb64iyIzOSqW55QmGCEBYxd4N
+         gkYfvYATi9dHyN6B8Wu9I9c/o1nt2H+pEaWixLm1jDUgRZPl3x8DfaCbd0buAl4xdQcp
+         hxtA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1727791146; x=1728395946;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=D6WY/g6Cgyg+cQPqXPBpX6WhwzYNdVWDHYYov6D1CWE=;
+        b=oZKMwrXtxbq5hdaqGEi2VuFw6ike8ylidgtY5w2y/NGPuWeRJ5qTyIVNjubgnsgmLT
+         ihxiVPnnh05gEMKXcHzFSj3rxEigFH5Edudw3VQkqMiemRxXK8LRMsiSl+qUT2QrJx8f
+         e0NKWzL7ezhw3a4MaUlCDKICqNksWBzRmmRpZhiSWRyYszU7Li2lD57yB6CT6fcL1gc8
+         U8317MdsBEAe51Uq/ne2tkRkOIE9HjSZ+6kGp+P9Fe96uJiLHRgq0HIpFzRuZTR+Q+kY
+         xUv4mn9dgnMQ20CmdtWL2VQwRGgXg5oT5fmkxU67cppWQKEjh1lH6CbNnhy4ATMiTJxG
+         jXQQ==
+X-Gm-Message-State: AOJu0YwKc8ue9lNDbUj2/5GD9UpY0PB5AGZsuws9WJJq8gRDXaiJ5NWc
+	MirLdFI5yVG1io+bOrDgb9zs8z/4WWxRsOv/nJWS98dHcQzfNBgAgGXmLLvyE7yMQU9ETIOfnC1
+	wMl9LpkFaBAIpaasQaA9x961LGtKwaoytV0lPJEy4eTkz7Zxopi0Id0HxjGVr0DH/79YS0URc0N
+	8rl+SoAfC74wNHlp7qkzVlry+/Cn0TrK2oPL9kD4M79OsZON9Z4h9obnNjZdVPe/4riEllFhLKU
+	ncF51w0NZ7fUugTYyCyaeufIqrBMXtnDfLHLZvS4/ppnK7Cnvkq4cZwHLr3Hd/jhtrY4vN7mHQ=
+X-Google-Smtp-Source: AGHT+IGii6MlRZoZnwi1VAVoWdzzE3Qeu8aZ4irR2WwYOqyX6TmYfcT7wOvIW1DCXd1XnofM15HNQNapcLpp6DdsQQg=
+X-Received: by 2002:a05:6512:eaa:b0:536:9f02:17b4 with SMTP id
+ 2adb3069b0e04-5389fc6309dmr9479062e87.40.1727791146108; Tue, 01 Oct 2024
+ 06:59:06 -0700 (PDT)
+MIME-Version: 1.0
+From: Kaden Killian <kaden.killian@missionary.org>
+Date: Tue, 1 Oct 2024 22:58:53 +0900
+Message-ID: <CABgTvgYyZA2hw9URhozYT93x4KDQTqPm38cWainCzmtRVRyaJQ@mail.gmail.com>
+Subject: =?UTF-8?B?VGhpcyB3ZWVrIPCfjZTwn42p8J+PuPCfkq8=?=
+To: killianfamily <killianfamily@gmail.com>
+Content-Type: multipart/alternative; boundary="00000000000082a80006236ab94c"
+X-GM-M1Sbpsf:  SC01
+X-CLOUD-SEC-AV-Sent: true
+X-CLOUD-SEC-AV-Info: missionarymail,google_mail,monitor
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+
+--00000000000082a80006236ab94c
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Tuesday
+Today was a little exhausting due to catching a cold (I shall never escape
+sickness lol) but it was still a good day. We had my district counsel
+meeting and we had to ride trains for like 30 minutes to get there; we
+shared a few stories and did a couple mogis to practice our teaching. After
+we were done, we went to eat at a restaurant all together; I got some
+shrimp Tempura and it was really good. On the way home I bought a couple of
+donuts for some reason lol. The first had anko (sweet bean paste) inside
+and I really enjoyed it. I'm glad, because I have heard a lot of foreigners
+do not lol. When we got back, we did studies for a while then went to the
+Fukuda=E2=80=99s home to have a meal and teach a short spiritual message. B=
+rother
+and sister Fukuda are like 70 or 80 and they are super nice; our dinner was
+very traditionally Japanese and consisted of crushed up doritos in a bowl
+with various taco materials =F0=9F=98=82 Definitely not what I was expectin=
+g. Was
+very tasty though~
+
+Wednesday
+Today Elder Berg and I taught the beginner Eikaiwa class which was very
+fun. A lot of the class was pretty sidetracked but it was probably still
+good English practice for the students lol. Afterwards we played Badminton
+(we meaning everyone besides me because of my foot lol) but I did get to
+spectate and draw, which was fun. Also did a little experimenting with my
+new camera.
+
+Thursday
+Tsuji san
+Basketball
+
+Friday
+On Friday I don't remember a lot from the day, we probably taught a lesson
+or something but I'm writing this on P-Day so I'm unsure =F0=9F=98=82 Howev=
+er, Friday
+night I do remember we ate Hamburger steak (basically just Hamburger
+patties lol) with cheese and rice and ketchup and it was amazing. I could
+only eat a couple of them, but it was great =F0=9F=8D=94 This was for a YSA=
+ activity,
+and afterwards people just kind of sat around and talked. I sat with a dude
+named Yuuhi and talked for like an hour, he's super cool. He loves eating
+all kinds of bugs (cooked of course) and i get the feelinb we are gonna eat
+some together soon =F0=9F=91=80 his favorite things are also camping and Ha=
+rry Potter
+for some reason. He loves SciFi but his favorite movies and books are Harry
+Potter it cracks me up =F0=9F=98=82
+
+Saturday
+Saturday we had a gyoza making party with the YSA that could come which
+were literally 3 people besides me, my companion, and or roomates, so
+that's 4 missionaries and 3 YSA lol. It took us like 2 hours to buy and
+prepare the gyoza as well as another hour of talking and eating. It was
+amazing. I ate probably 15 gyoza and I had to hold back so more people
+could eat lol.
+
+Sunday
+We went to a members son=E2=80=99s baptism
+Bike get (got a bike and I am in pain from the seat)
+Meal at the Ikawas
+
+Monday
+Train
+Zone Conference (will write more about this next week if I can, Lotta stuff
+happened)
+Hirakata
+
+Tuesday (This week's Pday cause of Zone conference)
+Today was a crazy Pday. We went to the other area=E2=80=99s church to call =
+family
+and meet up with our district (some of them anyways) to go to the MR. Donut
+museum and get some chicken with a member named Shingo. It was pretty fun
+and the donuts at the end were fire. There was one donut (I did not buy)
+that said =E2=80=9CMexican Meat=E2=80=9D on it and I really don't understan=
+d what that
+means, but it's a little frightening =F0=9F=98=82 after our lengthy excursi=
+on (after
+which I talked with Shingo-San for like an hour) Elder Sonomura and I met
+up with someone I found on HelloTalk named Monica, and we talked and ate
+for an hour or two, was super fun. She speaks Pretty solid English but
+mostly spoke Japanese cause she said she was shy lol. We ate some
+Okonomiyaki, which was really good and I'm pretty sure my mom would have
+loved the one I ordered.
+
+Sorry a couple days were very briefly described, But I'm pretty short on
+time particularly due to how long it took us to get home from eating food
+with Monica-San (Pray for Elder Sonomura to be led spiritually but mostly
+directionally =F0=9F=98=82=F0=9F=98=85)
+
+Lobe you guys!!
+
+-Elder Killian
+
+Spiritual message
+Very brief today, but where ever you're at in life, I'd invite you to
+simply write down 3 things you're grateful for. If you can write down at
+least 1 thing a night you're grateful for, you might be surprised by the
+end of the week, or month =F0=9F=98=81=F0=9F=98=81
+
+--00000000000082a80006236ab94c
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto"><div dir=3D"auto">Tuesday</div><div dir=3D"auto">Today wa=
+s a little exhausting due to catching a cold (I shall never escape sickness=
+ lol) but it was still a good day. We had my district counsel meeting and w=
+e had to ride trains for like 30 minutes to get there; we shared a few stor=
+ies and did a couple mogis to practice our teaching. After we were done, we=
+ went to eat at a restaurant all together; I got some shrimp Tempura and it=
+ was really good. On the way home I bought a couple of donuts for some reas=
+on lol. The first had anko (sweet bean paste) inside and I really enjoyed i=
+t. I&#39;m glad, because I have heard a lot of foreigners do not lol. When =
+we got back, we did studies for a while then went to the Fukuda=E2=80=99s h=
+ome to have a meal and teach a short spiritual message. Brother and sister =
+Fukuda are like 70 or 80 and they are super nice; our dinner was very tradi=
+tionally Japanese and consisted of crushed up doritos in a bowl with variou=
+s taco materials =F0=9F=98=82 Definitely not what I was expecting. Was very=
+ tasty though~</div><div dir=3D"auto"><br></div><div dir=3D"auto">Wednesday=
+</div><div dir=3D"auto">Today Elder Berg and I taught the beginner Eikaiwa =
+class which was very fun. A lot of the class was pretty sidetracked but it =
+was probably still good English practice for the students lol. Afterwards w=
+e played Badminton (we meaning everyone besides me because of my foot lol) =
+but I did get to spectate and draw, which was fun. Also did a little experi=
+menting with my new camera.</div><div dir=3D"auto"><br></div><div dir=3D"au=
+to">Thursday</div><div dir=3D"auto">Tsuji san</div><div dir=3D"auto">Basket=
+ball</div><div dir=3D"auto"><br></div><div dir=3D"auto">Friday</div><div di=
+r=3D"auto">On Friday I don&#39;t remember a lot from the day, we probably t=
+aught a lesson or something but I&#39;m writing this on P-Day so I&#39;m un=
+sure =F0=9F=98=82 However, Friday night I do remember we ate Hamburger stea=
+k (basically just Hamburger patties lol) with cheese and rice and ketchup a=
+nd it was amazing. I could only eat a couple of them, but it was great =F0=
+=9F=8D=94 This was for a YSA activity, and afterwards people just kind of s=
+at around and talked. I sat with a dude named Yuuhi and talked for like an =
+hour, he&#39;s super cool. He loves eating all kinds of bugs (cooked of cou=
+rse) and i get the feelinb we are gonna eat some together soon =F0=9F=91=80=
+ his favorite things are also camping and Harry Potter for some reason. He =
+loves SciFi but his favorite movies and books are Harry Potter it cracks me=
+ up =F0=9F=98=82</div><div dir=3D"auto"><br></div><div dir=3D"auto">Saturda=
+y</div><div dir=3D"auto">Saturday we had a gyoza making party with the YSA =
+that could come which were literally 3 people besides me, my companion, and=
+ or roomates, so that&#39;s 4 missionaries and 3 YSA lol. It took us like 2=
+ hours to buy and prepare the gyoza as well as another hour of talking and =
+eating. It was amazing. I ate probably 15 gyoza and I had to hold back so m=
+ore people could eat lol.</div><div dir=3D"auto"><br></div><div dir=3D"auto=
+">Sunday</div><div dir=3D"auto">We went to a members son=E2=80=99s baptism<=
+/div><div dir=3D"auto">Bike get (got a bike and I am in pain from the seat)=
+</div><div dir=3D"auto">Meal at the Ikawas</div><div dir=3D"auto"><br></div=
+><div dir=3D"auto">Monday</div><div dir=3D"auto">Train</div><div dir=3D"aut=
+o">Zone Conference (will write more about this next week if I can, Lotta st=
+uff happened)</div><div dir=3D"auto">Hirakata</div><div dir=3D"auto"><br></=
+div><div dir=3D"auto">Tuesday (This week&#39;s Pday cause of Zone conferenc=
+e)</div><div dir=3D"auto">Today was a crazy Pday. We went to the other area=
+=E2=80=99s church to call family and meet up with our district (some of the=
+m anyways) to go to the MR. Donut museum and get some chicken with a member=
+ named Shingo. It was pretty fun and the donuts at the end were fire. There=
+ was one donut (I did not buy) that said =E2=80=9CMexican Meat=E2=80=9D on =
+it and I really don&#39;t understand what that means, but it&#39;s a little=
+ frightening =F0=9F=98=82 after our lengthy excursion (after which I talked=
+ with Shingo-San for like an hour) Elder Sonomura and I met up with someone=
+ I found on HelloTalk named Monica, and we talked and ate for an hour or tw=
+o, was super fun. She speaks Pretty solid English but mostly spoke Japanese=
+ cause she said she was shy lol. We ate some Okonomiyaki, which was really =
+good and I&#39;m pretty sure my mom would have loved the one I ordered.</di=
+v><div dir=3D"auto"><br></div><div dir=3D"auto">Sorry a couple days were ve=
+ry briefly described, But I&#39;m pretty short on time particularly due to =
+how long it took us to get home from eating food with Monica-San (Pray for =
+Elder Sonomura to be led spiritually but mostly directionally =F0=9F=98=82=
+=F0=9F=98=85)</div><div dir=3D"auto"><br></div><div dir=3D"auto">Lobe you g=
+uys!!</div><div dir=3D"auto"><br></div><div dir=3D"auto">-Elder Killian</di=
+v><div dir=3D"auto"><br></div><div dir=3D"auto">Spiritual message</div><div=
+ dir=3D"auto">Very brief today, but where ever you&#39;re at in life, I&#39=
+;d invite you to simply write down 3 things you&#39;re grateful for. If you=
+ can write down at least 1 thing a night you&#39;re grateful for, you might=
+ be surprised by the end of the week, or month =F0=9F=98=81=F0=9F=98=81</di=
+v><div dir=3D"auto"><br></div></div>
+
+--00000000000082a80006236ab94c--

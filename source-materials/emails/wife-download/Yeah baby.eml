@@ -1,0 +1,218 @@
+Delivered-To: killianfamily@gmail.com
+Received: by 2002:a05:6022:3285:b0:e5:9b2e:d134 with SMTP id bw5csp3335243lab;
+        Mon, 17 Nov 2025 05:30:18 -0800 (PST)
+X-Received: by 2002:a17:907:1b27:b0:b73:8d2e:2d3d with SMTP id a640c23a62f3a-b738d2e383cmr619408666b.4.1763386218307;
+        Mon, 17 Nov 2025 05:30:18 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1763386218; cv=none;
+        d=google.com; s=arc-20240605;
+        b=ixdyyviWfBjdBdFeAQR0q3AUpTD6kUQ06mErn/XfuVUEnfIZET74+8F7yg9I7Ss6Cy
+         VR0fSbHILoB0G+2ntf+O8deZWYbigBDYwc0wWoPWrDQ8EdDPDUXpqJ/1x3fvx2H2yqCb
+         tusV2GeQSsWgOs9Kbkl+S3E7dqJ47It2rbqElWWXDpKdI1MgC4ByxM/Lt+xPWfJO+ML3
+         yGG2bsbbSj+zolKtT+lZLZjn6mHjRB9/lSeZG+K0EtmVVoIPtnZsLRVI8Ry0NoBIFbwN
+         qbv7OMw0EKBR7BxMwWeVbxN4Ud8RhGc+2zI97HW02CgReohJpMVYRbXdcg2XyP8bC7Xh
+         Bl2g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=5jNYkyuAZMJTxeFW4go/cPwEQqHGbe3LILvETLlA76s=;
+        fh=Z6qIxyYYRJ6j+FNssoCqK5Gc8S1S3uCnhgfLbiAK++k=;
+        b=ivr1EzW2gdVzWQ8B0vpfe3t32MSpC83zz2mMJlHQCCMMbz2jA5SNCLl4TuAgi55yTi
+         BC9MFQ+N/yzT5WLVzNlhvr/I1qyHATsvLUYT1S39lyCe/IneJaKkeCTye/y6dR9a1itw
+         LV4Rvb3DqFpW9pX6g2o+nv60LqzwLjzUpldvEKtInZa2hgsdJlEtqQyjGxxTzUno+kdF
+         DlXBvv2aCc72KVh/ow9pPGBuqVSLLokuFSbY5L07rpj4D9aRoMbc1BtSh7fESAktDkRH
+         kcR0E8zNix/SQEfB/9AO9npHj7raOGNbJ40G4SGm2jUoB4IFOY5DonzveFBBs/dAKODY
+         ymVw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@missionary.org header.s=google header.b=H2BTM3iF;
+       spf=pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=kaden.killian@missionary.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=missionary.org;
+       dara=pass header.i=@gmail.com
+Return-Path: <kaden.killian@missionary.org>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id a640c23a62f3a-b734fd70760sor396422266b.15.2025.11.17.05.30.18
+        for <killianfamily@gmail.com>
+        (Google Transport Security);
+        Mon, 17 Nov 2025 05:30:18 -0800 (PST)
+Received-SPF: pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@missionary.org header.s=google header.b=H2BTM3iF;
+       spf=pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=kaden.killian@missionary.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=missionary.org;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=missionary.org; s=google; t=1763386218; x=1763991018; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=5jNYkyuAZMJTxeFW4go/cPwEQqHGbe3LILvETLlA76s=;
+        b=H2BTM3iFZGGhaCFVA7hiFgxVOmzkY8UNGeeu4+gQ0KTZ+MT2Ke4/TND3R8wprV0ThB
+         MQB+R9c6Pc7ojuF773RJCO5Pg3RPhVIhcoBZFY1dgQFjT8IwtTbQTTR0bvPegZIz22g6
+         5xWns8nTEYdIp9UflovldyBMV3/un1YOSWxY4mQUGA86ZWomtsacZSjofjFJF5+h3VVg
+         5H1efedfGLMgdQyi5Ct1NKkS4dRr8t6AJEF6Sne4J28jBElXKbyKlor9qVV/wKxr/VBa
+         lJYNe5JMKRXjHWtOjzczVGiFs2zoZALumavhaiX7yUMq9r0lCWag1dAJsvaOP3PbTKrI
+         Yzsg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1763386218; x=1763991018;
+        h=to:subject:message-id:date:from:mime-version:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=5jNYkyuAZMJTxeFW4go/cPwEQqHGbe3LILvETLlA76s=;
+        b=QWju9ptrqXSb5f6WqBV81TdcJFXRNi3BKlO7P/xLfqwQTzU6qTn4VloI4KGnAHm3Xy
+         AYEds7ywzjeYh/MoAz2ERsusPpr6ojoBwFINGa47LSUJvPxRvdyAv8vyUsqw3kwV//zY
+         o2w4Xljb+LyTBVBV7U1U8q9x3KI5cHCu4h3bDfDlZ3DoR66PA5zs7tckNWhpvI+0wRUD
+         ouorlPaIyDW4fCmYq6y/JAybomQkGadUDZdOc4IE1ezhGCj92V2dZjEAXRipYoZkjexd
+         M1pdsYCGhza6cMyRX41xy6F7AacYove/iJXu5cnXWNumTDi8+DyAH4R3LZc2ml6if/wk
+         5gBg==
+X-Gm-Message-State: AOJu0YxAcaVWDiRf01OqtbUZqccH4BepeKBPTktuv91mOY1C0Km/Wc6h
+	TMA14pJIvkJ53X7b5w644ab5y1MTCfIwKMCX+OusnV45kWDOyL3YiYcD7R8Ep9teO0dcSnBinnk
+	C7p7De630zSgFZ6aaruO8RmBYwlxnALUc+KyEWDWmkmTtK7agWcxKhBTXPOfgJLWlT60CoEIsXm
+	4hmQOxu+hQbU51EWcLnHvLGTc0GtrrbH9bGRGJVGPATe4CtTMwy34N2L4J3UyaUH56bLc2/N0fV
+	QJ0aY2DpOZOPi0TUyy2jnhmlmRWBPCn7p1T/8hOWuOTkjVh+LHTGOThSYqYXropN2NNKi4VDXgX
+X-Gm-Gg: ASbGncsPu+GgYm9Azb1ITcneHsybyX/VfMdfj8Uom7CR5sNHWEUfU/dDQ9GbxY11ny1
+	RFJtj8XQVpPLTsN38N+V6hmt0ahWYwsyuFOaqmMuXSZF5YEB/0VrM8d//cPoqCeA8ETnzWAbdi2
+	26LgJy2LHA/QHf6u20lgldSojOGKTpw/yp4KKlWkJnD30snWsz5ocTPNYrskcgKQH3wi4luUECn
+	qTdpO1y7B5hlHzIbztKUvfEQ5bHLwUhvt/1zk+dRR5zoI1hIElhUIWZGxMJ09toc3HaNdWiGH95
+	t58OwamafXjVJn97
+X-Google-Smtp-Source: AGHT+IEaPAjPx/seCr270xNBSAkGe6w5c5/VRLYNsrFd63rfJYGYwzM93mgTdYplU25OeCJ5zNRJMe99KTYSUtWpCq4=
+X-Received: by 2002:a17:907:6e90:b0:b72:d43a:4fab with SMTP id
+ a640c23a62f3a-b7367bc3f44mr1275184466b.43.1763386217397; Mon, 17 Nov 2025
+ 05:30:17 -0800 (PST)
+MIME-Version: 1.0
+From: Kaden Killian <kaden.killian@missionary.org>
+Date: Mon, 17 Nov 2025 22:30:05 +0900
+X-Gm-Features: AWmQ_bmrLxJZacSUQmFPCXvPM20HQKk1J6iGQcAG-Kkmki6-YjVyZxpz_4t-fbs
+Message-ID: <CABgTvgYth-Y5EQht+kLu-Jukr2saPnHg4MSEOcsWeXX-WjMmoA@mail.gmail.com>
+Subject: Yeah baby
+To: Tanya Killian <killianfamily@gmail.com>, 
+	"Spencer Killian (Spencer K)" <spencerok@gmail.com>, Kyle Killian <kylekillian@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000170f180643ca592f"
+X-CLOUD-SEC-AV-Sent: true
+X-CLOUD-SEC-AV-Info: missionarymail,google_mail,monitor
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+
+--000000000000170f180643ca592f
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Monday
+Today we ate lunch with Katayama san! Afterwards we went to a park and took
+some pictures with him too. He actually requested some artwork, so I gave
+it to him in person today, but a couple days later he sent me an email
+asking me to change it =F0=9F=98=82 I guess that's what I get making an art=
+ for
+someone with such particular standards =F0=9F=A4=B7=E2=80=8D=E2=99=82=EF=B8=
+=8F=F0=9F=98=81 After that we biked pretty
+far to check out a secondhand store and the mall. At the mall there were
+some people at a table and they were taking a survey of customers at the
+mall the reward for taking the survey was a bag of potato chips so we
+decided we'd stop by and take the survey because I love surveys LOL so we
+sat down to take the survey they told us it would take just a few minutes
+and we began and we noticed that it would take more than just a few minutes
+LOL we ended up taking this survey for probably 10 minutes not
+understanding most of it and we left with, as promised, a bag of chips. =F0=
+=9F=98=82
+The same night we also met at the church with Nishioka san and had a family
+home evening activity as usual. We made some letters for friends and asked
+Nishioka san to give one to one of her friends =F0=9F=98=81
+
+Tuesday
+Today we started off with a district meeting over Zoom, and had some great
+housing too! We met a lady who was super sweet, and a guy who invited us
+into his house to show us his ART AND ELECTRIC GUITAR????? You kidding Me?
+We are absolutely Going back to jam out with bro. Today was also Eikaiwa,
+and Matsuoka san brought me a late birthday present =F0=9F=91=80 It's a Suk=
+imaswitch
+CD 20th anniversary album!!!!!!!!!!! Literally the Album I listened to in
+America that made me fall in love with Sukimaswitch. Thats an =E2=80=9Cup t=
+here=E2=80=9D
+birthday present =F0=9F=98=86
+
+Wednesday
+Played soccer with some kids at a park! One of them knows a kid who's going
+to our activities, and he took some of our flyers to pass out to his
+friends, and he's asking his mom to let him come to game night! We will see
+how it goes!
+
+Thursday
+Today we met a few cool people housing, ome of which thought we were their
+mother impersonating some young men =F0=9F=98=82 (through the doorbell voic=
+ebox) as
+well as had a fantastic Daytime Eikaiwa for the first time! 5 new people
+showed up, and we already have an appointment set up with one of them!
+=F0=9F=98=81=F0=9F=98=81=E2=9C=A8=EF=B8=8F A highlight for sure!
+
+Friday
+We met with Kimura san in his art store, and had a 2 way lesson about our
+religions lol. Buddhism is really just all the beliefs of Christianity with
+a different name attached to the deity which is pretty interesting and I
+wouldn=E2=80=99t have expected. We also had Game night and attempted to vis=
+it a
+bunch of inactive members by bike (we weren't able to meet any of them =F0=
+=9F=98=A2).
+Solid day!
+
+No more time to write so I'll talk about the rest next week!! I love you
+guys!!!!!!! =E2=9D=A4=EF=B8=8F=E2=9D=A4=EF=B8=8F=E2=9D=A4=EF=B8=8F=E2=9D=A4=
+=EF=B8=8F=E2=9D=A4=EF=B8=8F=E2=9D=A4=EF=B8=8F=E2=9D=A4=EF=B8=8F=E2=9D=A4=EF=
+=B8=8F=F0=9F=92=9C
+
+Saturday
+Today we had
+
+Sunday
+
+--000000000000170f180643ca592f
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto">Monday<div dir=3D"auto">Today we ate lunch with Katayama =
+san! Afterwards we went to a park and took some pictures with him too. He a=
+ctually requested some artwork, so I gave it to him in person today, but a =
+couple days later he sent me an email asking me to change it =F0=9F=98=82 I=
+ guess that&#39;s what I get making an art for someone with such particular=
+ standards =F0=9F=A4=B7=E2=80=8D=E2=99=82=EF=B8=8F=F0=9F=98=81 After that w=
+e biked pretty far to check out a secondhand store and the mall. At the mal=
+l there were some people at a table and they were taking a survey of custom=
+ers at the mall the reward for taking the survey was a bag of potato chips =
+so we decided we&#39;d stop by and take the survey because I love surveys L=
+OL so we sat down to take the survey they told us it would take just a few =
+minutes and we began and we noticed that it would take more than just a few=
+ minutes LOL we ended up taking this survey for probably 10 minutes not und=
+erstanding most of it and we left with, as promised, a bag of chips. =F0=9F=
+=98=82 The same night we also met at the church with Nishioka san and had a=
+ family home evening activity as usual. We made some letters for friends an=
+d asked Nishioka san to give one to one of her friends =F0=9F=98=81</div><d=
+iv dir=3D"auto"><br></div><div dir=3D"auto">Tuesday</div><div dir=3D"auto">=
+Today we started off with a district meeting over Zoom, and had some great =
+housing too! We met a lady who was super sweet, and a guy who invited us in=
+to his house to show us his ART AND ELECTRIC GUITAR????? You kidding Me? We=
+ are absolutely Going back to jam out with bro. Today was also Eikaiwa, and=
+ Matsuoka san brought me a late birthday present =F0=9F=91=80 It&#39;s a Su=
+kimaswitch CD 20th anniversary album!!!!!!!!!!! Literally the Album I liste=
+ned to in America that made me fall in love with Sukimaswitch. Thats an =E2=
+=80=9Cup there=E2=80=9D birthday present =F0=9F=98=86</div><div dir=3D"auto=
+"><br></div><div dir=3D"auto">Wednesday</div><div dir=3D"auto">Played socce=
+r with some kids at a park! One of them knows a kid who&#39;s going to our =
+activities, and he took some of our flyers to pass out to his friends, and =
+he&#39;s asking his mom to let him come to game night! We will see how it g=
+oes!</div><div dir=3D"auto"><br></div><div dir=3D"auto">Thursday</div><div =
+dir=3D"auto">Today we met a few cool people housing, ome of which thought w=
+e were their mother impersonating some young men =F0=9F=98=82 (through the =
+doorbell voicebox) as well as had a fantastic Daytime Eikaiwa for the first=
+ time! 5 new people showed up, and we already have an appointment set up wi=
+th one of them! =F0=9F=98=81=F0=9F=98=81=E2=9C=A8=EF=B8=8F A highlight for =
+sure!</div><div dir=3D"auto"><br></div><div dir=3D"auto">Friday</div><div d=
+ir=3D"auto">We met with Kimura san in his art store, and had a 2 way lesson=
+ about our religions lol. Buddhism is really just all the beliefs of Christ=
+ianity with a different name attached to the deity which is pretty interest=
+ing and I wouldn=E2=80=99t have expected. We also had Game night and attemp=
+ted to visit a bunch of inactive members by bike (we weren&#39;t able to me=
+et any of them =F0=9F=98=A2). Solid day!</div><div dir=3D"auto"><br></div><=
+div dir=3D"auto">No more time to write so I&#39;ll talk about the rest next=
+ week!! I love you guys!!!!!!! =E2=9D=A4=EF=B8=8F=E2=9D=A4=EF=B8=8F=E2=9D=
+=A4=EF=B8=8F=E2=9D=A4=EF=B8=8F=E2=9D=A4=EF=B8=8F=E2=9D=A4=EF=B8=8F=E2=9D=A4=
+=EF=B8=8F=E2=9D=A4=EF=B8=8F=F0=9F=92=9C</div><div dir=3D"auto"><br></div><d=
+iv dir=3D"auto">Saturday</div><div dir=3D"auto">Today we had=C2=A0</div><di=
+v dir=3D"auto"><br></div><div dir=3D"auto">Sunday</div><div dir=3D"auto"><b=
+r></div><div dir=3D"auto"><br></div><div dir=3D"auto"><br></div></div>
+
+--000000000000170f180643ca592f--

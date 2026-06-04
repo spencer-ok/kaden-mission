@@ -1,0 +1,315 @@
+Delivered-To: killianfamily@gmail.com
+Received: by 2002:a05:7022:6084:b0:8c:d8d2:5690 with SMTP id k4csp1641770dlk;
+        Mon, 28 Oct 2024 07:04:33 -0700 (PDT)
+X-Received: by 2002:a17:907:6d12:b0:a99:46ff:f4e6 with SMTP id a640c23a62f3a-a9de619a39amr755225366b.61.1730124273612;
+        Mon, 28 Oct 2024 07:04:33 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1730124273; cv=none;
+        d=google.com; s=arc-20240605;
+        b=YBwhpXnlnVtsQI+9BqFMoq0sDgl1ybL1DaCqSPhHZE+B1Dmh0fdvEadQLMImbilbAP
+         I0Nd4REPFEfXg2t/AmTUodRy9Lff28RgqXoKKIZH6BptDIRLMCNdto/CBu7VhkBgT9Q6
+         MIQYvgqEexqxUcMAXQwruX+gboy0aTkXI1V6/EZLXp6b/Jdaccm8mQ6tmplTSjffe6oq
+         51n6wK3kDCEMIKYYOQ8Qiv3s/kjMI6h+SC7KuhrRNbjMMmSRFKYGl1rWlr2FNT3Wj09G
+         7zLXjw7PIMTLekF8p3lXptslFWJWQ2IkCsSd8mVYe6m1e9pp5Km37q9OOVtPnBR+Nx+z
+         mbKA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=NfjQG/iqByg42HABd4cS7e88Mf+BJzk/9qNYM4nAkKw=;
+        fh=7heRuBWPyNQUWJA2/viMPwiNfAUA567OllBtKvgTBis=;
+        b=lLjgdAxo9HpJaJvcNRoMml44bj2AaJiFBNDN/mtqdmmU+cXF5aji6XhIYMMqypfapG
+         I9UgzqZJ4PCbxRRwTGW25E0xB1QC3OG/ARkvZPxqoW9FAPps4OKgupO/6DGayAUJeTpy
+         NzzQItLFtD1tmC7kr9bythsv4zdGd2dI290ZMTvRrIInqmLFA8NVvB3HQ3Iv7mDqmRR+
+         iau7nKQu+Xa7YC2fvlyExFWICbFII+dQueFcJu68FreX4oPLSzSal8XluslLAGg3nDpB
+         OQ0UerfiIXjwVjgebmXonylNisioIvjJ+BEvJD0ygJtn9oApDsOsZBsUXK6rJyaxJvRq
+         vI6Q==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@missionary.org header.s=google header.b=WIAFuoAg;
+       spf=pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=kaden.killian@missionary.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=missionary.org;
+       dara=pass header.i=@gmail.com
+Return-Path: <kaden.killian@missionary.org>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id a640c23a62f3a-a9b1f298b29sor275514766b.13.2024.10.28.07.04.33
+        for <killianfamily@gmail.com>
+        (Google Transport Security);
+        Mon, 28 Oct 2024 07:04:33 -0700 (PDT)
+Received-SPF: pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@missionary.org header.s=google header.b=WIAFuoAg;
+       spf=pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=kaden.killian@missionary.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=missionary.org;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=missionary.org; s=google; t=1730124273; x=1730729073; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=NfjQG/iqByg42HABd4cS7e88Mf+BJzk/9qNYM4nAkKw=;
+        b=WIAFuoAgt7zRgJMcp6bh7TDR5dZRJhUhB9+kItfzm9Dg2PJcm/7w4G84+FldBtB0/U
+         XseV10GuH4p2x3BPLrpiLDHdHaopdT0XWIqxX3lPQNxC0Mr1/aHDbAdLMdy1MvLXt5eD
+         iT/U3hwy8yYz6N6ZJ12C+Zjv0NoUk0agYudcVQKQHYQSm5aekWjWKs2ZTE+ykGA+pRq8
+         hGeOqU84nzjXmU/FmiQpL0AaDeQXDqyer+8za887cQVg0M4K44K4A+J4IQrZk8IWBWhf
+         Tsc9V0lj3zkSN4AVTlDmpseWqtO2luxq6piFxslW4SbNsSVIL1tE2WNzpMzxy5wjDKp3
+         1QNw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1730124273; x=1730729073;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=NfjQG/iqByg42HABd4cS7e88Mf+BJzk/9qNYM4nAkKw=;
+        b=SBnFm2yl2JZN7kWgbZU373g93SGYnckC2Prii1OWrN+CTK8ccoS9v3Psgn6jkH0RXR
+         ssi+tRS4T9absk0LtUbELqvBh8tScExITb/cp9WDV20Ar5A00HrrMaQKrol5Q7owvt3a
+         qn/0cQBhUCqvZYn9bDt7jibzchKkFMIN9y8nU2FOZa/cQbpCyM/ZJGc3xJLy1G0D6fMk
+         0YEBIJafArxKu2fChwEEj3yvC+MewUF7nTO9MluV70ZR2qnBvtkoKX0iA0IZQq1duPbb
+         K1tfDOouap+6H4ezVn7+yXIHS2OGIs6DETcoWxUSgADWXEE0QwLLuJUoBE714GILZ3uH
+         UsiA==
+X-Gm-Message-State: AOJu0Yy0teR2g1N5zcVR+PPdypQTdt/URM3ToAbPRmkhTSaJmcBIHnD+
+	HlnwvXft22cX8pUMa0zP1OZfVVhJ8fQs/mVmFDK5DBcypyWXoc08ttl3l77bn6qTtN+vwh26Plo
+	SfZyX+v9wSw2gtRR9OM8Q96FyjuIcA05bhUI04jJnZ9sVvZYOIKj4CDE3/PDfEBDyOh98AvxpwQ
+	uvqRpQnWeBCll5kHb3+w2PUgbP2JQgLx14AiTI8B09sxfcdKRDcB/gJHuQmtAxcTWCJS7Sp4yZ5
+	4XxPVl8n4v/PySVn5d275OReapdeAu9cobig7Ju7q6BJtK0DJfqv7qBJpjwm7zNPsb8pQ7F
+X-Google-Smtp-Source: AGHT+IFiBW60bX71l1hFg+P22Sa8iAEHhSDj+7bnapW/w68WUQCyZK+bNyBZyjwh9PVkP+GLDzQPfrIpaupmFeegBgE=
+X-Received: by 2002:a17:906:c105:b0:a99:6791:5449 with SMTP id
+ a640c23a62f3a-a9de615ad79mr800342066b.52.1730124272148; Mon, 28 Oct 2024
+ 07:04:32 -0700 (PDT)
+MIME-Version: 1.0
+From: Kaden Killian <kaden.killian@missionary.org>
+Date: Mon, 28 Oct 2024 23:04:07 +0900
+Message-ID: <CABgTvgZ_SpYpCKb7kv=4EUqmm5Q0ZB=xUufYGU1gVKa0mrjSWw@mail.gmail.com>
+Subject: =?UTF-8?B?QnllIGJ5ZSBJc2hpemFrYemVt+iAgQ==?=
+To: killianfamily <killianfamily@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000a8b7a4062589f29a"
+X-GM-M1Sbpsf:  SC01
+X-CLOUD-SEC-AV-Sent: true
+X-CLOUD-SEC-AV-Info: missionarymail,google_mail,monitor
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+
+--000000000000a8b7a4062589f29a
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Oct 22
+
+Tuesday
+Today was DCM, and afterwards a lovely exchange With Elder Wilson. Fun
+fact, it was actually his Last exchange, and my first =F0=9F=98=82 He gave =
+me a lot
+of good advice about missionary work in general; we used a few different
+ways to reach out to people. We first did just a little streeting, then
+after went to a nearby station and did some sign streeting. Usually it
+doesn't go well from my experience, but like 10 seconds after I held up the
+sign, a lady walked right over to us, and is gonna bring her boyfriend to
+Eikaiwa in Okamachi (the area that Elder Wilson is from). Was a huge
+miracle! Later that night we also probably deposited around 100-150 flyers
+into people's mailboxes lol. Was very fun =F0=9F=98=81 we also had our tran=
+sfer
+video, which didn't change much besides Ishizaka=E9=95=B7=E8=80=81 transfer=
+ring to Akashi,
+which is sad =F0=9F=98=A2 But it'll be ok, we get Kyoumen=E9=95=B7=E8=80=81=
+ in his place; he's a riot.
+
+Wednesday
+Today before Eikaiwa, a dude named Sanchew came to the church to make music
+with Sonomura=E9=95=B7=E8=80=81, as I drew on the sidelines lol. He was sup=
+er nice, and his
+voice is extremely high =F0=9F=98=82 he brought a guitar and was singing up=
+ a storm.
+He actually stayed at the chyrch building for like 5 hours probably lol. We
+had Eikaiwa with him, and afterwards he even stayed for a decent while
+during Badminton. Was awesome! In Eikaiwa we talked almost only about food;
+Elder Berg has the advanced class structured basically as a big
+conversation, so we basically just talked about random foods in English for
+an hour lol.
+
+Thursday
+Today we were planning to go to a festival for a bunch of the morning, but
+when we got there, oddly nobody was there. Turns out Sonomura=E9=95=B7=E8=
+=80=81 had the
+wrong month =F0=9F=98=82 Anyways, I spent a lot of the day with Ishizaka=E9=
+=95=B7=E8=80=81, as he
+needed to impart his final wisdom to Mr before he transferred. I asked if I
+could call a bunch of inactive members numbers, and he taught me a bit,
+then let me do the rest =F0=9F=98=81 It was a bit nerve-racking but great p=
+ractice!
+We also did a lot of travel, getting from Ibaraki to Hirakata is an hour
+nomatter how you get there lol. When we got back to Ibaraki, Ishizaka=E9=95=
+=B7=E8=80=81 and
+I taught a lesson to Mahinda=E5=85=84=E5=BC=9F, a new member in our ward. H=
+e's maybe the
+nicest dude I=E2=80=99ve met. There are low-key a lot of people I want to s=
+ay that
+about, but it=E2=80=99s still true =F0=9F=98=82 Later that night we had Bas=
+ketball as usual,
+and I was able to share some of my art while others played basketball;
+still fun. Afterwards, we taught a lesson, idk what it was about or who it
+was with, but I had it written down so I'm pretty sure it happened =F0=9F=
+=98=82 I
+could just check the =E2=80=9CArea Book=E2=80=9D but I've gotta write, so f=
+or now just
+pretend it was a super touching story =F0=9F=91=8D=F0=9F=91=8D
+
+Friday
+We met with Mahinda=E5=85=84=E5=BC=9F again, and this time he bought us all=
+ donuts, again
+super nice dude. Later we ate again at the Fukudas, This time it was
+okonomiaki, but I was actually so close to throwing up from how much I ate.
+They would not stop making food =F0=9F=92=80 Later I somehow was feeling ok=
+, and we
+met again with Rui. He's again super nice, and feels like an American
+friend, but hes just gotta get to more church and activities, He's still a
+member but just thinks the other church members here are weird =F0=9F=98=82=
+ We will
+fix this =F0=9F=91=8D=F0=9F=91=8D=F0=9F=91=8D =F0=9F=98=82 Anyways, he also=
+ told us he works for JT, which is
+apparently Japan Tobacco or something =F0=9F=98=82 he says he doesnt tell h=
+is boss
+about his beliefs or anything or he'd probably get fired lol. He still
+works there because it pays well lol. That night at the Gathering Place, I
+pretty much taught Nao a lesson all by myself while everyone else taught a
+big lesson a few chairs away from us lol. Shes not a member, but says she
+wants to be a senior missionary in Utah =F0=9F=98=82=F0=9F=98=82 love the p=
+assion, let's just
+move forward then lol. After we git home, we played our last game of Catan
+with Ishizaka=E9=95=B7=E8=80=81, pretty sure Berg=E9=95=B7=E8=80=81 won =F0=
+=9F=98=A2
+
+Saturday
+Today we got some more Indo Curry with President Sano=E2=80=99s son. I got =
+the
+spicest that they had, and it was perfectly fine lol. I gotta find some
+real spicy stuff someday =F0=9F=98=82 We had a fun meeting at the church fo=
+r our
+=E2=80=9Cward conference eve=E2=80=9D. Later we git to visit Moriguchi san=
+=E2=80=99s apartment, her
+kids are the cutest ever =F0=9F=98=82=F0=9F=98=827
+
+Sunday
+
+Church taught primary for about 5 mins,
+afterwards had lunch with moriguchi and toyama San. Toyama only made it to
+the luncheon part, but it was awesome; he got to talk a bunch with the
+members! Also got to say hi to Yu=E5=85=84=E5=BC=9F again, this time he tol=
+d me he
+specifically wants to be a captain in Germany So he can pilot a german made
+ship. Love this guy.
+
+Pday
+Today we went Shopping for most of the day lol. First we went to a
+cards/game shop, which was very neat, also kind of crazy how cheap some old
+games were (and how expensive some others were lol). We tried to visit a
+cool big statue bit it was unfortunately closed =F0=9F=98=95 was still fun =
+to bike
+there though! Near the place of the statue there was a massive mall, so we
+went and looked around, was very fun. Not a bunch else to say unfortunately
+lol.
+
+Sorry some stuff isn't super detailed, I'm typing like a menace ATM =F0=9F=
+=98=82 Love
+you guys!!!
+I mean it!! I will try to get back to yall next Pday, sorry =F0=9F=98=85
+Bye!
+-=E3=82=AD=E3=83=AA=E3=82=A2=E3=83=B3=E9=95=B7=E8=80=81
+
+Today's spiritual message is simple; think of something/someone you are
+grateful for, and think about why you are grateful for it/them. Pray about
+it, and let God know you are appreciative, and I promise that you will be
+able to feel that he hears that. It's true :)
+Bye!
+
+--000000000000a8b7a4062589f29a
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto">Oct 22<div dir=3D"auto"><br></div><div dir=3D"auto">Tuesd=
+ay</div><div dir=3D"auto">Today was DCM, and afterwards a lovely exchange W=
+ith Elder Wilson. Fun fact, it was actually his Last exchange, and my first=
+ =F0=9F=98=82 He gave me a lot of good advice about missionary work in gene=
+ral; we used a few different ways to reach out to people. We first did just=
+ a little streeting, then after went to a nearby station and did some sign =
+streeting. Usually it doesn&#39;t go well from my experience, but like 10 s=
+econds after I held up the sign, a lady walked right over to us, and is gon=
+na bring her boyfriend to Eikaiwa in Okamachi (the area that Elder Wilson i=
+s from). Was a huge miracle! Later that night we also probably deposited ar=
+ound 100-150 flyers into people&#39;s mailboxes lol. Was very fun =F0=9F=98=
+=81 we also had our transfer video, which didn&#39;t change much besides Is=
+hizaka=E9=95=B7=E8=80=81 transferring to Akashi, which is sad =F0=9F=98=A2 =
+But it&#39;ll be ok,  we get Kyoumen=E9=95=B7=E8=80=81 in his place; he&#39=
+;s a riot.</div><div dir=3D"auto"><br></div><div dir=3D"auto">Wednesday</di=
+v><div dir=3D"auto">Today before Eikaiwa, a dude named Sanchew came to the =
+church to make music with Sonomura=E9=95=B7=E8=80=81, as I drew on the side=
+lines lol. He was super nice, and his voice is extremely high =F0=9F=98=82 =
+he brought a guitar and was singing up a storm. He actually stayed at the c=
+hyrch building for like 5 hours probably lol. We had Eikaiwa with him, and =
+afterwards he even stayed for a decent while during Badminton. Was awesome!=
+ In Eikaiwa we talked almost only about food; Elder Berg has the advanced c=
+lass structured basically as a big conversation, so we basically just talke=
+d about random foods in English for an hour lol.</div><div dir=3D"auto"><br=
+></div><div dir=3D"auto">Thursday</div><div dir=3D"auto">Today we were plan=
+ning to go to a festival for a bunch of the morning, but when we got there,=
+ oddly nobody was there. Turns out Sonomura=E9=95=B7=E8=80=81 had the wrong=
+ month =F0=9F=98=82 Anyways, I spent a lot of the day with Ishizaka=E9=95=
+=B7=E8=80=81, as he needed to impart his final wisdom to Mr before he trans=
+ferred. I asked if I could call a bunch of inactive members numbers, and he=
+ taught me a bit, then let me do the rest =F0=9F=98=81 It was a bit nerve-r=
+acking but great practice! We also did a lot of travel, getting from Ibarak=
+i to Hirakata is an hour nomatter how you get there lol. When we got back t=
+o Ibaraki, Ishizaka=E9=95=B7=E8=80=81 and I taught a lesson to Mahinda=E5=
+=85=84=E5=BC=9F, a new member in our ward. He&#39;s maybe the nicest dude I=
+=E2=80=99ve met. There are low-key a lot of people I want to say that about=
+, but it=E2=80=99s still true =F0=9F=98=82 Later that night we had Basketba=
+ll as usual, and I was able to share some of my art while others played bas=
+ketball; still fun. Afterwards, we taught a lesson, idk what it was about o=
+r who it was with, but I had it written down so I&#39;m pretty sure it happ=
+ened =F0=9F=98=82 I could just check the =E2=80=9CArea Book=E2=80=9D but I&=
+#39;ve gotta write, so for now just pretend it was a super touching story =
+=F0=9F=91=8D=F0=9F=91=8D</div><div dir=3D"auto"><br></div><div dir=3D"auto"=
+>Friday</div><div dir=3D"auto">We met with Mahinda=E5=85=84=E5=BC=9F again,=
+ and this time he bought us all donuts, again super nice dude. Later we ate=
+ again at the Fukudas, This time it was okonomiaki, but I was actually so c=
+lose to throwing up from how much I ate. They would not stop making food =
+=F0=9F=92=80 Later I somehow was feeling ok, and we met again with Rui. He&=
+#39;s again super nice, and feels like an American friend, but hes just got=
+ta get to more church and activities, He&#39;s still a member but just thin=
+ks the other church members here are weird =F0=9F=98=82 We will fix this =
+=F0=9F=91=8D=F0=9F=91=8D=F0=9F=91=8D =F0=9F=98=82 Anyways, he also told us =
+he works for JT, which is apparently Japan Tobacco or something =F0=9F=98=
+=82 he says he doesnt tell his boss about his beliefs or anything or he&#39=
+;d probably get fired lol. He still works there because it pays well lol. T=
+hat night at the Gathering Place, I pretty much taught Nao a lesson all by =
+myself while everyone else taught a big lesson a few chairs away from us lo=
+l. Shes not a member, but says she wants to be a senior missionary in Utah =
+=F0=9F=98=82=F0=9F=98=82 love the passion, let&#39;s just move forward then=
+ lol. After we git home, we played our last game of Catan with Ishizaka=E9=
+=95=B7=E8=80=81, pretty sure Berg=E9=95=B7=E8=80=81 won =F0=9F=98=A2</div><=
+div dir=3D"auto"><br></div><div dir=3D"auto">Saturday</div><div dir=3D"auto=
+">Today we got some more Indo Curry with President Sano=E2=80=99s son. I go=
+t the spicest that they had, and it was perfectly fine lol. I gotta find so=
+me real spicy stuff someday =F0=9F=98=82 We had a fun meeting at the church=
+ for our =E2=80=9Cward conference eve=E2=80=9D. Later we git to visit Morig=
+uchi san=E2=80=99s apartment, her kids are the cutest ever =F0=9F=98=82=F0=
+=9F=98=827</div><div dir=3D"auto"><br></div><div dir=3D"auto">Sunday</div><=
+div dir=3D"auto"><br></div><div dir=3D"auto">Church taught primary for abou=
+t 5 mins,</div><div dir=3D"auto">afterwards had lunch with moriguchi and to=
+yama San. Toyama only made it to the luncheon part, but it was awesome; he =
+got to talk a bunch with the members! Also got to say hi to Yu=E5=85=84=E5=
+=BC=9F again, this time he told me he specifically wants to be a captain in=
+ Germany So he can pilot a german made ship. Love this guy.</div><div dir=
+=3D"auto"><br></div><div dir=3D"auto">Pday</div><div dir=3D"auto">Today we =
+went Shopping for most of the day lol. First we went to a cards/game shop, =
+which was very neat, also kind of crazy how cheap some old games were (and =
+how expensive some others were lol). We tried to visit a cool big statue bi=
+t it was unfortunately closed =F0=9F=98=95 was still fun to bike there thou=
+gh! Near the place of the statue there was a massive mall, so we went and l=
+ooked around, was very fun. Not a bunch else to say unfortunately lol.</div=
+><div dir=3D"auto"><br></div><div dir=3D"auto">Sorry some stuff isn&#39;t s=
+uper detailed, I&#39;m typing like a menace ATM =F0=9F=98=82 Love you guys!=
+!!</div><div dir=3D"auto">I mean it!! I will try to get back to yall next P=
+day, sorry =F0=9F=98=85</div><div dir=3D"auto">Bye!=C2=A0</div><div dir=3D"=
+auto">-=E3=82=AD=E3=83=AA=E3=82=A2=E3=83=B3=E9=95=B7=E8=80=81</div><div dir=
+=3D"auto"><br></div><div dir=3D"auto">Today&#39;s spiritual message is simp=
+le; think of something/someone you are grateful for, and think about why yo=
+u are grateful for it/them. Pray about it, and let God know you are appreci=
+ative, and I promise that you will be able to feel that he hears that. It&#=
+39;s true :)</div><div dir=3D"auto">Bye!</div><div dir=3D"auto"><br></div><=
+/div>
+
+--000000000000a8b7a4062589f29a--

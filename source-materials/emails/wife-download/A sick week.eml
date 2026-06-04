@@ -1,0 +1,215 @@
+Delivered-To: killianfamily@gmail.com
+Received: by 2002:a05:6022:901a:b0:65:2ffb:d87 with SMTP id bc26csp1692292lab;
+        Mon, 6 Jan 2025 04:21:34 -0800 (PST)
+X-Received: by 2002:a05:6402:40c8:b0:5d0:e50b:899e with SMTP id 4fb4d7f45d1cf-5d81dd66e0cmr57809374a12.4.1736166094160;
+        Mon, 06 Jan 2025 04:21:34 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1736166094; cv=none;
+        d=google.com; s=arc-20240605;
+        b=FExTSx3JytRS9TZMyvgS2F5g3t4oy13sVACLdpAxFU09fw1ywdsYRxob4GD3f3xCL1
+         yJNzmCyNToM2XZff3b3keFdp9MC9vYeVm/Jltpu4L2hu7ddsC+1e8bNOgceSB+PUIrVj
+         KKYaHj+m0xJTHGc/v1q09oy815/xtmmcbZwHlxEiKDRAWpuMlUPA3WhhD3r/3c0DhOOv
+         I55Kh/lw+MYb0l6Eo3sK0ThM9SxahSj48uUFatx1jdNWrq6ZOVaRrO4+gsfJ92zDQKin
+         90v5ZspX3e2hpo5oWUHacfNig7UTJgSw1MmrvuI/d2+EDFB0TQgr+OBk5jIh3NxxJlVY
+         j8bQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=rC1AueXVnwmArpeU8sfMbZsNKFQwDr8SAtIrCQoAF7g=;
+        fh=7heRuBWPyNQUWJA2/viMPwiNfAUA567OllBtKvgTBis=;
+        b=C2kWl4ie11ut2ILHYP0d9Ll8gaXInu56kVly18mWdpaaQ1sBTf1e+oJnZ0wjLh5rNL
+         OtEsIjQYahcSuJFYlRzvBANEHlFxB6UCDxJSQRajwJyFO/cpsswp3zvzXobvFY3+548q
+         47xldlK4rhdM2AeJUzawOWYvDTdH8hJLWX6yS7O999keDRYtS1d78JOACkfvZxP733eh
+         nVBUECqWUJ9YG+WrPpvYC8JkmfJNzbx+lDBqUdqft3z8Noi5iWpcTVfYkn2aebUVoSZr
+         wTj1etssyYzOHrhy1/J5Ysp1qcxAl+ciKemrIbggGENi4l1+oAY8Y6YOLZpGx6uEfF7g
+         T81w==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@missionary.org header.s=google header.b=N+zuOoWX;
+       spf=pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=kaden.killian@missionary.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=missionary.org;
+       dara=pass header.i=@gmail.com
+Return-Path: <kaden.killian@missionary.org>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 4fb4d7f45d1cf-5d806765a09sor11815385a12.5.2025.01.06.04.21.34
+        for <killianfamily@gmail.com>
+        (Google Transport Security);
+        Mon, 06 Jan 2025 04:21:34 -0800 (PST)
+Received-SPF: pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@missionary.org header.s=google header.b=N+zuOoWX;
+       spf=pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=kaden.killian@missionary.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=missionary.org;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=missionary.org; s=google; t=1736166093; x=1736770893; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=rC1AueXVnwmArpeU8sfMbZsNKFQwDr8SAtIrCQoAF7g=;
+        b=N+zuOoWXBBNnRfjvSWt3UYugNLJY0f+hxLm4ZWlW/sZZql3M0Uh7/wcp+X6pU5GEEz
+         LYv4vnlQBiRoMuRYuH+5aJhnUJXgn5pBOHJT86i2BsibtrqACwI4CqgSFg+/lAtMMX55
+         D53QiT4+/xxBVNPM/1ccjBAMEZ3v9DDoJaGXvdWDxH0kDKYjye490ZSKpGNACjB5jGdV
+         Vc1twDRa36uiXP4hoij2KMb5OTy3RyKAvqSq+b7KxDpHQmUdjzKn5cNtNn/JaQVuTwrk
+         zLPu9VSoeFZEtDRTxZqGn9Ygf1icI7o3r5EN4QwdqFxQKBCD7GI1wMNvEiOMgoP+S3J0
+         yahg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1736166093; x=1736770893;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=rC1AueXVnwmArpeU8sfMbZsNKFQwDr8SAtIrCQoAF7g=;
+        b=bfvcxhO7IdwMbB6ND5J+a3WSvwxwiQHk35eYMguJ15BtMw/xUmAflYwQGeZNrrNa3C
+         tggnHlKC63+V/LsyTd7P+meUFXq31moA/F3yhEQMjPTUM4l7mp5YDXruYRK3bAgHq0/b
+         L2cU9kZmqMYLA+Ja+yeyfoiVzmts29hWOfTJY9NARXP6m1hLBv1+C30zd2Ld8UX0PhaL
+         ShfzVlSZjxr806XBuAgzcgCjY5qatJM/FUU/a77xsjRTzhKDjo0xs34kGEBYaeHuB2ZH
+         DII6iRa4ICxGuTBrxWbUc9XLslXYX3oUSJDO3qabVpedYgRFKbp4YOgbxMEVz+q2b22u
+         M0iw==
+X-Gm-Message-State: AOJu0Yw76vMpepgr/1c2MJZHgaweovVzpdDTGS4I2CKKTW8OKzFAlMdl
+	R3lya3pbbp8g+4eZ9RjPL97qdf0JCJVhJf2xRqPTqXP5wWhoAwkS99AuTxoJCNeYX2S2FRWduss
+	bOFm2gncehDULg/IehwnmFA72TGEpVyhflcVAo7zI8W7Ni5wS/T1drXaE1CW0YmlTqfutXvMXSh
+	Ffi2oQmG7J4IKU1ilCk/vw6+Gm5qWj+7lybo9zOPooMsQAt/hsHJzBVEejnzlg7NOi+dXtQm96T
+	nlnGbE4RVdmO8YO0QFzaeWc4WdpR5aVGLTnLzcwf3tHX4dGmIL1CYxx6NYnr0MW3w5Wqxe9+qg=
+X-Gm-Gg: ASbGncujYClF4MtWdvlzj2eVUfM+FCGtxchfHfKyTqAeJL8NXnFqhQ3rTL0AXwSsyBR
+	XtdtiGL6zt1DlI/heavVgzvK3gf8CsLwQ3IYWA2tmgKNL5v4Vt4vna+wPpOtD8NrnQR4e7S/F
+X-Google-Smtp-Source: AGHT+IEnoOMAttgN0f9Zzt0qZmtyVzGAqYpSsXcL3FxL71bO0RoqGLAqlUDkQvUf2qIiJryvT6BGp318zBehlJPnEhw=
+X-Received: by 2002:a05:6402:528a:b0:5d3:f141:ccf6 with SMTP id
+ 4fb4d7f45d1cf-5d81de16c82mr54394330a12.32.1736166093304; Mon, 06 Jan 2025
+ 04:21:33 -0800 (PST)
+MIME-Version: 1.0
+From: Kaden Killian <kaden.killian@missionary.org>
+Date: Mon, 6 Jan 2025 21:21:19 +0900
+Message-ID: <CABgTvgY4ijhgcOnHnaHw9x7gaYBGEZhzX6KYBkwj7fJ8sma=CA@mail.gmail.com>
+Subject: A sick week
+To: killianfamily <killianfamily@gmail.com>
+Content-Type: multipart/alternative; boundary="00000000000043505d062b08abcc"
+X-CLOUD-SEC-AV-Sent: true
+X-CLOUD-SEC-AV-Info: missionarymail,google_mail,monitor
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+
+--00000000000043505d062b08abcc
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Mackay=E9=95=B7=E8=80=81 and I (mostly Mackay=E9=95=B7=E8=80=81) were sick =
+for the past week, mega zest (as
+Mackay=E9=95=B7=E8=80=81 would say). There are a few positives though! (The=
+re always are
+baby =F0=9F=94=A5)
+
+This week we had =E9=95=B7=E8=80=81=E5=A4=A7=E4=BC=9A (chouroutaikai) aka E=
+lders Conference. Unfortunately
+we didn't get to meet mission wide, but we did get to gather in our
+respective zones. We basically played random sports, Pok=C3=A9mon, and Beyb=
+lades
+in the Takamatsu church building (I spent most of the time playing
+Pok=C3=A9mon).
+
+It was super fun to see Wheeler=E9=95=B7=E8=80=81 and Dietrich=E9=95=B7=E8=
+=80=81, I've yet to bump into
+Fair=E9=95=B7=E8=80=81 yet however=F0=9F=98=A2. It'll happen sometime soon =
+I'm sure.
+
+This week was a tough one for me personally. It feels hard to use my time
+effectively locked inside the apartment when my Companion is getting some
+Z's. I've had a lot of time to reflect on how I'm using my time, which is a
+good thing! One thing I learned is that it's pretty easy to let yourself
+get lured into laziness when you have an excuse for it. I think that there
+are definitely times where a break for peace of mind is warranted, but all
+too often we ride those excuses and end up wasting our time or using it
+much less effectively than we could be. This is a pretty hard
+feeling/mindset to combat from my experience. It is, however, possible! If
+we jump up, and make up our minds to do something more, the energy starts
+flowing and stuff gets done. That first step is never very easy,
+Unfortunately.
+
+"Breaking out" is something I could definitely use some work on. I think
+that a couple ways I've "broken out" is by getting sick of using time a
+certain way (definitely not the ideal method) or by relying on others to
+hold me accountable and help to motivate me (IDEAL!! =F0=9F=94=A5).
+
+I really don't believe that we will be stuck in a negative mindset/way of
+life  forever, (most of the time we eventually move on) but it can take a
+really really long time to change on your own. My invitation is to try and
+rely on someone else to improve some aspect of your life. Sometimes we feel
+like "oh, I don't want to burden this person" or even "I can do it by
+myself." These statements have some elements of truth; relying on others
+does take some amount of effort from the other person, and you probably
+could do things on your own. BUT! More often than not it is pretty
+ineffective trying to manage it all yourself. People are usually pretty
+willing to help you out too! =F0=9F=98=81
+
+I know that as we turn outwards (for help or to provide help) we will find
+light in our lives. I have felt Christ's light in my life, and that's
+definitely part of why I'm out spending 2 years of my life trying to share
+that with people! I encourage you to share your light, and sometimes to let
+other's light shine on you =F0=9F=98=84
+
+"Verily, verily, I say unto you, I give unto you to be the light of this
+people."
+
+-Jesus Christ
+
+(From 3 Nephi 12:14)
+
+Love you guys, each and every one of you! I'd love to hear from you too!
+Let me know what's up! =F0=9F=98=81
+
+=E3=82=AD=E3=83=AA=E3=82=A2=E3=83=B3=E9=95=B7=E8=80=81
+
+--00000000000043505d062b08abcc
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto">Mackay=E9=95=B7=E8=80=81 and I (mostly Mackay=E9=95=B7=E8=
+=80=81) were sick for the past week, mega zest (as Mackay=E9=95=B7=E8=80=81=
+ would say). There are a few positives though! (There always are baby =F0=
+=9F=94=A5)=C2=A0<div dir=3D"auto"><br></div><div dir=3D"auto">This week we =
+had =E9=95=B7=E8=80=81=E5=A4=A7=E4=BC=9A (chouroutaikai) aka Elders Confere=
+nce. Unfortunately we didn&#39;t get to meet mission wide, but we did get t=
+o gather in our respective zones. We basically played random sports, Pok=C3=
+=A9mon, and Beyblades in the Takamatsu church building (I spent most of the=
+ time playing Pok=C3=A9mon).=C2=A0</div><div dir=3D"auto"><br></div><div di=
+r=3D"auto">It was super fun to see Wheeler=E9=95=B7=E8=80=81 and Dietrich=
+=E9=95=B7=E8=80=81, I&#39;ve yet to bump into Fair=E9=95=B7=E8=80=81 yet ho=
+wever=F0=9F=98=A2. It&#39;ll happen sometime soon I&#39;m sure.=C2=A0</div>=
+<div dir=3D"auto"><br></div><div dir=3D"auto">This week was a tough one for=
+ me personally. It feels hard to use my time effectively locked inside the =
+apartment when my Companion is getting some Z&#39;s. I&#39;ve had a lot of =
+time to reflect on how I&#39;m using my time, which is a good thing! One th=
+ing I learned is that it&#39;s pretty easy to let yourself get lured into l=
+aziness when you have an excuse for it. I think that there are definitely t=
+imes where a break for peace of mind is warranted, but all too often we rid=
+e those excuses and end up wasting our time or using it much less effective=
+ly than we could be. This is a pretty hard feeling/mindset to combat from m=
+y experience. It is, however, possible! If we jump up, and make up our mind=
+s to do something more, the energy starts flowing and stuff gets done. That=
+ first step is never very easy, Unfortunately.</div><div dir=3D"auto"><br><=
+/div><div dir=3D"auto">&quot;Breaking out&quot; is something I could defini=
+tely use some work on. I think that a couple ways I&#39;ve &quot;broken out=
+&quot; is by getting sick of using time a certain way (definitely not the i=
+deal method) or by relying on others to hold me accountable and help to mot=
+ivate me (IDEAL!! =F0=9F=94=A5).</div><div dir=3D"auto"><br></div><div dir=
+=3D"auto">I really don&#39;t believe that we will be stuck in a negative mi=
+ndset/way of life=C2=A0 forever, (most of the time we eventually move on) b=
+ut it can take a really really long time to change on your own. My invitati=
+on is to try and rely on someone else to improve some aspect of your life. =
+Sometimes we feel like &quot;oh, I don&#39;t want to burden this person&quo=
+t; or even &quot;I can do it by myself.&quot; These statements have some el=
+ements of truth; relying on others does take some amount of effort from the=
+ other person, and you probably could do things on your own. BUT! More ofte=
+n than not it is pretty ineffective trying to manage it all yourself. Peopl=
+e are usually pretty willing to help you out too! =F0=9F=98=81</div><div di=
+r=3D"auto"><br></div><div dir=3D"auto">I know that as we turn outwards (for=
+ help or to provide help) we will find light in our lives. I have felt Chri=
+st&#39;s light in my life, and that&#39;s definitely part of why I&#39;m ou=
+t spending 2 years of my life trying to share that with people! I encourage=
+ you to share your light, and sometimes to let other&#39;s light shine on y=
+ou =F0=9F=98=84</div><div dir=3D"auto"><br></div><div dir=3D"auto">&quot;Ve=
+rily, verily, I say unto you, I give unto you to be the light of this peopl=
+e.&quot;</div><div dir=3D"auto"><br></div><div dir=3D"auto">-Jesus Christ</=
+div><div dir=3D"auto"><br></div><div dir=3D"auto">(From 3 Nephi 12:14)</div=
+><div dir=3D"auto"><br></div><div dir=3D"auto">Love you guys, each and ever=
+y one of you! I&#39;d love to hear from you too! Let me know what&#39;s up!=
+ =F0=9F=98=81</div><div dir=3D"auto"><br></div><div dir=3D"auto">=E3=82=AD=
+=E3=83=AA=E3=82=A2=E3=83=B3=E9=95=B7=E8=80=81</div><div dir=3D"auto"><br></=
+div><div dir=3D"auto"><br></div></div>
+
+--00000000000043505d062b08abcc--

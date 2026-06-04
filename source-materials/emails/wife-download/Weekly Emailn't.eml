@@ -1,0 +1,290 @@
+Delivered-To: killianfamily@gmail.com
+Received: by 2002:a05:6022:521e:b0:70:dd05:1f with SMTP id w30csp3684577law;
+        Tue, 10 Jun 2025 20:53:35 -0700 (PDT)
+X-Received: by 2002:a17:907:3f23:b0:ad5:5114:f538 with SMTP id a640c23a62f3a-ade89762422mr176949766b.13.1749614015282;
+        Tue, 10 Jun 2025 20:53:35 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1749614015; cv=none;
+        d=google.com; s=arc-20240605;
+        b=ffkhW8h+5XNh7ev07Qf97TIpwl024pWtZnpNgf8vSGn05lc1mWXlvPEZrQDw8M4kDU
+         hPGVCTf+5Ncf+h2pmsiAHfL593tc0hVe10N9dJ0SrE7rlObyfFz5u7mRE9ihC99UGt4b
+         qNrguvjrexMEjpDMidf4eCnN4u5aMyJNtplPb3wefG/PYiszIDLCCnZEMisZlL3m6TE5
+         IKnNcD74VDq3BlhwKTK67SbUydLnnbhmd6Xq51Hphx66WPx/Ikg1HE+UDKRFc4NdgH6g
+         t+FVyPwa6Oe05auHFmObUiARzMYrkrV9Y5Ej/g7wovpDfFZqSEC4RmYZaSm58SR5mveK
+         Xhhw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=djoEymBaMEVl7bLw04Sp2UaU5sdHKYOBQiqoUxjqfZc=;
+        fh=YV2lJTWLy9+vtE/lRrQJmQ4sGdf7fKsQrloTRmIHfcg=;
+        b=gZiTfa/YSsVv+uPfcKrfY2U9ebypC14G6yjC5iBIx4o5NeTBOMLItlu9hb9J7kYH7O
+         RedmaCDPhL3MohD9g9zyNgYYMJSNd6/Yev+mKrRU3VxjX50wJp+gOUMPHsGEchvgn4jg
+         qElg7G0kjHzB/Zl+b7jD54U4NEUEJthpwOY4LgifUJmK8niKt+oUqzPim79k0kNzrMUT
+         c9WBrDJ8/J75H32P6C65ShXz9kpLXmYib2qSstNktLnR4ymygU5oPeH6AVXGFFZ0Uldg
+         XM6/OSaKV7ZQmqm9ucmdbNUuP79IQfAHYVOMo0t8Vbl54O/e4jEJanP5nQ7EfAvi0NtI
+         0+ow==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@missionary.org header.s=google header.b=CTCeqbAV;
+       spf=pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=kaden.killian@missionary.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=missionary.org;
+       dara=pass header.i=@gmail.com
+Return-Path: <kaden.killian@missionary.org>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id a640c23a62f3a-ade8d8cad6dsor25834666b.6.2025.06.10.20.53.35
+        for <killianfamily@gmail.com>
+        (Google Transport Security);
+        Tue, 10 Jun 2025 20:53:35 -0700 (PDT)
+Received-SPF: pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@missionary.org header.s=google header.b=CTCeqbAV;
+       spf=pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=kaden.killian@missionary.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=missionary.org;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=missionary.org; s=google; t=1749614014; x=1750218814; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=djoEymBaMEVl7bLw04Sp2UaU5sdHKYOBQiqoUxjqfZc=;
+        b=CTCeqbAV/UJWB/hXPd8kop2Vc4FEkckol5z1pMdQWzDeFLMGGtCOWPgFKwUeSi1a7B
+         9ndqTWPve78vwynCrfhuZciA48GkldUYISh9sr00JVe+/Lm6sUrMbdZbNbN+ylrYH/Fn
+         e0+FZH1uuDq8pQGU01QSjsfeHykRYUEgIjAI36ivZjRwgPv7A8wPaDup+h8h3agB5OmL
+         uPYyv3/x9WZ6vTfOUUcDWEu6WB4FBoXSysUKkAhfQ/Eo0LDdtAxg6jApZKbAv0buHW53
+         3sTlY4gjYK+mvVYi2PRoT4czv/5DQ8IE7USMVmK7nS5VW+ghsW96Qf3w6QvpV14nNBbt
+         P0KQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1749614014; x=1750218814;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=djoEymBaMEVl7bLw04Sp2UaU5sdHKYOBQiqoUxjqfZc=;
+        b=em72wEO+SfnUQrNqwBSEN9g6cGmSLq17ahfTNfLJDC1EfnkI0E9tpx5kuglaDMkt1C
+         2NRvYpCofzunxkyI2aVlMcfV5FvCO/eSmzcZdELKjQmD0CXxHi8tVWgChN6LX6icPEwu
+         UViiqRcwmeY+C0VlrDzmBO5BI88yLiMxAxcnx9RGrWeRb/pyovbe9WbCAnnfoTJNTW7v
+         HMzmWfZV9+u1hQcXOgdHnPhxT4B4QsNbxFmsYByFJfpQ4KW9lRjZhlonr2KOgrw2443A
+         eHS87MyYhgK3ihmeDRX7+5qbObZubxSb3fiHlAr8TXdgwQ2MKB7GNyi35pzkDA/t+/Fs
+         bTuA==
+X-Gm-Message-State: AOJu0YyAhd3vuNylvjoO818auZYhTtINERqf16ufaEok7fEK/7LAoUk0
+	otOE5wE2dUw2x2GQIfVTVq79lPFU/lW7NI+/XzSAwG671MoluwIwhh5nK7RF8YRawWNFo9Vva+w
+	xRCaPCeLilShn13LuhEC9+0F/Jm+zyoPdBCknbfllPAN4l6MVVpjFngDKbOksotUJQPUZysjMfC
+	CUGN0aL2f5rZ2wKzLPJxCASVlcA1ZY0Tmvg5cwtYJ/NUv6+UuufE4AAKvONRTILjOjh04+N0A+Z
+	wfdCQeMUUQt2/t4Jmf4dIEfuEORSPEovQo3+whz3iPJRY2n7CMvGWtyWdKM7D1mTBIOVSNYezWI
+X-Gm-Gg: ASbGnctl2Fp7nUHW1iDxmH2bt4hyOmU7gmpcykDhFa77Rwf53o5Sh6boPidCMzM0VXR
+	hQ0TLrVjOVycjY40CQNXp1SuZ95FNM4Nsm6ogljZaXBIbW/nInvkSHa8Ty8Boa/JF1JG3LJx3C1
+	c+8U06bYqNts6ZShAUUJSOw7F1Nzk89aLmEhf8Z9kiOgwnHoyn8vibKFluAtwZ533zi9QwllE=
+X-Google-Smtp-Source: AGHT+IGLXiAlh6Z7MoqhM9QoFT7X7g5JPrMaORD/mtasB06jOUgu0IkdFkmuvA51xdLMcK4m7Zx6CNtBDBQoZjsXAJs=
+X-Received: by 2002:a17:907:db16:b0:ace:d587:2f3b with SMTP id
+ a640c23a62f3a-ade899f5db4mr132757266b.22.1749614014287; Tue, 10 Jun 2025
+ 20:53:34 -0700 (PDT)
+MIME-Version: 1.0
+From: Kaden Killian <kaden.killian@missionary.org>
+Date: Wed, 11 Jun 2025 12:53:22 +0900
+X-Gm-Features: AX0GCFto4I80pBwR50KyjlRluk-vJFQ5SiGkTe5QIVvflcL2vCjLxZe9oKqgrq4
+Message-ID: <CABgTvgZdmiOzR1yG8QYDYEoO68=j6ii-B2PPEU8NscEjU+JiCQ@mail.gmail.com>
+Subject: Weekly Emailn't
+To: Tanya Killian <killianfamily@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000d0e248063743c18a"
+X-CLOUD-SEC-AV-Sent: true
+X-CLOUD-SEC-AV-Info: missionarymail,google_mail,monitor
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+
+--000000000000d0e248063743c18a
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hello everyone, thank you for Joining me for this weekly review. Not! I am
+going to go over everything from this week and this last week in my next
+email. For today I have a few random things from Elder Killian's brain to
+share =F0=9F=A7=A0
+
+Spiritual message/update
+
+This past week has been great, and I've only felt anxious a couple times
+and only for a few minutes at a time. There are a couple reasons I believe
+this is the case.
+
+1. Prayer
+
+Ever since I've started experiencing these somewhat anxious feelings I've
+immediately taken to the knees to pray about it to my Heavenly Father. I
+trust that He hears my prayers and is concerned about my well-being. I also
+believe that the Heavenly Help we are prescribed is correlated somehow to
+our faith and open-ness with God. I haven't felt immediate relief from
+these feelings in the moment, but steadily I have noticed a positive
+change. I attribute this to Heavenly Father, and also in part to my trust
+that I place in Him.
+
+2. Anxious vs Anxiously Engaged
+
+Doctrine and Covenants chapter 58 reads:
+27 Verily I say, men should be anxiously engaged in a good cause, and do
+many things of their own free will, and bring to pass much righteousness;
+28 For the power is in them, wherein they are agents unto themselves. And
+inasmuch as men do good they shall in nowise lose their reward.
+
+We sometimes can't 100 percent control our emotions or our circumstances,
+but there are things that we can control, as we are "agents unto
+[ourselves.]" I have had an increased focus on this kind of mindset these
+past couple of weeks, and it's made all the difference. As I focus on
+putting all of my efforts into bringing others closer to the Savior and
+showing love unto my brothers and sisters in Japan, I have slowly seen the
+anxious feelings I've felt get pushed to the side, or even covered up by
+the bright and rejoicable experiences I have seen through that increased
+focus.
+
+I am very grateful for what God and the Savior have done to ease my
+burdens. I promise that as You (whoever you may be, member of the Church or
+not) walk forward with trust that you are being watched over, and acting in
+Righteousness, you will be blessed and see a great change in your lives. We
+all need to change, no matter where we are at. I am still trying to change
+each day, failing, repenting, and slowly crawling forward. Some days feel
+like I'm being dragged backwards! But I have the desire to move forward,
+and thanks to the Savior sometimes that's even enough.
+
+Poetry
+
+1. Never-woulda-thought
+
+Pokemon is Lit
+My companion is Brainwashed
+It's pretty funny =F0=9F=98=82
+
+2. Crime Seen
+
+Stem cells peek around the corner;
+The left side of my brain has got
+The right side of my brain in a choke-hold and if I said that the left side
+wasn't being bold I would be denying I'm a foreigner, which would therefore
+be a lie that I'd just told. The reason there's an argument is that the
+left side really meant to argue just for the sake of it, and it didn't sit
+right with the right side of my brain. "It wouldn't be right" just to leave
+those words suspended in the air so the right side of my brain upended the
+chair of the left side (who wasn't on the right side at the time) which (if
+I'm right) provoked the scene and the image that we've just imagined right
+here. I've got nothing left to say 'sides this whole thing just so happened
+to be a stroke of luck or a stroke of genius. On second thought it might be
+right to say it was just a stroke.
+
+3. Ceramic Feathers
+
+If a bird of ceramic took flight
+It would have to be due to a trick
+With "feathers of masonry?" Yeah, right
+I refuse to imagine they'd stick
+
+In this moment just now
+I realized... something grand
+As I furrow my brow
+In disbelief and
+
+Close off my mind to the idea of this event
+It's quite obvious now that things just won't go how I'd meant
+
+If we limit ourselves from the get-go I fear
+That aside from this "brick bird" much greater, much more important things
+will veer
+
+Off course
+Astray
+Into lost places
+Far away
+
+So make the decision to stretch your perspective
+There's no need to scrutinize like a detective
+Think openly and take all your measures
+To fly far away on your ceramic feathers
+
+Conclusion!
+
+Thanks for tuning in. I had fun writing each part of this, and I hope it
+will have some meaning with whoever reads this. Love you guys!!
+
+Elder Killian
+
+--000000000000d0e248063743c18a
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto">Hello everyone, thank you for Joining me for this weekly =
+review. Not! I am going to go over everything from this week and this last =
+week in my next email. For today I have a few random things from Elder Kill=
+ian&#39;s brain to share =F0=9F=A7=A0<div dir=3D"auto"><br></div><div dir=
+=3D"auto">Spiritual message/update</div><div dir=3D"auto"><br></div><div di=
+r=3D"auto">This past week has been great, and I&#39;ve only felt anxious a =
+couple times and only for a few minutes at a time. There are a couple reaso=
+ns I believe this is the case.</div><div dir=3D"auto"><br></div><div dir=3D=
+"auto">1. Prayer</div><div dir=3D"auto"><br></div><div dir=3D"auto">Ever si=
+nce I&#39;ve started experiencing these somewhat anxious feelings I&#39;ve =
+immediately taken to the knees to pray about it to my Heavenly Father. I tr=
+ust that He hears my prayers and is concerned about my well-being. I also b=
+elieve that the Heavenly Help we are prescribed is correlated somehow to ou=
+r faith and open-ness with God. I haven&#39;t felt immediate relief from th=
+ese feelings in the moment, but steadily I have noticed a positive change. =
+I attribute this to Heavenly Father, and also in part to my trust that I pl=
+ace in Him.</div><div dir=3D"auto"><br></div><div dir=3D"auto">2. Anxious v=
+s Anxiously Engaged</div><div dir=3D"auto"><br></div><div dir=3D"auto">Doct=
+rine and Covenants chapter 58 reads:</div><div dir=3D"auto">27 Verily I say=
+, men should be anxiously engaged in a good cause, and do many things of th=
+eir own free will, and bring to pass much righteousness;=C2=A0</div><div di=
+r=3D"auto">28 For the power is in them, wherein they are agents unto themse=
+lves. And inasmuch as men do good they shall in nowise lose their reward.</=
+div><div dir=3D"auto"><br></div><div dir=3D"auto">We sometimes can&#39;t 10=
+0 percent control our emotions or our circumstances, but there are things t=
+hat we can control, as we are &quot;agents unto [ourselves.]&quot; I have h=
+ad an increased focus on this kind of mindset these past couple of weeks, a=
+nd it&#39;s made all the difference. As I focus on putting all of my effort=
+s into bringing others closer to the Savior and showing love unto my brothe=
+rs and sisters in Japan, I have slowly seen the anxious feelings I&#39;ve f=
+elt get pushed to the side, or even covered up by the bright and rejoicable=
+ experiences I have seen through that increased focus.</div><div dir=3D"aut=
+o"><br></div><div dir=3D"auto">I am very grateful for what God and the Savi=
+or have done to ease my burdens. I promise that as You (whoever you may be,=
+ member of the Church or not) walk forward with trust that you are being wa=
+tched over, and acting in Righteousness, you will be blessed and see a grea=
+t change in your lives. We all need to change, no matter where we are at. I=
+ am still trying to change each day, failing, repenting, and slowly crawlin=
+g forward. Some days feel like I&#39;m being dragged backwards! But I have =
+the desire to move forward, and thanks to the Savior sometimes that&#39;s e=
+ven enough.</div><div dir=3D"auto"><br></div><div dir=3D"auto">Poetry</div>=
+<div dir=3D"auto"><br></div><div dir=3D"auto">1. Never-woulda-thought</div>=
+<div dir=3D"auto"><br></div><div dir=3D"auto">Pokemon is Lit</div><div dir=
+=3D"auto">My companion is Brainwashed</div><div dir=3D"auto">It&#39;s prett=
+y funny =F0=9F=98=82</div><div dir=3D"auto"><br></div><div dir=3D"auto">2. =
+Crime Seen</div><div dir=3D"auto"><br></div><div dir=3D"auto">Stem cells pe=
+ek around the corner;</div><div dir=3D"auto">The left side of my brain has =
+got</div><div dir=3D"auto">The right side of my brain in a choke-hold and i=
+f I said that the left side wasn&#39;t being bold I would be denying I&#39;=
+m a foreigner, which would therefore be a lie that I&#39;d just told. The r=
+eason there&#39;s an argument is that the left side really meant to argue j=
+ust for the sake of it, and it didn&#39;t sit right with the right side of =
+my brain. &quot;It wouldn&#39;t be right&quot; just to leave those words su=
+spended in the air so the right side of my brain upended the chair of the l=
+eft side (who wasn&#39;t on the right side at the time) which (if I&#39;m r=
+ight) provoked the scene and the image that we&#39;ve just imagined right h=
+ere. I&#39;ve got nothing left to say &#39;sides this whole thing just so h=
+appened to be a stroke of luck or a stroke of genius. On second thought it =
+might be right to say it was just a stroke.</div><div dir=3D"auto"><br></di=
+v><div dir=3D"auto">3. Ceramic Feathers</div><div dir=3D"auto"><br></div><d=
+iv dir=3D"auto">If a bird of ceramic took flight</div><div dir=3D"auto">It =
+would have to be due to a trick</div><div dir=3D"auto">With &quot;feathers =
+of masonry?&quot; Yeah, right</div><div dir=3D"auto">I refuse to imagine th=
+ey&#39;d stick</div><div dir=3D"auto"><br></div><div dir=3D"auto">In this m=
+oment just now</div><div dir=3D"auto">I realized... something grand</div><d=
+iv dir=3D"auto">As I furrow my brow</div><div dir=3D"auto">In disbelief and=
+</div><div dir=3D"auto"><br></div><div dir=3D"auto">Close off my mind to th=
+e idea of this event</div><div dir=3D"auto">It&#39;s quite obvious now that=
+ things just won&#39;t go how I&#39;d meant</div><div dir=3D"auto"><br></di=
+v><div dir=3D"auto">If we limit ourselves from the get-go I fear</div><div =
+dir=3D"auto">That aside from this &quot;brick bird&quot; much greater, much=
+ more important things will veer</div><div dir=3D"auto"><br></div><div dir=
+=3D"auto">Off course</div><div dir=3D"auto">Astray</div><div dir=3D"auto">I=
+nto lost places</div><div dir=3D"auto">Far away</div><div dir=3D"auto"><br>=
+</div><div dir=3D"auto">So make the decision to stretch your perspective</d=
+iv><div dir=3D"auto">There&#39;s no need to scrutinize like a detective</di=
+v><div dir=3D"auto">Think openly and take all your measures</div><div dir=
+=3D"auto">To fly far away on your ceramic feathers</div><div dir=3D"auto"><=
+br></div><div dir=3D"auto">Conclusion!</div><div dir=3D"auto"><br></div><di=
+v dir=3D"auto">Thanks for tuning in. I had fun writing each part of this, a=
+nd I hope it will have some meaning with whoever reads this. Love you guys!=
+!</div><div dir=3D"auto"><br></div><div dir=3D"auto">Elder Killian</div></d=
+iv>
+
+--000000000000d0e248063743c18a--

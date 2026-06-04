@@ -1,0 +1,290 @@
+Delivered-To: killianfamily@gmail.com
+Received: by 2002:a05:6022:5382:b0:72:7d7f:5d4b with SMTP id cl2csp2356897lab;
+        Sun, 29 Jun 2025 23:58:15 -0700 (PDT)
+X-Received: by 2002:a17:906:7314:b0:ae3:6651:58ba with SMTP id a640c23a62f3a-ae366515afemr835170666b.35.1751266695339;
+        Sun, 29 Jun 2025 23:58:15 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1751266695; cv=none;
+        d=google.com; s=arc-20240605;
+        b=HWlOHyJ9y3DgJurVyrAQ4r9CtaOMkO+q+gWTzHGfTiMl/WdSB7E3JD7NuRMGWNUUZI
+         93yGDBUzjhlUtxuea16LMFD2ooqebjm0i3XOcGyzJVNv3pFA789gQ3ZboL9imSHxpiTC
+         zSvOFS8YjOWTfIOMZK41sGKvZykpMy/SPc3S+8FNX+LuAf97/BdS98urSrnF6hEi5fM3
+         qH4xH0qB4EFW0Dqrs9z/9V9hb9BHZ7lCbtKbI1PxUqaIL4RoWkJo3hj1YR9pcxXwZp2Z
+         eg0rD17GkFkvIfxVTphAnaCMbXIq/Pw45UvisSvniU5uo1b/eUirjQ/WG2RSLUCW3LWa
+         ZKPw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=aMtoHjChpvRhwBQCUkrJWDs82meouAjrgS9wK7QxwaY=;
+        fh=YV2lJTWLy9+vtE/lRrQJmQ4sGdf7fKsQrloTRmIHfcg=;
+        b=KkyDfWlI0MQvALUTyBcsjCAIcOg02peMqN8ZC0XauiFoMlPYvZSNqZT55mn6sEmLRI
+         qoJrVCgydeo5qAJq9sEM+N4wrQAP6xUJ7MTqpoBsB43f20bzbwzdsx+9SFQM+XGLi16t
+         ui1NVauaqFrF1FV4eh1x5Hz4a7vhadkvErz1BHUYqDy+UZAD4APddFhh8K1U/whletZD
+         VJD0FYNZQ25fzR0uiWY6kMrlpmSqOOMONStww+SytaIaiit9m/xU2QqULSP53KwWZma6
+         zTLPWypFb6sH/1Jq0K05mUzfdCcLsmh4rykSylJiYmbJV9oNjQYjDP0nEmM5yxGLXvPO
+         N3SA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@missionary.org header.s=google header.b="ob1/eKRK";
+       spf=pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=kaden.killian@missionary.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=missionary.org;
+       dara=pass header.i=@gmail.com
+Return-Path: <kaden.killian@missionary.org>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id a640c23a62f3a-ae1f1e3c9a9sor320476966b.0.2025.06.29.23.58.15
+        for <killianfamily@gmail.com>
+        (Google Transport Security);
+        Sun, 29 Jun 2025 23:58:15 -0700 (PDT)
+Received-SPF: pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@missionary.org header.s=google header.b="ob1/eKRK";
+       spf=pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=kaden.killian@missionary.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=missionary.org;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=missionary.org; s=google; t=1751266695; x=1751871495; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=aMtoHjChpvRhwBQCUkrJWDs82meouAjrgS9wK7QxwaY=;
+        b=ob1/eKRKYnPSlBXugPFSHngHp73Ji9Znrs74eE551uHvX40TKwn6yehHJCUKOhzPFe
+         YWUpx6WD5fs750GKWcizjTtnmWyac/TIT4sRhiOXl2dpAzWJemKdeCD/lPU42TJx6vbS
+         JT7aIa196jxGXDPMCaFif1a/lgTuzlIFUNpSqAmWhAR29vsmmEdBSkScuKQOaGqIvrzT
+         LCf5ploPFil+Pw1kj2LiOWkk1sOeTqbZS3Kb8Ny5VgIcRSwSFJYVXwX7pKJFlJp1p0kA
+         p9AfK+AjEmrgfl2aroQQ0OC0bEL4vPeflEB7g3m8bvH7XDD6yf1LlxyFcWX1FqUGtMT6
+         MuzQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1751266695; x=1751871495;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=aMtoHjChpvRhwBQCUkrJWDs82meouAjrgS9wK7QxwaY=;
+        b=fteVPwYry6PvD1llBkkZ4IszVynxbRK9vnY7JhBFXQyMJO1FkLr0xdvTmbY8iyxTmc
+         1Nwlem1DRIDV50YzUedryRHO7pWvfUPnCJKq4g3AkOz75eK+7DsDOml/Ad4LuQdHMMj9
+         KIimRjEJKKBuBK1yc2U04Omm7ST5I6qyNPTdaYkRyIolfRxhv3tAdJGgbsX6jfiHyndV
+         vaPEf74WVbDqjZBM10mqaX/vgQW25QY7m8HK01oFCrd6eXUYZK7u0CrKZD14Ev2O9PJs
+         Y7FDE848ImLGEEvxMMGuxGDIZbrRVn+coZ90kS5t5gDre5AoRFIJJwIdguiFvp73ePP6
+         o0fQ==
+X-Gm-Message-State: AOJu0YwwA7MX6hydKuHEttRAhRdwtots8feQo1Xl2ewoKd1zk9pFRYCD
+	onNPPtAHrFvHjQTu9i88+HaK2Tb1QmMB7bzzUYiVaO4g53fTm0K0j3yg8yfcKqzgZGwg7e+Sbxy
+	QKG1xw7/UD60ABXN+/RQLwCcHWvT65wQ7NLhDKHB3d7OJrXdlKxrHZacyjvdSJoHDzJSTlgahcx
+	HQuADJ1h+DABcuGohRTk3fZpvj2rxztwTbxa7jtZ5Ga2UmJqvcifTLw3Yoxr0iabiK3N1vzE/P+
+	qOgsg1+7vizwihXOJfCuNqn1ZeEber7yFAwW+fRFpLMTBmfOiZyivk467OQgPJipUrJjKLG/pqn
+X-Gm-Gg: ASbGncvzHcD6VARA6qnSAIinDV6Vw7nYYVs7tlecYy+EWjcX1P//dpRYR33M3AFNTPP
+	PpDXBqTHaUu0mcKpGZoFw6TWk0SMobiu9e/BGQLqdOyt57Ppydma+/jKTusf89H3zidMUKvafZ4
+	o0HIyVhpk/uhD7AbWKfqGXAiageHBbJMnMxTnVheF5RaXJ+s8+0ihecJmPduxrBzGL5LRMpCXFp
+	rAmy0NwdKqmiQ==
+X-Google-Smtp-Source: AGHT+IGJg915DT9lJGELgzLkWU2vKLJA/GKsQDVNASdLruLX5Vy+Hqe5d7U4nm2FwHB7R9s/y0fW5VXwWaVST89stf4=
+X-Received: by 2002:a17:907:edc2:b0:ae3:67c7:54a6 with SMTP id
+ a640c23a62f3a-ae367c7565bmr697403866b.34.1751266694392; Sun, 29 Jun 2025
+ 23:58:14 -0700 (PDT)
+MIME-Version: 1.0
+From: Kaden Killian <kaden.killian@missionary.org>
+Date: Mon, 30 Jun 2025 15:58:02 +0900
+X-Gm-Features: Ac12FXyz6qc1h9oeVVG5T5lyL86Q7NbZNLFEFF_BevJUGYldfKwXmZkAzjJ_qP0
+Message-ID: <CABgTvgZygTk2xKjoZd3=24iefz4t7uY1DHM+cFDamty0oQyvwQ@mail.gmail.com>
+Subject: =?UTF-8?B?SG90IHdlZWsg8J+UpQ==?=
+To: Tanya Killian <killianfamily@gmail.com>
+Content-Type: multipart/alternative; boundary="00000000000039fcbb0638c48d00"
+X-CLOUD-SEC-AV-Sent: true
+X-CLOUD-SEC-AV-Info: missionarymail,google_mail,monitor
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+
+--00000000000039fcbb0638c48d00
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+It has been a very hot week, but it turns out I like the heat and don't
+mind being all sweaty. Let's go!
+
+Tuesday
+Today we had a great DCM (District Council Meeting), even if it was Just
+over video chat. Afterwards we did some fire housing, and were able to meet
+some really nice people that weren't interested in our church, but It was
+still a good experience. We also went and ate Dominos Pizza, which I
+haaaaate in America (unpopular opinion). It was Edible but the Pizza Hut I
+had here was way better. To end off the day we had some more sword practice
+with Shiko, as well as a little bit of guitar stuff too. It was pretty
+funny, this time he brought like 4 foam Kids swords, a fake rubber knife,
+and some foam nunchucks (no idea how to spell that). It was pretty awesome
+lol.
+
+Wednesday
+This morning We peeled onions for 3 hours with a guy we helped weed with a
+while ago. We had a good chance to talk with him, and he is interested in
+playing spikeball sometime together. We were able to talk a bit about our
+purpose as missionaries, but we are hoping we can ask him about more Gospel
+stuff when we meet again. We had a 30 minute lesson with Hiroko about the
+Restoration later, before we headed off to the monthly Kodomo Shokudo,
+where theres a bunch of free food. This time we attempted to help out, but
+we mostly just stood around lol. Later we had Eikaiwa and ping pong at the
+church, which was great as usual!
+
+Thursday
+Today we did some weeding for Kanata=E5=85=84=E5=BC=9F, and talked about Am=
+erican movies
+among other random things. It was super rainy so we were mostly inside
+today doing weekly planning and media work. It was definitely kind of a
+slump.
+
+Friday
+Today we had an Eikaiwa Video call with Aime, and we also had a lesson at
+the church with Sakurako=E3=81=95=E3=82=93! We invited her to pray about wh=
+at we taught,
+and she said she will. We also showed her the Baptismal Font and talked
+about Baptism too. She's super prepared for Baptism, but we are planning on
+inviting her to baptism in one of our next lessons=E2=80=A6 =F0=9F=A4=94=F0=
+=9F=91=80
+
+Saturday
+=E2=80=A6so! First off today Apparently Sakurako met with the Abeno Mission=
+aries
+(my two past comps, Sonomura=E9=95=B7=E8=80=81 and Martinson=E9=95=B7=E8=80=
+=81=F0=9F=98=86) and they invited her to
+baptism, and she said yes =F0=9F=98=82=F0=9F=98=B2 She's our friend so we w=
+ill probably be the
+ones to Baptize her but it was a funny turn of events. We were able to call
+with her and talk about things. The most difficult part for her is going to
+be telling her Mom about it. She's really worried about it, so we are going
+to try and have lessons with members who had similar experiences. Today we
+had Eikaiwa at Ozaki, and on our way back home we went to the church and
+finished up some pizza members made for an activity. Later we had an
+Apartment inspection over video chat and it was Hilarious. Brother Watanabe
+is such an awesome guy, but he definitely surprised us with some of his
+comments. He said that getting bald stinks, but he could probably just find
+a truck on the street and he wouldn't have to worry about his hair loss
+anymore =F0=9F=92=80 pretty crazy comment. After the inspection, we went to=
+ leave and
+try to do some housing. On the way, we literally watched an old lady crash
+her car into the back of a building. She broke her back window and the back
+of her car, but the store was ok I think. It's lucky nobody was in the way.
+Our actual housing today was pretty lackluster, a lot of people saying no.
+We had a few nice refusals, however, and one person might have interest in
+our Eikaiwa class!
+
+Sunday
+Pretty normal Sunday Today, I Gave the closing prayer in Sacrament meeting
+which was nice, definitely not my best prayer but its the effort that
+counts. Later we visited Sister Aren with Sister Suehiro, and dropped Off
+some treats. They seem to be having a pretty tough time, mostly just the
+mom, Sister Aren. We read a scripture together, and invited her to read the
+whole chapter. She has a very strong testimony! Keep her in your prayers!
+
+Imma Write about Pday next week, but it's in general been a pretty solid
+week. I feel that this email is missing some sauce, so it's poetry time
+baby.
+
+Haiku
+
+Piping hot, Cheesy
+It's not a corny romance
+It is Pizza Hut.
+
+Mind in the Gutter?
+
+To what extent can you tune out the static?
+That white noise that surrounds
+What do you hear that gets the =E2=80=9Call clear=E2=80=9D
+Have you thoroughly examined your intake?
+
+How well-dusted is your attic?
+What, in your mind, abounds?
+If revealed, would you have cause to fear?
+I recommend you check, and make no mistake.
+
+I hope you enjoyed my poetry lol. I am gonna try and keep things pretty
+short for today, but I want everyone reading this to know that they are
+awesome! I love getting the chance to serve a mission, and I've learned so
+many good things about myself and what I want my life to be like once I'm
+back in America. I miss you all, and I'm almost a year into my mission! I
+will be looking forward to sharing my experiences with you all in person =
+=F0=9F=98=81
+
+Love you guys!
+
+--00000000000039fcbb0638c48d00
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto"><div dir=3D"auto">It has been a very hot week, but it tur=
+ns out I like the heat and don&#39;t mind being all sweaty. Let&#39;s go!</=
+div><div dir=3D"auto"><br></div>Tuesday<div dir=3D"auto">Today we had a gre=
+at DCM (District Council Meeting), even if it was Just over video chat. Aft=
+erwards we did some fire housing, and were able to meet some really nice pe=
+ople that weren&#39;t interested in our church, but It was still a good exp=
+erience. We also went and ate Dominos Pizza, which I haaaaate in America (u=
+npopular opinion). It was Edible but the Pizza Hut I had here was way bette=
+r. To end off the day we had some more sword practice with Shiko, as well a=
+s a little bit of guitar stuff too. It was pretty funny, this time he broug=
+ht like 4 foam Kids swords, a fake rubber knife, and some foam nunchucks (n=
+o idea how to spell that). It was pretty awesome lol.</div><div dir=3D"auto=
+"><br></div><div dir=3D"auto">Wednesday</div><div dir=3D"auto">This morning=
+ We peeled onions for 3 hours with a guy we helped weed with a while ago. W=
+e had a good chance to talk with him, and he is interested in playing spike=
+ball sometime together. We were able to talk a bit about our purpose as mis=
+sionaries, but we are hoping we can ask him about more Gospel stuff when we=
+ meet again. We had a 30 minute lesson with Hiroko about the Restoration la=
+ter, before we headed off to the monthly Kodomo Shokudo, where theres a bun=
+ch of free food. This time we attempted to help out, but we mostly just sto=
+od around lol. Later we had Eikaiwa and ping pong at the church, which was =
+great as usual!</div><div dir=3D"auto"><br></div><div dir=3D"auto">Thursday=
+</div><div dir=3D"auto">Today we did some weeding for Kanata=E5=85=84=E5=BC=
+=9F, and talked about American movies among other random things. It was sup=
+er rainy so we were mostly inside today doing weekly planning and media wor=
+k. It was definitely kind of a slump.</div><div dir=3D"auto"><br></div><div=
+ dir=3D"auto">Friday</div><div dir=3D"auto">Today we had an Eikaiwa Video c=
+all with Aime, and we also had a lesson at the church with Sakurako=E3=81=
+=95=E3=82=93! We invited her to pray about what we taught, and she said she=
+ will. We also showed her the Baptismal Font and talked about Baptism too. =
+She&#39;s super prepared for Baptism, but we are planning on inviting her t=
+o baptism in one of our next lessons=E2=80=A6 =F0=9F=A4=94=F0=9F=91=80</div=
+><div dir=3D"auto"><br></div><div dir=3D"auto">Saturday</div><div dir=3D"au=
+to">=E2=80=A6so! First off today Apparently Sakurako met with the Abeno Mis=
+sionaries (my two past comps, Sonomura=E9=95=B7=E8=80=81 and Martinson=E9=
+=95=B7=E8=80=81=F0=9F=98=86) and they invited her to baptism, and she said =
+yes =F0=9F=98=82=F0=9F=98=B2 She&#39;s our friend so we will probably be th=
+e ones to Baptize her but it was a funny turn of events. We were able to ca=
+ll with her and talk about things. The most difficult part for her is going=
+ to be telling her Mom about it. She&#39;s really worried about it, so we a=
+re going to try and have lessons with members who had similar experiences. =
+Today we had Eikaiwa at Ozaki, and on our way back home we went to the chur=
+ch and finished up some pizza members made for an activity. Later we had an=
+ Apartment inspection over video chat and it was Hilarious. Brother Watanab=
+e is such an awesome guy, but he definitely surprised us with some of his c=
+omments. He said that getting bald stinks, but he could probably just find =
+a truck on the street and he wouldn&#39;t have to worry about his hair loss=
+ anymore =F0=9F=92=80 pretty crazy comment. After the inspection, we went t=
+o leave and try to do some housing. On the way, we literally watched an old=
+ lady crash her car into the back of a building. She broke her back window =
+and the back of her car, but the store was ok I think. It&#39;s lucky nobod=
+y was in the way. Our actual housing today was pretty lackluster, a lot of =
+people saying no. We had a few nice refusals, however, and one person might=
+ have interest in our Eikaiwa class!</div><div dir=3D"auto"><br></div><div =
+dir=3D"auto">Sunday</div><div dir=3D"auto">Pretty normal Sunday Today, I Ga=
+ve the closing prayer in Sacrament meeting which was nice, definitely not m=
+y best prayer but its the effort that counts. Later we visited Sister Aren =
+with Sister Suehiro, and dropped Off some treats. They seem to be having a =
+pretty tough time, mostly just the mom, Sister Aren. We read a scripture to=
+gether, and invited her to read the whole chapter. She has a very strong te=
+stimony! Keep her in your prayers!</div><div dir=3D"auto"><br></div><div di=
+r=3D"auto">Imma Write about Pday next week, but it&#39;s in general been a =
+pretty solid week. I feel that this email is missing some sauce, so it&#39;=
+s poetry time baby.</div><div dir=3D"auto"><br></div><div dir=3D"auto">Haik=
+u</div><div dir=3D"auto"><br></div><div dir=3D"auto">Piping hot, Cheesy</di=
+v><div dir=3D"auto">It&#39;s not a corny romance</div><div dir=3D"auto">It =
+is Pizza Hut.</div><div dir=3D"auto"><br></div><div dir=3D"auto">Mind in th=
+e Gutter?</div><div dir=3D"auto"><br></div><div dir=3D"auto">To what extent=
+ can you tune out the static?</div><div dir=3D"auto">That white noise that =
+surrounds</div><div dir=3D"auto">What do you hear that gets the =E2=80=9Cal=
+l clear=E2=80=9D</div><div dir=3D"auto">Have you thoroughly examined your i=
+ntake?</div><div dir=3D"auto"><br></div><div dir=3D"auto">How well-dusted i=
+s your attic?</div><div dir=3D"auto">What, in your mind, abounds?</div><div=
+ dir=3D"auto">If revealed, would you have cause to fear?</div><div dir=3D"a=
+uto">I recommend you check, and make no mistake.</div><div dir=3D"auto"><br=
+></div><div dir=3D"auto">I hope you enjoyed my poetry lol. I am gonna try a=
+nd keep things pretty short for today, but I want everyone reading this to =
+know that they are awesome! I love getting the chance to serve a mission, a=
+nd I&#39;ve learned so many good things about myself and what I want my lif=
+e to be like once I&#39;m back in America. I miss you all, and I&#39;m almo=
+st a year into my mission! I will be looking forward to sharing my experien=
+ces with you all in person =F0=9F=98=81</div><div dir=3D"auto"><br></div><d=
+iv dir=3D"auto">Love you guys!</div><div dir=3D"auto"><br></div></div>
+
+--00000000000039fcbb0638c48d00--

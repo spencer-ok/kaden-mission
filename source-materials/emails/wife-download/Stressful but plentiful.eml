@@ -1,0 +1,168 @@
+Delivered-To: killianfamily@gmail.com
+Received: by 2002:a05:6022:c316:b0:e5:9b2e:d134 with SMTP id ds22csp924204lab;
+        Mon, 8 Dec 2025 05:30:55 -0800 (PST)
+X-Received: by 2002:a05:6402:4557:b0:649:563d:da6e with SMTP id 4fb4d7f45d1cf-649563dda95mr459014a12.23.1765200655104;
+        Mon, 08 Dec 2025 05:30:55 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1765200655; cv=none;
+        d=google.com; s=arc-20240605;
+        b=RIRJkubNHJ3C6rkr+o1HTaDNFnrqY73y/h7DIrx34E3riN65EtpIdPR0LYM0f+JguQ
+         Kak3zYSxPzUnWBochhTwQ4YnXVXP9n8U4ajot6fhz1UrdIqhMDxd32nKs+8+/v1s3Wgf
+         F9zvw229xtOtvuLy/BEq+RsIljQBbgg6WeQN9TKEUtBDubFpUnxA3wsM/BWZu1MF7415
+         ZpH/jvU18xo4ffkOTnIxpKlMksnfxUi7PN+ttDaaIC9AVgoO4WkPvP8F/yhTOibAFozT
+         WhE7mcGQb2HAFWKD9wjzNUQTosaMX78+D4V4K4HehPe00f0H4fLz/6+3qJCOf4G591+n
+         LSOQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=271zXBaiwoZiruNdnZTyIdjjeLNqk4Ox9MfUWRjdC2k=;
+        fh=Z6qIxyYYRJ6j+FNssoCqK5Gc8S1S3uCnhgfLbiAK++k=;
+        b=arSBnOh780Z1woFIkSXCsO4hUNGaF9nPCzxWQSp8TviSJUXUeIVokDYEgvyvanKXBu
+         TGKuwmyT7wmZGob494Y3P64NmPS3q8IDC88bir51nwjfR9s1GIzwg0X1nscuWSmJDk0f
+         IXIw3pflKvC+htWLgh2Me8OQcaDTRQ7+X/ZVrEWcK/upFeap6LrkzAcVnZqs3N91TcYr
+         QbSyS7KZLcZyp2EG0NqWFTUJZmX2OtKojPLnobA7Fn8qMpXTaIzDpZfHdVaM+K6l/eFp
+         PtM3D7qmAzZwIz/4kuX5UF97ocBxFgzZbOvUaCf+w7usYFVpWC2BXEywYSjM/tAz3lGH
+         zJZA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@missionary.org header.s=google header.b=WL+8Arro;
+       spf=pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=kaden.killian@missionary.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=missionary.org;
+       dara=pass header.i=@gmail.com
+Return-Path: <kaden.killian@missionary.org>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 4fb4d7f45d1cf-647b338509csor2309317a12.12.2025.12.08.05.30.54
+        for <killianfamily@gmail.com>
+        (Google Transport Security);
+        Mon, 08 Dec 2025 05:30:55 -0800 (PST)
+Received-SPF: pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@missionary.org header.s=google header.b=WL+8Arro;
+       spf=pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=kaden.killian@missionary.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=missionary.org;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=missionary.org; s=google; t=1765200654; x=1765805454; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=271zXBaiwoZiruNdnZTyIdjjeLNqk4Ox9MfUWRjdC2k=;
+        b=WL+8Arroup0SfoOzmlNcRTfUvTUbSbMHBODCGhzjQUfsadjmawz6qETuGkurJTOKir
+         bO83lG4sAW4JQip1Jpq0SdQV/qy0e//o6HcS0Roe5yCEyT43pyfOviOqVeTZkoJBgCt4
+         8VMOmmoN3o1CJev+tORPhxhGyP50iYOfHeC1uFkeKN5+1opg+i/HpzEqV81SrTcJzIfa
+         Bi6iNDhCmWPeEoylYjiOAudU2ODz/mHhGqqRsssIlOlaTc7Yz0MaloLqq1TLR6QI0dYb
+         gJiWL7XAVpxyPQ/fXTOedYD1xsbj1692v30a/CgAH2ZXfo3k9Y3s1hOZysO23MFpRtYo
+         48mQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1765200654; x=1765805454;
+        h=to:subject:message-id:date:from:mime-version:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=271zXBaiwoZiruNdnZTyIdjjeLNqk4Ox9MfUWRjdC2k=;
+        b=YwsXAiadUGcTS2dbTgM2bwPv2Gym6xCM512EPoDRD71j+pjScTVhewvueWmRxFvFhJ
+         hfX3P1MTp5RgieZrnjnx/J/C0c1FcRSp4UZRAvF9eYoll1lrTVUQrsYMe2suVQnwkFwK
+         q93sUo6deAXQUgoIinAE7vvr4aYPEzCEQFZxenyBmpqDUik7hnldNxiJdg/pQPUd4Ok7
+         xDgGJZ953ijr3h/MDg/Uqbr5/+H2w8+Zy6fgqIgI8iuaAVDn550iIBG3mLaREnoSvreJ
+         0pT/vQkVTgXW81M2/Q/nDbE+BJVPGhqTCoVVK65lDAf4SpjiO3iT1fevaCwa6ogOgi7M
+         mBeQ==
+X-Gm-Message-State: AOJu0YwDs/Zv7cXCtQIt7ac2EwH1VzeuVTwn5Ei+VOubh+kodQ9z+mDh
+	hvOX+wZpjTa0WwyLq65RZFnzCdqel100J8Rhc3wCMUXXMBR0QnnDkKiJ7GWBm/YR9ZkpQt3ZmPK
+	0w7Z0DIG2sdGMCjl0GmXJRYki3zs3djoQPdwA3humm7adppPjOX85xI/H6aHNpYZQK/x9ubWUOd
+	FUYLcXmke8NT8D8C4O7xmQXrY32p/102LaYzlOq2ijSPGQdyCNSFm14LoYJzlBc1OEDKeX1iTmB
+	0R2ixRDcuNYUVnORvm49w/fwc6vGkdtFxqw+mHOBXcNspjAgCix1mEib2UptEXUXp+zq8BtE4bl
+X-Gm-Gg: ASbGncuX6YW7mzKRMibmruzATcF6x7xuD0MGjt5iuRWZFRydK+3b71S0GZKu/iO9bYt
+	n9aX9FJy8i/B0WQev8DRk/Bf5WVCs1gPtM9AVjtJJJxBUXgDMKu4tc6hAGnimvvIdNj/PFSaBaV
+	LmgOFpxLPLdBHJ7kNdt2pAU7wT9yWjspAQHG185n9Uar+DUeROjXFzHmr4g77L6sKY8A68Wlqu9
+	bvaPETveGh+NfAvN4UK+0uyrV7naI+Bk3GpmuLY5MBHoLXNVQN7K4QN35QKxW7lMFefDOSReq06
+	T+vyducPmnOZbKv2mXPVe5kkXr0=
+X-Google-Smtp-Source: AGHT+IH6853VSCK00Gz/6gqwLtmdi3ZVf82shekxyw3IyOnKhtGUY4iW61Crd1B7kuxZahl0vExmI3LoKJPWJki+4FM=
+X-Received: by 2002:a05:6402:278c:b0:643:c8b:8d61 with SMTP id
+ 4fb4d7f45d1cf-64919b9fbe3mr6486588a12.0.1765200654196; Mon, 08 Dec 2025
+ 05:30:54 -0800 (PST)
+MIME-Version: 1.0
+From: Kaden Killian <kaden.killian@missionary.org>
+Date: Mon, 8 Dec 2025 22:30:41 +0900
+X-Gm-Features: AQt7F2r8lQKxQ4qV07gNLFLjwrUeMeuwWDUyPjjPWE6rpacU-XXMHKbVp7AOK1Q
+Message-ID: <CABgTvgYB0qb3LZp4E=NQa6hBM_qDZfBjErE9xw1TMmXeXAbynw@mail.gmail.com>
+Subject: Stressful but plentiful
+To: Tanya Killian <killianfamily@gmail.com>, 
+	"Spencer Killian (Spencer K)" <spencerok@gmail.com>, Kyle Killian <kylekillian@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000f36e4b064570cd98"
+X-CLOUD-SEC-AV-Sent: true
+X-CLOUD-SEC-AV-Info: missionarymail,google_mail,monitor
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+
+--000000000000f36e4b064570cd98
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Monday
+Today we cleaned our apartment, and had some awful stressful drama with a
+member, but its over so no worries =F0=9F=98=81=E2=9C=A8=EF=B8=8F
+
+Tuesday-Thursday
+Outside of the usual, we had an apartment inspection (A++++), met to draw
+with Kanda san, went to the dentist, and had Kids Eikaiwa! For some reason
+one of the kids parents gave us 5 American dollars she found in her house,
+and we split them up between the kids lol
+
+Friday
+Today we cooked up some fancy steak that Kanda san gave us, and also met
+and invited Kitagawa san to Baptism! She was shocked lol, she's the owner
+of a shrine, but she's seriously considering our invitation. She was asking
+a lot of good questions, and she even called us on this next Monday to ask
+when we can meet to talk more about it. She's so cool. Tonight was Game
+night, and Hinata kun brought one of his friends!! Having young people at
+the church is a blessing, even if they are like in their early teens lol.
+
+Saturday
+Today we had a lot of time for housing, and met a girl in her 20s who wants
+to meet up with us again! We prayed about where we should go finding, and
+she was at the first house we Knocked on. She loves art, and is like a
+Professional at manga! so Cool, her name is Akari san. Today we also had a
+good lesson with Matsuoka san. Good day.
+
+Sunday
+Today we visited so many people! We caroled and blessed the Sacrament for
+Sister Junko, Brother Katayama, and Sang for Sister Maggi and her Filipino
+Roomates! We felt the spirit so strongly =F0=9F=98=8A We were also able to =
+visit the
+Yamauchi Family and the guy named Shinichi san (who likes radio) with
+Brother Hisamune. It was so fun, and a huge Blessing.
+
+Jesus Christ loves you. So do I! Pray in your afflictions. It will all be
+OK. Catch you next week =F0=9F=98=8A=E2=9C=A8=EF=B8=8F
+
+--000000000000f36e4b064570cd98
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto">Monday<div dir=3D"auto">Today we cleaned our apartment, a=
+nd had some awful stressful drama with a member, but its over so no worries=
+ =F0=9F=98=81=E2=9C=A8=EF=B8=8F</div><div dir=3D"auto"><br></div><div dir=
+=3D"auto">Tuesday-Thursday</div><div dir=3D"auto">Outside of the usual, we =
+had an apartment inspection (A++++), met to draw with Kanda san, went to th=
+e dentist, and had Kids Eikaiwa! For some reason one of the kids parents ga=
+ve us 5 American dollars she found in her house, and we split them up betwe=
+en the kids lol</div><div dir=3D"auto"><br></div><div dir=3D"auto">Friday</=
+div><div dir=3D"auto">Today we cooked up some fancy steak that Kanda san ga=
+ve us, and also met and invited Kitagawa san to Baptism! She was shocked lo=
+l, she&#39;s the owner of a shrine, but she&#39;s seriously considering our=
+ invitation. She was asking a lot of good questions, and she even called us=
+ on this next Monday to ask when we can meet to talk more about it. She&#39=
+;s so cool.  Tonight was Game night, and Hinata kun brought one of his frie=
+nds!! Having young people at the church is a blessing, even if they are lik=
+e in their early teens lol.</div><div dir=3D"auto"><br></div><div dir=3D"au=
+to">Saturday</div><div dir=3D"auto">Today we had a lot of time for housing,=
+ and met a girl in her 20s who wants to meet up with us again! We prayed ab=
+out where we should go finding, and she was at the first house we Knocked o=
+n. She loves art, and is like a Professional at manga! so Cool, her name is=
+ Akari san. Today we also had a good lesson with Matsuoka san. Good day.</d=
+iv><div dir=3D"auto"><br></div><div dir=3D"auto">Sunday</div><div dir=3D"au=
+to">Today we visited so many people! We caroled and blessed the Sacrament f=
+or Sister Junko, Brother Katayama, and Sang for Sister Maggi and her Filipi=
+no Roomates! We felt the spirit so strongly =F0=9F=98=8A We were also able =
+to visit the Yamauchi Family and the guy named Shinichi san (who likes radi=
+o) with Brother Hisamune. It was so fun, and a huge Blessing.</div><div dir=
+=3D"auto"><br></div><div dir=3D"auto">Jesus Christ loves you. So do I! Pray=
+ in your afflictions. It will all be OK. Catch you next week =F0=9F=98=8A=
+=E2=9C=A8=EF=B8=8F</div><div dir=3D"auto"><br></div></div>
+
+--000000000000f36e4b064570cd98--

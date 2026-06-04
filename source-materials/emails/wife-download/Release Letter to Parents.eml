@@ -1,0 +1,270 @@
+Delivered-To: spencerok@gmail.com
+Received: by 2002:a2e:8819:0:b0:38e:dcfa:c0c9 with SMTP id x25csp575577ljh;
+        Thu, 30 Apr 2026 04:02:28 -0700 (PDT)
+X-Received: by 2002:a05:6a20:3d85:b0:3a2:d79c:414f with SMTP id adf61e73a8af0-3a3cf7a620cmr3135540637.48.1777546947769;
+        Thu, 30 Apr 2026 04:02:27 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1777546947; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=XNPyxow30BRsPjL2nqM39aM0rxFxZ7A5l0oIa+wtcpNnHQiU7NvAvfTfdJYE2j0Uaq
+         shWvUk6fo01sc7aC59Djv+rkiFk/8m++b8fWksyivl8WJUxpbOvKJPmVBreCTAaZmVMw
+         eS+K9/8iZMWc3AX9ppatHvrriVUGZMFCUNOfBKWH/f5403ehEylOTyyVZsntWKrDjKqP
+         CCZL9Ifla58j9uAM5GS1VIPVDKogANPu5RSuYP8RcGy6AMkE/6P9pu7R3byI+Mx/Lul9
+         aHjsdQ0nYfmCTpdtMsxtd1MMU1R5i2z1d8WmS7Q9G3dLahrzxk6EaXCtjmQyoeGE6wvP
+         QUwA==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=mime-version:content-language:accept-language:reply-to:message-id
+         :date:thread-index:thread-topic:subject:to:from:dkim-signature;
+        bh=GB0B+TWAlQvkf+0eVP4cVwXBvhwiknIicpappFB0+jU=;
+        fh=quhJWf8+Cj2aBzCAShZHmEObNDjXV/hSkZmsBB0dGZM=;
+        b=PUjlHnNopLzJXMmEoNCfxsp1tfPzVKasFq13P3xiBFsZ8y1HTrMb587QboAih8Lbot
+         w9/KtrVq9C/slI70IJ6EhY/R5Bkg08RkTi9x/IHbwEjkftP6duou3HaoQ5i5fdR77Q3w
+         GQAebsLnLwSwzL3nzGgptxzreZHPUHq4UfgCLSeHfWVJM66QdJgJL3O6H5nPI9oUzSuC
+         CWz7MwIbA89Z+3BWec/RTdksPqeFy5KsBBp2Er8fAzcBp/szeNsrvccujEUHxjd9wA1m
+         m/vghxsve/aMlealGkMpYns+92VEVijvcSwo5jn7r8BabiL3OA0rM/sOk23x/I5OBLX/
+         LntQ==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@ChurchofJesusChrist.org header.s=selector1 header.b=Ti6nECgG;
+       arc=pass (i=1 spf=pass spfdomain=churchofjesuschrist.org dkim=pass dkdomain=churchofjesuschrist.org dmarc=pass fromdomain=churchofjesuschrist.org);
+       spf=pass (google.com: domain of tsuyoshi.sano@churchofjesuschrist.org designates 2a01:111:f403:c105::1 as permitted sender) smtp.mailfrom=Tsuyoshi.Sano@churchofjesuschrist.org;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=churchofjesuschrist.org
+Return-Path: <Tsuyoshi.Sano@churchofjesuschrist.org>
+Received: from CH1PR05CU001.outbound.protection.outlook.com (mail-northcentralusazlp170100001.outbound.protection.outlook.com. [2a01:111:f403:c105::1])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-c7fd64f683bsi8082677a12.120.2026.04.30.04.02.27
+        for <spencerok@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 30 Apr 2026 04:02:27 -0700 (PDT)
+Received-SPF: pass (google.com: domain of tsuyoshi.sano@churchofjesuschrist.org designates 2a01:111:f403:c105::1 as permitted sender) client-ip=2a01:111:f403:c105::1;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@ChurchofJesusChrist.org header.s=selector1 header.b=Ti6nECgG;
+       arc=pass (i=1 spf=pass spfdomain=churchofjesuschrist.org dkim=pass dkdomain=churchofjesuschrist.org dmarc=pass fromdomain=churchofjesuschrist.org);
+       spf=pass (google.com: domain of tsuyoshi.sano@churchofjesuschrist.org designates 2a01:111:f403:c105::1 as permitted sender) smtp.mailfrom=Tsuyoshi.Sano@churchofjesuschrist.org;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=churchofjesuschrist.org
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=GHW9zoxN5fqr7CctUGOYhbgTs0nhQ6j32f69ZPm311o8oIqHCJ2ttgwFSzz+mQB6GaOUmGV09tvHzxP/l4RqzhfnHpgjB/8ybJE3gb4qz6VdW2zJWGOoTuhG41U3q3yfY0yvQzGl1Q3GoFvr5uvCX8zmabYJOYZ4ABJxlB4NQUh1O25yTsNteXhQSgkSkzdfJqPE3ib1vaWkyNYOy5BqT/++oTb0bVSifHh4XW4Z/TlokKoH11k+oBFA7Ve4xCv/uG83QQpZ0pWDAMB+5FcPFynP1CPcMt1awGB1ylrYBjID5r48RlJWbWEFb5Em5JFcuRFqvAVVpXM0TSN15UL3aQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=GB0B+TWAlQvkf+0eVP4cVwXBvhwiknIicpappFB0+jU=;
+ b=FQ1QCkS5RGfq2bvwnO+KAR7FzQhuJxZeYztAzVyKQJrvwUGi+jxevRiHxNoNJ84ruOx7QNuEDpLO9wdz60H7Rws7I7pCc/gJ3oiiYN7v6yourTdOshFb5NjKgp5AfvvVc/xts/CF/0ur+gQsLsrEIaQxxMV4Vs/Ef//nyIMmuOC+OFPJNSzFUIHyN13uKc4xvlJaa09ZxWjLztzS9TkE+/+Eo3URF22mE2F1GUnqGNyZtjTto6m1mk94kEHTVW4ZpPi9IR79NoLGfmyZVzPBnNJdL1cDAEZNTR5bi/N7KIK4kotE5cUYlpzx1l6CHPyK27RfXOoVpqPNYpMmeLiA2Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=churchofjesuschrist.org; dmarc=pass action=none
+ header.from=churchofjesuschrist.org; dkim=pass
+ header.d=churchofjesuschrist.org; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=ChurchofJesusChrist.org; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=GB0B+TWAlQvkf+0eVP4cVwXBvhwiknIicpappFB0+jU=;
+ b=Ti6nECgG3etne5el9X5oBpNfM+aHTy2SzerTOjXK6mdx4qyoUsSfRhXhyoeUPovpstc7rIj9emAdWTz815l7cmN1Afd0hr7SNZg/QwhVmSdnxQI2lYflRM5o5w5ge4rprNgFbWBCEZaJ9xCQNtDLjvcEKqSw6ClTiD11+Wm7320=
+Received: from SA0PR04MB7403.namprd04.prod.outlook.com (2603:10b6:806:e3::11)
+ by MW6PR04MB9025.namprd04.prod.outlook.com (2603:10b6:303:24a::16) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9870.20; Thu, 30 Apr
+ 2026 11:02:23 +0000
+Received: from SA0PR04MB7403.namprd04.prod.outlook.com
+ ([fe80::71a9:16ab:b97f:d069]) by SA0PR04MB7403.namprd04.prod.outlook.com
+ ([fe80::71a9:16ab:b97f:d069%6]) with mapi id 15.20.9870.022; Thu, 30 Apr 2026
+ 11:02:23 +0000
+From: TSUYOSHI SANO <Tsuyoshi.Sano@churchofjesuschrist.org>
+To: Spencer Killian <spencerok@gmail.com>
+Subject: Release Letter to Parents
+Thread-Topic: Release Letter to Parents
+Thread-Index: AQHc2JDO6XaeUVx+akyOZLM/f9p07A==
+Date: Thu, 30 Apr 2026 11:02:21 +0000
+Message-ID:
+ <SA0PR04MB7403FF57246128EA140EA1C7E6352@SA0PR04MB7403.namprd04.prod.outlook.com>
+Reply-To: Japan Kobe Mission President
+	<gp-2016702-PRS@groups.churchofjesuschrist.org>
+Accept-Language: en-US, ja-JP
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-correspondence-app-id: D0F0C907-48C0-44DE-8719-DD1C483EA00E
+x-correspondence-batch-info: c79bdcc7-8f60-46f6-8f34-3cf5fe2fc63c
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=churchofjesuschrist.org;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: SA0PR04MB7403:EE_|MW6PR04MB9025:EE_
+x-ms-office365-filtering-correlation-id: 267024cd-a170-4ac3-e6d1-08dea6a7f4ec
+x-ms-exchange-atpmessageproperties: SA
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam:
+ BCL:0;ARA:13230040|1800799024|376014|366016|38070700021|18002099003|8096899003|56012099003|55112099003;
+x-microsoft-antispam-message-info:
+ SRlVaG6SWHyVUkaFCkbBM6mNOdZ5NKbG+DlFQmWNp2iceGMBAYAu5ISrbJJxhTjMvtBEVnPplvBsmvuMe5ignb92CEDTtN0dkF3sQb8mek6f73mM0shjOWl5vTSDf1xbrrztS+IxPU6lpLnZPGjJCoTbq4gYq5hcZKf7Clr5HzRMKrWuEZxeqMNJI00hYho95uY1uHOV1Iu06MCvyJZTVjDtaBVn7xv47kE7dVw9fFwS5k935S2dcGZt5UViwkAzBo6UUBQGEo/iJteq1eUz1w7ygOcC2ZOByo72mgJVt1ctO8MW91MiwXgMS33vsWMTLD+H8IWS9RK4AqsL5HPoeSQkj/nPxzOOK43O/43br98TpPsVXbIyinF6QGk24O4baYtOl6Ic8ppAEMHerC5/mXH/E2cUac1u8La3uk7P/+6t/tSwUx8ka8dbzJppP4+4mvhWaNxn1iSddQkeSo0nXSKPMkmneAKXJG1nNEPsIeec1PO6rCXxQjJyuyhvKONGK8GI5Sm3h2rcBFOr8lg3eG5Dc45FawlzzskLfTBrI96xNzrLt6cgHdZUnaXfh+QYg58li8l8R1ZVmnOTqSwM2sZNgYb/OJRCaz+JI+6rcT6UMvalR1KFLqYuSY5BXlQRxN9oo43l8s0aRDyKee1VDM0thynQZWVPhJLvyQjfee7Nv1ABndO4lIFGUI91Y9tmvd4hrL8BZWC9uznwFPYyUloctWNEahbGAtdvQqdLmQafhKxl8nd4rBCG29vCXvo0en7Aip30ZQKW5wi2sm4RuLYKtdoAsekpj4qAe1njnWY=
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SA0PR04MB7403.namprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(376014)(366016)(38070700021)(18002099003)(8096899003)(56012099003)(55112099003);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ =?us-ascii?Q?URgqjPEGk0slMuDgQXzkErT3qparZ+unvTMvAzaf5HluPVxHBpN2D0Kw5I4u?=
+ =?us-ascii?Q?JRYrTWznsfj73cn7yXaX+NUgyxpRPAZnQHU/Mzod0rz5EW5ZmMgVFsthYbrm?=
+ =?us-ascii?Q?x5lMXre9DpDLlJzkPsscKN2lLubMPboy96mq1hciIJ+M37poXDzgKMoMzCK8?=
+ =?us-ascii?Q?IpF05EWOlo7NIrk84ax5Susx8z7LGrJFaeuew6dHIr9UCMOseBTmmyuPciqH?=
+ =?us-ascii?Q?GroHAeeoH2qLrQUZC0djdx/xVstFF79bZJq5hpGekJXvH3GF9vU45ebT8wCN?=
+ =?us-ascii?Q?17muQYP3kQF+EmOIyStAfxsV5BOWddLEsgbPWEX9WZGFcsxKk4ziYIevoZrt?=
+ =?us-ascii?Q?cw/x70Ua8Yk8wQQA9QbkFNPSq7ytDDg+/SglI4q8aL4ghMwfSP6OYFK2gSaD?=
+ =?us-ascii?Q?qu1vWe+UJ5Rru2k8SNg/jHGSeqaRMMg5nF2MS4hPRnwJd7+LC1Z/a3ys5OEo?=
+ =?us-ascii?Q?LaPFMTX9pWh/A2HolbXtuic+xz56k2byi/wZgHpFnGZ1F0CV8YFdaY+568vb?=
+ =?us-ascii?Q?5NZF+2L0s48/x0s1qr0U3V9PA/kDZ7biKFprS7BQ1Q2yKgvesL8qs2g5aHQ8?=
+ =?us-ascii?Q?sG7/yxaTCHUT+YJOnV9QWHZirhHJWkOC0oYh3iyZTEjcnweZAhNowDnnj10w?=
+ =?us-ascii?Q?cw3FQ5OgS8CBtf76sN0/Z6jJ5d5+gnbdt00s6Vnxps4p8UkezBa2sQVp/6aP?=
+ =?us-ascii?Q?MgfvO6lSuL0DBCQkPx29+8RNilBzRr01iwCV89sRf6VIRwAuVhJ9c1JrQPBQ?=
+ =?us-ascii?Q?Edbxi1Ux2oSy/N/i3WeDgmZHVgook5JgjI0dgVN1gtQsGiDgcs/l4H2jIsK4?=
+ =?us-ascii?Q?KedYyp7z1MHjadoSkCNBcSVYs8gnkCoz96xDaIEcoO+ParbYS6gmCklFI0Iu?=
+ =?us-ascii?Q?BJbtBuaTYo8VZaU+fgRQcS3oKMhDSf6w2rachuWOgp11od4cb9xdXai8cFNk?=
+ =?us-ascii?Q?qIRUWKuaT6B4/fMU/Jk6TIMTCVk3dCv/0uAwedP6b8NX0Fo6+ZmgHKNqoKdU?=
+ =?us-ascii?Q?Wng0mUt2Ut0pzgqqBOwJ3DKn7vnAoJixJpia1PuFxJo9gle324AVZOfJ29yu?=
+ =?us-ascii?Q?fwL2zw2XD6PSP3B/689hkInoEZ3e59GmFcRXsqET1QXOZnVQPFN6+hkQT6DH?=
+ =?us-ascii?Q?AtrD1nWEnNR8ScoFnRVJcuYE8vobst0VRCfK6qpglQIQtMfmQ4vY0HuRmSnU?=
+ =?us-ascii?Q?2NfrPJiVgt+Y9xESfvc2/lgfFaCLoAVdQ986AELvkL0iSPEbxrDjtlsGifoy?=
+ =?us-ascii?Q?KLuOxXi65E4MR4g+dBkXtvmn3p9XRQUIiPGRLeu1oS3W+2nEQXJELC51NyL3?=
+ =?us-ascii?Q?LjglJ3jJq64h6y7R1p3TF8R5AEf7xkDE7OlWbPCkU5gzzjW90QzAUhOwYtDg?=
+ =?us-ascii?Q?vhT1dU2nmVubDEeHG4CLp5BL9XjT/s/nNLOywZvu8T0wT2ppodCFtIFOU9P1?=
+ =?us-ascii?Q?86IKC7JDSALz8FKNEVANf7yb/HrRB002ZL5t3OA8asX5VHDM+kEv1EXUnm8O?=
+ =?us-ascii?Q?dU37GXqMVpxYeDXuIcp+jZf7WkkOO5IIjqJr4oVAlz2OwAgu62TIJG6X8iWB?=
+ =?us-ascii?Q?CEDiPXIRpyaNZg6HRvX/ktRbsHmD1MbPuM9EclQo3e6PinmKxsAlFPwy3QZJ?=
+ =?us-ascii?Q?+HJvYohzUx1xJORbzpEvuA8AWmB/9dEvXwfnjAHMED5LhIAp6nd0SPuzBYfk?=
+ =?us-ascii?Q?502EFMU7CnI1HnW8WywBMY84SQLuApCE9xDCFgiiEgIl+34NZMWuOWRpOcVp?=
+ =?us-ascii?Q?PNAHoj7MdFeULvY5y3SyZRb2ednARKCuUBN7YTomALBP+xHKe2Me?=
+Content-Type: multipart/alternative;
+	boundary="_000_SA0PR04MB7403FF57246128EA140EA1C7E6352SA0PR04MB7403namp_"
+MIME-Version: 1.0
+X-OriginatorOrg: churchofjesuschrist.org
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: SA0PR04MB7403.namprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 267024cd-a170-4ac3-e6d1-08dea6a7f4ec
+X-MS-Exchange-CrossTenant-originalarrivaltime: 30 Apr 2026 11:02:21.5695
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 61e6eeb3-5fd7-4aaa-ae3c-61e8deb09b79
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: MUZi79JY0U2PLjcOwmocQ8+mqMyAqea9tA5Lx+M7fsiWAwSIr7vGv9AklFT7twEINjOjAxMBUn1A8e4OSxG8SFJ7Yim57ePRCwldU69Uvllqh1Ma0vPXyyl89HB+sCwV
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MW6PR04MB9025
+
+--_000_SA0PR04MB7403FF57246128EA140EA1C7E6352SA0PR04MB7403namp_
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+Apr 30, 2026
+
+Dear Brother and Sister Killian,
+
+We are grateful to report that on 4 Jun 2026, Elder Kaden Killian will be r=
+eturning to your family in Lindon, UT, having faithfully completed his duti=
+es as a missionary in the Japan Kobe Mission. His stake president will offi=
+cially release him from full-time service shortly after his arrival.
+
+Elder Killian is a wise, thoughtful, kind, caring, compassionate missionary=
+ who always works faithfully and cheerfully. He served diligently in leader=
+ship positions as Trainer for two assignments and helped new missionaries g=
+ain their confidence and grow into fine missionaries. His dedicated service=
+ in the Japan Kobe Mission will be remembered warmly in the hearts of many.
+
+Sister Sano and I are deeply grateful for the love and example that Elder K=
+illian radiated during his missionary service and for the opportunity to wo=
+rk with him here. It is inspiring to witness the joy in Elder Killian's cou=
+ntenance as he prepares to be reunited with you, his beloved family. I am d=
+eeply grateful to you for allowing your son to serve as a missionary in Jap=
+an at this time. May God's choicest blessings be granted upon you and your =
+family.
+
+Upon completing the mission, Elder Killian will receive an email from the M=
+issionary Department containing a copy of the "Certificate of Missionary Se=
+rvice" including the signature of the President of the Church. This email c=
+ontains instructions for downloading additional copies from churchofjesusch=
+rist.org.
+
+We love your son and thank you for your continued support.
+
+Best regards,
+
+President and Sister Sano
+
+Japan Kobe Mission
+
+
+
+--_000_SA0PR04MB7403FF57246128EA140EA1C7E6352SA0PR04MB7403namp_
+Content-Type: text/html; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dus-ascii"=
+>
+</head>
+<body>
+<p style=3D"text-align:right;"><span data-tag=3D"Date_MMM_D_YYYY">Apr 30, 2=
+026</span><span>&nbsp;</span></p>
+<p style=3D"text-align:justify;">Dear Brother and Sister&nbsp;<span data-ta=
+g=3D"Recipient Last Name">Killian</span>,</p>
+<p style=3D"text-align:justify;">We are grateful to report that on <span da=
+ta-tag=3D"Missionary Release Date">
+4 Jun 2026</span><span>,&nbsp;</span><span data-tag=3D"Missionary Title">El=
+der</span><span>&nbsp;</span><span data-tag=3D"Missionary Full Name Officia=
+l">Kaden Killian</span><span>&nbsp;</span>will be returning to your family =
+in
+<span data-tag=3D"Recipient Home City">Lindon</span><span>,&nbsp;</span><sp=
+an data-tag=3D"Recipient Home State">UT</span><span>,&nbsp;</span>having fa=
+ithfully completed
+<span data-tag=3D"his/her">his</span>&nbsp;duties as a missionary in the Ja=
+pan Kobe Mission.
+<span data-tag=3D"His/Her">His</span>&nbsp;stake president will officially =
+release <span data-tag=3D"him/her">
+him</span>&nbsp;from full-time service shortly after <span data-tag=3D"his/=
+her">his</span>&nbsp;arrival.
+</p>
+<p style=3D"text-align:justify;"><span data-tag=3D"Missionary Title">Elder<=
+/span><span>&nbsp;</span><span data-tag=3D"Missionary Last Name Official">K=
+illian</span>&nbsp;is a wise, thoughtful, kind, caring, compassionate missi=
+onary who always works faithfully and cheerfully.
+<span data-tag=3D"He/She">He</span>&nbsp;served diligently in leadership po=
+sitions as Trainer for two assignments and helped new missionaries gain the=
+ir confidence and grow into fine missionaries.
+<span data-tag=3D"His/Her">His</span>&nbsp;dedicated service in the Japan K=
+obe Mission will be remembered warmly in the hearts of many.&nbsp;</p>
+<p style=3D"text-align:justify;">Sister Sano and I are deeply grateful for =
+the love and example that
+<span data-tag=3D"Missionary Title">Elder</span><span>&nbsp;</span><span da=
+ta-tag=3D"Missionary Last Name Official">Killian</span>&nbsp;radiated durin=
+g
+<span data-tag=3D"his/her">his</span>&nbsp;missionary service and for the o=
+pportunity to work with
+<span data-tag=3D"him/her">him</span>&nbsp;here. It is inspiring to witness=
+ the joy in <span data-tag=3D"Missionary Title">
+Elder</span><span>&nbsp;</span><span data-tag=3D"Missionary Last Name Offic=
+ial">Killian</span>'s countenance as
+<span data-tag=3D"he/she">he</span>&nbsp;prepares to be reunited with you, =
+<span data-tag=3D"his/her">
+his</span>&nbsp;beloved family. I am deeply grateful to you for allowing yo=
+ur <span data-tag=3D"son/daughter">
+son</span>&nbsp;to serve as a missionary in Japan at this time. May God's c=
+hoicest blessings be granted upon you and your family.</p>
+<p style=3D"text-align:justify;">Upon completing the mission, <span data-ta=
+g=3D"Missionary Title">
+Elder</span><span>&nbsp;</span><span data-tag=3D"Missionary Last Name Offic=
+ial">Killian</span>&nbsp;will receive an email from the Missionary Departme=
+nt containing a copy of the &quot;Certificate of Missionary Service&quot; i=
+ncluding the signature of the President of the Church.
+ This email contains instructions for downloading additional copies from ch=
+urchofjesuschrist.org.</p>
+<p style=3D"text-align:justify;">We love your <span data-tag=3D"son/daughte=
+r">son</span><span>&nbsp;and thank you for your continued support.&nbsp;</s=
+pan></p>
+<p style=3D"text-align:justify;">Best regards,</p>
+<p style=3D"margin:0in;text-align:justify;font-family:Calibri, sans-serif;"=
+><span style=3D"font-size:12pt;font-family:Calibri;">President and Sister S=
+ano</span></p>
+<p style=3D"margin:0in;text-align:justify;font-size:10.5pt;font-family:Cali=
+bri, sans-serif;">
+<span style=3D"font-size:12pt;font-family:Calibri;">Japan Kobe Mission</spa=
+n></p>
+<p style=3D"margin:0in;box-sizing:border-box;color:#212529;background-color=
+:#ffffff;text-align:justify;font-size:10.5pt;font-family:Calibri, sans-seri=
+f;">
+&nbsp;</p>
+</body>
+</html>
+
+--_000_SA0PR04MB7403FF57246128EA140EA1C7E6352SA0PR04MB7403namp_--

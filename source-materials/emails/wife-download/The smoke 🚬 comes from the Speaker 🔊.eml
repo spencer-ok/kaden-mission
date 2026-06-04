@@ -1,0 +1,342 @@
+Delivered-To: killianfamily@gmail.com
+Received: by 2002:a05:6022:709c:b0:6b:8b71:a6f9 with SMTP id b28csp1213744laa;
+        Mon, 3 Mar 2025 06:01:59 -0800 (PST)
+X-Received: by 2002:a05:6512:108b:b0:549:66d8:a1cf with SMTP id 2adb3069b0e04-54966d8a608mr1659782e87.26.1741010519202;
+        Mon, 03 Mar 2025 06:01:59 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1741010519; cv=none;
+        d=google.com; s=arc-20240605;
+        b=FV6oe75FGgUd2VM+R/MLll20Lco2YWQ4/6+epXcsSXBhmUHLGjTD+qd4jq/Ysspz/S
+         uhhqvgiV+zG48+I3tRYjmTgriQH3aiFt+IKnSRqYX/l+K2ThMEqnd0548xXxkuAhwIC+
+         P8goW7b/Cl923qvppLt89uN/jWiHyiME/RqaY3wW9XslJ0hzfERzNKARMC7KkYETm9if
+         n1sdyymGDXoegF1cEmnvfTpi+cSLClUz6gZOT+SHPrHk403sANEclGbtG3CXWoV5FELF
+         JoBMGdbuxbyj3vbINatmjg9W1zeIulwFiNZp/FelSJmud1W5ezQeYcX4QfSvVVmv31pe
+         1g5A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=osxQjmB098/TGCLrsSwID6OvSmYzCRl1AIi+gtAv07w=;
+        fh=7heRuBWPyNQUWJA2/viMPwiNfAUA567OllBtKvgTBis=;
+        b=Gtq1xwvD2wjU8d8Ldh+6Md9QWsSYkmMubb/LHdginAshWKdXCKoVgiBKmnyP1OfTob
+         1bjC1scIWerNhhvczCpokXMG8THYNzIxHRs6fkI5zqLUpudRuaCOCBZkAXyzVK0vbEIB
+         Atmgj4f5/tQSRM6cf/z8Fr2GamXwtVmoisW+KkKaawbhNZbkkvYEnlT9AtjhWOrnXouS
+         jDPrOuhKks+/mKGKUeGA8lJWEg/lbVSI+kqvCmq0bVMKr0a5hpgivpbbH07HjC2jhrJ0
+         DQYs60u3tjFo1N6wkcmBytNBy9R8GQ+9coacjzORb4PWi826KC1ZkYVOJve8CtVVChRJ
+         Ra7Q==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@missionary.org header.s=google header.b=YskeFCrG;
+       spf=pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=kaden.killian@missionary.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=missionary.org;
+       dara=pass header.i=@gmail.com
+Return-Path: <kaden.killian@missionary.org>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 2adb3069b0e04-54957594552sor1146835e87.8.2025.03.03.06.01.58
+        for <killianfamily@gmail.com>
+        (Google Transport Security);
+        Mon, 03 Mar 2025 06:01:59 -0800 (PST)
+Received-SPF: pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@missionary.org header.s=google header.b=YskeFCrG;
+       spf=pass (google.com: domain of kaden.killian@missionary.org designates 209.85.220.41 as permitted sender) smtp.mailfrom=kaden.killian@missionary.org;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=missionary.org;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=missionary.org; s=google; t=1741010518; x=1741615318; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=osxQjmB098/TGCLrsSwID6OvSmYzCRl1AIi+gtAv07w=;
+        b=YskeFCrGick6AQ3oRshikXjMMjdLWQ7YScDB2sd4uxkGt5R4YTJEBYETt45mMvcqUk
+         rIUVie00AypgTnhdAHmbYFdQF7zI0Gg0UWbFjqtBivT0pTIPpGeRgGTBFMaXvTn0YDTI
+         Z8uRVEyV8q6d/2884MDBV4SQu17+5BIaG7Ujpc65LESdPN1dfW7ZrA26ibPPi0bereFu
+         4qCZT4T/MPEtshfQDnm6vo3CBLxX8FSOf8yicy6OEiR1ede7g7s/JNEfAtcs0npZ/4n4
+         ZP2Lm43phL2T+IRGFztZMP4XxGrJHug6wmg536dlRu0VfmUDGDkGXB+/Jyw8H2ju10kR
+         X54g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1741010518; x=1741615318;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=osxQjmB098/TGCLrsSwID6OvSmYzCRl1AIi+gtAv07w=;
+        b=ardrFNjJKRXgQVWdhAMEuStZPjbhAtA0ob3vjSEqjCSi/D+5ui4VrgBBMD+pyC0omn
+         NOTumZJMOZc6v67DZHoLyHdjfaunY1ZZwxUig/p6WXb37TdBSV3LAhPgzKCFXaUxVaq0
+         34qlkS2hSMlxjIrrQAgC/YV6VLleLWtDt8PLCQZFgv1wwBJGTNoAZkyCMvlK8INw2sN5
+         S6cyFzG/9Wu35K+ZUlwc4bYXrfqRyGPQ0LOh+thNdaLkgZW6gaX8yRh45Ju6ZoNe7VeF
+         EDPA5Yml87PuFFCWhyEMZvgI8jqWxqmqKCQAxoOVKAuE+2yYuGg/5bOtD6uWQGggZZEY
+         YfuQ==
+X-Gm-Message-State: AOJu0Yxq4m9gEMVB04b/vSPbNGntlearih4K7Rs14iA9wt1SxIc+7W8S
+	zqafg6EiaBM7EqRkgyj9+S08AmhqLwhlKw66pHlLSxYvqjP+wCN/38aXC5vggvAsjZ8KOncbWnE
+	xoafi/udfjpXHClqNoe/YXfTsAQfBQBCFRZrzK0MBfwpJZYltyvinv7soavrqhaF42KzuILBVqu
+	+srB34Krcd/i0umIqyjqt0q/ODIAmr4Stqrg7rt5tgySGwDNxPptU6llJ0DErpV2dWYtxG70/4/
+	VGa3eSTYaZLyKpG5i3FT5iuoNadVJ6AY/V1nTTzfpgEYXQSjtAgH/mvnNA4ePbTGegC626kL50=
+X-Gm-Gg: ASbGncvSFUhfrGr3CqWGVO0vUBqCs2+NCM/fQEx93c3ug8ZQYt3yqJ7X05agkJryuCk
+	q7e3MaAFAEMYmeGpFgnoMH5EtmJxikWElSp6z9dM2FEkQ4v3VoGCKj9/lY+Dn0khaqxWd6NFasw
+	ac2iPuCa2O+kckNMTo7r51iueUDJiS7IOerMBYD5FWY/ZJgnKuBpC0d4MwQQ==
+X-Google-Smtp-Source: AGHT+IEWzRtEFkTDmk5gEZxqCjD0Hj5L6ozbUnCa+VoJUYUVpI97I6QfiBzT6NrApGYP6jXEul8TNP6GMiEyY/JHxRc=
+X-Received: by 2002:a05:6512:3b11:b0:545:aa5:d44f with SMTP id
+ 2adb3069b0e04-5494c3207afmr5779907e87.30.1741010514644; Mon, 03 Mar 2025
+ 06:01:54 -0800 (PST)
+MIME-Version: 1.0
+From: Kaden Killian <kaden.killian@missionary.org>
+Date: Mon, 3 Mar 2025 23:01:43 +0900
+X-Gm-Features: AQ5f1Jodo8WrU8jutrS8YX5APRLA5zjc_vFZMfJvVbjJCvLRgecMSGtyBgfPyYU
+Message-ID: <CABgTvga6nWQk08CO0PwquEno8ySGf22UmTLteWpPymmy8cnBHA@mail.gmail.com>
+Subject: =?UTF-8?B?VGhlIHNtb2tlIPCfmqwgY29tZXMgZnJvbSB0aGUgU3BlYWtlciDwn5SK?=
+To: killianfamily <killianfamily@gmail.com>
+Content-Type: multipart/alternative; boundary="00000000000046bdde062f70998e"
+X-CLOUD-SEC-AV-Sent: true
+X-CLOUD-SEC-AV-Info: missionarymail,google_mail,monitor
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+
+--00000000000046bdde062f70998e
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Last Week in Marugame
+
+News is out; I am being transferred to a place called Sennan in Wakayama
+Zone (Sennan is technically in Osaka Prefecture but that's a nitpicky
+detail)
+I am going to be companions with one of my district member=E2=80=99s past
+companions, Magbago=E9=95=B7=E8=80=81. He is from the Phillipines, and a cr=
+azy character to
+say the least. Very interested to see how we will work as a companionship!
+It's odd to go into a new companionship already knowing a bit about my
+companion. Hopefully that will be a good thing haha.
+
+Tuesday this week we had DCM, the last one in this District for me. We went
+all the way to Toyo to have it in person with the District Leader
+companionship. It was around 2 hours travel there, and it cost a decent
+amount too. We ended up having to cut it short because of the other Elders
+having a lesson appointment, but we talked a lot about inviting friends to
+baptism. The sister missionaries have invited 3 friends to baptism and all
+of them said yes and have dates planned! One of their baptisms will be next
+week! Too bad I won't be there =F0=9F=98=A2 On our way home from Toyo we mi=
+ssed a
+train, and the total travel was around 4-5 hours. Not to mention, when we
+got back to the station in Marugame my bike and one of the Sister
+Missionary=E2=80=99s bikes had been stolen =F0=9F=98=B6 We went to the poli=
+ce and let them
+know, and walked all the way back to our apartments. Bummmmmerrrrr (the
+story isn=E2=80=99t over????)
+
+Wednesday-Friday
+I am writing this all pretty late so I don=E2=80=99t remember a lot of deta=
+ils, but
+a few notable things happened. The sister missionaries in our area=E2=80=99=
+s
+neighbor was a huge help to us this week. After my bike was stolen, they
+found out and let us borrow their Son=E2=80=99s bike for the foreseeable fu=
+ture. He
+rode it all the way over to the apartment, and his parents drove away and
+left him to walk home lol. They are an interesting family for sure.
+Fortunately, we found out that our bikes hadn=E2=80=99t been stolen but rat=
+her
+confiscated by a rental bike company for being in front of the station for
+longer than they should have been. Not sure if that is legal but ok. I had
+to pay about 10 bucks fee but I was just happy to have the bike back. The
+bike that the friend dropped off at our apartment ironically never got
+used, we were actually able to get back my bike the day after it went
+missing. The same people that dropped off that bike also helped me to get
+my suitcases to the train station so that I didn=E2=80=99t have to walk all=
+ the way
+there, was a lifesaver. Unnnnnfortunately we went to have a =E2=80=9Clast s=
+upper=E2=80=9D
+with Nakamura=E5=85=84=E5=BC=9F in our ward. We went with Tatsuya!
+
+It was great, and I think that they get along really well. There was a
+video of a Japanese restaurant (opening in India I think) playing on the
+tablet that we used to order our food. I said in Japanese that it was a
+bunch of foreigners, and for some reason Tatsuya thought it was super funny
+and started choking on his water for a minute there lol. I was trying to
+play it off casually but I was snickering a little bit too haha. After our
+dinner, we got back to finish packing before the Sister=E2=80=99s neighbor =
+arrived.
+Unfortunately I had a lot of stuff to pack last minute and took like 10
+minutes longer than She had expected, and we were half yelled at in the car
+all the way to the station about being late and how unacceptable that is in
+Japan. It is understandable, and I don=E2=80=99t think I will have any prob=
+lems
+being late with packing in the future, but it was a pretty wild explosion
+to witness. We were saying sorry for like 10 minutes straight lol.
+
+Martinson=E9=95=B7=E8=80=81 and I made it safely to Okayama to spend the ni=
+ght, and I spent
+the last 15 minutes of the day doing all of the dirty dishes in the
+apartment. I never got told thank you or anything but it felt great to do
+something to help someone even if it may have gone unnoticed. I think that
+we can learn a lot from =E2=80=9Cunsolicited service=E2=80=9D. I will try a=
+nd write a
+spiritual message about that below. Anyways, I went to bed afterwards, and
+it may have been an even worse sleep than the last time I slept over there.
+I was super cold all night, and I tried desperately to cover myself with a
+towel as I slept lol. I probably barely got any sleep, but I lived to tell
+the tale fortunately.
+
+Or unfortunately=E2=80=A6
+Saturday morning I had to throw my towel and guitar back in my bags and
+book It for the station, I had no idea I needed to leave early so I was
+super Stressed. On the way to the station, because I was carrying a full
+suitcase, carry on and backpack, the 3 Elders in front of me Left me in the
+dust and took the train we needed to ride before I could catch up. That
+left me alone without a sim card to try and travel 3=C2=BD hours to Osaka.
+Fortunately, I did somehow manage to make it all by myself, but having not
+eaten anything all morning I was on the brink of passing out from lugging
+around so much alone. It was brutal.
+
+Sunday-Monday
+Since arriving in Sennan, I have done some much needed vacuuming, traveled
+to stake conference, and enjoyed Listening to reports as my companion is
+the district Leader. Cool story, I made a Jimoty post on Saturday evening,
+and Magbago=E9=95=B7=E8=80=81 didn't have high hopes to say the least. Appa=
+rently he had
+previously made a post for a game night and nobody was interested. Anyways,
+we checked on the post the next day, and there were already 4 people
+interested in being our friends =F0=9F=98=B1=F0=9F=98=B1=F0=9F=98=B1=F0=9F=
+=99=8C=F0=9F=99=8C Huge blessing, let's just hope
+they respond quickly and positively! JIMOTY LETS GO
+I also managed to find a speaker for my guitar on Pday, but when I brought
+it home to try out, it worked for a few minutes and then smoke started
+coming out of it. Now it only makes a buzzing sound that will likely
+produce more smoke if I leave it turned on. Hey, if I need to set off a
+fire alarm I am SET =F0=9F=94=A5=F0=9F=94=A5 I am pretty bummed and frustra=
+ted though, maybe I
+will just save up my personal money for a few weeks and try to find a nicer
+speaker or something, bummer.
+
+Spiritual Thought Time!
+I mentioned I wanted to talk a little about =E2=80=9Cunsolicited service,=
+=E2=80=9D so I
+will try to come up with something =F0=9F=A7=A0=F0=9F=94=8C
+In our lives, we spend a lot of time doing things that benefit ourselves.
+This isn't necessarily a bad thing, it's absolutely important to take care
+of ourselves, but I have noticed something by paying less attention to my
+own wants. As I focus my energy towards fulfilling God's will and
+strengthening those around me, I find that my heart is more full, and my
+conscience is less troubled by my worries and concerns. I am by no means
+perfect at this, but I'd encourage whoever is reading this to spend some
+time in which you'd regularly indulge in personal wants or activities and
+do something for one of your friends or family members. They don't even
+have to be someone you know! If you make some time for others without the
+sole intention of praise or reward, you will feel spiritually full. I
+believe that this is true, I have experienced it firsthand!
+
+I love you guys, I hope you are doing ok in your lives. I can't wait to
+message/hear from you all. hang In there!
+
+=E3=82=AD=E3=83=AA=E3=82=A2=E3=83=B3=E9=95=B7=E8=80=81
+
+--00000000000046bdde062f70998e
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto">Last Week in Marugame<div dir=3D"auto"><br></div><div dir=
+=3D"auto">News is out; I am being transferred to a place called Sennan in W=
+akayama Zone (Sennan is technically in Osaka Prefecture but that&#39;s a ni=
+tpicky detail)</div><div dir=3D"auto">I am going to be companions with one =
+of my district member=E2=80=99s past companions, Magbago=E9=95=B7=E8=80=81.=
+ He is from the Phillipines, and a crazy character to say the least. Very i=
+nterested to see how we will work as a companionship! It&#39;s odd to go in=
+to a new companionship already knowing a bit about my companion. Hopefully =
+that will be a good thing haha.=C2=A0</div><div dir=3D"auto"><br></div><div=
+ dir=3D"auto">Tuesday this week we had DCM, the last one in this District f=
+or me. We went all the way to Toyo to have it in person with the District L=
+eader companionship. It was around 2 hours travel there, and it cost a dece=
+nt amount too. We ended up having to cut it short because of the other Elde=
+rs having a lesson appointment, but we talked a lot about inviting friends =
+to baptism. The sister missionaries have invited 3 friends to baptism and a=
+ll of them said yes and have dates planned! One of their baptisms will be n=
+ext week! Too bad I won&#39;t be there =F0=9F=98=A2 On our way home from To=
+yo we missed a train, and the total travel was around 4-5 hours. Not to men=
+tion, when we got back to the station in Marugame my bike and one of the Si=
+ster Missionary=E2=80=99s bikes had been stolen =F0=9F=98=B6 We went to the=
+ police and let them know, and walked all the way back to our apartments. B=
+ummmmmerrrrr (the story isn=E2=80=99t over????)</div><div dir=3D"auto"><br>=
+</div><div dir=3D"auto">Wednesday-Friday</div><div dir=3D"auto">I am writin=
+g this all pretty late so I don=E2=80=99t remember a lot of details, but a =
+few notable things happened. The sister missionaries in our area=E2=80=99s =
+neighbor was a huge help to us this week. After my bike was stolen, they fo=
+und out and let us borrow their Son=E2=80=99s bike for the foreseeable futu=
+re. He rode it all the way over to the apartment, and his parents drove awa=
+y and left him to walk home lol. They are an interesting family for sure. F=
+ortunately, we found out that our bikes hadn=E2=80=99t been stolen but rath=
+er confiscated by a rental bike company for being in front of the station f=
+or longer than they should have been. Not sure if that is legal but ok. I h=
+ad to pay about 10 bucks fee but I was just happy to have the bike back. Th=
+e bike that the friend dropped off at our apartment ironically never got us=
+ed, we were actually able to get back my bike the day after it went missing=
+. The same people that dropped off that bike also helped me to get my suitc=
+ases to the train station so that I didn=E2=80=99t have to walk all the way=
+ there, was a lifesaver. Unnnnnfortunately we went to have a =E2=80=9Clast =
+supper=E2=80=9D with Nakamura=E5=85=84=E5=BC=9F in our ward. We went with T=
+atsuya!=C2=A0</div><div dir=3D"auto"><br></div><div dir=3D"auto">It was gre=
+at, and I think that they get along really well. There was a video of a Jap=
+anese restaurant (opening in India I think) playing on the tablet that we u=
+sed to order our food. I said in Japanese that it was a bunch of foreigners=
+, and for some reason Tatsuya thought it was super funny and started chokin=
+g on his water for a minute there lol. I was trying to play it off casually=
+ but I was snickering a little bit too haha. After our dinner, we got back =
+to finish packing before the Sister=E2=80=99s neighbor arrived. Unfortunate=
+ly I had a lot of stuff to pack last minute and took like 10 minutes longer=
+ than She had expected, and we were half yelled at in the car all the way t=
+o the station about being late and how unacceptable that is in Japan. It is=
+ understandable, and I don=E2=80=99t think I will have any problems being l=
+ate with packing in the future, but it was a pretty wild explosion to witne=
+ss. We were saying sorry for like 10 minutes straight lol.</div><div dir=3D=
+"auto"><br></div><div dir=3D"auto">Martinson=E9=95=B7=E8=80=81 and I made i=
+t safely to Okayama to spend the night, and I spent the last 15 minutes of =
+the day doing all of the dirty dishes in the apartment. I never got told th=
+ank you or anything but it felt great to do something to help someone even =
+if it may have gone unnoticed. I think that we can learn a lot from =E2=80=
+=9Cunsolicited service=E2=80=9D. I will try and write a spiritual message a=
+bout that below. Anyways, I went to bed afterwards, and it may have been an=
+ even worse sleep than the last time I slept over there. I was super cold a=
+ll night, and I tried desperately to cover myself with a towel as I slept l=
+ol. I probably barely got any sleep, but I lived to tell the tale fortunate=
+ly.</div><div dir=3D"auto"><br></div><div dir=3D"auto">Or unfortunately=E2=
+=80=A6</div><div dir=3D"auto">Saturday morning I had to throw my towel and =
+guitar back in my bags and book It for the station, I had no idea I needed =
+to leave early so I was super Stressed. On the way to the station, because =
+I was carrying a full suitcase, carry on and backpack, the 3 Elders in fron=
+t of me Left me in the dust and took the train we needed to ride before I c=
+ould catch up. That left me alone without a sim card to try and travel 3=C2=
+=BD hours to Osaka. Fortunately, I did somehow manage to make it all by mys=
+elf, but having not eaten anything all morning I was on the brink of passin=
+g out from lugging around so much alone. It was brutal.</div><div dir=3D"au=
+to"><br></div><div dir=3D"auto">Sunday-Monday</div><div dir=3D"auto">Since =
+arriving in Sennan, I have done some much needed vacuuming, traveled=C2=A0<=
+/div><div dir=3D"auto">to stake conference, and enjoyed Listening to report=
+s as my companion is the district Leader. Cool story, I made a Jimoty post =
+on Saturday evening, and Magbago=E9=95=B7=E8=80=81 didn&#39;t have high hop=
+es to say the least. Apparently he had previously made a post for a game ni=
+ght and nobody was interested. Anyways, we checked on the post the next day=
+, and there were already 4 people interested in being our friends =F0=9F=98=
+=B1=F0=9F=98=B1=F0=9F=98=B1=F0=9F=99=8C=F0=9F=99=8C Huge blessing, let&#39;=
+s just hope they respond quickly and positively! JIMOTY LETS GO</div><div d=
+ir=3D"auto">I also managed to find a speaker for my guitar on Pday, but whe=
+n I brought it home to try out, it worked for a few minutes and then smoke =
+started coming out of it. Now it only makes a buzzing sound that will likel=
+y produce more smoke if I leave it turned on. Hey, if I need to set off a f=
+ire alarm I am SET =F0=9F=94=A5=F0=9F=94=A5 I am pretty bummed and frustrat=
+ed though, maybe I will just save up my personal money for a few weeks and =
+try to find a nicer speaker or something, bummer.</div><div dir=3D"auto"><b=
+r></div><div dir=3D"auto">Spiritual Thought Time!</div><div dir=3D"auto">I =
+mentioned I wanted to talk a little about =E2=80=9Cunsolicited service,=E2=
+=80=9D so I will try to come up with something =F0=9F=A7=A0=F0=9F=94=8C</di=
+v><div dir=3D"auto">In our lives, we spend a lot of time doing things that =
+benefit ourselves. This isn&#39;t necessarily a bad thing, it&#39;s absolut=
+ely important to take care of ourselves, but I have noticed something by pa=
+ying less attention to my own wants. As I focus my energy towards fulfillin=
+g God&#39;s will and strengthening those around me, I find that my heart is=
+ more full, and my conscience is less troubled by my worries and concerns. =
+I am by no means perfect at this, but I&#39;d encourage whoever is reading =
+this to spend some time in which you&#39;d regularly indulge in personal wa=
+nts or activities and do something for one of your friends or family member=
+s. They don&#39;t even have to be someone you know! If you make some time f=
+or others without the sole intention of praise or reward, you will feel spi=
+ritually full. I believe that this is true, I have experienced it firsthand=
+!</div><div dir=3D"auto"><br></div><div dir=3D"auto">I love you guys, I hop=
+e you are doing ok in your lives. I can&#39;t wait to message/hear from you=
+ all. hang In there!</div><div dir=3D"auto"><br></div><div dir=3D"auto">=E3=
+=82=AD=E3=83=AA=E3=82=A2=E3=83=B3=E9=95=B7=E8=80=81</div><div dir=3D"auto">=
+<br></div><div dir=3D"auto"><br></div></div>
+
+--00000000000046bdde062f70998e--

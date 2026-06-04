@@ -1,0 +1,312 @@
+Delivered-To: killianfamily@gmail.com
+Received: by 2002:a05:6022:502:b0:63:5c48:aa50 with SMTP id q2csp4425920laq;
+        Tue, 3 Dec 2024 22:58:14 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFCFxI5XOVbrZCvZmAEsWBHiHBJnKBHefpaGayR/hCcNS2musdrFnMDRcKByyJuwuOivxAC
+X-Received: by 2002:a05:6830:6f8e:b0:71d:5336:df80 with SMTP id 46e09a7af769-71dad6cc7b4mr5493007a34.20.1733295494370;
+        Tue, 03 Dec 2024 22:58:14 -0800 (PST)
+ARC-Seal: i=4; a=rsa-sha256; t=1733295494; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=I6484ZfEer9g9JplVqlQiPZIyZkuEPzohikeBDjDuou/T7Q3NkUz/eQNcxR8j/kUgv
+         GXnsiUtyZZoMQ7eQF8otcZELfr3SOtPCfNUq3ylvh8G/U/88N1OEit+cw+leFU2aPnfT
+         6I+vTuh5Jr8P39rL0UFPWPBBEHyIrJQiCJwsdjv5btqMoHy9cwVMpYQhof6XsOa/RfGb
+         tobK0SeNaWZhMULSF0tx1oltQRG41IOa7fjDcfT/G1HhEfoKSleiAhGv1pQXPJy8jEXc
+         6hm5S0oUu/RPHAF/5KtOPI7Tr9CXbmToUjYk+pE+/ym33ORSO8N57Vk98gcfYnRy0Zz4
+         keRg==
+ARC-Message-Signature: i=4; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=authentication-results-original:mime-version:msip_labels
+         :content-language:accept-language:message-id:date:thread-index
+         :thread-topic:subject:to:from:dkim-signature:dkim-signature;
+        bh=0ByYff7CK3zJherHyyYTRn5ELIsa+QUcA/I0VPXLpGQ=;
+        fh=2wcF+T701Xt375BJdqgfYYOG9Sj/tA2vMLQhIxdGl2s=;
+        b=d2muXKzqzDgZHC+dNeTDZ9aAlnwys7VZ4OGnS2Y2zMKBA41cdvbz8aEW1hY1XqHyZK
+         mTnFl8afCl22ydWCtxRQ81y0uvP6Yn86ZCOJVmgL1jMa8+vPGnlwnNMnc8GGUjNwP6wD
+         X70IPbXG6E0WPSPv8gjvdwDROfczZZfV3qBlgf8CcPnaUCVhvpfI1SkjwzpZQO+af+h4
+         QkiFuptH//nDw5xQimfN3y02bggdpZyJ05xkVWd5xGq/gIhRRp57/Z5NmKXFowP+05Yb
+         kHzCMph3a6vpRL9Ld/Oj5QeaafpuEJGKZ/lJifXf21V9DyP7iXLhQvIbexcbPNhb8jon
+         GL5Q==;
+        dara=google.com
+ARC-Authentication-Results: i=4; mx.google.com;
+       dkim=pass header.i=@ChurchofJesusChrist.org header.s=selector1 header.b=aqCNQHLu;
+       dkim=pass header.i=@ChurchofJesusChrist.org header.s=selector1 header.b=aqCNQHLu;
+       arc=pass (i=3 spf=pass spfdomain=churchofjesuschrist.org dkim=pass dkdomain=churchofjesuschrist.org dmarc=pass fromdomain=churchofjesuschrist.org);
+       spf=pass (google.com: domain of 2016702@churchofjesuschrist.org designates 2a01:111:f403:c105::1 as permitted sender) smtp.mailfrom=2016702@churchofjesuschrist.org;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=churchofjesuschrist.org
+Return-Path: <2016702@churchofjesuschrist.org>
+Received: from CH1PR05CU001.outbound.protection.outlook.com (mail-northcentralusazlp170100001.outbound.protection.outlook.com. [2a01:111:f403:c105::1])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-7fcfe59fccdsi1060176a12.555.2024.12.03.22.58.13
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 03 Dec 2024 22:58:14 -0800 (PST)
+Received-SPF: pass (google.com: domain of 2016702@churchofjesuschrist.org designates 2a01:111:f403:c105::1 as permitted sender) client-ip=2a01:111:f403:c105::1;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@ChurchofJesusChrist.org header.s=selector1 header.b=aqCNQHLu;
+       dkim=pass header.i=@ChurchofJesusChrist.org header.s=selector1 header.b=aqCNQHLu;
+       arc=pass (i=3 spf=pass spfdomain=churchofjesuschrist.org dkim=pass dkdomain=churchofjesuschrist.org dmarc=pass fromdomain=churchofjesuschrist.org);
+       spf=pass (google.com: domain of 2016702@churchofjesuschrist.org designates 2a01:111:f403:c105::1 as permitted sender) smtp.mailfrom=2016702@churchofjesuschrist.org;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=churchofjesuschrist.org
+ARC-Seal: i=3; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=pass;
+ b=PE6viHgrACDWoo2Hw3G54ES536SBmwKE0gPAY3jkOlLqNR8M1Vc4HvKb88UAybSC+P6XSGzheZYmzxpYvw5AW3Huf8y5qAg+MvfpiQlw+dR1k+dXlvn0YJJYU9hiOfzQFuu4gotjTw/7kNNTAVJ5CwBRoDZHFCuhKe54YlRERkJHc0zQnDZFytZm5Rg15Hi3wJY13VDLJfHt92ztRGeYpd3He4k/P6h5d9RNgPOLqaBAi17dOgR1cRTNhk5cp4KGzxsTN9ZD85nIIunhvEP0e6a3nPSBhGTP02l7SW9/7eesiE9tkUsqnAEKtzg7JLpnyjvlpXw/L3r9HsfReFzfkg==
+ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=0ByYff7CK3zJherHyyYTRn5ELIsa+QUcA/I0VPXLpGQ=;
+ b=vCyBjhnXppPbDAfaHOmF9XFWMHR/jFb2y3DOfSByhF01CaOoPMKQfaX2KpM1KQwaRAaEoa5cr64N0X7lmFyzqMQcHYiEQHbtyDgC+h6Y97PbfT5g0zEoNIXmqaesf6tRp4dYKG1dOrntGwcEJ/8akjChkQKa411rThx+IdznnRRylApYbTgzbX9W5xd9osrKunMdQ8FsWVeHDXkZvv9Mb7mNxXMIYs83M+TYTCHTnxgvm5HB0KFz+b+HUNglyDyrq06BCk9gLcEYnT115NJqQmOeE+cXb62FW8x4xSsKnxt6QtDCMdQaMsNAA9KyvU+8LnvwdcZC0tP5+8vFmXuITQ==
+ARC-Authentication-Results: i=3; mx.microsoft.com 1; spf=pass (sender ip is
+ 3.214.204.181) smtp.rcpttodomain=gmail.com
+ smtp.mailfrom=churchofjesuschrist.org; dmarc=pass (p=reject sp=reject
+ pct=100) action=none header.from=churchofjesuschrist.org; dkim=pass
+ (signature was verified) header.d=churchofjesuschrist.org; arc=pass (0 oda=1
+ ltdi=1 spf=[1,1,smtp.mailfrom=churchofjesuschrist.org]
+ dkim=[1,1,header.d=churchofjesuschrist.org]
+ dmarc=[1,1,header.from=churchofjesuschrist.org])
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=ChurchofJesusChrist.org; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=0ByYff7CK3zJherHyyYTRn5ELIsa+QUcA/I0VPXLpGQ=;
+ b=aqCNQHLuhNpcWuyH3ZA9TfNZ5lAVLobbfzEK475S6tuNCkRym6gKyg1e9dSO1QabU6xgHCDW/WjB7tRLz9xQ/6omXftI5LJpvxGmXJfBYh4iF+p8sOGVou/gpX1mIbD6b4dIqrdJb3xghFbbtY9VMRzRAMgIdY7iOM1Pf69GzQQ=
+Received: from BN9PR03CA0266.namprd03.prod.outlook.com (2603:10b6:408:ff::31)
+ by LV3PR04MB8942.namprd04.prod.outlook.com (2603:10b6:408:1a1::11) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8230.11; Wed, 4 Dec
+ 2024 06:58:08 +0000
+Received: from BN2PEPF000044A7.namprd04.prod.outlook.com
+ (2603:10b6:408:ff:cafe::20) by BN9PR03CA0266.outlook.office365.com
+ (2603:10b6:408:ff::31) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8207.19 via Frontend Transport; Wed,
+ 4 Dec 2024 06:58:08 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 3.214.204.181)
+ smtp.mailfrom=ChurchofJesusChrist.org; dkim=pass (signature was verified)
+ header.d=ChurchofJesusChrist.org;dmarc=pass action=none
+ header.from=ChurchofJesusChrist.org;
+Received-SPF: Pass (protection.outlook.com: domain of ChurchofJesusChrist.org
+ designates 3.214.204.181 as permitted sender)
+ receiver=protection.outlook.com; client-ip=3.214.204.181;
+ helo=us-dlp.cloud-sec-av.com; pr=C
+Received: from us-dlp.cloud-sec-av.com (3.214.204.181) by
+ BN2PEPF000044A7.mail.protection.outlook.com (10.167.243.101) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.8230.7
+ via Frontend Transport; Wed, 4 Dec 2024 06:58:08 +0000
+Received: from emails-5221435-6-mt-prod-cp-us-2.checkpointcloudsec.com (ip-10-10-157-201.ec2.internal [10.10.157.201])
+	by mta-outgoing-dlp-967-mt-prod-cp-us-2.checkpointcloudsec.com (Postfix) with ESMTPS id 307C47FFC3;
+	Wed,  4 Dec 2024 06:58:08 +0000 (UTC)
+ARC-Authentication-Results: i=2; mx.checkpointcloudsec.com; arc=pass;
+  dkim=none header.d=none
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed;
+ d=checkpointcloudsec.com; s=arcselector01; t=1733295488; h=from : to :
+ subject : date : message-id : content-type : mime-version;
+ bh=0ByYff7CK3zJherHyyYTRn5ELIsa+QUcA/I0VPXLpGQ=;
+ b=mUFWuQ3qd8BzsINhcU8ClBFLUIILQQXcYJYOz+Nxh++Gg/dK45yA+OqfIqbv1+fDdQUIw
+ ec6RIXE5aaPZ7C1BZcdt9VjtZbJV6X1YVZCq6f9N+z0BQ2oA2Ek4pS5CZZhEi1VMKsUmiL4
+ voWSVcdukwu8W/o2VvDHn1r9gw8s5ws=
+ARC-Seal: i=2; cv=pass; a=rsa-sha256; d=checkpointcloudsec.com;
+ s=arcselector01; t=1733295488;
+ b=S/MqghmXF3SUuvKKhBgIdFhkG+4dmWcKS8YTXKbvMaxpNjVfPJC6KByr9fwwx7/VT6XyG
+ JeEvOw/sw8S4SIN5gNlHku/TWx9NlJcDbNScDlMqt0iLcJ3wObQWa/v9rsYNSP0bspckHzX
+ sD6/6NCkYn2tTNyRHvubYMtOfwNZTPk=
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=iveUAH0QHez4oD5PQl/0c7C27AIMsGeBBOVkr7sQ4P60G1KtYcHeXMnRyg3hFsk2MEa8uGNqypFJftd0omnUbiNpR9vwPFgq2/PzViKiHL90Q2HPvijd+x/cP1iKamrlMG4jkHDmnQemoH+KmktE8GvE6XPzM3Ve1RZPqYbIsRfluQxQaX0ILpks55uO4dSVGTocZZPRuUajNuFO+fez/8hpjzU5i5YaVe0007jOxZsk4woUwnDE0L2rkl1RQ4eo3MTcJH9+MMgBygOw2JIGoVtVxou3QDgoYmK1pHzjVdGNIuKS9cD9927tf+VvxpyLNe7jNVQC9TIhNyWGPYk7aQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=0ByYff7CK3zJherHyyYTRn5ELIsa+QUcA/I0VPXLpGQ=;
+ b=i/U+HkyfNw/PDgdGvn5R1ENaYMoQLCFyNPeqBa5OaxiIAvL6yN0ZfhnrdPJakeck6pcqJMsqlGL3NXVDYJsy/uX92+5S2KmfvL8vy/PeldjDlAmZ+uJEbdgNKHL93AWyWZReL+MU9FtuQ9drrdRnj8WPayZloVlLlSeZg68rmHOytX3TJcHhONV2UNgCj4mPa9E7geXeuIyPlR4QtLq70ANCmisILIcMy5TayJtg45bXBWrQjGF6sZ4BQwmPURxPzJIYO3BrCeWnDp4iguh6Y95mmvsdSuLFtnaIgYluv2+SQdQmUgjnLiDSP1AdDQFa7eY8HJpYLOCX9gAuH55QQg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=churchofjesuschrist.org; dmarc=pass action=none
+ header.from=churchofjesuschrist.org; dkim=pass
+ header.d=churchofjesuschrist.org; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=ChurchofJesusChrist.org; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=0ByYff7CK3zJherHyyYTRn5ELIsa+QUcA/I0VPXLpGQ=;
+ b=aqCNQHLuhNpcWuyH3ZA9TfNZ5lAVLobbfzEK475S6tuNCkRym6gKyg1e9dSO1QabU6xgHCDW/WjB7tRLz9xQ/6omXftI5LJpvxGmXJfBYh4iF+p8sOGVou/gpX1mIbD6b4dIqrdJb3xghFbbtY9VMRzRAMgIdY7iOM1Pf69GzQQ=
+Received: from PH0PR04MB7719.namprd04.prod.outlook.com (2603:10b6:510:57::9)
+ by CYYPR04MB8877.namprd04.prod.outlook.com (2603:10b6:930:c7::15) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8207.18; Wed, 4 Dec
+ 2024 06:57:58 +0000
+Received: from PH0PR04MB7719.namprd04.prod.outlook.com
+ ([fe80::fcf8:3e08:7dbd:9537]) by PH0PR04MB7719.namprd04.prod.outlook.com
+ ([fe80::fcf8:3e08:7dbd:9537%4]) with mapi id 15.20.8230.010; Wed, 4 Dec 2024
+ 06:57:58 +0000
+From: Japan Kobe Mission <2016702@ChurchofJesusChrist.org>
+To: "Killianfamily@gmail.com" <Killianfamily@gmail.com>, "spencerok@gmail.com"
+	<spencerok@gmail.com>
+Subject: Your package has arrived in Kobe, Japan
+Thread-Topic: Your package has arrived in Kobe, Japan
+Thread-Index: AQHbRhm/OCTARk85sUeEZ7KT5xZE8g==
+Date: Wed, 4 Dec 2024 06:57:57 +0000
+Message-ID: <PH0PR04MB7719FA6E319F83EF8949F199FD372@PH0PR04MB7719.namprd04.prod.outlook.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+msip_labels: MSIP_Label_03ef5274-90b8-4b3f-8a76-b4c36a43e904_Enabled=True;MSIP_Label_03ef5274-90b8-4b3f-8a76-b4c36a43e904_SiteId=61e6eeb3-5fd7-4aaa-ae3c-61e8deb09b79;MSIP_Label_03ef5274-90b8-4b3f-8a76-b4c36a43e904_SetDate=2024-12-04T06:57:57.365Z;MSIP_Label_03ef5274-90b8-4b3f-8a76-b4c36a43e904_Name=Not
+ Encrypted;MSIP_Label_03ef5274-90b8-4b3f-8a76-b4c36a43e904_ContentBits=0;MSIP_Label_03ef5274-90b8-4b3f-8a76-b4c36a43e904_Method=Standard;
+x-ms-traffictypediagnostic:
+	PH0PR04MB7719:EE_|CYYPR04MB8877:EE_|BN2PEPF000044A7:EE_|LV3PR04MB8942:EE_
+X-MS-Office365-Filtering-Correlation-Id: cb7735a3-4092-415c-dce1-08dd14310277
+X-MS-Exchange-AtpMessageProperties: SA
+x-cloud-sec-av-info: churchofjesuschrist,office365_emails,sent,inline
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam-Untrusted:
+ BCL:0;ARA:13230040|376014|1800799024|366016|8096899003|38070700018;
+X-Microsoft-Antispam-Message-Info-Original:
+ =?us-ascii?Q?1vQbkEnRrDPVVuZtAh7L8HDP/mrKg7/dHGEK7UIvgBEKHnHUgc+YuEVZcV/y?=
+ =?us-ascii?Q?UyAKVwj930jWH7kiqY8p6KofahkwWoCCjTyRQpMcw61gCtlPHWy57i29UhZC?=
+ =?us-ascii?Q?A77X8msLh8iys9OWqm404olohLudBgRnD4JgYJw0aDZDz0sxNi5htkbabj6K?=
+ =?us-ascii?Q?B7HfhicipyKEcOTfUwd23C7biW0yyjoxQ2KkZpNzv1wuvGtoAwyxeNxVjHKP?=
+ =?us-ascii?Q?Doux4JVjJx0IykP5SAFBQgR1PEx6MxIiqvfXf22yNhLzUOzZ9omIrT7easMT?=
+ =?us-ascii?Q?3KMoI6+KDGYI89tIiPkXezoV9ZL8DgLIroNowlk3NjfXBy/IQupLn22BYyxY?=
+ =?us-ascii?Q?Q+JqxYuYbhKWQOcGFFgt/a6Y3BDBRvdUpjku1lAq2VspJ5hOpdIwxET15a++?=
+ =?us-ascii?Q?7rPp4UyTrZ9AqptkhWmzjA3LhIU2wMjptMKW51gXIeIwAEU6FB/WH60Vj5y8?=
+ =?us-ascii?Q?ngrZ7pvGdipHRfbLlXW8eY1gREiFz4YcQmgxUOqr+E26EbyJAjqBY/5z7L7T?=
+ =?us-ascii?Q?UjbfKLAhusjSJm8aDO1uQr9c7B38gzfklQKuOYhh7r1/RSXKnhh6odcRZIsa?=
+ =?us-ascii?Q?bM7KOktCN37DT9xfSKnXyNtAKVRSYu2zMqR6sEXurQAs/teQoDLI53yOsctX?=
+ =?us-ascii?Q?XDytIYmvoLnhE4K8+dhttD6ZSGRxdabEDNs4QiEF5fPvj67Tr2p7o7SzdufC?=
+ =?us-ascii?Q?BhZFUvLMzDdhabMQ9bsnqDTReXDCmzjyFPFsJhnCSuCP5ImFnC5ZAzmckXGt?=
+ =?us-ascii?Q?gmtT4snNMNQ+tzfM5UJKn7OEfBuNg08q3LHcsuDbQZDY7lcUROleAe1hW7Er?=
+ =?us-ascii?Q?Wlb8/9OBIMdJ/mtmpbxFcaHNUBBejlG38hPzqUd+1qQORCwjb3YUBlkIlXGc?=
+ =?us-ascii?Q?k8PKRVwNOl37j149a/mqOWvhC3pVyI2X30OCraNqFgMV1ceiKoliq6QnWgJD?=
+ =?us-ascii?Q?gkXpDMUN3/KO08MHB4UuEqgD24KwcEMOQFvEcFWDz+XjFSH89sXQ9Zv8gXrt?=
+ =?us-ascii?Q?P65yqW8Rxa1pZMDuAlhz2ogg3Pm0buIFtCUK7mjtXMKttycpaPFx2BPrEIeC?=
+ =?us-ascii?Q?yamn+en1FFNNXkoxA/35tMcDq/5cdtgLdgwd48V/LSlJJOM8DY+cOaIWNiZL?=
+ =?us-ascii?Q?A4n3mcyyFXMXSOYmXqBJmHsW52Fk9xmhK/gfK6twUodwwGgDF1xbwr2kWyYw?=
+ =?us-ascii?Q?kTyA6Izit/lM0U+oYZLNez9h34mksHx1UPFOY1n++lY61BHAzyHDZeqDfEwj?=
+ =?us-ascii?Q?js1NczLWAaYoskJJrVrlhYS3KZQnAONtmBrOSXC4MMBpeOGf0pRfoApoDsCZ?=
+ =?us-ascii?Q?bgps9Rco8Vp7HL6YcyNrwNScKUFMxWoPLanreaPbIA5Fapl+WI9lZRNOBeIU?=
+ =?us-ascii?Q?5hVXCQZeQAjbuz3iaVxP4EuDqwimgZj3tGFlM4LKEF+eQhPRXA=3D=3D?=
+X-Forefront-Antispam-Report-Untrusted:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PH0PR04MB7719.namprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(1800799024)(366016)(8096899003)(38070700018);DIR:OUT;SFP:1101;
+Content-Type: multipart/alternative;
+	boundary="_000_PH0PR04MB7719FA6E319F83EF8949F199FD372PH0PR04MB7719namp_"
+MIME-Version: 1.0
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CYYPR04MB8877
+X-CLOUD-SEC-AV-INT-Relay: sent<mta-outgoing-dlp-mt-prod-cp-us-2-1.checkpointcloudsec.com>
+X-CLOUD-SEC-AV-UUID: cc892eee70334c51a93db093f4471348:churchofjesuschrist,office365_emails,sent,inline:39aaa811f0a457f9ead15e1a42f788f2
+Authentication-Results-Original: mx.checkpointcloudsec.com; arc=pass;
+ dkim=none header.d=none
+Return-Path: 2016702@ChurchofJesusChrist.org
+X-EOPAttributedMessage: 0
+X-MS-Exchange-Transport-CrossTenantHeadersStripped:
+ BN2PEPF000044A7.namprd04.prod.outlook.com
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id-Prvs:
+	3a90b869-b584-49e0-9e0a-08dd1430fc4c
+X-Microsoft-Antispam:
+	BCL:0;ARA:13230040|36860700013|14060799003|82310400026|35042699022|376014|1800799024|8096899003;
+X-Microsoft-Antispam-Message-Info:
+	=?iso-8859-1?Q?/lz0ICNomMbDpJJipnh7vqmgizA8ImdGScSY6lASfocIcHGQxWOif4+KY7?=
+ =?iso-8859-1?Q?axMavsaMQJWoZXhEw0zatrGpYFRZRTqCwe0XT9Q7iD7PsOJy8cdZsTa/XW?=
+ =?iso-8859-1?Q?LbAYLweiOW6oGgoK+8uI89iQ9K3ZG5SlCIQ+AApnoTGZAVJzQglhvybhPq?=
+ =?iso-8859-1?Q?voxjiDl0ym31iQzZxIdbznNTQDkJV80Zg1cfMPa6pCUzbv1C/WBRVgC0N+?=
+ =?iso-8859-1?Q?eDGFCdtBefc0rUQV2naf0SUCSCqbtVcnyPP5Oa8UJy20bkraIHBC/wrF9a?=
+ =?iso-8859-1?Q?05I2IwkHwOu9m5dpz/cm9BrnxTe8zo7tW9AG530ET9J0dRXQiuZ7MtG3Jo?=
+ =?iso-8859-1?Q?rnlslSl/UvqLW6jCBgrYU20rxX1hbuH8P/+8Y+WrjEvrRfjD5bvqJs/AwQ?=
+ =?iso-8859-1?Q?sE2PGKo87L2ZjXwLFQkSFG8nVXoIVwxAcfjFZMeqj3ZLvNy09y39cQDaXP?=
+ =?iso-8859-1?Q?htvwOj0kizCUcxBiGCtmZISHAYnWoBrieDb6WRdkB8JrdUsGpymsthQxOh?=
+ =?iso-8859-1?Q?DS7CQ8DEWPI7RkHXRj2mx211rreZYhM4I3UHj3iRYnDreCs1dvr1ySS/lu?=
+ =?iso-8859-1?Q?L7P052xGcFtkuIiO/2N5ubLaLaXt47ejCvvv5+AqRVc2qAShFINY1/J7OK?=
+ =?iso-8859-1?Q?O0jILHWadtjdgosnCpBUvZW/87tRR1k+URXf3Gzzd3LcxGU9gy+5zzYFXd?=
+ =?iso-8859-1?Q?VLfeY37gvJfojZ7MlzNrHy51mzCmrXJLRAWfpaVImIUgTGtIHQ2z+Cw6r9?=
+ =?iso-8859-1?Q?NB4MiItaeHEovOIayzAjBTiy8mDqEH3Dp5kSaY0N6lBc0PTUYdwKngd9Mm?=
+ =?iso-8859-1?Q?x2i1mS8p1vTzbMGBR3wwI8w/Vk+wusDSiH3/UyIJGc8ABEQFvdHH+y9Fyi?=
+ =?iso-8859-1?Q?37m7bd3asXeAbVFunMp+Jf04YrXiIrFtX89qd/ukT4zPyKb0uwqdWSfXQd?=
+ =?iso-8859-1?Q?qmoEbC60qUNM/p/gsRnaZOFzPjbFWAVSazqPRKVc3C2/x/qmlPmtF4xh9C?=
+ =?iso-8859-1?Q?nRXkvjI8OEczcEHxuoGFf7Qc4l6mn7Npyd4/8HosCYuQS4PqOVi/WZo6LY?=
+ =?iso-8859-1?Q?yJ2CO7eE5SUUO1Trdb6o+jCzMqlSzofqbxHZeGQd/1V9kB6bcvjgCVmnkJ?=
+ =?iso-8859-1?Q?CqfUjBCZzsa0KNHfrZVcoFUcvI5LMjWE1i1hee1dFDWUGBEtxNOZ7AsEN+?=
+ =?iso-8859-1?Q?9RzWxUkC26aRyHBZ4FQYJBSH8jec6H+bS9zXZ1t8tkRFg2hjVS5Irmu2BW?=
+ =?iso-8859-1?Q?PtzIsi1TRJdW0ekvflvF1zusP/jmGtqgie/fzsq3Bli1PYbn19AvA1LTVU?=
+ =?iso-8859-1?Q?WzDj0Zk2OLaL53FFmfkaMbcenGzSy1S2MY5Zgc0HGgPuFFlTCDv4O6xNj3?=
+ =?iso-8859-1?Q?v/ZALvBveyDHc9nLexL8g0/OXJYDc10H0RnFXA/Lk1bB1vdAvGoedv4xAw?=
+ =?iso-8859-1?Q?Q1Ex0OHlgy/VnI19anutvnI9yWZSxAQ9NhMfAxZpO2dPoXyJrzvsUoFhqr?=
+ =?iso-8859-1?Q?8x9aicxxYpMrnjpnDjdkqu?=
+X-Forefront-Antispam-Report:
+	CIP:3.214.204.181;CTRY:US;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:us-dlp.cloud-sec-av.com;PTR:us-dlp.cloud-sec-av.com;CAT:NONE;SFS:(13230040)(36860700013)(14060799003)(82310400026)(35042699022)(376014)(1800799024)(8096899003);DIR:OUT;SFP:1101;
+X-OriginatorOrg: churchofjesuschrist.org
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Dec 2024 06:58:08.3372
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: cb7735a3-4092-415c-dce1-08dd14310277
+X-MS-Exchange-CrossTenant-Id: 61e6eeb3-5fd7-4aaa-ae3c-61e8deb09b79
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=61e6eeb3-5fd7-4aaa-ae3c-61e8deb09b79;Ip=[3.214.204.181];Helo=[us-dlp.cloud-sec-av.com]
+X-MS-Exchange-CrossTenant-AuthSource:
+	BN2PEPF000044A7.namprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: LV3PR04MB8942
+
+--_000_PH0PR04MB7719FA6E319F83EF8949F199FD372PH0PR04MB7719namp_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+Dear Parent(s),
+We wanted you to know that your package arrived at the Japan Kobe Mission O=
+ffice. We also wanted you to know that your package will be delivered at yo=
+ur missionaries Zone Conference in time for the Holidays.
+If you have any questions, please reply to our Mission Office Secretary at =
+the above email address.
+Merry Christmas!
+
+Sister Lee Wade
+Kobe Japan Mission
+Office Secretary
+2016702@churchofjesuschrist.org
+Office: 078-805-1570
+
+--_000_PH0PR04MB7719FA6E319F83EF8949F199FD372PH0PR04MB7719namp_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<style type=3D"text/css" style=3D"display:none;"> P {margin-top:0;margin-bo=
+ttom:0;} </style>
+</head>
+<body dir=3D"ltr">
+<div class=3D"elementToProof" style=3D"line-height: 1.38; margin: 0in 0in 8=
+pt; font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, H=
+elvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+Dear Parent(s),</div>
+<div style=3D"line-height: 1.38; margin: 0in 0in 8pt; font-family: Aptos, A=
+ptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; fon=
+t-size: 12pt; color: rgb(0, 0, 0);">
+We wanted you to know that your package arrived at the Japan Kobe Mission O=
+ffice. We also wanted you to know that your package will be delivered at yo=
+ur missionaries Zone Conference in time for the Holidays.</div>
+<div style=3D"line-height: 1.38; margin: 0in 0in 8pt; font-family: Aptos, A=
+ptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; fon=
+t-size: 12pt; color: rgb(0, 0, 0);">
+If you have any questions, please reply to our Mission Office Secretary at =
+the above email address.</div>
+<div class=3D"elementToProof" style=3D"line-height: 1.38; margin: 0in 0in 8=
+pt; font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, H=
+elvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+<b>Merry Christmas!</b></div>
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
+olor: rgb(0, 0, 0);">
+<br>
+</div>
+<div id=3D"Signature" class=3D"elementToProof">
+<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
+Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+Sister Lee Wade</div>
+<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
+Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+Kobe Japan Mission</div>
+<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
+Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+Office Secretary</div>
+<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
+Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+2016702@churchofjesuschrist.org</div>
+<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
+Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+Office: 078-805-1570</div>
+</div>
+</body>
+</html>
+
+--_000_PH0PR04MB7719FA6E319F83EF8949F199FD372PH0PR04MB7719namp_--

@@ -95,15 +95,25 @@ async function main() {
       continue;
     }
     try {
-      const { tags, scores, raw } = await classify(thumbPath);
-      img.tags = tags;
-      img.scores = scores;
-      img.rawDescription = raw;
+      let result;
+      for (let attempt = 0; attempt < 3; attempt++) {
+        try {
+          result = await classify(thumbPath);
+          break;
+        } catch (e) {
+          if (attempt < 2) { await new Promise(r => setTimeout(r, 2000)); continue; }
+          throw e;
+        }
+      }
+      img.tags = result.tags;
+      img.scores = result.scores;
+      img.rawDescription = result.raw;
       done++;
       if (done % 10 === 0) {
         console.log(`  ${done}/${untagged.length} classified...`);
         fs.writeFileSync(INVENTORY_PATH, JSON.stringify(inventory, null, 2));
       }
+      await new Promise(r => setTimeout(r, 500));
     } catch (e) {
       console.log(`  ERROR: ${img.filename} - ${e.message}`);
       img.tags = ['other'];
