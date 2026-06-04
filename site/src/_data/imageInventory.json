@@ -61438,10 +61438,20 @@
     "modal": "2024-10-14_My-name-i_1728653957718-modal.jpg",
     "source": "emails",
     "date": "2024-10-14",
-    "tags": [],
-    "caption": "",
+    "tags": [
+      "selfie",
+      "people",
+      "group"
+    ],
+    "caption": "Friends at Train Station",
     "art": false,
-    "featured": false
+    "featured": false,
+    "scores": {
+      "people": 7,
+      "group": 7,
+      "selfie": 8
+    },
+    "rawDescription": "The image shows three young men posing together in front of a train station, smiling and looking at the camera. One man is wearing glasses and a face mask, while another has his arm around him. The third person appears to be standing behind them. They are all dressed nicely with ties visible on their shirts. \n\nIn the background, there's a bus parked near the train tracks, indicating that they might be waiting for transportation or just arrived at the station."
   },
   {
     "filename": "2024-10-21_So-I-gues_1729345149632.jpg",
@@ -61449,10 +61459,22 @@
     "modal": "2024-10-21_So-I-gues_1729345149632-modal.jpg",
     "source": "emails",
     "date": "2024-10-21",
-    "tags": [],
-    "caption": "",
+    "tags": [
+      "people",
+      "group",
+      "scenery",
+      "activity"
+    ],
+    "caption": "Beach Day Fun",
     "art": false,
-    "featured": false
+    "featured": false,
+    "scores": {
+      "people": 7,
+      "group": 7,
+      "scenery": 7,
+      "activity": 7
+    },
+    "rawDescription": "The image shows a group of people standing on the beach, enjoying their time together in the sand and water. There are at least nine individuals visible in the scene, some closer to the foreground while others are further back near the ocean's edge. The atmosphere appears lively as they engage with each other or participate in various activities such as dancing or playing games.\n\nIn addition to the people, there is a car parked on the beach and an umbrella set up nearby, providing shade for those who wish to relax under it. A backpack can also be seen placed close to one of the individuals, suggesting that they might have brought some belongings with them for their day at the beach."
   },
   {
     "filename": "2024-10-21_So-I-gues_1729432010670.jpg",
@@ -61460,10 +61482,22 @@
     "modal": "2024-10-21_So-I-gues_1729432010670-modal.jpg",
     "source": "emails",
     "date": "2024-10-21",
-    "tags": [],
-    "caption": "",
+    "tags": [
+      "people",
+      "group",
+      "scenery",
+      "activity"
+    ],
+    "caption": "Hiking Buddies",
     "art": false,
-    "featured": false
+    "featured": false,
+    "scores": {
+      "people": 7,
+      "group": 7,
+      "scenery": 7,
+      "activity": 7
+    },
+    "rawDescription": "The image features a group of four young men posing together in front of a large rock formation, possibly on a hiking trail or during an outdoor adventure. They are all smiling and enjoying the moment as they take pictures to capture their experience. One man is holding up his hand with both fingers raised, while another has his hand raised only partially. The group appears to be dressed for various activities, including one of them wearing a backpack."
   },
   {
     "filename": "2024-10-21_So-I-gues_20241020_211955.jpg",
@@ -61471,10 +61505,20 @@
     "modal": "2024-10-21_So-I-gues_20241020_211955-modal.jpg",
     "source": "emails",
     "date": "2024-10-21",
-    "tags": [],
-    "caption": "",
+    "tags": [
+      "art",
+      "people",
+      "document"
+    ],
+    "caption": "Proud Artist",
     "art": false,
-    "featured": false
+    "featured": false,
+    "scores": {
+      "people": 7,
+      "art": 8,
+      "document": 7
+    },
+    "rawDescription": "The image shows a young man sitting in front of a table, holding up a piece of paper or drawing that he has made. He is smiling and appears to be proud of his work. The room seems to have a cozy atmosphere with a chair nearby and another person partially visible on the left side of the scene."
   },
   {
     "filename": "2024-10-21_So-I-gues_20241021_185300.jpg",
@@ -61482,10 +61526,18 @@
     "modal": "2024-10-21_So-I-gues_20241021_185300-modal.jpg",
     "source": "emails",
     "date": "2024-10-21",
-    "tags": [],
-    "caption": "",
+    "tags": [
+      "selfie",
+      "people"
+    ],
+    "caption": "Casual Portrait",
     "art": false,
-    "featured": false
+    "featured": false,
+    "scores": {
+      "people": 7,
+      "selfie": 8
+    },
+    "rawDescription": "The image features a young man wearing a white shirt, sitting in front of a chair and looking at the camera. He has short hair and is positioned close to the left side of the frame. The background includes a wall adorned with pictures and curtains that add depth to the scene."
   },
   {
     "filename": "2024-11-18_I-ate-mor_1000004178.jpg",
@@ -61493,10 +61545,14 @@
     "modal": "2024-11-18_I-ate-mor_1000004178-modal.jpg",
     "source": "emails",
     "date": "2024-11-18",
-    "tags": [],
-    "caption": "",
+    "tags": [
+      "other"
+    ],
+    "caption": "No Image",
     "art": false,
-    "featured": false
+    "featured": false,
+    "scores": {},
+    "rawDescription": "\"I'm sorry, I don't understand what you're saying.\""
   },
   {
     "filename": "2024-11-18_I-ate-mor_1000004363.jpg",
@@ -61504,10 +61560,16 @@
     "modal": "2024-11-18_I-ate-mor_1000004363-modal.jpg",
     "source": "emails",
     "date": "2024-11-18",
-    "tags": [],
-    "caption": "",
+    "tags": [
+      "food"
+    ],
+    "caption": "Rice Bowl",
     "art": false,
-    "featured": false
+    "featured": false,
+    "scores": {
+      "food": 8
+    },
+    "rawDescription": "The image features a white bowl filled with rice and green vegetables, such as seaweed or chives, placed on top of a wooden table. The bowl is the main focus in the scene, occupying most of the frame. In addition to the bowl, there are two books visible in the background, one located near the left edge of the image and another towards the right side."
   },
   {
     "filename": "2024-11-18_I-ate-mor_1000004374.jpg",
@@ -61515,10 +61577,18 @@
     "modal": "2024-11-18_I-ate-mor_1000004374-modal.jpg",
     "source": "emails",
     "date": "2024-11-18",
-    "tags": [],
-    "caption": "",
+    "tags": [
+      "people",
+      "group"
+    ],
+    "caption": "Group Smile",
     "art": false,
-    "featured": false
+    "featured": false,
+    "scores": {
+      "people": 7,
+      "group": 7
+    },
+    "rawDescription": "\"There are five people in the image, all smiling and posing together. One of them is holding a small object that appears to be a pencil case or a box containing a toothbrush.\""
   },
   {
     "filename": "2024-11-18_I-ate-mor_1000004376.jpg",
@@ -61526,10 +61596,20 @@
     "modal": "2024-11-18_I-ate-mor_1000004376-modal.jpg",
     "source": "emails",
     "date": "2024-11-18",
-    "tags": [],
-    "caption": "",
+    "tags": [
+      "food",
+      "people",
+      "group"
+    ],
+    "caption": "Dining Together",
     "art": false,
-    "featured": false
+    "featured": false,
+    "scores": {
+      "people": 7,
+      "group": 7,
+      "food": 8
+    },
+    "rawDescription": "The image shows three young men sitting at a dining table in what appears to be a restaurant or cafe setting, enjoying their meal together. They are all smiling and posing for the camera while eating food from bowls placed on the table. The atmosphere seems relaxed and friendly as they share this moment with each other."
   },
   {
     "filename": "2024-11-25_A-robot-s_1000004843.jpg",
@@ -61537,10 +61617,18 @@
     "modal": "2024-11-25_A-robot-s_1000004843-modal.jpg",
     "source": "emails",
     "date": "2024-11-25",
-    "tags": [],
-    "caption": "",
+    "tags": [
+      "art",
+      "scenery"
+    ],
+    "caption": "Apartment Art",
     "art": false,
-    "featured": false
+    "featured": false,
+    "scores": {
+      "scenery": 7,
+      "art": 8
+    },
+    "rawDescription": "The image features a hallway in an apartment, where two pieces of art are displayed on the wall. One piece is a black bear statue placed next to a picture depicting a Chinese character. The other artwork is a painting that includes a tree and a bird. Both items contribute to creating a unique and artistic atmosphere within the space."
   },
   {
     "filename": "2024-11-25_A-robot-s_1000004855.jpg",
@@ -61548,10 +61636,14 @@
     "modal": "2024-11-25_A-robot-s_1000004855-modal.jpg",
     "source": "emails",
     "date": "2024-11-25",
-    "tags": [],
-    "caption": "",
+    "tags": [
+      "other"
+    ],
+    "caption": "Floating Microwave",
     "art": false,
-    "featured": false
+    "featured": false,
+    "scores": {},
+    "rawDescription": "The image features a white microwave oven placed on top of a counter, next to a wall. The microwave is positioned in such a way that it appears as if it's floating or hanging from the wall. This unusual placement might be due to limited space in the kitchen area or an attempt to save countertop space by utilizing vertical storage solutions."
   },
   {
     "filename": "2024-12-11_Honey-on-_1000005397.jpg",
@@ -61559,10 +61651,20 @@
     "modal": "2024-12-11_Honey-on-_1000005397-modal.jpg",
     "source": "emails",
     "date": "2024-12-11",
-    "tags": [],
-    "caption": "",
+    "tags": [
+      "people",
+      "group",
+      "scenery"
+    ],
+    "caption": "Suit Up",
     "art": false,
-    "featured": false
+    "featured": false,
+    "scores": {
+      "people": 7,
+      "group": 7,
+      "scenery": 7
+    },
+    "rawDescription": "The image shows two men standing next to each other, both wearing suits and ties. They are smiling at the camera, creating a friendly atmosphere in the scene. One of them is holding up his hand, possibly gesturing or making a point while they pose together. The setting appears to be an outdoor area with a train station visible in the background, suggesting that this could be a public event or gathering where people have come together for a special occasion or celebration."
   },
   {
     "filename": "2024-12-11_Honey-on-_1000005625.jpg",
@@ -61570,10 +61672,20 @@
     "modal": "2024-12-11_Honey-on-_1000005625-modal.jpg",
     "source": "emails",
     "date": "2024-12-11",
-    "tags": [],
-    "caption": "",
+    "tags": [
+      "selfie",
+      "people",
+      "group"
+    ],
+    "caption": "Peace Sign",
     "art": false,
-    "featured": false
+    "featured": false,
+    "scores": {
+      "people": 7,
+      "group": 7,
+      "selfie": 8
+    },
+    "rawDescription": "\"Two young men are standing next to each other, both smiling and making a peace sign gesture in the air. They appear to be enjoying their time together.\""
   },
   {
     "filename": "2024-12-11_Honey-on-_1000005628.jpg",
@@ -61581,10 +61693,20 @@
     "modal": "2024-12-11_Honey-on-_1000005628-modal.jpg",
     "source": "emails",
     "date": "2024-12-11",
-    "tags": [],
-    "caption": "",
+    "tags": [
+      "food",
+      "people",
+      "group"
+    ],
+    "caption": "Indian Restaurant",
     "art": false,
-    "featured": false
+    "featured": false,
+    "scores": {
+      "people": 7,
+      "group": 7,
+      "food": 8
+    },
+    "rawDescription": "The image shows two young men sitting at a dining table in what appears to be an Indian restaurant, enjoying their meal together. They are smiling and posing for the camera while eating food from plates placed on the table. The table is set with various bowls containing different dishes of food, as well as cups and utensils like forks and knives.\n\nThe atmosphere seems lively and social, with both men engaged in conversation and enjoying their time together over a delicious meal."
   },
   {
     "filename": "2025-01-01_Ive-got-s_1000006916.jpg",
@@ -61592,10 +61714,16 @@
     "modal": "2025-01-01_Ive-got-s_1000006916-modal.jpg",
     "source": "emails",
     "date": "2025-01-01",
-    "tags": [],
-    "caption": "",
+    "tags": [
+      "document"
+    ],
+    "caption": "Love Note",
     "art": false,
-    "featured": false
+    "featured": false,
+    "scores": {
+      "document": 7
+    },
+    "rawDescription": "The image features a white piece of paper on which the phrase \"I love you all so much!\" is written in black and red block letters, creating an artistic and playful design. The lettering stands out against the plain background of the paper, making it the focal point of the scene."
   },
   {
     "filename": "2025-01-13_First-ema_1000007647.jpg",
@@ -61603,10 +61731,16 @@
     "modal": "2025-01-13_First-ema_1000007647-modal.jpg",
     "source": "emails",
     "date": "2025-01-13",
-    "tags": [],
-    "caption": "",
+    "tags": [
+      "activity"
+    ],
+    "caption": "No Image",
     "art": false,
-    "featured": false
+    "featured": false,
+    "scores": {
+      "activity": 7
+    },
+    "rawDescription": "\"Us: If we roll a multiple of 3, how about We go to bed instead of playing more Pokemon?\""
   },
   {
     "filename": "2025-01-13_First-ema_1000007673.jpg",
@@ -61614,10 +61748,20 @@
     "modal": "2025-01-13_First-ema_1000007673-modal.jpg",
     "source": "emails",
     "date": "2025-01-13",
-    "tags": [],
-    "caption": "",
+    "tags": [
+      "people",
+      "group",
+      "activity"
+    ],
+    "caption": "Playing Cards",
     "art": false,
-    "featured": false
+    "featured": false,
+    "scores": {
+      "people": 7,
+      "group": 7,
+      "activity": 7
+    },
+    "rawDescription": "The image shows a person holding up two playing cards, possibly from a game of poker or another card game involving multiple decks. The person is standing in front of a table where the cards are placed. There is also an additional person partially visible on the left side of the scene."
   },
   {
     "filename": "2025-05-26_Magbago-o_1000013768.jpg",
@@ -61625,10 +61769,18 @@
     "modal": "2025-05-26_Magbago-o_1000013768-modal.jpg",
     "source": "emails",
     "date": "2025-05-26",
-    "tags": [],
-    "caption": "",
+    "tags": [
+      "art",
+      "people"
+    ],
+    "caption": "Glasses and Gun",
     "art": true,
-    "featured": false
+    "featured": false,
+    "scores": {
+      "people": 7,
+      "art": 8
+    },
+    "rawDescription": "The image features a black and white drawing of a man wearing glasses, holding a gun in his hand. The drawing is quite detailed, showcasing the artist's skillful work. The scene appears to be set on a table or desk, with an additional object visible in the background."
   },
   {
     "filename": "2025-07-14_Long-emai_1000014952.jpg",
@@ -61636,10 +61788,18 @@
     "modal": "2025-07-14_Long-emai_1000014952-modal.jpg",
     "source": "emails",
     "date": "2025-07-14",
-    "tags": [],
-    "caption": "",
+    "tags": [
+      "people",
+      "group"
+    ],
+    "caption": "Tied Up",
     "art": false,
-    "featured": false
+    "featured": false,
+    "scores": {
+      "people": 7,
+      "group": 7
+    },
+    "rawDescription": "\"Two young men are smiling and posing together in a room, both wearing white shirts and ties. They seem to be enjoying the moment captured in this photo.\""
   },
   {
     "filename": "2025-07-14_Long-emai_1000015254.jpg",
@@ -61647,10 +61807,18 @@
     "modal": "2025-07-14_Long-emai_1000015254-modal.jpg",
     "source": "emails",
     "date": "2025-07-14",
-    "tags": [],
-    "caption": "",
+    "tags": [
+      "people",
+      "group"
+    ],
+    "caption": "Pointing Fun",
     "art": false,
-    "featured": false
+    "featured": false,
+    "scores": {
+      "people": 7,
+      "group": 7
+    },
+    "rawDescription": "\"Two young men posing together in a room, one wearing glasses and the other wearing a suit. The man on the left is pointing at his companion's head while both are smiling.\""
   },
   {
     "filename": "2025-07-14_Long-emai_1000015320.jpg",
@@ -61658,10 +61826,18 @@
     "modal": "2025-07-14_Long-emai_1000015320-modal.jpg",
     "source": "emails",
     "date": "2025-07-14",
-    "tags": [],
-    "caption": "",
+    "tags": [
+      "people",
+      "activity"
+    ],
+    "caption": "Game Night",
     "art": false,
-    "featured": false
+    "featured": false,
+    "scores": {
+      "people": 7,
+      "activity": 7
+    },
+    "rawDescription": "The image shows a wooden table covered in various playing cards, tarot cards, and other items such as a cell phone, a cup, and some bottles. The cards are spread out across the table, creating an interesting scene of card games or tarot reading. A person can be seen sitting at the table, possibly preparing to play with the cards or looking through them for guidance."
   },
   {
     "filename": "2025-07-14_Long-emai_1000015367.jpg",
@@ -61669,10 +61845,18 @@
     "modal": "2025-07-14_Long-emai_1000015367-modal.jpg",
     "source": "emails",
     "date": "2025-07-14",
-    "tags": [],
-    "caption": "",
+    "tags": [
+      "people",
+      "group"
+    ],
+    "caption": "Store Smiles",
     "art": false,
-    "featured": false
+    "featured": false,
+    "scores": {
+      "people": 7,
+      "group": 7
+    },
+    "rawDescription": "\"Two men are standing in a store, one wearing a blue jacket and the other wearing a white shirt. They both have smiles on their faces as they pose for a picture.\""
   },
   {
     "filename": "2025-07-14_Long-emai_1000015369.jpg",
@@ -61680,10 +61864,16 @@
     "modal": "2025-07-14_Long-emai_1000015369-modal.jpg",
     "source": "emails",
     "date": "2025-07-14",
-    "tags": [],
-    "caption": "",
+    "tags": [
+      "people"
+    ],
+    "caption": "Train Ride",
     "art": false,
-    "featured": false
+    "featured": false,
+    "scores": {
+      "people": 7
+    },
+    "rawDescription": "The image shows a man wearing a white shirt and tie, sitting on the back of a train seat. He is looking up at something above him, possibly gazing out the window or observing his surroundings. The man appears to be in deep thought or contemplation as he sits there with an intense look on his face."
   },
   {
     "filename": "2025-08-25_Four-Perc_20250820_171121_resized.jpg",
@@ -61691,10 +61881,22 @@
     "modal": "2025-08-25_Four-Perc_20250820_171121_resized-modal.jpg",
     "source": "emails",
     "date": "2025-08-25",
-    "tags": [],
-    "caption": "",
+    "tags": [
+      "art",
+      "people",
+      "group",
+      "document"
+    ],
+    "caption": "Body Parts",
     "art": true,
-    "featured": false
+    "featured": false,
+    "scores": {
+      "people": 7,
+      "group": 7,
+      "art": 8,
+      "document": 7
+    },
+    "rawDescription": "The image shows a person holding up a piece of paper that features three different drawings of human body parts, including an ear and two lips. The drawing of the ear is more prominent than the other two, making it stand out in the scene. The person's hand is positioned over the paper, emphasizing the focus on these specific drawings."
   },
   {
     "filename": "2025-08-25_Four-Perc_20250820_175057_resized.jpg",
@@ -61702,10 +61904,16 @@
     "modal": "2025-08-25_Four-Perc_20250820_175057_resized-modal.jpg",
     "source": "emails",
     "date": "2025-08-25",
-    "tags": [],
-    "caption": "",
+    "tags": [
+      "people"
+    ],
+    "caption": "Whiteboard Face",
     "art": true,
-    "featured": false
+    "featured": false,
+    "scores": {
+      "people": 7
+    },
+    "rawDescription": "The image features a whiteboard that has been decorated to resemble the face of a person, complete with eyes and nose. The face is made up of small circles or buttons, giving it a unique and playful appearance. There are four blue buttons on the board, which appear to be attached to the face in various positions. These buttons add an interesting visual element to the otherwise plain whiteboard."
   },
   {
     "filename": "2026-06-01_Coming-so_1000028576.jpg",
@@ -61713,10 +61921,18 @@
     "modal": "2026-06-01_Coming-so_1000028576-modal.jpg",
     "source": "emails",
     "date": "2026-06-01",
-    "tags": [],
-    "caption": "",
+    "tags": [
+      "art",
+      "scenery"
+    ],
+    "caption": "Dragonfly Art",
     "art": true,
-    "featured": false
+    "featured": false,
+    "scores": {
+      "scenery": 7,
+      "art": 8
+    },
+    "rawDescription": "The image features a black and white drawing of a dragonfly resting on a green stem or branch. The dragonfly is positioned in the center of the frame, occupying most of the space within the artwork. The background appears to be a simple white surface, which further accentuates the details of the dragonfly's wings and body. Overall, this image captures the beauty and intricacy of nature through the artist's skillful depiction of the dragonfly resting on its perch."
   },
   {
     "filename": "2026-06-01_Coming-so_1000028613.jpg",
@@ -61724,10 +61940,16 @@
     "modal": "2026-06-01_Coming-so_1000028613-modal.jpg",
     "source": "emails",
     "date": "2026-06-01",
-    "tags": [],
-    "caption": "",
+    "tags": [
+      "art"
+    ],
+    "caption": "Basketball Action",
     "art": true,
-    "featured": false
+    "featured": false,
+    "scores": {
+      "art": 8
+    },
+    "rawDescription": "The image features a watercolor drawing of a basketball player, likely a professional athlete or a cartoon character, in action on the court. The artist has depicted the player holding a basketball and appears to be jumping up into the air while dribbling the ball with one hand. The scene is set against a purple background, which adds depth and contrast to the artwork."
   },
   {
     "filename": "2026-06-01_Coming-so_1000028616.jpg",
@@ -61735,10 +61957,16 @@
     "modal": "2026-06-01_Coming-so_1000028616-modal.jpg",
     "source": "emails",
     "date": "2026-06-01",
-    "tags": [],
-    "caption": "",
+    "tags": [
+      "people"
+    ],
+    "caption": "Medical Duo",
     "art": false,
-    "featured": false
+    "featured": false,
+    "scores": {
+      "people": 7
+    },
+    "rawDescription": "The image features a man and woman standing next to each other, both smiling at the camera. The woman is wearing a white coat, which suggests that she might be a doctor or a nurse. They are posing together in front of a house, indicating they could be family members or friends. Both individuals appear happy and content as they share this moment with the photographer."
   },
   {
     "filename": "2026-06-01_Coming-so_1000028617.jpg",
@@ -61746,10 +61974,20 @@
     "modal": "2026-06-01_Coming-so_1000028617-modal.jpg",
     "source": "emails",
     "date": "2026-06-01",
-    "tags": [],
-    "caption": "",
+    "tags": [
+      "people",
+      "group",
+      "scenery"
+    ],
+    "caption": "Formal Group",
     "art": false,
-    "featured": false
+    "featured": false,
+    "scores": {
+      "people": 7,
+      "group": 7,
+      "scenery": 7
+    },
+    "rawDescription": "The image shows a group of five people standing in front of a building, posing together for the camera. They are all dressed formally and wearing ties, indicating that they might be attending an event or gathering. The individuals include two men on the left side of the frame, one man in the center, another man on the right side, and a woman towards the back.\n\nThe group appears to be composed of both adults and children, suggesting that this could be a family event or a special occasion where people of different ages are involved. The building they are standing in front of is likely related to their gathering, such as an office, school, or community center."
   },
   {
     "filename": "2026-06-01_Coming-so_1000028625.jpg",
@@ -61757,9 +61995,17 @@
     "modal": "2026-06-01_Coming-so_1000028625-modal.jpg",
     "source": "emails",
     "date": "2026-06-01",
-    "tags": [],
-    "caption": "",
+    "tags": [
+      "selfie",
+      "people"
+    ],
+    "caption": "Silly Bedtime",
     "art": false,
-    "featured": false
+    "featured": false,
+    "scores": {
+      "people": 7,
+      "selfie": 8
+    },
+    "rawDescription": "The image features a young man wearing glasses and posing in front of a bed, possibly on his own or someone else's bed. He is making a funny face while looking at the camera, which adds humor to the scene. The close-up view of him emphasizes his facial expression and the overall atmosphere of the picture."
   }
 ]
