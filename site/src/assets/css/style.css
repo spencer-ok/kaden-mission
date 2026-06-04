@@ -670,6 +670,55 @@ body {
   font-style: normal;
 }
 
+/* === Poetry === */
+.poetry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.poem-card {
+  background: var(--card-bg);
+  border: 1px solid var(--divider);
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.poem-title {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  color: var(--accent);
+}
+
+.poem-text {
+  font-family: inherit;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  margin-bottom: 0.8rem;
+  color: var(--ink);
+  flex: 1;
+}
+
+.poem-note {
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.poem-source {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-align: center;
+  margin-top: auto;
+}
+
 /* === Messages / Chat === */
 .chat-thread {
   max-width: 600px;

@@ -165,6 +165,21 @@ layout: base.njk
     </div>
   </section>
 
+  {# Poetry Section #}
+  <section class="section" id="poetry">
+    <h2 class="section-title">詩 <span>My Poetry</span></h2>
+    <div class="poetry-grid">
+      {% for poem in poetry %}
+      <div class="poem-card">
+        <h3 class="poem-title">{{ poem.title }}</h3>
+        <pre class="poem-text">{{ poem.text }}</pre>
+        {% if poem.note %}<p class="poem-note">{{ poem.note }}</p>{% endif %}
+        <cite class="poem-source">{{ poem.date }} · {{ poem.source }}</cite>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
   {# Emails Section #}
   <section class="section" id="emails">
     <h2 class="section-title">手紙 <span>My Letters Home</span></h2>
