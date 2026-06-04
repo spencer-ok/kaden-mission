@@ -195,6 +195,19 @@
       window.quotePrev = () => { stopTimer(); goTo(current - 1); startTimer(); };
     })();
 
+    // Poetry accordion
+    document.querySelectorAll('.poem-card').forEach(d => {
+      d.addEventListener('toggle', () => {
+        if (d.open) {
+          document.querySelectorAll('.poem-card').forEach(o => { if (o !== d) o.open = false; });
+          setTimeout(() => {
+            const y = d.getBoundingClientRect().top + window.scrollY - 60;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }, 50);
+        }
+      });
+    });
+
     // Photo Grid Filter & Pagination
     (function() {
       const PAGE_SIZE = 24;
