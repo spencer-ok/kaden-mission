@@ -622,10 +622,13 @@ body {
 /* === Quotes === */
 .quotes-carousel {
   position: relative;
-  min-height: 180px;
+  min-height: 280px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: var(--card-bg);
+  border: 1px solid var(--divider);
+  border-radius: 8px;
 }
 
 .quote-slide {
@@ -640,7 +643,6 @@ body {
 
 .quote-slide.active {
   opacity: 1;
-  position: relative;
   pointer-events: auto;
 }
 
@@ -660,10 +662,10 @@ body {
 
 /* === Poetry === */
 .poetry-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
-  gap: 1.5rem;
-  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -672,16 +674,20 @@ body {
   border: 1px solid var(--divider);
   border-radius: 8px;
   padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
   overflow: hidden;
 }
 
 .poem-title {
   font-size: 1rem;
-  margin-bottom: 0.8rem;
   color: var(--accent);
+  cursor: pointer;
+  list-style: none;
 }
+
+.poem-title::marker { content: ''; }
+.poem-title::-webkit-details-marker { display: none; }
+
+.poem-card[open] .poem-title { margin-bottom: 0.8rem; }
 
 .poem-text {
   font-family: inherit;
