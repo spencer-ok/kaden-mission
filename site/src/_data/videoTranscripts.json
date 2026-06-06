@@ -4181,5 +4181,47 @@
       }
     ],
     "language": "en"
+  },
+  "2026-06-04 16.18.16.mp4": {
+    "text": "you you So good. - - Thank you.",
+    "segments": [
+      {
+        "id": 0,
+        "text": "you",
+        "start": 0.028,
+        "end": 0.516
+      },
+      {
+        "id": 1,
+        "text": "you",
+        "start": 2.012,
+        "end": 2.468
+      },
+      {
+        "id": 2,
+        "text": "So good.",
+        "start": 6.908,
+        "end": 7.652
+      },
+      {
+        "id": 3,
+        "text": "-",
+        "start": 12.892,
+        "end": 15.524
+      },
+      {
+        "id": 4,
+        "text": "-",
+        "start": 16.028,
+        "end": 17.124
+      },
+      {
+        "id": 5,
+        "text": "Thank you.",
+        "start": 44.86,
+        "end": 48.228
+      }
+    ],
+    "language": "en"
   }
 }

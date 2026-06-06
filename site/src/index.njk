@@ -139,11 +139,7 @@ layout: base.njk
       </div>
       {% endif %}{% endfor %}
     </div>
-    <div class="photo-paging">
-      <button onclick="photoPrev()" id="photoPrev">← Prev</button>
-      <span id="photoPageInfo"></span>
-      <button onclick="photoNext()" id="photoNext">Next →</button>
-    </div>
+    <div class="photo-paging" id="photoPaging"></div>
   </section>
 
   {# Quotes Section #}

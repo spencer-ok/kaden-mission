@@ -230,6 +230,32 @@
         });
       }
 
+      function renderPaging(totalPages) {
+        const paging = document.getElementById('photoPaging');
+        if (totalPages <= 1) { paging.innerHTML = ''; return; }
+        let html = '';
+        html += `<button class="pg-btn" onclick="goPage(0)" ${currentPage===0?'disabled':''}>«</button>`;
+        html += `<button class="pg-btn" onclick="goPage(${currentPage-1})" ${currentPage===0?'disabled':''}>‹</button>`;
+        const start = Math.max(0, currentPage - 2);
+        const end = Math.min(totalPages - 1, currentPage + 2);
+        if (start > 0) html += `<button class="pg-btn" onclick="goPage(0)">1</button><span class="pg-dots">…</span>`;
+        for (let i = start; i <= end; i++) {
+          html += `<button class="pg-btn${i===currentPage?' active':''}" onclick="goPage(${i})">${i+1}</button>`;
+        }
+        if (end < totalPages - 1) html += `<span class="pg-dots">…</span><button class="pg-btn" onclick="goPage(${totalPages-1})">${totalPages}</button>`;
+        html += `<button class="pg-btn" onclick="goPage(${currentPage+1})" ${currentPage>=totalPages-1?'disabled':''}>›</button>`;
+        html += `<button class="pg-btn" onclick="goPage(${totalPages-1})" ${currentPage>=totalPages-1?'disabled':''}>»</button>`;
+        html += `<span class="pg-jump">Go to: <input type="number" min="1" max="${totalPages}" value="${currentPage+1}" onchange="goPage(this.value-1)" class="pg-input"></span>`;
+        paging.innerHTML = html;
+      }
+
+      window.goPage = function(p) {
+        const filtered = getFiltered();
+        const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
+        currentPage = Math.max(0, Math.min(p, totalPages - 1));
+        render();
+      };
+
       function render() {
         const filtered = getFiltered();
         const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
@@ -239,12 +265,7 @@
         items.forEach(i => i.classList.add('hidden'));
         filtered.slice(start, start + PAGE_SIZE).forEach(i => i.classList.remove('hidden'));
 
-        const info = document.getElementById('photoPageInfo');
-        const prevBtn = document.getElementById('photoPrev');
-        const nextBtn = document.getElementById('photoNext');
-        info.textContent = `${currentPage + 1} / ${totalPages} (${filtered.length} items)`;
-        prevBtn.disabled = currentPage === 0;
-        nextBtn.disabled = currentPage >= totalPages - 1;
+        renderPaging(totalPages);
       }
 
       window.setPhotoTag = function(btn, tag) {
@@ -270,8 +291,6 @@
       };
 
       window.filterPhotos = function() { currentPage = 0; render(); };
-      window.photoNext = () => { currentPage++; render(); };
-      window.photoPrev = () => { currentPage--; render(); };
       render();
     })();
 

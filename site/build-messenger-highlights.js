@@ -71,7 +71,7 @@ for (const msg of allMessages) {
     isKaden
   };
   if (msg.photos) {
-    entry.photos = msg.photos.map(p => p.replace(/\.\w+$/, '-thumb.jpg'));
+    entry.photos = [...new Set(msg.photos.map(p => p.replace(/\.\w+$/, '-thumb.jpg')))];
   }
   if (msg.audio) {
     entry.audio = msg.audio;
