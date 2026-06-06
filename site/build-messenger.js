@@ -22,11 +22,13 @@ for (const chat of chats) {
     if (!msg.content && !msg.photos && !msg.videos && !msg.audio_files) continue;
     if (msg.content && /^(You created|.+ changed the|.+ set the|.+ named the|.+ to the group)/.test(msg.content)) continue;
 
+    let text = msg.content || '';
+
     const entry = {
       sender: msg.sender_name,
       date: new Date(msg.timestamp_ms).toISOString().slice(0, 10),
       timestamp: msg.timestamp_ms,
-      text: msg.content || ''
+      text
     };
 
     if (msg.photos) {

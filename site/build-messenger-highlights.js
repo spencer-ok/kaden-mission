@@ -10,13 +10,17 @@ const chatData = JSON.parse(fs.readFileSync(MESSAGES_PATH, 'utf8'));
 
 function fixEncoding(str) {
   if (!str) return '';
-  try { return Buffer.from(str, 'latin1').toString('utf8'); } catch (e) { return str; }
+  // Only decode if string has mojibake patterns (high bytes \xc0-\xff without valid multibyte)
+  if (/[\u00c0-\u00ff][\u0080-\u00bf]/.test(str)) {
+    try { return Buffer.from(str, 'latin1').toString('utf8'); } catch (e) {}
+  }
+  return str;
 }
 
 // Find all dates that have at least one important Kaden message
 const importantDates = new Set(
   Object.values(scored)
-    .filter(v => v.score >= 7 && v.text && v.text.trim().length > 20)
+    .filter(v => v.score >= 7 && (v.text && v.text.trim().length > 20 || v.hasPhoto))
     .map(v => v.date)
 );
 

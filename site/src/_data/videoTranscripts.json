@@ -4037,5 +4037,149 @@
       }
     ],
     "language": "en"
+  },
+  "20260604_161710.mp4": {
+    "text": "And I didn't record it. Welcome home! No you do not! I love you too. It's been a long time. Thank you. Good to see you. Thank you. I feel like they're like way taller.  Oh man, so much traveling. I didn't sleep through any of it. You didn't sleep again? No, I couldn't sleep. - Thank you.",
+    "segments": [
+      {
+        "id": 0,
+        "text": "And I didn't record it.",
+        "start": 1.436,
+        "end": 3.588
+      },
+      {
+        "id": 1,
+        "text": "Welcome home! No you do not!",
+        "start": 5.148,
+        "end": 7.908
+      },
+      {
+        "id": 2,
+        "text": "I love you too. It's been a long time.",
+        "start": 9.468,
+        "end": 15.748
+      },
+      {
+        "id": 3,
+        "text": "Thank you.",
+        "start": 16.604,
+        "end": 17.252
+      },
+      {
+        "id": 4,
+        "text": "Good to see you.",
+        "start": 18.716,
+        "end": 20.3
+      },
+      {
+        "id": 5,
+        "text": "Thank you.",
+        "start": 20.616,
+        "end": 21.36
+      },
+      {
+        "id": 6,
+        "text": "I feel like they're like way taller.",
+        "start": 28.264,
+        "end": 33.296
+      },
+      {
+        "id": 7,
+        "text": "",
+        "start": 34.472,
+        "end": 41.0999375
+      },
+      {
+        "id": 8,
+        "text": "Oh man, so much traveling. I didn't sleep through any of it. You didn't sleep again? No, I couldn't sleep.",
+        "start": 41.0999375,
+        "end": 51.4719375
+      },
+      {
+        "id": 9,
+        "text": "- Thank you.",
+        "start": 51.8479375,
+        "end": 53.12
+      }
+    ],
+    "language": "en"
+  },
+  "20260604_161905.mp4": {
+    "text": "Richard got a video.",
+    "segments": [
+      {
+        "id": 0,
+        "text": "Richard got a video.",
+        "start": 0,
+        "end": 20.3946875
+      }
+    ],
+    "language": "en"
+  },
+  "20260604_182242.mp4": {
+    "text": "Okay, let's see who Pepper likes more. Excuse me! - Okay. What the... Hello. - Mmm. - Yeah, it's in there. - - She's so big.",
+    "segments": [
+      {
+        "id": 0,
+        "text": "Okay, let's see who Pepper likes more.",
+        "start": 0.924,
+        "end": 3.172
+      },
+      {
+        "id": 1,
+        "text": "Excuse me!",
+        "start": 31.74,
+        "end": 32.388
+      },
+      {
+        "id": 2,
+        "text": "- Okay.",
+        "start": 44.86,
+        "end": 45.636
+      },
+      {
+        "id": 3,
+        "text": "What the...",
+        "start": 46.492,
+        "end": 47.332
+      },
+      {
+        "id": 4,
+        "text": "Hello.",
+        "start": 47.868,
+        "end": 48.772
+      },
+      {
+        "id": 5,
+        "text": "-",
+        "start": 50.3,
+        "end": 51.364
+      },
+      {
+        "id": 6,
+        "text": "Mmm.",
+        "start": 53.404,
+        "end": 53.956
+      },
+      {
+        "id": 7,
+        "text": "- Yeah, it's in there.",
+        "start": 55.964,
+        "end": 59.396
+      },
+      {
+        "id": 8,
+        "text": "-",
+        "start": 67.9,
+        "end": 68.836
+      },
+      {
+        "id": 9,
+        "text": "- She's so big.",
+        "start": 69.788,
+        "end": 72.0426875
+      }
+    ],
+    "language": "en"
   }
 }
