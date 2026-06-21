@@ -266,6 +266,38 @@ body {
   .mission-president { flex-direction: column; align-items: center; text-align: center; }
 }
 
+/* === Homecoming Talk === */
+.homecoming-talk {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.talk-audio {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.talk-transcript {
+  background: var(--card-bg);
+  border: 1px solid var(--divider);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.talk-transcript summary {
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+.transcript-text {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  line-height: 1.8;
+  color: var(--ink);
+  white-space: pre-wrap;
+}
+
 /* === Sections === */
 .section {
   max-width: 900px;

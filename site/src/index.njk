@@ -25,6 +25,18 @@ layout: base.njk
     </div>
   </section>
 
+  {# Homecoming Talk Section #}
+  <section class="section" id="homecoming-talk">
+    <h2 class="section-title">帰還 <span>Homecoming Talk</span></h2>
+    <div class="homecoming-talk">
+      <audio controls preload="none" src="/assets/audio/homecoming-talk.mp3" class="talk-audio"></audio>
+      <details class="talk-transcript">
+        <summary>Show transcript</summary>
+        <div class="transcript-text">{{ homecomingTalk.text }}</div>
+      </details>
+    </div>
+  </section>
+
   {# Map Section #}
   <section class="section section-wide" id="map">
     <h2 class="section-title">地図 <span>My Mission Map</span></h2>
